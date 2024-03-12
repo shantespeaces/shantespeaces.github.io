@@ -75,7 +75,7 @@
     <!-- <Portfolio /> -->
   </section>
   <section>
-    <!-- <SkwCarousel /> -->
+    <SkwCarousel />
     <!-- <Portfolio /> -->
   </section>
   <footer>
@@ -90,7 +90,7 @@ import { useRoute } from "vue-router";
 import MainNav from "../components/Nav.vue";
 import FooterComponent from "../components/FooterComponent.vue";
 
-// import SkwCarousel from "@/components/SkwCarousel.vue";
+import SkwCarousel from "@/components/SkwCarousel.vue";
 // import Portfolio from "../components/Portfolio.vue";
 // import Feather from "@/components/Feather.vue";
 
