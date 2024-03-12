@@ -105,7 +105,7 @@ const pauseVideo = (event) => {
 };
 const fetchProjectDetails = async () => {
   try {
-    const response = await axios.get(`/src/projects.json`);
+    const response = await axios.get(`/portfolio/src/projects.json`);
     project.value = response.data.find((p) => p.id === Number(projectId.value));
   } catch (error) {
     console.error("Error fetching project details:", error);

@@ -119,7 +119,7 @@
 
 <script setup>
 import { ref, onMounted, computed, nextTick } from "vue";
-import projectData from "/src/projects.json";
+import projectData from "/portfolio/src/projects.json";
 
 const projects = ref(projectData);
 const selectedProject = ref(null);
