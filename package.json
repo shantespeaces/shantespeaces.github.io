@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
-  "homepage": "https://shantespeaces.github.io/portfolio",
+ 
   "private": true,
   "type": "module",
   "scripts": {
