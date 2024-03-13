@@ -119,30 +119,30 @@ onUnmounted(() => {
 });
 
 const slides = [
-  { title: "The Menu", id: 2, image: "portfolio/images/menu.jpg" },
-  { title: "Prima Colors", id: 3, image: "portfolio/images/primaColors.jpg" },
-  { title: "Pub G4", id: 4, image: "portfolio/images/pubg4.png" },
-  { title: "Bois Espiègle", id: 5, image: "portfolio/images/logo-bois.png" },
-  { title: "Fusion Spa", id: 4, image: "portfolio/images/spa.png" },
+  { title: "The Menu", id: 2, image: "public/images/menu/logo.png" },
+  { title: "Prima Colors", id: 3, image: "public/images/primaColors/logo.png" },
+  { title: "Pub G4", id: 4, image: "public/images/pubG4/logo.png" },
+  { title: "Bois Espiègle", id: 5, image: "public/images/bois/logo.png" },
+  { title: "Fusion Spa", id: 4, image: "public/images/spa/logo.png" },
 ];
 
 const handleStyles = (index) => {
   if (index === 0 || index === 3) {
     return {
-      backgroundImage: `url("portfolio/images/artDeco1.jpg")`,
+      backgroundImage: `url("public/images/artDeco1.jpg")`,
       backgroundSize: `500px 500px`,
     };
   } else if (index === 1) {
     return {
-      backgroundImage: `url("portfolio/images/artDeco4.jpg")`,
+      backgroundImage: `url("public/images/artDeco4.jpg")`,
     };
   } else if (index === 2) {
     return {
-      backgroundImage: `url("portfolio/images/artDeco2.jpg")`,
+      backgroundImage: `url("public/images/artDeco2.jpg")`,
     };
   } else if (index === 4) {
     return {
-      backgroundImage: `url("portfolio/images/artDeco3.jpg")`,
+      backgroundImage: `url("public/images/artDeco3.jpg")`,
       backgroundSize: `700px 700px`,
     };
   }
@@ -369,7 +369,7 @@ onMounted(() => {
 img.cover-image {
   height: 4.5em;
   width: 4.5em;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 50%;
   position: absolute;
   transform: rotateX(0deg) rotateY(180deg);
