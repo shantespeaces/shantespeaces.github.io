@@ -9,7 +9,7 @@
     "build": "vite build --base=/portfolio/",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist/portfolio"
+    "deploy": "gh-pages -d dist/"
   
   },
   "dependencies": {

@@ -88,7 +88,6 @@ import { ref, onMounted, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import MainNav from "../components/Nav.vue";
 import FooterComponent from "../components/FooterComponent.vue";
-import { defineProps } from "vue";
 
 // import SkwCarousel from "@/components/SkwCarousel.vue";
 // import Portfolio from "../components/Portfolio.vue";
