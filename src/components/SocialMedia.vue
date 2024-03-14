@@ -9,12 +9,12 @@
       /></a>
     </div>
     <div class="">
-      <a href=""
+      <a href="#"
         ><img src="/images/socialMedias/linkedin.png" alt="Logo LinkedIn"
       /></a>
     </div>
     <div class="">
-      <a href=""
+      <a href="#"
         ><img src="/images/socialMedias/github.png" alt="Logo Github"
       /></a>
     </div>

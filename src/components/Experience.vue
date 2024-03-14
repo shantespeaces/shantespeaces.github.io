@@ -48,7 +48,10 @@
                   >
                   <router-link
                     class="project-details"
-                    :to="{ name: 'project', params: { id: project.id } }"
+                    :to="{
+                      name: 'project',
+                      params: { id: project.id },
+                    }"
                   >
                     Design
                   </router-link>
@@ -119,15 +122,23 @@
 
 <script setup>
 import { ref, onMounted, computed, nextTick } from "vue";
-import projectData from "/portfolio/src/projects.json";
+import axios from "axios";
 
-const projects = ref(projectData);
+const projects = ref([]);
+
+async function getProjects() {
+  const axios_result = await axios.get("projects.json");
+  console.log(axios_result.data);
+  projects.value = axios_result.data;
+}
+
+getProjects();
+
 const selectedProject = ref(null);
 
 const handleTitleClick = (project) => {
   selectedProject.value = project;
 };
-console.log("projectData:", projectData);
 
 const projectsPerPage = 3;
 const currentPage = ref(0);
@@ -154,9 +165,13 @@ const showNextProjects = () => {
 };
 
 onMounted(async () => {
-  // Sets the default selected project to the first project on component mount
+  // Fetch projects
+  await getProjects();
+
+  // Sets the default selected project to the first project if no project is selected
   selectedProject.value = projects.value[0];
   await nextTick();
+  // console.log("Selected project after setting:", selectedProject.value);
 });
 </script>
 

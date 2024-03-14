@@ -4,7 +4,10 @@ import IndexView from "../views/Index.vue"
 // import ProfileVue from '@/views/Profile.vue'
 // import PortfolioVue from '../views/Portfolio.vue'
 import ProjectVue from '../views/Project.vue'
-import ProjetsVue from '../views/Projets.vue'
+import Projects from '@/views/Projects.vue'
+
+// import Experience from '@/components/Experience.vue'
+// import SkwCarousel from '@/components/SkwCarousel.vue'
 
 // Route
 const router = createRouter({
@@ -12,8 +15,8 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            name: "accueil",
-            component: IndexView
+            name: "home",
+            component: IndexView,
         },
      
         // {
@@ -25,12 +28,18 @@ const router = createRouter({
             path: "/project/:id",
             name: "project",
             component: ProjectVue, 
+            props: true,
         },
         {
-            path: "/projets/",
-            name: "projets",
-            component: ProjetsVue, 
+            path: "/projects/",
+            name: "projects",
+            component: Projects
         },
+        // {
+        //     path: "/experience/",
+        //     name: "experience",
+        //     component:  Experience,
+        // },
        
      
     ]

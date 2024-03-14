@@ -119,30 +119,30 @@ onUnmounted(() => {
 });
 
 const slides = [
-  { title: "The Menu", id: 2, image: "public/images/menu/logo.png" },
-  { title: "Prima Colors", id: 3, image: "public/images/primaColors/logo.png" },
-  { title: "Pub G4", id: 4, image: "public/images/pubG4/logo.png" },
-  { title: "Bois Espiègle", id: 5, image: "public/images/bois/logo.png" },
-  { title: "Fusion Spa", id: 4, image: "public/images/spa/logo.png" },
+  { title: "The Menu", id: 2, image: "/images/menu/logo.png" },
+  { title: "Prima Colors", id: 3, image: "/images/primaColors/logo.png" },
+  { title: "Pub G4", id: 4, image: "/images/pubG4/logo.png" },
+  { title: "Bois Espiègle", id: 8, image: "/images/bois/logo-bois.png" },
+  { title: "Fusion Spa", id: 1, image: "/images/spa/logo.png" },
 ];
 
 const handleStyles = (index) => {
   if (index === 0 || index === 3) {
     return {
-      backgroundImage: `url("public/images/artDeco1.jpg")`,
+      backgroundImage: `url("/images/artDeco1.jpg")`,
       backgroundSize: `500px 500px`,
     };
   } else if (index === 1) {
     return {
-      backgroundImage: `url("public/images/artDeco4.jpg")`,
+      backgroundImage: `url("/images/artDeco4.jpg")`,
     };
   } else if (index === 2) {
     return {
-      backgroundImage: `url("public/images/artDeco2.jpg")`,
+      backgroundImage: `url("/images/artDeco2.jpg")`,
     };
   } else if (index === 4) {
     return {
-      backgroundImage: `url("public/images/artDeco3.jpg")`,
+      backgroundImage: `url("/images/artDeco3.jpg")`,
       backgroundSize: `700px 700px`,
     };
   }
@@ -218,7 +218,7 @@ onMounted(() => {
   overscroll-behavior: none;
   display: flex;
   overflow: hidden;
-  background-image: url("portfolio/images/feather.png");
+  background-image: url("public/images/feather.png");
   background-size: 75em;
   background-position: top left;
 }
@@ -374,6 +374,7 @@ img.cover-image {
   position: absolute;
   transform: rotateX(0deg) rotateY(180deg);
   transform-style: preserve-3d;
+  background-color: black;
 }
 .animated-text {
   position: absolute;

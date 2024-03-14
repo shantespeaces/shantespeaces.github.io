@@ -1,44 +1,36 @@
 <template>
-  <div class="card-wrapper">
-    <div
-      class="card-container animate__animated animate__pulse"
-      @click="handleClick"
-      :style="backgroundStyle"
-    >
-      <!-- <img :src="cardImage" class="" alt="..." /> -->
-      <div v-if="type === 'design'" class="shape-container">
-        <div class="circle">
-          <img :src="circleImage" alt="Circle Image" />
-          <div class="back">
-            <p class="card-text">{{ title }}</p>
+  <section class="section-plans" id="section-plans">
+    <div class="card animate__animated animate__pulse">
+      <div class="card__side card__side--front">
+        <p class="card-text">{{ title }}</p>
+        <img :src="backgroundImage" class="background-img" alt="" />
+      </div>
+      <div class="card__side card__side--back" @click="handleClick">
+        <div v-if="type === 'design'" class="shape-container">
+          <div class="circle">
+            <img :src="logo" alt="logo" />
           </div>
         </div>
-      </div>
-      <div
-        v-else-if="type === 'video'"
-        class="shape-container square-container"
-      >
-        <!-- Square shape content -->
-        <div class="square">
-          <img :src="circleImage" alt="Square Image" />
-          <div class="back">
-            <p class="card-text">{{ title }}</p>
+        <div
+          v-else-if="type === 'video'"
+          class="shape-container square-container"
+        >
+          <!-- Square shape content -->
+          <div class="square">
+            <img :src="logo" alt="Square Image" />
           </div>
         </div>
-      </div>
-      <div v-else-if="type === 'code'" class="shape-container">
-        <!-- Hexagon shape content -->
-        <div class="hexagon-container">
-          <div class="hexagon">
-            <img :src="circleImage" alt="Hexagon Image" />
-            <div class="back">
-              <p class="card-text">{{ title }}</p>
+        <div v-else-if="type === 'code'" class="shape-container">
+          <!-- Hexagon shape content -->
+          <div class="hexagon-container">
+            <div class="hexagon">
+              <img :src="logo" alt="Hexagon Image" />
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -48,11 +40,11 @@ const emit = defineEmits();
 const props = defineProps([
   // "cardImage",
   "title",
-  "circleImage",
+  "logo",
   "type",
   "id",
   "projectId",
-  "backgroundStyle",
+  "backgroundImage",
 ]);
 
 const handleClick = () => {
@@ -63,36 +55,57 @@ const handleClick = () => {
 </script>
 
 <style>
-.card-wrapper {
-  width: 18rem;
-  height: 23rem;
-  /* background-color: #faf9f6; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  /* background: #fff7f2; */
-  background-color: #ddc0b4;
-  box-shadow: 5px 5px 10px #e0d9d5, -5px -5px 10px #ffffff;
-  z-index: 100;
+.card {
+  /* -webkit-perspective: 150rem;
+
+  -moz-perspective: 150rem; */
+  position: relative;
+  perspective: 150rem;
+  width: 23rem;
+  height: 25rem;
+  border: none;
 }
-.card-wrapper:hover {
-  -webkit-transform: rotateY(-180deg);
+
+.card__side {
+  height: 25rem;
+
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+  background: #ffebe1;
+  object-fit: cover;
+}
+.card:hover .card__side--front {
   transform: rotateY(-180deg);
 }
-/* .card__side--back-3 {
-  background: linear-gradient(-45deg, #9a4eff, #24ff72);
-} */
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
 .card-container {
-  position: relative;
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+
   width: 15rem;
-  height: 20rem;
+  height: 15rem;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
   z-index: 101;
-  background: #ffebe1;
-  box-shadow: 24px 24px 48px #bca399, -24px -24px 48px #feddcf;
+  /* background: #ffebe1; */
+  /* box-shadow: 24px 24px 48px #bca399, -24px -24px 48px #feddcf; */
 }
 /* .card-container:hover { */
 /* background-color: #faf9f6; */
@@ -112,10 +125,11 @@ img {
   height: 100%;
   border-radius: 10px;
 }
-
-.shape-container,
-.square-container,
-.hexagon-container {
+.shape-container {
+  display: flex;
+  flex-direction: column;
+}
+.shape-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -130,42 +144,12 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* transition: transform 2.0s ease-in-out; */
-  /* transition: transform 2s ease;
-  transform-style: preserve-3d; */
 }
 
 .circle img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-}
-
-.circle .back {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotateY(180deg);
-  background-color: black;
-  color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.circle:hover {
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-.circle:hover .back {
-  display: flex;
-  -webkit-transform: rotateY(0);
-  transform: rotateY(0);
 }
 
 .square {
@@ -185,31 +169,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.square .back {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotateX(180deg);
-  background-color: #ef402f;
-  color: black;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-}
-
-.square:hover .back {
-  display: flex;
-}
-
-.square:hover {
-  transform: rotateX(180deg);
-  border-radius: 10px;
 }
 
 .hexagon {
@@ -232,32 +191,9 @@ img {
   object-fit: cover;
 }
 
-.hexagon .back {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotateX(180deg);
-  background-color: rgba(255, 133, 71);
-  color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-}
-
-.hexagon:hover .back {
-  display: flex;
-}
-
-.hexagon:hover {
-  transform: rotateX(180deg);
-}
 p.card-text {
   font-family: "Major Mono Display", monospace;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 </style>

@@ -4,9 +4,9 @@
       <div class="brand">
         <!-- <img class="logo" src="/images/artDeco3.jpg" alt="" /> -->
         <router-link
-          data-name="accueil"
+          data-name="home"
           class="navbar-brand"
-          :to="{ name: 'accueil' }"
+          :to="{ name: 'home' }"
         >
           Shanté
         </router-link>
@@ -27,16 +27,19 @@
     <transition name="slide">
       <ul v-if="isOpen" class="menu">
         <li class="menu-item">
-          Home
-          <!-- <router-link data-name="accueil" :to="{ name: 'accueil' }"
-          >Home</router-link
-        > -->
+          <router-link data-name="home" :to="{ name: 'home' }"
+            >Home</router-link
+          >
         </li>
+        <!-- <li class="menu-item">
+          <router-link data-name="Experience" :to="{ name: 'experience' }"
+            >Experience</router-link
+          >
+        </li> -->
         <li class="menu-item">
-          Portfolio
-          <!-- <router-link data-name="portfolio" :to="{ name: 'portfolio' }"
-          >Portfolio</router-link
-        > -->
+          <router-link data-name="projects" :to="{ name: 'projects' }">
+            Projects</router-link
+          >
         </li>
         <li class="menu-item">
           Contact

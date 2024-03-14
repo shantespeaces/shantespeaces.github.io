@@ -16,33 +16,6 @@
     <div
       class="portfolio-container mt-3 container d-flex flex-wrap gap-4 justify-content-start"
     >
-      <!-- <div class="neumorphisme31"></div>
-      <div class="neumorphisme32"></div>
-      <div class="neumorphisme31"></div>
-      <div class="neumorphisme32"></div>
-      <div class="neumorphisme31"></div>
-      <div class="neumorphisme32"></div>
-      <div class="neumorphisme31"></div>
-      <div class="neumorphisme32"></div>
-      <div class="neumorphisme33"></div>
-      <div class="neumorphisme34"></div>
-      <div class="neumorphisme35"></div>
-      <div class="neumorphisme36"></div>
-      <div class="neumorphisme37"></div>
-      <div class="neumorphisme38"></div>
-      <div class="neumorphisme39"></div>
-      <div class="neumorphisme40"></div>
-      <div class="neumorphisme31"></div>
-      <div class="neumorphisme32"></div>
-      <div class="neumorphisme33"></div>
-      <div class="neumorphisme34"></div>
-      <div class="neumorphisme35"></div>
-      <div class="neumorphisme36"></div>
-      <div class="neumorphisme37"></div>
-      <div class="neumorphisme38"></div>
-      <div class="neumorphisme39"></div>
-      <div class="neumorphisme40"></div> -->
-
       <div
         v-for="(card, index) in cards"
         :key="card.id"
@@ -50,15 +23,16 @@
         class="col mb-5 mx-3 align-self-start"
         :class="{ 'row-1': index % 2 === 0, 'row-2': index % 2 !== 0 }"
       >
+        <!-- <CardVue /> -->
         <CardVue
           :id="card.id"
-          :circleImage="card.circleImage"
+          :logo="card.logo"
           :title="card.title"
           :type="card.type"
           :index="index"
           :projectId="card.id"
           @handleClick="handleCardClick"
-          :backgroundStyle="card.backgroundStyle"
+          :backgroundImage="card.backgroundImage"
         />
       </div>
     </div>
@@ -71,11 +45,12 @@
 import FilterButtons from "../components/FilterButtons.vue";
 import { ref, onMounted } from "vue";
 import CardVue from "@/components/Card.vue";
-import cardData from "/src/projects.json";
+// import cardData from "/src/projects.json";
 import DownArrowButton from "../components/DownArrowButton.vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
 
+const cardData = await axios.get(`/projects.json`);
 const portfolioRef = ref(null);
 const router = useRouter();
 const cards = ref(cardData);
@@ -86,24 +61,24 @@ const filterByType = (type) => {
   selectedType.value = type === selectedType.value ? null : type;
 };
 
-const handleCardClick = async (projectId) => {
-  try {
-    const response = await axios.get(`/src/projects.json`);
-    const selectedProject = response.data.find(
-      (project) => project.id === Number(projectId)
-    );
+// const handleCardClick = async (projectId) => {
+//   try {
+//     const response = await axios.get(`/src/projects.json`);
+//     const selectedProject = response.data.find(
+//       (project) => project.id === Number(projectId)
+//     );
 
-    // Use selectedProject for some logic (example: log some information)
-    if (selectedProject) {
-      console.log("Selected Project:", selectedProject);
-    }
+//     // Use selectedProject for some logic (example: log some information)
+//     if (selectedProject) {
+//       console.log("Selected Project:", selectedProject);
+//     }
 
-    // Navigate to the project page
-    router.push({ name: "project", params: { id: projectId } });
-  } catch (error) {
-    console.error("Error handling card click:", error);
-  }
-};
+//     // Navigate to the project page
+//     router.push({ name: "project", params: { id: projectId } });
+//   } catch (error) {
+//     console.error("Error handling card click:", error);
+//   }
+// };
 
 onMounted(async () => {
   function debounce(func, delay) {

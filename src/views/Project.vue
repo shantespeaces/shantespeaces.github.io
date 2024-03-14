@@ -1,81 +1,80 @@
-<!-- Project.vue -->
 <template>
   <MainNav />
   <!-- <Feather /> -->
-  <div class="show-background-container" v-if="project">
-    <div class="show-container d-flex">
-      <div class="show-container-left">
-        <div class="main-content" ref="mainContentRef">
-          <div class="main-headings" ref="mainHeadingsRef">
-            <q id="quote"> a random quote related to programming. </q>
+  <section id="project">
+    <div class="show-background-container" v-if="project">
+      <div class="show-container d-flex">
+        <div class="show-container-left">
+          <div class="main-content" ref="mainContentRef">
+            <div class="main-headings" ref="mainHeadingsRef">
+              <q id="quote"> a random quote related to programming. </q>
 
-            <div class="heading">
-              <h3 id="heading1">{{ project.language }}</h3>
-              <h3 id="heading2">Project,</h3>
-              <h1 id="heading3">{{ project.heading3 }}</h1>
-              <h4 id="heading4">{{ project.title }}</h4>
-            </div>
-
-            <div class="show-project-description">
-              <p>{{ project.description }}</p>
-            </div>
-            <template v-if="project.link">
-              <div class="github">
-                <a
-                  :href="project.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View project in Github</a
-                >
+              <div class="heading">
+                <h3 id="heading1">{{ project.language }}</h3>
+                <h3 id="heading2">Project,</h3>
+                <h1 id="heading3">{{ project.heading3 }}</h1>
+                <h4 id="heading4">{{ project.title }}</h4>
               </div>
-            </template>
+
+              <div class="show-project-description">
+                <p>{{ project.description }}</p>
+              </div>
+              <template v-if="project.link">
+                <div class="github">
+                  <a
+                    :href="project.link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >View project in Github</a
+                  >
+                </div>
+              </template>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div
-        class="show-container-right d-flex justify-content-center alig-items-center"
-      >
-        <div class="logo-show-container">
-          <template v-if="project.video">
-            <video
-              :src="project.video"
-              type="video/mp4"
-              ref="videoRef"
-              class="video"
-              @mouseover="playVideo"
-              @mouseout="pauseVideo"
-              loop
-              muted
-            ></video>
-          </template>
-
-          <img class="logo-show" :src="project.logo" alt="" />
         </div>
 
         <div
-          class="image-show-container"
-          v-for="(image, index) in project.projectImages"
-          :key="index"
+          class="show-container-right d-flex justify-content-center alig-items-center"
         >
-          <p class="image-show-title">{{ image.title }}</p>
-          <img class="image-show" :src="image.image" alt="" />
-        </div>
-        <!-- <template v-if="project.pdf"
+          <div class="logo-show-container">
+            <template v-if="project.video">
+              <video
+                :src="project.video"
+                type="video/mp4"
+                ref="videoRef"
+                class="video"
+                @mouseover="playVideo"
+                loop
+                controls
+              ></video>
+            </template>
+
+            <img class="logo-show" :src="project.logo" alt="" />
+          </div>
+
+          <div
+            class="image-show-container"
+            v-for="(image, index) in project.projectImages"
+            :key="index"
+          >
+            <p class="image-show-title">{{ image.title }}</p>
+            <img class="image-show" :src="image.image" alt="" />
+          </div>
+          <!-- <template v-if="project.pdf"
           ><button class="pdf">
             click me to see pdf of client document guide
             <iframe :src="project.pdf"></iframe>
           </button>
         </template> -->
+        </div>
       </div>
     </div>
-  </div>
-
+  </section>
   <section>
     <!-- <Portfolio /> -->
   </section>
   <section>
-    <SkwCarousel />
+    <!-- <SkwCarousel /> -->
     <!-- <Portfolio /> -->
   </section>
   <footer>
@@ -84,40 +83,89 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import axios from "axios";
+import { ref, onMounted, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import MainNav from "../components/Nav.vue";
 import FooterComponent from "../components/FooterComponent.vue";
+import { defineProps } from "vue";
 
-import SkwCarousel from "@/components/SkwCarousel.vue";
+// import SkwCarousel from "@/components/SkwCarousel.vue";
 // import Portfolio from "../components/Portfolio.vue";
 // import Feather from "@/components/Feather.vue";
 
-const projectId = ref(null);
-const project = ref(null);
 const playVideo = (event) => {
   event.target.play();
 };
 
-const pauseVideo = (event) => {
-  event.target.pause();
-};
-const fetchProjectDetails = async () => {
+const props = defineProps({
+  id: {
+    type: [Number, String], // Accepts either number or string
+    required: true,
+  },
+});
+onMounted(() => {
+  console.log("ID prop:", props.id);
+  console.log("Project object:", project.value);
+});
+const project = ref(null); // Initialize as null or an empty object
+
+const route = useRoute(); // Access route object
+
+onMounted(async () => {
+  const projectId = parseInt(route.params.id); // Convert id to number
+  await getProjectDetails(projectId);
+});
+
+async function getProjectDetails(id) {
   try {
-    const response = await axios.get(`/portfolio/public/projects.json`);
-    project.value = response.data.find((p) => p.id === Number(projectId.value));
+    console.log("ID being searched:", id); // Log the ID being searched
+
+    const axios_result = await axios.get("/projects.json");
+    console.log("Axios response:", axios_result.data); // Log the entire response data
+
+    const projectsData = axios_result.data;
+
+    // Log each project's ID in the data array
+    console.log(
+      "Projects data IDs:",
+      projectsData.map((project) => project.id)
+    );
+
+    // Find the project with the matching id
+    const newProject = projectsData.find((project) => project.id === id);
+
+    if (newProject) {
+      // If the project with the matching id is found, assign it to the project ref
+      project.value = newProject;
+      console.log("Project details:", project.value);
+    } else {
+      console.error("Project not found with id:", id);
+    }
   } catch (error) {
     console.error("Error fetching project details:", error);
   }
-};
-
-onMounted(() => {
-  const route = useRoute();
-  const id = route.params.id;
-  projectId.value = id;
-  fetchProjectDetails();
-});
+}
+</script>
+<script>
+// const project = ref({});
+// const projectId = ref(null);
+// const fetchProjectDetails = async () => {
+//   try {
+//     const response = await axios.get("projects.json");
+//     project.value = response.data.find((p) => p.id === Number(projectId.value));
+//     // Force scroll to the top when the project details are fetched
+//     window.scrollTo(0, 0);
+//   } catch (error) {
+//     console.error("Error fetching project details:", error);
+//   }
+// };
+// onMounted(() => {
+//   const route = useRoute();
+//   const id = route.params.id;
+//   projectId.value = id;
+//   fetchProjectDetails();
+// });
 </script>
 <style>
 .show-background-container {
@@ -226,8 +274,6 @@ onMounted(() => {
 .logo-show-container {
   max-width: 100%;
   padding-bottom: 10em;
-  animation: scaleDown 3s ease 2s;
-  -webkit-animation: scaleDown 3s ease 2s;
 }
 
 .logo-show-container img {
@@ -542,4 +588,3 @@ button.pdf {
   }
 }
 </style>
-../components/PortfolioSkw.vue

@@ -84,7 +84,7 @@ const projects = ref([]);
 
 async function fetchData() {
   try {
-    const response = await fetch(`/portfolio/src/projects.json`);
+    const response = await fetch(`projects.json`);
     const data = await response.json();
     // Shuffle the projects array
     data.sort(() => Math.random() - 0.5);
