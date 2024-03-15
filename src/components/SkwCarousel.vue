@@ -48,7 +48,15 @@
               <div class="skw-page__content">
                 <h2 class="skw-page__heading">{{ project.title }}</h2>
                 <p class="skw-page__description">{{ project.description }}</p>
-                <!-- <img class="logo-skw" :src="project.logo" alt="" /> -->
+                <router-link
+                  class="project-details"
+                  :to="{
+                    name: 'project',
+                    params: { id: project.id },
+                  }"
+                >
+                  See Project Details
+                </router-link>
               </div>
             </div>
           </div>
@@ -57,7 +65,15 @@
               <div class="skw-page__content">
                 <h2 class="skw-page__heading">{{ project.title }}</h2>
                 <p class="skw-page__description">{{ project.description }}</p>
-                <!-- <img class="logo-skw" :src="project.logo" alt="" /> -->
+                <router-link
+                  class="project-details"
+                  :to="{
+                    name: 'project',
+                    params: { id: project.id },
+                  }"
+                >
+                  See Project Details
+                </router-link>
               </div>
             </div>
           </div>
@@ -84,7 +100,7 @@ const projects = ref([]);
 
 async function fetchData() {
   try {
-    const response = await fetch(`projects.json`);
+    const response = await fetch(`/projects.json`);
     const data = await response.json();
     // Shuffle the projects array
     data.sort(() => Math.random() - 0.5);

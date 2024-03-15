@@ -2,56 +2,63 @@
   <section class="section-plans" id="section-plans">
     <div class="card animate__animated animate__pulse">
       <div class="card__side card__side--front">
-        <p class="card-text">{{ title }}</p>
-        <img :src="backgroundImage" class="background-img" alt="" />
+        <p class="card-text">{{ project.title }}</p>
+        <img :src="project.backgroundImage" class="background-img" alt="" />
       </div>
-      <div class="card__side card__side--back" @click="handleClick">
-        <div v-if="type === 'design'" class="shape-container">
-          <div class="circle">
-            <img :src="logo" alt="logo" />
+      <router-link
+        class="project-details"
+        :to="{
+          name: 'project',
+          params: { id: project.id },
+        }"
+      >
+        <div class="card__side card__side--back">
+          <div v-if="type === 'design'" class="shape-container">
+            <div class="circle">
+              <img :src="project.logo" alt="logo" />
+            </div>
           </div>
-        </div>
-        <div
-          v-else-if="type === 'video'"
-          class="shape-container square-container"
-        >
-          <!-- Square shape content -->
-          <div class="square">
-            <img :src="logo" alt="Square Image" />
+          <div
+            v-else-if="type === 'video'"
+            class="shape-container square-container"
+          >
+            <!-- Square shape content -->
+            <div class="square">
+              <img :src="project.logo" alt="Square Image" />
+            </div>
           </div>
-        </div>
-        <div v-else-if="type === 'code'" class="shape-container">
-          <!-- Hexagon shape content -->
-          <div class="hexagon-container">
-            <div class="hexagon">
-              <img :src="logo" alt="Hexagon Image" />
+          <div v-else-if="type === 'code'" class="shape-container">
+            <!-- Hexagon shape content -->
+            <div class="hexagon-container">
+              <div class="hexagon">
+                <img :src="project.logo" alt="Hexagon Image" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </section>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref } from "vue";
-const emit = defineEmits();
+import { defineProps } from "vue";
 
-const props = defineProps([
-  // "cardImage",
-  "title",
-  "logo",
-  "type",
-  "id",
-  "projectId",
-  "backgroundImage",
-]);
+const props = defineProps({
+  project: Object, // Define 'project' prop as an Object type
+});
+// import { defineProps, defineEmits, ref } from "vue";
+// const emit = defineEmits();
 
-const handleClick = () => {
-  console.log("Clicked card ID:", props.projectId);
-  // Emit the clicked card's id
-  emit("handleClick", props.projectId);
-};
+// const props = defineProps([
+//   "cardImage",
+//   "title",
+//   "logo",
+//   "type",
+//   "id",
+//   "projectId",
+//   "backgroundImage",
+// ]);
 </script>
 
 <style>

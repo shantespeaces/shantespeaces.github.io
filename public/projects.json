@@ -102,7 +102,8 @@
     "projectImages": [
       {"title": "Home Page", "image": "/images/pubG4/home.png"},
       {"title": "Menu Page", "image": "/images/pubG4/menu.png"},
-    {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}],
+      {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}
+    ],
     "description": "Maintained consistent communication and reported back to the 'client', showcasing effective stakeholder management skills during development of a restaurant website",
     "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms.", "Engaged in an iterative design process, soliciting feedback and making revisions as necessary to refine the website design and ensure alignment with the client's vision and needs"],
     "link": "https://github.com/shantespeaces/PubG4",

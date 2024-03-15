@@ -26,6 +26,7 @@
   <section id="sticky-scrolling-text">
     <ScrollingText />
   </section>
+  <Portfolio />
   <footer>
     <FooterComponent />
   </footer>
@@ -40,7 +41,7 @@ import HeaderComponent from "../components/HeaderComponent.vue";
 import About from "../components/About.vue";
 import Experience from "../components/Experience.vue";
 import References from "../components/References.vue";
-// import Portfolio from "../components/Portfolio.vue";
+import Portfolio from "../components/Portfolio.vue";
 // import Card1Vue from "../components/Card1.vue";
 </script>
 <style>

@@ -70,8 +70,17 @@
       </div>
     </div>
   </section>
-  <section>
-    <!-- <Portfolio /> -->
+  <section class="more">
+    <div>
+      <button>
+        <router-link data-name="home" :to="{ name: 'home' }"
+          >Return to Home Page</router-link
+        >
+      </button>
+
+      <button @click="viewPrevProject">View Previous Project</button>
+      <button @click="viewNextProject">View Another Project</button>
+    </div>
   </section>
   <section>
     <!-- <SkwCarousel /> -->
@@ -99,17 +108,19 @@ const playVideo = (event) => {
 
 const props = defineProps({
   id: {
-    type: [Number, String], // Accepts either number or string
+    type: [Number, String],
     required: true,
   },
 });
+
+const project = ref(null); // Initialize as null or an empty object
+const route = useRoute(); // Access route object
+let projectId = null; // To keep track of the current project ID
+
 onMounted(() => {
   console.log("ID prop:", props.id);
   console.log("Project object:", project.value);
 });
-const project = ref(null); // Initialize as null or an empty object
-
-const route = useRoute(); // Access route object
 
 onMounted(async () => {
   const projectId = parseInt(route.params.id); // Convert id to number
@@ -137,6 +148,7 @@ async function getProjectDetails(id) {
     if (newProject) {
       // If the project with the matching id is found, assign it to the project ref
       project.value = newProject;
+      projectId = id; // Update current project ID
       console.log("Project details:", project.value);
     } else {
       console.error("Project not found with id:", id);
@@ -145,27 +157,18 @@ async function getProjectDetails(id) {
     console.error("Error fetching project details:", error);
   }
 }
+
+const viewNextProject = async () => {
+  projectId++; // Increment project ID
+  await getProjectDetails(projectId);
+};
+
+const viewPrevProject = async () => {
+  projectId--; // Decrement project ID
+  await getProjectDetails(projectId);
+};
 </script>
-<script>
-// const project = ref({});
-// const projectId = ref(null);
-// const fetchProjectDetails = async () => {
-//   try {
-//     const response = await axios.get("projects.json");
-//     project.value = response.data.find((p) => p.id === Number(projectId.value));
-//     // Force scroll to the top when the project details are fetched
-//     window.scrollTo(0, 0);
-//   } catch (error) {
-//     console.error("Error fetching project details:", error);
-//   }
-// };
-// onMounted(() => {
-//   const route = useRoute();
-//   const id = route.params.id;
-//   projectId.value = id;
-//   fetchProjectDetails();
-// });
-</script>
+
 <style>
 .show-background-container {
   background-color: ivory;
@@ -299,6 +302,12 @@ video {
 }
 button.pdf {
   margin-bottom: 10em;
+}
+.more {
+  height: 10em;
+  background-color: blue;
+  z-index: 100;
+  position: sticky;
 }
 @keyframes scaleDown {
   0% {
