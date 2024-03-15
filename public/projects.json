@@ -104,7 +104,7 @@
       {"title": "Menu Page", "image": "/images/pubG4/menu.png"},
     {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}],
     "description": "Maintained consistent communication and reported back to the 'client', showcasing effective stakeholder management skills during development of a restaurant website",
-    "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms."],
+    "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms.", "Engaged in an iterative design process, soliciting feedback and making revisions as necessary to refine the website design and ensure alignment with the client's vision and needs"],
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "/images/cards/pink.jpg",
     "backgroundStyle": {
@@ -118,16 +118,16 @@
   {
     "id": 4,
     "cardImage": "/images/pexels-magda-ehlers-1279813.jpg",
-    "logo": "/images/logo-javascript-logo-black-and-white.png",
-    "skw": "/images/pubG4/skw.jpg",
+    "logo": "/images/filmsFlix/logo.png",
+    "skw": "/images/filmsFlix/skw.jpg",
     "type": "code",
     "date": "Spring 2023",
-    "title": "FilmFlix - Mini Film App",
+    "title": "FilmsFlix - Mini Film App",
     "heading3": "Films",
-    "projectImages": [{"title": "Image 1 Title", "image": "/images/pexels-engin-akyurt-2092075.jpg"},
-      {"title": "Image 2 Title", "image": "/images/pexels-magda-ehlers-1279813.jpg"}],
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "projectImages": [{"title": "Home", "image": "/images/filmsFlix/home.jpeg"},
+      {"title": "Film Details", "image": "/images/filmsFlix/show.jpeg"}],
+    "description": "Laravel Exercise: FilmsFlix is a Laravel project designed to replicate the immersive experience of a Netflix-style platform. The objective was to create a small website allowing users to browse a list of movies as well as the details of each movie with information retrieved from the database.",
+    "items": ["Learning Laravel!", "Creation of the models and Retrieval of data (using a model) and passing it to the views", "Dynamization of views with received data and use of an appropriate layout and components"],
     "link": "https://github.com/shantespeaces/filmsFlix",
     "backgroundImage": "/images/cards/pink1.jpg",
     "backgroundStyle": {
@@ -175,8 +175,8 @@
     "heading3": "Travel",
     "projectImages": [{"title": "Home Page", "image": "/images/monVoyage/home.png"},
       {"title": "", "image": ""}],
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "description": "WordPress Exercise: The objective of the Mon Voyage website creation exercise was to familiarize oneself with the fundamentals of the WordPress platform. This included tasks such as integrating and customizing a theme to suit the desired aesthetic and functionality, as well as adding relevant content to populate the website. Through this process, I gained hands-on experience in navigating WordPress, manipulating themes, and effectively presenting content on a website.",
+    "items": ["Gained practical experience in working with the WordPress platform, allowing them to grasp key concepts such as theme integration, customization, and content management through active engagement with the platform.", "By integrating and modifying a theme, I honed my skills in customizing website appearance and functionality to align with specific requirements or design preferences. This involved adjusting layout, colors, fonts, and other elements to create a cohesive and visually appealing website.", "Through the addition of content, I learned how to effectively structure and present information on a website."],
     "link": "https://0261994.cpsw-fcsei.com/wordpress",
     "backgroundImage": "/images/artDecoGreen.jpg",
     "backgroundStyle": {
@@ -197,13 +197,14 @@
     "title": "Fashion Blog",
     "heading3": "Fashion",
     "projectImages": [
+      {"title": "Mood Board", "image": "/images/fashion/inspiration.png"},
       {"title": "Home Page", "image": "/images/fashion/home.png"},
       {"title": "About Us / Contact Page", "image": "/images/fashion/about.png"},
-      {"title": "Product Page", "image": "/images/fashion/product.png"},
-      {"title": "Mood Board", "image": "/images/fashion/inspiration.png"}
+      {"title": "Product Page", "image": "/images/fashion/product.png"}
+   
     ],
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "description": "Design Exercise: The objective of this project was to develop skills in creating a mood board based on a client request and utilize it as inspiration to design a fashion blog website. This project was specifically tailored to cater to the preferences and characteristics of a persona within the 30+ age group, characterized as funky artists, bloggers, and shoppers. The aim was to create a visually appealing and engaging website design that resonates with the target audience's tastes and preferences.",
+    "items": ["Curated a mood board based on the client's request and the persona's characteristics. The mood board incorporated vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.", "Utilized the mood board as inspiration to design the fashion blog website. Incorporated elements such as vibrant color schemes, playful typography, dynamic layouts, and visually striking imagery to create an engaging and immersive user experience.", "Ensured that the web design elements aligned with the persona's preferences and characteristics. Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
     "link": "",
     "backgroundImage": "/images/artDecoGreen.jpg",
     "backgroundStyle": {

@@ -186,7 +186,7 @@ onMounted(async () => {
 #sticky-projects {
   position: sticky;
   position: -webkit-sticky;
-  top: -150px;
+  top: -250px;
 }
 .experience h2.heading {
   text-align: end;
