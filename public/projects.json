@@ -18,8 +18,8 @@
         {"title": "", "image": ""},
         {"title": "", "image": ""}
      ],
-      "description": "This portfoilo! A fun personal project to showcase my work. Inspired by Art Deco, this site is a reflection of my celebration of life and my entrance into the world of web developpemnt, a place where I could try new ideas and let my creativity shine! ",
-      "items": [" Suttle yet interesting animations, a challenging creative design", "Vues Js SPA", "Bullet point 3", "Bullet point 3"],
+      "description": "Design Exercise: Elevating User Experience for a Spa Website. Welcome to the serene world of Tranquil Spa. Our esteemed client has approached us with the vision of creating a harmonious digital space that mirrors the tranquility and luxury of their physical spa. As their chosen design agency, we are tasked with crafting a captivating user interface (UI) design for their website. This project requires adept skills in Adobe XD, Photoshop (PS), and Illustrator (AI) to translate the essence of relaxation into a seamless digital experience.",
+      "items": [" Curated high-quality images of serene spa environments, lush landscapes, and serene treatments to visually transport visitors to a world of relaxation.", "Soothing hues such as soft blues, muted greens, and gentle neutrals to evoke a sense of calmness.", "Employed a harmonious blend of colors, typography, and imagery to evoke a tranquil atmosphere while maintaining visual appeal.", "Mobil, Tablet and Desktop design"], 
       "link": "",
       "backgroundImage": "/images/artDecoGreen.jpg",
       "backgroundStyle": {
@@ -46,8 +46,8 @@
       {"title": "Profile Page", "image": "/images/menu/profile.jpeg"},
       {"title": "Recipe Page", "image": "/images/menu/recipe.jpeg"} 
     ],
-    "description": "A recipe creation platform dedicated to cooking enthusiasts. A user-friendly interface allowing users to input ingredients, cooking instructions, photos, and other relevant details for their recipes. This phase aims to establish a strong foundation by enabling users to create accounts, facilitating the recording, management, and access to their personal recipes within the application.",
-    "items": ["Highlights Include: A complex form where users can creat and modify a recipe. Tools for classifying recipes by type, cuisine, dietary preferences", "User Account Management: Allowing users to create personal accounts", "Technical Details: object-oriented React components. TypeScript, Bootsrap, Javascript. Responsive design", "Bullet point 3"],
+    "description": "A recipe creation platform dedicated to cooking enthusiasts. A user-friendly interface allowing users to input ingredients, cooking instructions, photos, and other relevant details for their recipes. This initial phase aims to establish a strong foundation by enabling users to create accounts, facilitating the recording, management, and access to their personal recipes within the application.",
+    "items": ["Crafted a dynamic and accessible User Interface (UI) using React and TypeScript, focusing on object-oriented programming", "Led design of a user-friendly UI/UX, including creation of a unique logo, and development of interactive mock-ups", "Implemented server-side scripting and API integration; designed sophisticated database architecture with interconnected tables.", "Enhanced awareness of responsive design and UI best practices has led to the development of a complex form featuring multiple input elements - maximizing efficiency and ensuring data integrity in data input processes","" ],
     "link": "https://github.com/shantespeaces/recipe-app",
     "backgroundImage": "/images/artDecoWoman.jpg",
     "backgroundStyle": {
@@ -78,8 +78,8 @@
       {"title": "Admin Gestion actualites", "image": "/images/primaColors/gestionActualites.jpeg"}
 
     ],
-    "description": "The objective of this project was to design a captivating website for the Prima-Colors Festival highlighting a variety of activities such as a contest, worhshops, Dj performances and much more. The festival targeted a dynamic clientele aged 18 to 40, passionate about arts, music, and creativity. The website's mission was to meet their expectations by offering a modern experience that combined technology and enjoyment.",
-    "items": ["Highlights Include: An extensive admin section for employes to dynamically create, update or delete content from the site", "Bullet point 2", "Bullet point 3", "The use of reusable components within a Laravel framework"],
+    "description": "Scoped and led development of a vibrant and engaging website for a festival blending both innovative design and technical skills. The objective of this project was to design a captivating website for the Prima-Colors Festival highlighting a variety of activities such as a contest, worhshops, Dj performances and much more. The festival targeted a dynamic clientele aged 18 to 40, passionate about arts, music, and creativity. The website's mission was to meet their expectations by offering a modern experience that combined technology and enjoyment.",
+    "items": ["Led team of 3, defining target audience and project objectives. Designed visual identity, including a unique logo, and comprehensive UX/UI strategy to ensure a user-friendly experience.", "Produced high-quality, reusable components using HTML5, SCSS and JavaScript within a Laravel framework.", "Oversaw all aspects of back-end development; spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section, enhancing website interactivity.", "Refined and optimized codebase - created reusable components and utilized JSON for content testing databases."],
     "link": "https://github.com/shantespeaces/prima_colors_pw2",
     "backgroundImage": "/images/cards/bubbles.jpg",
     "backgroundStyle": {
@@ -103,8 +103,8 @@
       {"title": "Home Page", "image": "/images/pubG4/home.png"},
       {"title": "Menu Page", "image": "/images/pubG4/menu.png"},
     {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}],
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "description": "Maintained consistent communication and reported back to the 'client', showcasing effective stakeholder management skills during development of a restaurant website",
+    "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms."],
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "/images/cards/pink.jpg",
     "backgroundStyle": {
@@ -153,8 +153,8 @@
       {"title": "Product", "image": "/images/bois/product.png"}
     ],
     "pdf": "/images/bois/pdf/bois.pdf",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "description": "UX/UI Exercise: Tasked with enhancing our skills in research, development, and UI/UX design, we were tasked with creating guideline documents essential for crafting mockups. These guidelines were then presented to a fictitious client, delineating the necessary elements for implementing specific scenarios. Accepted design elements were seamlessly integrated into the mockup. This exercise aimed to assess our ability to synthesize research findings and apply fundamental UI/UX principles to create impactful user interfaces.",
+    "items": ["Reflects the sophistication and opulence synonymous with luxury furniture through elegant design elements and sleek aesthetics.", "Highlight the meticulous craftsmanship and premium materials used in each furniture piece, instilling confidence in potential buyers.", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients, aimed to showcase our success and instill confidence in the shopper."],
     "link": "",
     "backgroundImage": "/images/artDecoGreen.jpg",
     "backgroundStyle": {
