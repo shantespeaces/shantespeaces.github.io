@@ -119,30 +119,30 @@ onUnmounted(() => {
 });
 
 const slides = [
-  { title: "The Menu", id: 1, image: "/images/menu/logo.png" },
-  { title: "Prima Colors", id: 2, image: "/images/primaColors/logo.png" },
-  { title: "Pub G4", id: 3, image: "/images/pubG4/logo.png" },
-  { title: "Bois Espiègle", id: 5, image: "/images/bois/logo-bois.png" },
-  { title: "Fusion Spa", id: 0, image: "/images/spa/logo.png" },
+  { title: "The Menu", id: 1, image: "images/menu/logo.png" },
+  { title: "Prima Colors", id: 2, image: "images/primaColors/logo.png" },
+  { title: "Pub G4", id: 3, image: "images/pubG4/logo.png" },
+  { title: "Bois Espiègle", id: 5, image: "images/bois/logo-bois.png" },
+  { title: "Fusion Spa", id: 0, image: "images/spa/logo.png" },
 ];
 
 const handleStyles = (index) => {
   if (index === 0 || index === 3) {
     return {
-      backgroundImage: `url("/images/artDeco1.jpg")`,
+      backgroundImage: `url("images/artDeco1.jpg")`,
       backgroundSize: `500px 500px`,
     };
   } else if (index === 1) {
     return {
-      backgroundImage: `url("/images/artDeco4.jpg")`,
+      backgroundImage: `url("images/artDeco4.jpg")`,
     };
   } else if (index === 2) {
     return {
-      backgroundImage: `url("/images/artDeco2.jpg")`,
+      backgroundImage: `url("images/artDeco2.jpg")`,
     };
   } else if (index === 4) {
     return {
-      backgroundImage: `url("/images/artDeco3.jpg")`,
+      backgroundImage: `url("images/artDeco3.jpg")`,
       backgroundSize: `700px 700px`,
     };
   }

@@ -21,13 +21,6 @@
         :key="project.id"
         :project="project"
       />
-      <!-- <div
-        v-for="(card, index) in cards"
-        :key="card.id"
-        v-show="!selectedType || card.type === selectedType"
-        class="col mb-5 mx-3 align-self-start"
-        :class="{ 'row-1': index % 2 === 0, 'row-2': index % 2 !== 0 }"
-      ></div> -->
     </div>
   </section>
 
@@ -39,15 +32,12 @@ import FilterButtons from "../components/FilterButtons.vue";
 import { ref, onMounted } from "vue";
 import CardVue from "@/components/Card.vue";
 import DownArrowButton from "../components/DownArrowButton.vue";
-import { useRouter } from "vue-router";
 import axios from "axios";
 
 const portfolioRef = ref(null);
-const router = useRouter();
 
 const projects = ref([]);
 const filteredProjects = ref([]);
-const selectedType = ref("code");
 
 async function getProjects() {
   const axios_result = await axios.get("projects.json");
@@ -58,13 +48,10 @@ async function getProjects() {
 getProjects();
 
 const filterByType = (type) => {
-  // Update the selectedType value
-  selectedType.value = type === selectedType.value ? null : type;
-
   // Filter projects based on selected type
-  if (selectedType.value) {
+  if (type) {
     filteredProjects.value = projects.value.filter(
-      (project) => project.type === selectedType.value
+      (project) => project.type && project.type === type
     );
   } else {
     // If everything is selected, show all projects
