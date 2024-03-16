@@ -218,7 +218,7 @@ onMounted(() => {
   overscroll-behavior: none;
   display: flex;
   overflow: hidden;
-  background-image: url("/images/feather.png");
+  background-image: url("images/feather.png");
   background-size: 75em;
   background-position: top left;
 }
