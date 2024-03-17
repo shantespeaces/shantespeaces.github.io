@@ -51,7 +51,7 @@ const filterByType = (type) => {
   // Filter projects based on selected type
   if (type) {
     filteredProjects.value = projects.value.filter(
-      (project) => project.type && project.type === type
+      (project) => project.types && project.types.includes(type)
     );
   } else {
     // If everything is selected, show all projects
