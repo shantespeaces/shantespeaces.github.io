@@ -65,7 +65,7 @@ import Profile from "@/components/Profile.vue";
   /* --goldToRightText: 5px -5px 8px rgba(48, 48, 48, 0.452); */
 
   --goldToBottomYellow: linear-gradient(
-    to right,
+    to bottom,
 
     #cb9b51 22%,
     #f6e27a 45%,

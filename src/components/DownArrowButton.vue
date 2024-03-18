@@ -48,12 +48,17 @@ const scrollToNextViewport = () => {
   font-size: 8em;
 }
 .arrow {
-  color: #ef402f;
+  background-image: var(--goldToRightYellow);
+  color: transparent;
+  -webkit-background-clip: text;
   cursor: pointer;
 }
 
 .arrow:hover {
-  color: #2980b9;
+  background-image: var(--goldToBottomYellow);
+  color: transparent;
+  -webkit-background-clip: text;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 button p {

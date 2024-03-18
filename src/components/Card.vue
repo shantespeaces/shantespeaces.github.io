@@ -9,7 +9,7 @@
           <div class="circle">
             <!-- <img :src="project.logo" alt="logo" /> -->
             <div class="title">
-              <h4>{{ project.title }}</h4>
+              <h4>{{ project.cardTitle }}</h4>
             </div>
           </div>
         </div>
@@ -26,12 +26,12 @@
           <p class="highlights">HIGHLIGHTS INCLUDE:</p>
           <ul>
             <li
-              v-for="(item, index) in project.items"
+              v-for="(item, index) in project.cardItems"
               :key="`${project.id}_${index}`"
               class="list-item d-flex pb-2"
             >
               <span class="bullet">+</span>
-              <span class="content">{{ item }}</span>
+              <p class="content">{{ item }}</p>
             </li>
           </ul>
 
@@ -120,7 +120,7 @@ const props = defineProps({
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   position: relative;
-  bottom: -5em;
+  bottom: -11em;
   left: 1em;
   height: 21em;
   width: 21em;
@@ -133,7 +133,7 @@ const props = defineProps({
   text-transform: uppercase;
   font-family: "parklane";
   letter-spacing: 2px;
-  font-size: 2.5em;
+  font-size: 3.5em;
 }
 .circle .title {
   border-bottom: none;
@@ -143,6 +143,19 @@ const props = defineProps({
   background: #ffebe1;
   object-fit: cover;
   flex-direction: column;
+}
+.card__side--back p,
+.card__side--back span {
+  color: black;
+}
+.card__side--back p {
+  font-size: 1.1rem;
+  padding-top: 0.3rem;
+  padding-left: 1rem;
+}
+.card__side--back .highlights {
+  padding-left: 1em;
+  padding-top: 1em;
 }
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
