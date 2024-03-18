@@ -361,7 +361,6 @@ h3.heading {
 }
 .pagination-buttons button:hover {
   transform: translateY(2px);
-
   background-image: var(--goldToRight);
   color: transparent;
   -webkit-background-clip: text;

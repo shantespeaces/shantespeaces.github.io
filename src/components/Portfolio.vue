@@ -52,45 +52,45 @@ const filterByType = (type) => {
       (project) => project.types && project.types.includes(type)
     );
   } else {
-    // If everything is selected, show all projects
+    // by default show all projects
     filteredProjects.value = projects.value;
   }
 };
 
-onMounted(async () => {
-  function debounce(func, delay) {
-    let timeoutId;
-    return function () {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func.apply(this, arguments);
-      }, delay);
-    };
-  }
-  try {
-    const observer = new IntersectionObserver(debounce(glide), {
-      threshold: 0,
-    });
+// onMounted(async () => {
+//   function debounce(func, delay) {
+//     let timeoutId;
+//     return function () {
+//       clearTimeout(timeoutId);
+//       timeoutId = setTimeout(() => {
+//         func.apply(this, arguments);
+//       }, delay);
+//     };
+//   }
+//   try {
+//     const observer = new IntersectionObserver(debounce(glide), {
+//       threshold: 0,
+//     });
 
-    const cards = portfolioRef.value.querySelectorAll(".col");
+//     const cards = portfolioRef.value.querySelectorAll(".col");
 
-    function glide(entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }
+//     function glide(entries) {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("visible");
+//           observer.unobserve(entry.target);
+//         }
+//       });
+//     }
 
-    cards.forEach((card, index) => {
-      observer.observe(card);
-      card.style.transitionDelay = `${index * 0.5}s`;
-    });
-  } catch (error) {
-    console.error("Error in onMounted:", error);
-  }
-});
+//     cards.forEach((card, index) => {
+//       observer.observe(card);
+//       card.style.transitionDelay = `${index * 0.5}s`;
+//     });
+//   } catch (error) {
+//     console.error("Error in onMounted:", error);
+//   }
+// });
 </script>
 
 <style>
@@ -130,7 +130,7 @@ section.portfolio {
   padding-top: 5em;
   padding-bottom: 5em;
 }
-.col {
+/* .col {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 2s ease, transform 2s ease;
@@ -142,11 +142,16 @@ section.portfolio {
 .row-2 {
   transform: translateX(-50px);
 }
+.col {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 2s ease, transform 2s ease;
+}
 .col.visible {
   opacity: 1;
   transform: translateX(0);
 }
 p.fixed {
   font-size: 3rem;
-}
+} */
 </style>
