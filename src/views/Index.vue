@@ -64,6 +64,16 @@ import Profile from "@/components/Profile.vue";
   );
   /* --goldToRightText: 5px -5px 8px rgba(48, 48, 48, 0.452); */
 
+  --goldToBottomYellow: linear-gradient(
+    to right,
+
+    #cb9b51 22%,
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%
+  );
+
   --goldToRightYellow: linear-gradient(
     to right,
 

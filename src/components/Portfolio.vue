@@ -1,26 +1,24 @@
 <template>
-  <section class="portfolio-filter" ref="portfolioRef" Id="sticky-portfolio">
-    <div class="neumorphisme-container">
-      <div class="container">
-        <h2 class="showcase mt-3">You might also like</h2>
-
-        <DownArrowButton />
-        <div class="filter">
-          <FilterButtons @filter="filterByType" class="next-viewport" />
-        </div>
-      </div>
+  <section class="portfolio" ref="portfolioRef">
+    <div class="heading-container">
+      <h2 class="heading">You might also like</h2>
     </div>
-  </section>
-
-  <section class="neumorphisme-container" ref="portfolioRef">
-    <div
-      class="portfolio-container mt-3 container d-flex flex-wrap gap-4 justify-content-start"
-    >
-      <CardVue
-        v-for="project in filteredProjects"
-        :key="project.id"
-        :project="project"
-      />
+    <section class="portfolio-filter" ref="portfolioRef" Id="sticky-portfolio">
+      <DownArrowButton />
+      <div class="filter">
+        <FilterButtons @filter="filterByType" class="next-viewport" />
+      </div>
+    </section>
+    <div class="card-container-wrapper">
+      <div
+        class="card-container container d-flex flex-wrap gap-4 justify-content-center"
+      >
+        <CardVue
+          v-for="project in filteredProjects"
+          :key="project.id"
+          :project="project"
+        />
+      </div>
     </div>
   </section>
 
@@ -101,20 +99,36 @@ onMounted(async () => {
   position: -webkit-sticky;
   top: -1000px;
 }
-.portfolio-filter {
+section.portfolio {
   overflow-x: hidden;
-}
-.neumorphisme-container {
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  /* background: #fff7f2; */
-  background: white;
   position: relative;
+  border-top: solid 2px;
+  border-image: var(--goldToRight) 1;
+  border-image-slice: 1;
+
+  background-color: ivory;
 }
-.neumorphisme-container.container h2 {
-  margin-top: 3em;
+
+.portfolio h2.heading {
+  padding-top: 4em;
+  background-color: #fbe1d0;
+  margin-left: 6em;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+.portfolio-filter {
+  padding-top: 5em;
+}
+.card-container-wrapper {
+}
+.card-container-wrapper {
+  background-image: url("/images/artDecoGreen.jpg");
+}
+.card-container {
+  background-color: ivory;
+  padding-top: 5em;
+  padding-bottom: 5em;
 }
 .col {
   opacity: 0;

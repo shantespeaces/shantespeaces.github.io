@@ -24,6 +24,12 @@
   </div>
 
   <div class="copyright d-flex justify-content-center">
+    <p>
+      <a
+        href="https://www.freepik.com/free-vector/gradient-art-deco-pattern_45183674.htm#fromView=search&page=1&position=50&uuid=341068ff-33ef-4d5e-b48a-0bceb0ea2c4a"
+        >Image by freepik</a
+      >
+    </p>
     <span class="material-symbols-outlined"> copyright </span>
     <p>Shanté Nicolaides Loving Art Deco 2024</p>
   </div>
