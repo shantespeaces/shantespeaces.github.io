@@ -131,7 +131,7 @@ async function getProjectDetails(id) {
   try {
     console.log("ID being searched:", id); // Log the ID being searched
 
-    const axios_result = await axios.get("/projects.json");
+    const axios_result = await axios.get("/portfolio/projects.json");
     console.log("Axios response:", axios_result.data); // Log the entire response data
 
     const projectsData = axios_result.data;
