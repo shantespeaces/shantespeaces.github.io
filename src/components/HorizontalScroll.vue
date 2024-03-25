@@ -120,30 +120,32 @@ onUnmounted(() => {
 
 const slides = [
   { title: "The Menu", id: 1, image: "images/menu/logo.png" },
-  { title: "Prima Colors", id: 2, image: "images/primaColors/logo.png" },
+  {
+    title: "Prima Colors",
+    id: 2,
+    image: "images/primaColors/logo.png",
+  },
   { title: "Pub G4", id: 3, image: "images/pubG4/logo.png" },
   { title: "Bois Espiègle", id: 5, image: "images/bois/logo-bois.png" },
   { title: "Fusion Spa", id: 0, image: "images/spa/logo.png" },
 ];
 
 const handleStyles = (index) => {
-  if (index === 0 || index === 3) {
+  if (index === 0 || index === 4) {
     return {
-      backgroundImage: `url("images/artDeco1.jpg")`,
+      backgroundImage: `url("images/artDeco/gold1.avif")`,
       backgroundSize: `500px 500px`,
     };
   } else if (index === 1) {
-    return {
-      backgroundImage: `url("images/artDeco4.jpg")`,
-    };
+    return { backgroundImage: `url("images/artDeco/artDeco2.jpg")` };
   } else if (index === 2) {
     return {
-      backgroundImage: `url("images/artDeco2.jpg")`,
+      backgroundImage: `url("images/artDeco/artDeco5.jpg")`,
+      backgroundSize: `500px 500px`,
     };
-  } else if (index === 4) {
+  } else if (index === 3) {
     return {
-      backgroundImage: `url("images/artDeco3.jpg")`,
-      backgroundSize: `700px 700px`,
+      backgroundImage: `url("images/artDeco/artDeco4.jpg")`,
     };
   }
 
@@ -190,7 +192,7 @@ onMounted(() => {
 .horizontal-scroll-container {
   overflow-x: hidden;
   position: relative;
-  background-color: ivory;
+  background-color: #fffdf6;
 
   border-top: solid 4px;
   border-image: linear-gradient(
@@ -218,7 +220,7 @@ onMounted(() => {
   overscroll-behavior: none;
   display: flex;
   overflow: hidden;
-  background-image: url("/images/feather.png");
+  background-image: url("/images/artDeco/feather4.png");
   background-size: 75em;
   background-position: top left;
 }
@@ -253,7 +255,7 @@ onMounted(() => {
   align-items: center;
   border: none;
   /* background-color: rgba(251, 225, 208, 1); */
-  /* background-color: ivory; */
+  /* background-color: #fffdf6; */
 }
 
 .horizontal-card:hover .cover,
@@ -307,7 +309,7 @@ onMounted(() => {
   height: 5em;
   width: 5em;
   border-radius: 50%;
-  background-color: rgba(251, 225, 208, 1);
+  background-color: #fcf4ed;
   text-align: center;
   border: solid 1px #cb9b51;
 }

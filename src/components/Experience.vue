@@ -1,5 +1,5 @@
 <template>
-  <section class="experience" id="sticky-experience-header">
+  <section class="experience" id="sticky-header">
     <div class="heading-container">
       <h2 class="heading">Experience</h2>
     </div>
@@ -53,7 +53,7 @@
                       params: { id: project.id },
                     }"
                   >
-                    Design
+                    {{ project.types.includes("video") ? "Video" : "Design" }}
                   </router-link>
                 </div>
               </div>
@@ -178,7 +178,7 @@ onMounted(async () => {
 <style>
 /*EXPERIENCE*/
 
-#sticky-experience-header {
+#sticky-header {
   position: sticky;
   position: -webkit-sticky;
   top: 0px;
@@ -186,26 +186,25 @@ onMounted(async () => {
 #sticky-projects {
   position: sticky;
   position: -webkit-sticky;
-  top: -250px;
+  top: -500px;
 }
 .experience h2.heading {
   text-align: end;
   padding-right: 1rem;
   padding-top: 3em;
   padding-bottom: 1rem;
-  background-color: #fbe1d0;
+  background-color: #fde8d9;
   margin-right: 6em;
   margin-bottom: 0;
 }
 .heading-container {
-  background-color: ivory;
+  background-color: #fffdf6;
 }
 
 .project-wrapper {
   position: relative;
-  background-image: url("/images/artDecoGreen.jpg");
+  background-image: url("/images/artDeco/artDecoGreen.jpg");
   width: 100vw;
-  height: 100em;
   padding-top: 5em;
   padding-bottom: 5em;
   border-top: solid 2px;
@@ -217,7 +216,7 @@ onMounted(async () => {
   position: relative;
   display: flex;
   justify-content: space-between;
-  background-color: ivory;
+  background-color: #fffdf6;
   padding: 10em 5em;
   margin-top: 5em;
   border-bottom: solid 0px 2px;
@@ -256,12 +255,14 @@ h3.heading {
   border-image-slice: 1;
   background-image: var(--goldToRightDark);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
 }
 .project-title:hover {
   background-image: var(--goldToRightDark);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
   transform: translateY(2px);
@@ -289,6 +290,7 @@ h3.heading {
   letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   text-transform: uppercase;
   width: 200px;
@@ -298,6 +300,7 @@ h3.heading {
 }
 .right-container .link-container a:hover {
   font-size: 1.4rem;
+  transition: font-size 0.5s;
 }
 
 .right-container p,
@@ -330,6 +333,7 @@ h3.heading {
 .right-container .bullet {
   background-image: var(--goldToRight);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
 }
 .right-container .content {
@@ -352,6 +356,7 @@ h3.heading {
   height: 65px;
   background-image: var(--goldToRight);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   margin-top: 0.7em;
 }
@@ -363,6 +368,7 @@ h3.heading {
   transform: translateY(2px);
   background-image: var(--goldToRight);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
 }
 .pagination-buttons button:hover p {

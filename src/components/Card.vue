@@ -21,7 +21,27 @@
         }"
       >
         <div class="card__side card__side--back d-flex">
-          <img :src="project.skw" class="background-img" alt="" />
+          <template v-if="project.videoSource">
+            <!-- Display video if it exists -->
+            <!-- <video
+              :src="project.videoSource.videoFile"
+              class="background-video"
+              controls
+              autoplay
+              muted
+            ></video> -->
+            <iframe
+              width="560"
+              height="315"
+              :src="project.videoSource.youtubeLink"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </template>
+          <template v-else>
+            <!-- Display images if video doesn't exist -->
+            <img :src="project.skw" class="background-img" alt="" />
+          </template>
           <p class="highlights">HIGHLIGHTS INCLUDE:</p>
           <ul>
             <li
@@ -60,9 +80,6 @@ const props = defineProps({
   width: 23rem;
   height: 45rem;
   border: none;
-  display: inline-block;
-  animation: pulse;
-  animation-duration: 2s;
 }
 
 .card__side {
@@ -114,7 +131,7 @@ const props = defineProps({
 }
 .card__side--back {
   transform: rotateY(180deg);
-  background: #ffebe1;
+  background: #fcf4ed;
   object-fit: cover;
   flex-direction: column;
 }
@@ -143,5 +160,9 @@ const props = defineProps({
 .card {
   transform: translateY(3px);
   transition: transform ease-in-out 0.1s;
+}
+.card__side video.background-video {
+  margin-top: 0;
+  height: 400px;
 }
 </style>

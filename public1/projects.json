@@ -1,0 +1,211 @@
+[ 
+  {
+    "id": 0,
+    "logo": "images/spa/logo1.png",
+   "skw": "/images/spa/hero.png",
+    "video": "",
+    "types": ["design"], 
+    "language": "Adobe",
+    "date": "Winter 2023",
+    "title": "Fusion Spa",
+    "cardTitle": "Fusion Spa",
+    "heading3": "Spa",
+    "projectImages": [
+      {"title": "Desktop", "image": "/images/spa/1920.png"}, 
+      {"title": "Tablet Design", "image": "/images/spa/768.png"}, 
+      {"title": "Mobile Design", "image": "/images/spa/430.png"},
+      {"title": "", "image": ""},
+      {"title": "", "image": ""}
+   ],
+    "description": "Design Exercise: Elevating User Experience for a Spa Website. Welcome to the serene world of Tranquil Spa. Our esteemed client has approached us with the vision of creating a harmonious digital space that mirrors the tranquility and luxury of their physical spa. As their chosen design agency, we are tasked with crafting a captivating user interface (UI) design for their website. This project requires adept skills in Adobe XD, Photoshop (PS), and Illustrator (AI) to translate the essence of relaxation into a seamless digital experience.",
+    "items": [" Curated high-quality images of serene spa environments, lush landscapes, and serene treatments to visually transport visitors to a world of relaxation.", "Soothing hues such as soft blues, muted greens, and gentle neutrals to evoke a sense of calmness.", "Employed a harmonious blend of colors, typography, and imagery to evoke a tranquil atmosphere while maintaining visual appeal.", "Mobil, Tablet and Desktop design"], 
+    "cardItems": ["Adobe Design Project: XD, PS, AI", "Created elegant and unique logo and branding", "Applied modern design trends such as glassmorphism",  "Employed a harmonious blend of colors, typography, and imagery", "Mobil, Tablet and Desktop design"], 
+    "link": "",
+    "backgroundImage": "images/cards/gold-foil.jpg"
+  },
+
+  { 
+    "id": 1,
+    "logo": "images/menu/logo.png",
+    "skw": "/images/menu/login.png",
+    "video": "",
+    "types": ["code", "design"], 
+    "language": "React TS",
+    "date": "Fall 2023",
+    "title": "The Menu - Recipe App",
+    "cardTitle": "The Menu",
+    "heading3": "Menu",
+    "projectImages": [ 
+      {"title": "Login", "image": "/images/menu/login.png"},
+      {"title": "Account Creation", "image": "/images/menu/account.jpeg"},
+      {"title": "Recipe Creation Form", "image": "/images/menu/formulaire-create.jpeg"},
+      {"title": "Profile Page", "image": "/images/menu/profile.jpeg"},
+      {"title": "Recipe Page", "image": "/images/menu/recipe.jpeg"} 
+    ],
+    "description": "A recipe creation platform dedicated to cooking enthusiasts. A user-friendly interface allowing users to input ingredients, cooking instructions, photos, and other relevant details for their recipes. This initial phase aims to establish a strong foundation by enabling users to create accounts, facilitating the recording, management, and access to their personal recipes within the application.",
+    "items": ["Crafted a dynamic and accessible User Interface (UI) using React and TypeScript, focusing on object-oriented programming", "Led design of a user-friendly UI/UX, including creation of a unique logo, and development of interactive mock-ups", "Implemented server-side scripting and API integration; designed sophisticated database architecture with interconnected tables.", "Enhanced awareness of responsive design and UI best practices has led to the development of a complex form featuring multiple input elements - maximizing efficiency and ensuring data integrity in data input processes","" ],
+    "cardItems": ["React project using Typescript and Bootstrap","Fully responsive, object-oriented programming", "Crafted a dynamic and accessible User Interface (UI)", "Implemented server-side scripting and API integration.", "Designed sophisticated database architecture.", "Development of a complex form featuring multiple input elements.","Creation of user account" ],
+    "link": "https://github.com/shantespeaces/recipe-app",
+    "backgroundImage": "images/cards/artDeco7.jpg"
+    
+  },
+  {
+    "id": 2,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/primaColors/logo.png",
+    "skw": "/images/primaColors/primaColors.jpg",
+    "video": "",
+    "types": ["code", "design"], 
+    "language": "Laravel",
+    "date": "Summer 2023",
+    "title": "Prima-Colors - Festival Website",
+    "cardTitle": "Prima-Colors",
+    "heading3": "Festival",
+    "projectImages": [
+      {"title": "Home Page", "image": "/images/primaColors/home.jpeg"},
+      {"title": "Activities", "image": "/images/primaColors/activites.jpeg"},
+      {"title": "Actualites", "image": "/images/primaColors/actualites.jpeg"},
+      {"title": "Ticket Booth", "image": "/images/primaColors/billetterie.jpeg"},
+      {"title": "About Us / Contact Page", "image": "/images/primaColors/contact.jpeg"},
+      {"title": "Admin Home", "image": "/images/primaColors/adminHome.jpeg"},
+      {"title": "Admin Gestion activites", "image": "/images/primaColors/gestionActivites.jpeg"},
+      {"title": "Admin Gestion actualites", "image": "/images/primaColors/gestionActualites.jpeg"}
+
+    ],
+    "description": "Scoped and led development of a vibrant and engaging website for a festival blending both innovative design and technical skills. The objective of this project was to design a captivating website for the Prima-Colors Festival highlighting a variety of activities such as a contest, worhshops, Dj performances and much more. The festival targeted a dynamic clientele aged 18 to 40, passionate about arts, music, and creativity. The website's mission was to meet their expectations by offering a modern experience that combined technology and enjoyment.",
+    "items": ["Led team of 3, defining target audience and project objectives. Designed visual identity, including a unique logo, and comprehensive UX/UI strategy to ensure a user-friendly experience.", "Produced high-quality, reusable components using HTML5, SCSS and JavaScript within a Laravel framework.", "Oversaw all aspects of back-end development; spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section, enhancing website interactivity.", "Refined and optimized codebase - created reusable components and utilized JSON for content testing databases."],
+    "cardItems": ["Laravel Project using SCSS and JavaScript", "Defined project objectives, design and comprehensive UX/UI strategy.", "Produced high-quality, reusable components." , "Spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section."],
+    "link": "https://github.com/shantespeaces/prima_colors_pw2",
+    "backgroundImage": "images/cards/gold-foil.jpg"
+  },
+  {
+    "id": 3,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/pubG4/logo.png",
+    "skw": "/images/pubG4/skw.jpg",
+    "video": "/videos/pubG4.mp4",
+    "types": ["code", "design", "video"], 
+    "language": "PhP",
+    "date": "Winter 2023",
+    "title": "Pub G4 - Restaurant Website",
+    "cardTitle": "Pub G4",
+    "heading3": "Pub",
+    "projectImages": [
+      {"title": "Home Page", "image": "/images/pubG4/home.png"},
+      {"title": "Menu Page", "image": "/images/pubG4/menu.png"},
+      {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}
+    ],
+    "description": "Maintained consistent communication and reported back to the 'client', showcasing effective stakeholder management skills during development of a restaurant website",
+    "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms.", "Engaged in an iterative design process, soliciting feedback and making revisions as necessary to refine the website design and ensure alignment with the client's vision and needs"],
+    "cardItems": ["Php Project using Vue.js and MVC architecture", "Outlined project objectives and established visual identity.", "Developement of Admin section enabling employees to manage menu items effectively", "Optimized website security having deployed role-based access control.", "Secure connection with encrypted passwords and robust authorization mechanisms."],
+    "link": "https://github.com/shantespeaces/PubG4",
+    "backgroundImage": "images/cards/artDeco6.jpg"
+  },
+
+ 
+  {
+    "id": 4,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/filmsFlix/logo.png",
+    "skw": "/images/filmsFlix/skw.jpg",
+    "types": ["code", "design"], 
+    "date": "Spring 2023",
+    "title": "FilmsFlix - Mini Film App",
+    "cardTitle": "FilmsFlix",
+    "heading3": "Films",
+    "projectImages": [{"title": "Home", "image": "/images/filmsFlix/home.jpeg"},
+      {"title": "Film Details", "image": "/images/filmsFlix/show.jpeg"}],
+    "description": "Laravel Exercise: FilmsFlix is a Laravel project designed to replicate the immersive experience of a Netflix-style platform. The objective was to create a small website allowing users to browse a list of movies as well as the details of each movie with information retrieved from the database.",
+    "items": ["Learning Laravel!", "Creation of the models and Retrieval of data (using a model) and passing it to the views", "Dynamization of views with received data and use of an appropriate layout and components"],
+    "cardItems": ["Mini Laravel App", "Creation of models and Retrieval of data", "Dynamization of views with received data and use of an appropriate layout and components"],
+    "link": "https://github.com/shantespeaces/filmsFlix",
+    "backgroundImage": "images/cards/gold-diamonds.jpg"
+  },
+  {
+    "id": 5,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/bois/logo.png",
+   "skw": "/images/bois/bois.jpg",
+   "types": ["design"], 
+    "language": "Adobe",
+    "date": "Date 3",
+    "title": "Bois Espiègle",
+    "cardTitle": "Bois Espiègle",
+    "heading3": "Store",
+    "projectImages": [
+      {"title": "Home Page", "image": "/images/bois/home.png"}, 
+      {"title": "Product Page", "image": "/images/bois/products.png"},
+      {"title": "Product", "image": "/images/bois/product.png"}
+    ],
+    "pdf": "images/bois/pdf/bois.pdf",
+    "description": "UX/UI Exercise: Tasked with enhancing our skills in research, development, and UI/UX design, we were tasked with creating guideline documents essential for crafting mockups. These guidelines were then presented to a fictitious client, delineating the necessary elements for implementing specific scenarios. Accepted design elements were seamlessly integrated into the mockup. This exercise aimed to assess our ability to synthesize research findings and apply fundamental UI/UX principles to create impactful user interfaces.",
+    "items": ["Reflects the sophistication and opulence synonymous with luxury furniture through elegant design elements and sleek aesthetics.", "Highlight the meticulous craftsmanship and premium materials used in each furniture piece, instilling confidence in potential buyers.", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients, aimed to showcase our success and instill confidence in the shopper."],
+    "cardItems": ["Adobe Design Project: XD, PS, AI", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients"],
+    "link": "",
+    "backgroundImage": "images/cards/artDeco8.jpg"
+  },
+  {
+    "id": 6,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/monVoyage/logo.png",
+   "skw": "/images/monVoyage/skw.jpg",
+   "types": ["design"], 
+    "language": "WordPress",
+    "date": "winter 2023",
+    "title": "Mon Voyage",
+    "cardTitle": "Mon Voyage",
+    "heading3": "Travel",
+    "projectImages": [{"title": "Home Page", "image": "/images/monVoyage/home.png"},
+      {"title": "", "image": ""}],
+    "description": "WordPress Exercise: The objective of the Mon Voyage website creation exercise was to familiarize oneself with the fundamentals of the WordPress platform. This included tasks such as integrating and customizing a theme to suit the desired aesthetic and functionality, as well as adding relevant content to populate the website. Through this process, I gained hands-on experience in navigating WordPress, manipulating themes, and effectively presenting content on a website.",
+    "items": ["Gained practical experience in working with the WordPress platform, allowing me to grasp key concepts such as theme integration, customization, and content management through active engagement with the platform.", "By integrating and modifying a theme, I honed my skills in customizing website appearance and functionality to align with specific requirements or design preferences. This involved adjusting layout, colors, fonts, and other elements to create a cohesive and visually appealing website.", "Through the addition of content, I learned how to effectively structure and present information on a website."],
+    "cardItems": [" WordPress project", "Intro to theme integration, customization, and content management.", "Customized website appearance and functionality to align with client requirements and design preferences.", "Effectively structured and presented information."],
+    "link": "https://0261994.cpsw-fcsei.com/wordpress",
+    "backgroundImage": "images/cards/gold-foil.jpg"
+  },
+  {
+    "id": 7,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "images/fashion/logo.png",
+   "skw": "/images/fashion/skw.png",
+   "types": ["design"], 
+    "language": "Adobe",
+    "date": "Winter 2022",
+    "title": "Fashion Blog",
+    "cardTitle": "Fashion Blog",
+    "heading3": "Fashion",
+    "projectImages": [
+      {"title": "Mood Board", "image": "/images/fashion/inspiration.png"},
+      {"title": "Home Page", "image": "/images/fashion/home.png"},
+      {"title": "About Us / Contact Page", "image": "/images/fashion/about.png"},
+      {"title": "Product Page", "image": "/images/fashion/product.png"}
+   
+    ],
+    "description": "Design Exercise: The objective of this project was to develop skills in creating a mood board based on a client request and utilize it as inspiration to design a fashion blog website. This project was specifically tailored to cater to the preferences and characteristics of a persona within the 30+ age group, characterized as funky artists, bloggers, and shoppers. The aim was to create a visually appealing and engaging website design that resonates with the target audience's tastes and preferences.",
+    "items": ["Curated a mood board based on the client's request and the persona's characteristics. The mood board incorporated vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.", "Utilized the mood board as inspiration to design the fashion blog website. Incorporated elements such as vibrant color schemes, playful typography, dynamic layouts, and visually striking imagery to create an engaging and immersive user experience.", "Ensured that the web design elements aligned with the persona's preferences and characteristics. Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
+    "cardItems": ["Adobe Design Project: XD, PS, AI", "Created a mood board based taht incorporates vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.",  "Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
+    "link": "",
+    "backgroundImage": "images/cards/artDeco9.jpg"
+  },
+  {
+    "id": 8,
+    "cardImage": "images/pexels-magda-ehlers-1279813.jpg",
+    "logo": "",
+   "skw": "",
+    "types": ["video"],
+    "language": "Premier",
+    "date": "Winter 2022",
+    "title": "The day in the life of a web programmer",
+    "cardTitle": "Dev Life",
+    "heading3": "Video",
+    "projectImages": [
+      {"title": "", "image": ""},{"title": "", "image": ""}
+    
+    ],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "items": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "cardItems": ["Bullet point 1", "Bullet point 2", "Bullet point 3", "Bullet point 3"],
+    "link": "",
+    "backgroundImage": "images/cards/gold-foil.jpg"
+  }  
+]

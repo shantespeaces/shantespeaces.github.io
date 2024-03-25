@@ -38,12 +38,13 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
   text-decoration: none;
 }
 .contact button:hover {
-  background-color: #fbe1d0;
+  background-color: #fcf4ed;
   border: none;
 }
 .contact button:hover a {
-  font-size: 2.1rem;
-  color: black;
+  font-size: 2.5rem;
+  /* color: black; */
+  transition: font-size 0.5s;
 }
 
 @media screen and (max-width: 1350px) {

@@ -24,27 +24,27 @@
   </div>
 
   <div class="copyright d-flex justify-content-center">
-    <p>
-      <a
-        href="https://www.freepik.com/free-vector/gradient-art-deco-pattern_45183674.htm#fromView=search&page=1&position=50&uuid=341068ff-33ef-4d5e-b48a-0bceb0ea2c4a"
-        >Image by freepik</a
-      >
-    </p>
     <span class="material-symbols-outlined"> copyright </span>
     <p>Shanté Nicolaides Loving Art Deco 2024</p>
+    <p>
+      <a href="https://www.freepik.com/free-vector"
+        >Art Deco Images by freepik</a
+      >
+    </p>
   </div>
 </template>
 <script setup>
 import ContactComponent from "../components/ContactComponent.vue";
 </script>
 <style>
-#sticky-footer {
+/* #sticky-footer {
   position: sticky;
   position: -webkit-sticky;
-  top: 0px;
-}
+  top: -20px;
+} */
 .footer-wrapper {
-  background-image: url("/images/feather.png");
+  background-color: #fcf4ed;
+  background-image: url("/images/artDeco/feather4.png");
   background-size: contain;
   flex-direction: column;
   z-index: 300;
@@ -57,7 +57,6 @@ import ContactComponent from "../components/ContactComponent.vue";
   border-bottom: solid 3px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
-  margin-bottom: 4em;
 }
 .footer-wrapper p {
   padding-top: 5em;
@@ -98,17 +97,19 @@ footer h1.job-title {
 }
 
 .footer-avatar img.avatar {
-  filter: brightness(90%) sepia(50%) saturate(70%) hue-rotate(-50deg);
+  /* filter: brightness(90%) sepia(50%) saturate(70%) hue-rotate(-50deg); */
   transform: rotateX(0deg) rotateY(180deg);
 }
 
 .copyright {
-  background-color: ivory;
+  background-color: #fffdf6;
   padding-top: 1rem;
 }
-.copyright p {
+.copyright p,
+.copyright a {
   background-image: var(--goldToRightDark);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
 
   padding-left: 1rem;
@@ -118,6 +119,7 @@ footer h1.job-title {
   padding-top: 0.3rem;
   background-image: var(--goldToRightDark);
   color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   text-transform: uppercase;
 }

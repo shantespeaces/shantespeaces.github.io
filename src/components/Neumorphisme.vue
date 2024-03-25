@@ -16,31 +16,63 @@
   <div class="neumorphisme55 neumorphisme"></div>
   <div class="neumorphisme56 neumorphisme"></div>
   <div class="neumorphisme57 neumorphisme"></div>
-  <img src="/images/goldDot.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot1.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot1.svg" class="neumorphisme58 neumorphisme" alt="" />
   <img
-    src="/images/goldCircle.png"
+    src="/images/neumorphisme/goldDot.png"
     class="neumorphisme58 neumorphisme"
     alt=""
   />
   <img
-    src="/images/goldCircle.png"
-    class="neumorphisme58 neumorphisme"
-    alt=""
-  />
-  <img src="/images/goldDot.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot1.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img src="/images/goldDot1.svg" class="neumorphisme58 neumorphisme" alt="" />
-  <img
-    src="/images/goldCircle.png"
+    src="/images/neumorphisme/goldDot.png"
     class="neumorphisme58 neumorphisme"
     alt=""
   />
   <img
-    src="/images/goldCircle.png"
+    src="/images/neumorphisme/goldCircle.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldCircle.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldCircle.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldCircle.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldDot.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldDot.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldDot.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldDot.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldCircle.png"
+    class="neumorphisme58 neumorphisme"
+    alt=""
+  />
+  <img
+    src="/images/neumorphisme/goldCircle.png"
     class="neumorphisme58 neumorphisme"
     alt=""
   />
@@ -70,13 +102,16 @@ onMounted(() => {
 });
 </script>
 <style>
-.neumorphisme58 {
+img.neumorphisme58 {
   position: absolute;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   z-index: 1;
+  background-color: transparent;
 }
+
+/* colored*/
 .neumorphisme54,
 .neumorphisme55,
 .neumorphisme56,
@@ -87,9 +122,33 @@ onMounted(() => {
   height: 100px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 10px 10px 20px #bca399, -10px -10px 20px #feddcf;
-  /* background: #eceff1;
-  box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #f9f9f9; */
+  background: linear-gradient(145deg, #eccdc1aa, #fffdf6);
+  box-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
+}
+
+.neumorphisme47,
+.neumorphisme48,
+.neumorphisme49 {
+  position: absolute;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  background: linear-gradient(145deg, #eccdc1aa, #fffdf6);
+  box-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
+}
+/* white */
+.neumorphisme46,
+.neumorphisme51,
+.neumorphisme52,
+.neumorphisme53 {
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 10px #e0cfc6, -8px -8px 10px #fffffc;
 }
 .neumorphisme43,
 .neumorphisme44,
@@ -100,46 +159,11 @@ onMounted(() => {
   height: 50px;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 10px 10px 20px #bca399, -10px -10px 20px #feddcf;
-  /* background: #eceff1;
-  box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #f9f9f9; */
+  box-shadow: 10px 10px 20px #bca399, -10px -10px 20px #fffdf6;
 }
 
-.neumorphisme46,
-.neumorphisme47,
-.neumorphisme48,
-.neumorphisme49 {
-  position: absolute;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  /* background: #fff7f2;
-  box-shadow: 8px 8px 10px #e0d9d5, -8px -8px 10px #ffffff; */
-  /* background: #ddc0b4; */
-  background-color: white;
-  background: linear-gradient(145deg, #eccdc1aa, #feddcf);
-  box-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #feddcf9d;
-}
-
-.neumorphisme51,
-.neumorphisme52,
-.neumorphisme53 {
-  position: absolute;
-  z-index: 1;
-  width: 100px;
-  height: 100px;
-  /* z-index: 3; */
-  border-radius: 50%;
-  /* background: linear-gradient(145deg, #fffbf1, #e6d4cb); */
-  box-shadow: 8px 8px 10px #e0cfc6, -8px -8px 10px #fffffc;
-  /* background: linear-gradient(145deg, #eccdc19d, #c7ada2);
-  box-shadow: 11px 11px 22px #b79f95, -11px -11px 22px #ffe1d3; */
-}
 .neumorphisme {
   position: absolute;
-  /* width: 100px;
-  height: 100px; */
   border-radius: 50%;
   background-color: white;
   z-index: 1;

@@ -6,21 +6,28 @@
         <div class="image-container left">
           <div class="quote-container d-flex justify-content-center">
             <q class="reference"
-              >a cute quote bbbbbbbbb bbbbbb bbbbbbbbbbbb bbbbbbbbbbbbbbbbb
-              bbbbbbbbbbbbbbbb</q
+              >Shante Nicolaides embodies values of integrity and reliability.
+              Always ready to tackle new challenges, she willingly assumes
+              additional responsibilities, demonstrating her ability to adapt
+              quickly and effectively to various situations. Her unwavering
+              commitment, attention to detail, and ability to work autonomously
+              truly set her apart.</q
             >
 
-            <p>name</p>
+            <p>- Marie Bertrand - Internship Suppervisor</p>
           </div>
         </div>
         <div class="image-container right">
           <div class="quote-container d-flex justify-content-center">
             <q class="reference"
-              >a cute quote bbbbbbbb bbbbbbbbbbbb bbbbbbb bbbbbbb bbbbbbbbbbbb
-              bbbbbbbbbb bbbb</q
-            >
+              >Shante has consistently approached each project with a high level
+              of autonomy and initiative, emphasizing diligent work. Her keen
+              interest in new technologies and her willingness to tackle complex
+              projects reflect her intellectual curiosity and determination to
+              excel in the field of web development.
+            </q>
 
-            <p>name</p>
+            <p>- Éric Gagné - Professor at Cégep de Saint-Jérôme</p>
           </div>
         </div>
       </div>
@@ -34,7 +41,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 #sticky-references {
   position: sticky;
   position: -webkit-sticky;
-  top: -500px;
+  top: -800px;
 }
 .references-container {
   background-color: white;
@@ -51,7 +58,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 .image-container.left {
   position: relative;
   left: 5em;
-  background-image: url("/images/artDecoWoman.svg");
+  background-image: url("/images/artDeco/artDecoWoman.svg");
   background-size: cover;
   height: 70em;
   width: 50em;
@@ -60,7 +67,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 .image-container.right {
   position: relative;
   right: 0;
-  background-image: url("/images/artDecoWoman.svg");
+  background-image: url("/images/artDeco/artDecoWoman.svg");
   background-size: cover;
   height: 70em;
   width: 50em;
@@ -77,8 +84,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   top: 24.2em;
   left: 5.8em;
   text-align: center;
-  background-color: ivory;
-  /* background-image: url("/images/artDecoGreen.jpg"); */
+  background-color: #fffdf6;
   height: 38.5em;
   width: 38.5em;
   border-radius: 50%;
@@ -87,7 +93,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   transform: rotate(-25deg);
 }
 .quote-container q,
-.qoute-container p {
+.quote-container p {
   padding: 1em;
 }
 @media screen and (max-width: 1600px) {

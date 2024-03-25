@@ -104,21 +104,22 @@ img.avatar {
   width: 18em;
   object-fit: cover;
   background-color: white;
-  box-shadow: -10px 10px 20px #bca399, -10px -10px 20px #feddcf;
+  box-shadow: -10px 10px 20px #bca399, -10px -10px 20px #fffdf6;
   background-size: contain;
   background-position: top;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px #3f3f3e, -6px -6px 10px #feddcf;
+  box-shadow: 6px 6px 10px #3f3f3e, -6px -6px 10px #fffdf6;
   z-index: 20;
   position: absolute;
-  filter: brightness(90%) sepia(50%) saturate(70%) hue-rotate(-60deg);
+
+  /* filter: brightness(90%) sepia(40%) saturate(40%) hue-rotate(-40deg); */
 }
 .avatar-background {
   height: 20em;
   width: 20em;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 8px -8px 15px #bca399, -8px -8px 15px #feddcf;
+  box-shadow: 8px -8px 15px #bca399, -8px -8px 15px #fffdf6;
   z-index: 15;
 }
 

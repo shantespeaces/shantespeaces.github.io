@@ -11,9 +11,11 @@
             printing and typesetting industry. Lorem Ipsum has been the
             industry's standard
           </q>
-          <button><p>read more</p></button>
+          <button @click="toggleFullText">
+            <p>{{ showFull ? "read less" : "read more" }}</p>
+          </button>
         </div>
-        <p class="full">
+        <p class="full" :class="{ 'show-full': showFull }">
           lorem "description": "Lorem Ipsum is simply dummy text of the printing
           and typesetting industry. Lorem Ipsum has been the industry's standard
           dummy text ever since the 1500s, when an unknown printer took a galley
@@ -31,7 +33,15 @@
     </section>
   </section>
 </template>
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showFull = ref(false);
+
+const toggleFullText = () => {
+  showFull.value = !showFull.value;
+};
+</script>
 <style>
 /* ABOUT */
 #sticky-about {
@@ -41,12 +51,12 @@
 }
 
 section.about {
-  background-color: ivory;
+  background-color: #fffdf6;
   z-index: 500;
 }
 section.about h2 {
   padding-top: 4em;
-  background-color: #fbe1d0;
+  background-color: #fde8d9;
   margin-left: 6em;
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -99,6 +109,7 @@ p.full {
   padding-bottom: 5em;
   margin-bottom: 0;
 }
+
 q.mini,
 p.full {
   font-size: 1.3rem;
@@ -156,17 +167,20 @@ p.full {
   }
 }
 @media screen and (max-width: 576px) {
-  h2.heading {
+  /* h2.heading {
     font-weight: bold;
-  }
+  } */
   section.about h2 {
     padding-top: 4em;
   }
   q.mini {
     font-size: 1.2rem;
   }
-  p.full {
+  .full {
     display: none;
+  }
+  .show-full {
+    display: block;
   }
   .text-container {
     padding-bottom: 12em;

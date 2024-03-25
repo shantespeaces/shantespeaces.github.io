@@ -197,7 +197,7 @@ function isPageActive(index) {
   top: -500px;
 }
 .skwd-projects {
-  background-color: ivory;
+  background-color: #fffdf6;
   padding-top: 10em;
   padding-bottom: 15em;
 }
@@ -207,7 +207,7 @@ h4.more-projects {
   font-size: 4em;
   margin-bottom: 1em;
   margin-left: 1em;
-  background-color: #fbe1d0;
+  background-color: #fde8d9;
 }
 .skw-pages {
   overflow: hidden;
@@ -331,7 +331,7 @@ button.shuffle p {
   font-family: "Poiret One", sans-serif;
 }
 button.shuffle:hover {
-  background-color: #fbe1d0;
+  background-color: #fcf4ed;
   border: none;
 }
 button.shuffle:hover p {

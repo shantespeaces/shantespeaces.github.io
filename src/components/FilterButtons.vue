@@ -23,9 +23,9 @@
             type="radio"
             class="radio-button"
             name="filter"
-            @click="filterByType('design')"
+            @click="filterByType('code')"
           />
-          <span class="label-text">UX UI</span>
+          <span class="label-text"> Talk is cheap. Show me the code!</span>
         </label>
       </div>
     </div>
@@ -37,9 +37,9 @@
             type="radio"
             class="radio-button"
             name="filter"
-            @click="filterByType('code')"
+            @click="filterByType('design')"
           />
-          <span class="label-text"> Let's see some code!</span>
+          <span class="label-text">UX UI</span>
         </label>
       </div>
     </div>
@@ -61,34 +61,21 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineEmits } from "vue";
 
 const props = defineProps(["filter"]);
 const emit = defineEmits();
 
-// Function to emit selected type and apply animation to cards
+// Function to emit selected type
 const filterByType = (type) => {
   // Emit the selected type to the parent component
   emit("filter", type);
-
-  // // Reset animation class on all cards
-  // document.querySelectorAll(".card").forEach((card) => {
-  //   card.classList.remove("animate__animated", "animate__pulse");
-  // });
-
-  // Apply animation class to the displayed cards based on the selected type
-  // const displayedCards = document.querySelectorAll(".card.visible");
-  // displayedCards.forEach((card, index) => {
-  //   setTimeout(() => {
-  //     card.classList.add("animate__animated", "animate__pulse");
-  //   }, index * 200);
-  // });
 };
 </script>
 
 <style scoped>
 .filter-button-wrapper {
-  margin: 5em 15em;
+  margin: 5em 15em 0em 15em;
   height: 8em;
 }
 
@@ -122,13 +109,4 @@ input[type="radio"]:checked + .label-text {
 .label-text {
   transition: font-size 0.5s;
 }
-/* .col {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 2s ease, transform 2s ease;
-}
-.card.visible {
-  opacity: 1;
-  transform: translateX(0);
-} */
 </style>

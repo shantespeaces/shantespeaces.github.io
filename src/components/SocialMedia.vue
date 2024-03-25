@@ -51,7 +51,7 @@ div.links {
   background-color: rgba(255, 255, 240, 0.5);
 }
 div.links:hover {
-  background-color: ivory;
+  background-color: #fffdf6;
   cursor: pointer;
 }
 

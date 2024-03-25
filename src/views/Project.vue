@@ -1,23 +1,38 @@
 <template>
   <MainNav />
   <!-- <Feather /> -->
+
   <section id="project">
     <div class="show-background-container" v-if="project">
       <div class="show-container d-flex">
         <div class="show-container-left">
           <div class="main-content" ref="mainContentRef">
             <div class="main-headings" ref="mainHeadingsRef">
-              <q id="quote"> a random quote related to programming. </q>
+              <q id="quote"> {{ project.quote }}</q>
 
               <div class="heading">
                 <h3 id="heading1">{{ project.language }}</h3>
-                <h3 id="heading2">Project,</h3>
+                <h3 id="heading2">Project</h3>
                 <h1 id="heading3">{{ project.heading3 }}</h1>
                 <h4 id="heading4">{{ project.title }}</h4>
               </div>
 
               <div class="show-project-description">
                 <p>{{ project.description }}</p>
+              </div>
+              <h5 class="highlights-title">Highligts</h5>
+              <div class="show-highlights">
+                <h5>Highligts</h5>
+                <ul class="">
+                  <li
+                    v-for="(item, index) in project.cardItems"
+                    :key="`${project.id}_${index}`"
+                    class="list-item d-flex pb-2"
+                  >
+                    <span class="bullet">+</span>
+                    <p class="content">{{ item }}</p>
+                  </li>
+                </ul>
               </div>
               <template v-if="project.link">
                 <div class="github">
@@ -40,18 +55,27 @@
             <template v-if="project.video">
               <video
                 :src="project.video"
-                type="video/mp4"
-                ref="videoRef"
-                class="video"
-                @mouseover="playVideo"
-                loop
+                class="background-video"
                 controls
+                autoplay
+                muted
               ></video>
             </template>
 
             <img class="logo-show" :src="project.logo" alt="" />
           </div>
-
+          <template v-if="project.pdfImages"
+            ><p>Guideline Document</p>
+            <div class="row">
+              <div
+                class="col-4 mb-3"
+                v-for="(pdfImage, index) in project.pdfImages"
+                :key="index"
+              >
+                <img class="image-pdf" :src="pdfImage.image" alt="" />
+              </div>
+            </div>
+          </template>
           <div
             class="image-show-container"
             v-for="(image, index) in project.projectImages"
@@ -60,31 +84,25 @@
             <p class="image-show-title">{{ image.title }}</p>
             <img class="image-show" :src="image.image" alt="" />
           </div>
-          <!-- <template v-if="project.pdf"
-          ><button class="pdf">
-            click me to see pdf of client document guide
-            <iframe :src="project.pdf"></iframe>
-          </button>
-        </template> -->
         </div>
       </div>
     </div>
   </section>
   <section class="more">
-    <div>
+    <div class="d-flex justify-content-between align-items-center">
       <button>
         <router-link data-name="home" :to="{ name: 'home' }"
-          >Return to Home Page</router-link
+          ><p>Return to Home Page</p></router-link
         >
       </button>
 
-      <button @click="viewPrevProject">View Previous Project</button>
-      <button @click="viewNextProject">View Another Project</button>
+      <button @click="viewPrevProject" class="d-flex">
+        <p>View Previous Project</p>
+      </button>
+      <button @click="viewNextProject" class="d-flex">
+        <p>View Next Project</p>
+      </button>
     </div>
-  </section>
-  <section>
-    <!-- <SkwCarousel /> -->
-    <!-- <Portfolio /> -->
   </section>
   <footer>
     <FooterComponent />
@@ -93,18 +111,12 @@
 
 <script setup>
 import axios from "axios";
-import { ref, onMounted, onBeforeMount } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import MainNav from "../components/Nav.vue";
 import FooterComponent from "../components/FooterComponent.vue";
 
-// import SkwCarousel from "@/components/SkwCarousel.vue";
-// import Portfolio from "../components/Portfolio.vue";
 // import Feather from "@/components/Feather.vue";
-
-const playVideo = (event) => {
-  event.target.play();
-};
 
 const props = defineProps({
   id: {
@@ -116,6 +128,7 @@ const props = defineProps({
 const project = ref(null); // Initialize as null or an empty object
 const route = useRoute(); // Access route object
 let projectId = null; // To keep track of the current project ID
+let projectsData = null; // To store the fetched projects data
 
 onMounted(() => {
   console.log("ID prop:", props.id);
@@ -123,24 +136,22 @@ onMounted(() => {
 });
 
 onMounted(async () => {
-  const projectId = parseInt(route.params.id); // Convert id to number
-  await getProjectDetails(projectId);
+  try {
+    const axios_result = await axios.get("/projects.json");
+    projectsData = axios_result.data;
+
+    // Convert id to number
+    const id = parseInt(route.params.id);
+    await getProjectDetails(id);
+  } catch (error) {
+    console.error("Error fetching projects data:", error);
+  }
 });
 
 async function getProjectDetails(id) {
   try {
-    console.log("ID being searched:", id); // Log the ID being searched
-
-    const axios_result = await axios.get("/portfolio/projects.json");
-    console.log("Axios response:", axios_result.data); // Log the entire response data
-
-    const projectsData = axios_result.data;
-
-    // Log each project's ID in the data array
-    console.log(
-      "Projects data IDs:",
-      projectsData.map((project) => project.id)
-    );
+    // Log the ID being searched
+    console.log("ID being searched:", id);
 
     // Find the project with the matching id
     const newProject = projectsData.find((project) => project.id === id);
@@ -148,7 +159,8 @@ async function getProjectDetails(id) {
     if (newProject) {
       // If the project with the matching id is found, assign it to the project ref
       project.value = newProject;
-      projectId = id; // Update current project ID
+      // Update current project ID
+      projectId = id;
       console.log("Project details:", project.value);
     } else {
       console.error("Project not found with id:", id);
@@ -159,22 +171,23 @@ async function getProjectDetails(id) {
 }
 
 const viewNextProject = async () => {
-  projectId++; // Increment project ID
+  const lastIndex = projectsData.length - 1;
+  projectId = projectId === lastIndex ? 0 : projectId + 1;
   await getProjectDetails(projectId);
 };
 
 const viewPrevProject = async () => {
-  projectId--; // Decrement project ID
+  const lastIndex = projectsData.length - 1;
+  projectId = projectId === 0 ? lastIndex : projectId - 1;
   await getProjectDetails(projectId);
 };
 </script>
 
 <style>
 .show-background-container {
-  background-color: ivory;
+  background-color: #fffdf6;
 }
 .show-container {
-  padding-top: 20em;
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
@@ -192,6 +205,7 @@ const viewPrevProject = async () => {
   position: relative;
   animation: fade-in 1.5s ease, slide-in 1.2s ease;
   -webkit-animation: fade-in 1.5s ease, slide-in 1.2s ease;
+  padding-top: 15em;
 }
 
 .main-content {
@@ -211,13 +225,43 @@ const viewPrevProject = async () => {
   padding-bottom: 1px;
   padding-left: 3px;
   margin-left: 15px;
-  font-size: 85%;
+  font-size: 1.1rem;
   border-bottom: 1px solid #757575;
   font-style: italic;
 }
 .main-headings .heading {
   margin-top: 20px;
   margin-left: 80px;
+}
+.main-headings h5 {
+  letter-spacing: 2px;
+  background-image: var(--goldToRight);
+  color: transparent;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  margin-left: 4em;
+}
+.show-highlights {
+  display: none;
+  padding: 2em;
+
+  background-color: #fffdf6;
+  border: solid 2px;
+  border-image: var(--goldToBottomYellow) 1;
+  border-image-slice: 1;
+  position: relative;
+  left: 20em;
+  top: -25em;
+  /* flex-wrap: wrap; */
+}
+.show-highlights h5 {
+  margin-left: 0;
+}
+/* .show-highlights li {
+  padding: 1em;
+} */
+.highlights-title:hover + .show-highlights {
+  display: block;
 }
 #heading1,
 #heading2,
@@ -238,6 +282,7 @@ const viewPrevProject = async () => {
   margin-left: 150px;
 }
 #heading3 {
+  padding-top: 1rem;
   margin-top: -52px;
   font-size: 1100%;
   font-weight: 800;
@@ -256,7 +301,7 @@ const viewPrevProject = async () => {
 }
 .show-project-description p {
   font-size: 1.3rem;
-  font-style: italic;
+  /* font-style: italic; */
 }
 .github a {
   margin-left: 92px;
@@ -272,6 +317,10 @@ const viewPrevProject = async () => {
 .show-container-right {
   width: 50%;
   flex-direction: column;
+  padding-top: 2em;
+}
+.show-container-right p {
+  text-align: center;
 }
 .logo-show-container {
   max-width: 100%;
@@ -293,9 +342,9 @@ const viewPrevProject = async () => {
   object-fit: cover;
   align-self: center;
 }
-video {
-  height: 30em;
-  margin-top: 10em;
+.background-video {
+  height: 40em;
+  margin-top: 15em;
 }
 .image-show-title {
   text-align: center;
@@ -304,10 +353,42 @@ button.pdf {
   margin-bottom: 10em;
 }
 .more {
-  height: 10em;
-  background-color: blue;
+  height: 8em;
+  background-color: white;
   z-index: 100;
-  position: sticky;
+  position: fixed;
+  border-top: solid 3px;
+  bottom: 0;
+  width: 100%;
+  border-image: var(--goldToRight) 1;
+  border-image-slice: 1;
+}
+.more button {
+  border: none;
+  background-image: var(--goldToBottom);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.more button p {
+  background-image: var(--goldToRightYellow);
+  color: transparent;
+  -webkit-background-clip: text;
+  /* padding-top: 3.3rem; */
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.more button p:hover {
+  transition: font-size 0.5s;
+  font-size: 3em;
+}
+.image-pdf {
+  height: 20em;
+  width: 14em;
+}
+.image-pdf:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }
 @keyframes scaleDown {
   0% {
@@ -557,25 +638,7 @@ button.pdf {
     margin-right: auto;
   }
 }
-/*
 
-@include tablet {
-  .show-container {
-    width: 100%;
-    height: auto;
-    font-size: 7px;
-  }
-  #heading3 {
-    margin-top: -35px ;
-  }
-  .link {
-    margin-left: 30px;
-  }
-  .more-info {
-    margin-top: -40px ;
-  }
-}
-*/
 @media (min-width: 700px) and (max-width: 1200px) {
   .show-container {
     width: 100%;
