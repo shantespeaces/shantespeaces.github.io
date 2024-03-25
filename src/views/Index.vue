@@ -1,8 +1,8 @@
 <template>
-  <WordAnimation v-if="isLoading" />
-  <Home v-if="!isLoading" />
-  <!-- <WordAnimation />
-  <Home /> -->
+  <!-- <WordAnimation v-if="isLoading" />
+  <Home v-if="!isLoading" /> -->
+  <WordAnimation />
+  <Home />
 </template>
 
 <script setup>
@@ -13,7 +13,7 @@ const isLoading = ref(true);
 
 setTimeout(() => {
   isLoading.value = false;
-}, 10000);
+}, 15000);
 </script>
 
 <style>

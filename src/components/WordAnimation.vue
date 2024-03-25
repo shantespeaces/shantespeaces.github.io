@@ -1,68 +1,61 @@
 <template>
   <div class="neumorphismes">
     <Neumorphisme />
-    <section
-      class="wordAnimation d-flex justify-content-center align-items-center"
-    >
+    <section class="wordAnimation d-flex">
       <div class="word-container">
-        <div>
+        <div class="centered d-flex">
           <div
-            class="click-me-left animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
+            class="word animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
           >
-            <p>click me!</p>
-            <img
-              class="arrow-icon-left d-flex justify-content-center align-items-center"
-              src="/images/semicircular-up-arrow.png"
-              alt=""
-            />
-          </div>
-          <div class="centered">
-            <div
-              class="word animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
-            >
-              <div class="rotate">
-                <span
-                  v-for="(letter, index) in shante"
-                  :key="index"
-                  class="shante"
-                >
-                  {{ letter }}
-                </span>
-                <br />
-                <span
-                  v-for="(letter, index) in portfolio"
-                  :key="index"
-                  @click="handleClick(index)"
-                  :class="{ active: isActive(index) }"
-                  class="port"
-                >
-                  {{ letter }}
-                </span>
-              </div>
+            <div class="rotate">
+              <span
+                v-for="(letter, index) in shante"
+                :key="index"
+                class="shante"
+              >
+                {{ letter }}
+              </span>
+              <br />
+
+              <span
+                v-for="(letter, index) in port"
+                :key="index"
+                @click="handleClick(index)"
+                :class="{ active: isActive(index) }"
+                class="port"
+              >
+                {{ letter }}
+              </span>
+              <br class="br" />
+
+              <span
+                v-for="(letter, index) in folio"
+                :key="index"
+                @click="handleClick(index)"
+                :class="{ active: isActive(index) }"
+                class="folio"
+              >
+                {{ letter }}
+              </span>
             </div>
           </div>
-
-          <!-- <div
-          class="click-me-right d-flex justify-content-center align-items-center"
+        </div>
+      </div>
+      <div class="click-container d-flex justify-content-around">
+        <div
+          class="click-me animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
         >
-          <img
-            class="arrow-icon-right"
-            src="/images/semicircular-up-arrow.png"
-            alt=""
-          />
-          <p>click me</p>
-        </div> -->
+          <p>click the letters!</p>
+        </div>
+        <div
+          class="enter-container d-flex animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
+        >
+          <p class="enter">Come In!</p>
+
+          <div class="enter-arrow"></div>
         </div>
       </div>
-      <div
-        class="enter d-flex animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
-      >
-        <p>Come In!</p>
-        <div class="arrow-enter-container" @click="enter">
-          <div class="arrow-enter"></div>
-        </div>
-      </div>
-      <p>
+      <p class="warning">
         Im under Construction, but come in and see where im at. I hope you
         enjoy!
       </p>
@@ -75,7 +68,8 @@ import { ref, onMounted } from "vue";
 import Neumorphisme from "../components/Neumorphisme.vue";
 
 const shante = ref(["S", "H", "A", "N", "T", "É", "'", "S"]);
-const portfolio = ref(["P", "O", "R", "T", "F", "O", "L", "I", "O"]);
+const port = ref(["P", "O", "R", "T", "-"]);
+const folio = ref(["F", "O", "L", "I", "O"]);
 // const wordRef = ref(null);
 
 onMounted(() => {
@@ -104,20 +98,6 @@ const handleClick = (index) => {
 const isActive = (index) => {
   return true;
 };
-
-// const enter = () => {
-//   const word = document.querySelector(".neumorphismes");
-//   if (word) {
-//     // Add the desired classes
-//     word.classList.add(
-//       "animate__animated",
-//       "animate__fadeInUp",
-//       "animate__slow",
-//       "1s",
-//       "animate__delay-0.5s"
-//     );
-//   }
-// };
 </script>
 
 <style>
@@ -128,13 +108,14 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .wordAnimation {
   height: 100vh;
   flex-direction: column;
+  margin: 10em 10em;
 }
 
-.centered {
+/* .centered {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+  flex-direction: column;
+} */
 .word {
   margin-bottom: 3em;
   z-index: 1000;
@@ -144,13 +125,12 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   -webkit-transform: rotate(-5deg);
   transform: rotate(-5deg);
 }
-.enter {
-  margin-left: 50em;
+.enter-container {
   z-index: 1000;
 }
-.enter p {
+p.enter {
   font-family: "League Script";
-  font-size: 8em;
+  font-size: 7em;
   background-image: var(--goldToRightDark);
   color: transparent;
   background-clip: text;
@@ -159,14 +139,10 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   text-shadow: 0 0 20px #fff, 0 0 10px #f6e27a, 0 0 50px #cb9b51;
   z-index: 1000;
 }
-.arrow-enter-container {
-  position: relative;
-  right: 0;
-  z-index: 1000;
-}
-.arrow-enter {
-  height: 6em;
-  width: 6em;
+
+.enter-arrow {
+  height: 4em;
+  width: 4em;
   border: solid;
   border-image: var(--goldToBottomYellow) 1;
   border-image-slice: 1;
@@ -177,67 +153,34 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   margin: 2em 0 0 2em;
   z-index: 1000;
 }
-.slide-leave-active {
-  animation: slideOut 1.8s ease-in-out forwards;
-}
-@keyframes slideOut {
-  0% {
-    opacity: 1;
-  }
 
-  85% {
-    opacity: 0.9;
-  }
+.click-me {
+  z-index: 1000;
+  align-self: start;
+}
 
-  100% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-}
-.click-me-left {
-  position: relative;
-  left: -10em;
-  top: 35em;
-  height: 5em;
-  width: 15em;
-  flex-direction: column;
-  z-index: 100;
-}
-.arrow-icon-left {
-  position: relative;
-  left: 8em;
-  height: 2.5em;
-  width: 2.5em;
-  transform: rotate(20deg);
-}
-/* .click-me-right {
-  position: relative;
-  top: 45em;
-  right: 5em;
-  height: 5em;
-  width: 15em;
-  flex-direction: column;
-  z-index: 100;
-}
-.arrow-icon-right {
-  height: 2.5em;
-  width: 2.5em;
-  transform: rotate(300deg);
-}
-.click-me-right p, */
-.click-me-left p {
+.click-me p {
   text-transform: uppercase;
+  letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: 2em;
+  font-size: 1.6em;
+  transform: rotate(-5deg);
+}
+.shante {
+  font-size: 8rem;
+}
+.port,
+.folio {
+  font-size: 14.5rem;
 }
 .word span {
   cursor: pointer;
   display: inline-block;
   letter-spacing: 1.5rem;
-  font-size: 13rem;
+
   user-select: none;
   line-height: 1.1;
   font-family: "Parklane";
@@ -246,17 +189,28 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
     0 0 20px rgba(255, 236, 222, 0.8), 0 0 25px rgba(255, 236, 222, 0.8),
     0 0 5px rgb(188, 139, 121), 0 0 30px rgba(255, 236, 222, 0.8),
     0 0 40px rgba(201, 174, 164, 0.8), 0 0 50px rgba(201, 174, 164, 0.8),
-    0 0 60px rgba(141, 103, 90, 0.8);
+    0 0 10px rgba(141, 103, 90, 0.3);
+}
+.word span:nth-child(14) {
+  display: none;
+}
+.br {
+  display: none;
+}
+.warning {
+  z-index: 1000;
+  align-self: center;
 }
 
+/* LETTER ANIMATION */
 .word span:nth-child(1),
 .word span:nth-child(4),
 .word span:nth-child(10),
 .word span:nth-child(12),
 .word span:nth-child(13),
-.word span:nth-child(14),
-.word span:nth-child(16),
-.word span:nth-child(17) {
+.word span:nth-child(15),
+.word span:nth-child(17),
+.word span:nth-child(18) {
   color: white;
   opacity: 0.8;
   animation: flicker 3s infinite alternate;
@@ -291,17 +245,14 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .word span:nth-child(6),
 .word span:nth-child(8),
 .word span:nth-child(11),
-.word span:nth-child(15),
-.word span:nth-child(18) {
-  color: white;
-  animation: colorPulse 3s linear infinite, flicker 3s infinite alternate;
+.word span:nth-child(16),
+.word span:nth-child(19) {
+  color: (236, 205, 193, 0.667);
+  animation: colorPulse 5s linear infinite, flicker 3s infinite alternate;
 }
 
 @keyframes colorPulse {
-  0% {
-    color: white;
-  }
-
+  0%,
   100% {
     color: white;
   }
@@ -328,11 +279,11 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   }
 }
 .word span:nth-child(12).active {
-  animation: falling1 2s ease-out;
+  animation: falling 2s ease-out;
   transform-origin: bottom center;
 }
 
-@keyframes falling1 {
+@keyframes falling {
   12% {
     transform: rotateX(240deg);
   }
@@ -375,7 +326,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
     transform: rotate(-45deg);
   }
 }
-.word span:nth-child(14).active {
+.word span:nth-child(16).active {
   animation: rotate 1s ease-out;
 }
 
@@ -389,7 +340,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
     transform: rotateY(360deg);
   }
 }
-.word span:nth-child(16).active {
+.word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
 }
@@ -409,7 +360,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
     transform: scale(1) translate(0, 0);
   }
 }
-.word span:nth-child(17).active {
+.word span:nth-child(19).active {
   animation: toplong 1.5s linear;
 }
 
@@ -423,11 +374,13 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
     transform: translateY(-48vh) scaleY(4);
   }
 }
-.word span:nth-child(18).active {
-  animation: falling 3s linear;
+.word span:nth-child(11).active,
+.word span:nth-child(17).active,
+.word span:nth-child(20).active {
+  animation: flipping 3s linear;
 }
 
-@keyframes falling {
+@keyframes flipping {
   0% {
     transform: rotateX(0deg);
   }
@@ -452,5 +405,213 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   /* Pause animations when clickable class is present */
   pointer-events: none;
   animation-play-state: paused !important;
+}
+.slide-leave-active {
+  animation: slideOut 1.8s ease-in-out forwards;
+}
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@media screen and (max-width: 1800px) {
+  .port,
+  .folio {
+    font-size: 13em;
+  }
+  .enter-container {
+    padding-top: 10em;
+  }
+  p.enter {
+    font-size: 6em;
+  }
+  .enter-arrow {
+    height: 3em;
+    width: 3em;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .port,
+  .folio {
+    font-size: 12em;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .shante {
+    font-size: 5em;
+  }
+  .port,
+  .folio {
+    font-size: 11rem;
+  }
+  .enter-container {
+    padding-top: 14em;
+  }
+  p.enter {
+    font-size: 5.5em;
+  }
+  .enter-arrow {
+    height: 3em;
+    width: 3em;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .port,
+  .folio {
+    font-size: 9.5rem;
+  }
+  .wordAnimation {
+    margin-top: 15em;
+  }
+  .enter-container {
+    padding-top: 13em;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .port,
+  .folio {
+    font-size: 8.5rem;
+  }
+  .enter-container {
+    padding-top: 14em;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .port,
+  .folio {
+    font-size: 7.5rem;
+  }
+  .enter-container {
+    padding-top: 13em;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .word span:nth-child(14) {
+    display: inline-block;
+  }
+  .port,
+  .folio {
+    font-size: 14rem;
+  }
+  .wordAnimation {
+    margin-top: 9em;
+  }
+  .enter-container {
+    padding-top: 0em;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .port,
+  .folio {
+    font-size: 11.5rem;
+  }
+  p.enter {
+    font-size: 4.5em;
+  }
+  .enter-arrow {
+    height: 2.5em;
+    width: 2.5em;
+  }
+  .enter-container {
+    padding-top: 5em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .wordAnimation {
+    margin-top: 15em;
+  }
+  .shante {
+    font-size: 3.5rem;
+  }
+  .port,
+  .folio {
+    font-size: 7rem;
+  }
+  .click-container {
+    flex-direction: column;
+  }
+  .click-me {
+    font-size: 1rem;
+  }
+  p.enter {
+    font-size: 4em;
+  }
+  .enter-container {
+    align-self: flex-end;
+  }
+  .enter-arrow {
+    height: 2em;
+    width: 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wordAnimation {
+    margin: 10em 2em;
+  }
+  .rotate {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    width: 100vw;
+  }
+  .shante {
+    font-size: 3.5rem;
+  }
+  .port,
+  .folio {
+    font-size: 9rem;
+  }
+
+  .click-me p {
+    font-size: 1.5rem;
+    flex-direction: column;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@media screen and (max-width: 576px) {
+  .wordAnimation {
+    margin: 8em 2em;
+  }
+  .word span:nth-child(14) {
+    display: none;
+  }
+
+  .shante {
+    font-size: 2.5rem;
+  }
+  .port {
+    font-size: 12rem;
+  }
+  .folio {
+    font-size: 5rem;
+  }
+  .br {
+    display: block;
+  }
+  .enter-container {
+    padding-top: 0em;
+  }
+  p.enter {
+    font-size: 3.5em;
+  }
+  .enter-container {
+    align-self: center;
+  }
+  .enter-arrow {
+    height: 1.5em;
+    width: 1.5em;
+  }
 }
 </style>
