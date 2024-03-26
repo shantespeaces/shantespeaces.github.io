@@ -91,6 +91,7 @@ a.navbar-brand {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 2rem;
   letter-spacing: 4px;
   font-weight: bold;
@@ -152,6 +153,7 @@ a.navbar-brand {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 2em;
   letter-spacing: 4px;
   font-weight: bold;
@@ -164,6 +166,7 @@ a.navbar-brand {
   font-size: 2rem;
   background-image: var(--goldToRightDark);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   font-family: "Poiret One", sans-serif;
 }
@@ -232,6 +235,7 @@ a.navbar-brand {
     font-size: 3rem;
     background-image: var(--goldToRightYellow);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
   }
 }
