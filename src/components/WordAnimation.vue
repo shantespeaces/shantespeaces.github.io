@@ -180,7 +180,6 @@ p.enter {
   cursor: pointer;
   display: inline-block;
   letter-spacing: 1.5rem;
-
   user-select: none;
   line-height: 1.1;
   font-family: "Parklane";
@@ -245,8 +244,8 @@ p.enter {
 .word span:nth-child(6),
 .word span:nth-child(8),
 .word span:nth-child(11),
-.word span:nth-child(16),
-.word span:nth-child(19) {
+.word span:nth-child(17),
+.word span:nth-child(20) {
   color: (236, 205, 193, 0.667);
   animation: colorPulse 5s linear infinite, flicker 3s infinite alternate;
 }
@@ -496,24 +495,28 @@ p.enter {
   }
 }
 @media screen and (max-width: 1200px) {
-  .word span:nth-child(14) {
-    display: inline-block;
+  .word span:nth-child(16) {
+    margin-left: 1.5em;
   }
-  .port,
+  .port {
+    font-size: 17rem;
+  }
   .folio {
-    font-size: 14rem;
+    font-size: 9rem;
   }
   .wordAnimation {
     margin-top: 9em;
   }
   .enter-container {
-    padding-top: 0em;
+    padding-top: 5em;
   }
 }
 @media screen and (max-width: 1100px) {
-  .port,
+  .port {
+    font-size: 14rem;
+  }
   .folio {
-    font-size: 11.5rem;
+    font-size: 7.5rem;
   }
   p.enter {
     font-size: 4.5em;
@@ -523,40 +526,12 @@ p.enter {
     width: 2.5em;
   }
   .enter-container {
-    padding-top: 5em;
+    padding-top: 10em;
   }
 }
 @media screen and (max-width: 992px) {
   .wordAnimation {
-    margin-top: 15em;
-  }
-  .shante {
-    font-size: 3.5rem;
-  }
-  .port,
-  .folio {
-    font-size: 7rem;
-  }
-  .click-container {
-    flex-direction: column;
-  }
-  .click-me {
-    font-size: 1rem;
-  }
-  p.enter {
-    font-size: 4em;
-  }
-  .enter-container {
-    align-self: flex-end;
-  }
-  .enter-arrow {
-    height: 2em;
-    width: 2em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .wordAnimation {
-    margin: 10em 2em;
+    margin: 10em 3em;
   }
   .rotate {
     -ms-transform: rotate(0deg);
@@ -567,9 +542,47 @@ p.enter {
   .shante {
     font-size: 3.5rem;
   }
-  .port,
+  .port {
+    font-size: 16rem;
+  }
   .folio {
-    font-size: 9rem;
+    font-size: 7rem;
+  }
+  .word span:nth-child(16) {
+    margin-left: 2.5em;
+  }
+  .click-container {
+    flex-direction: column;
+  }
+  .click-me {
+    font-size: 1rem;
+  }
+  .click-me p {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  p.enter {
+    font-size: 5em;
+  }
+  .enter-container {
+    align-self: flex-end;
+    padding-top: 5em;
+  }
+  .enter-arrow {
+    height: 2em;
+    width: 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .port {
+    font-size: 12rem;
+  }
+  .folio {
+    font-size: 5.5rem;
+  }
+  .word span:nth-child(16) {
+    margin-left: 1.5em;
   }
 
   .click-me p {
@@ -582,26 +595,23 @@ p.enter {
 }
 @media screen and (max-width: 576px) {
   .wordAnimation {
-    margin: 8em 2em;
-  }
-  .word span:nth-child(14) {
-    display: none;
+    margin: 10em 2em;
   }
 
   .shante {
     font-size: 2.5rem;
   }
   .port {
-    font-size: 12rem;
+    font-size: 8rem;
   }
   .folio {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .br {
     display: block;
   }
   .enter-container {
-    padding-top: 0em;
+    padding-top: 10em;
   }
   p.enter {
     font-size: 3.5em;
@@ -612,6 +622,36 @@ p.enter {
   .enter-arrow {
     height: 1.5em;
     width: 1.5em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wordAnimation {
+    margin: 6em 2.5em;
+  }
+  .shante {
+    font-size: 3rem;
+  }
+  .port {
+    font-size: 15rem;
+  }
+  .folio {
+    font-size: 5rem;
+  }
+  .word span:nth-child(16) {
+    margin-left: 0.3em;
+  }
+  .click-me {
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+  .enter-container {
+    padding-top: 0em;
+  }
+  p.enter {
+    margin-bottom: 0;
+  }
+  .warning {
+    font-size: 1rem;
   }
 }
 </style>
