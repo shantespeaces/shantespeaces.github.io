@@ -137,7 +137,7 @@ a.navbar-brand {
   justify-content: center;
   background-size: 55em;
   background-position: right;
-  background-image: url("/images/feather.png");
+  background-image: url("/images/artDeco/feather4.png");
   flex-direction: column;
   position: fixed;
   top: 5em;
