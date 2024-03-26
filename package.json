@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "run deploy": "npm run deploy",
-    "deploy": "gh-pages -d dist/portfolio"
+    "deploy": "main -d dist"
 
   
   },
