@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-  // base: "/portfolio",
+   base: "/",
   plugins: [
     vue(),
   ],
@@ -14,7 +14,7 @@ export default defineConfig({
   },
   build: {
     assetsInclude: '**/*.vue',
-    outDir: 'dist/portfolio'
+    
   },
 
 });
