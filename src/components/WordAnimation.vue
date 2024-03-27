@@ -533,20 +533,22 @@ p.enter {
   .wordAnimation {
     margin: 10em 3em;
   }
+  /* .word {
+    margin-left: 3.5em;
+  } */
   .rotate {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    width: 100vw;
   }
   .shante {
     font-size: 3.5rem;
   }
   .port {
-    font-size: 16rem;
+    font-size: 15rem;
   }
   .folio {
-    font-size: 7rem;
+    font-size: 6rem;
   }
   .word span:nth-child(16) {
     margin-left: 2.5em;
@@ -574,9 +576,9 @@ p.enter {
     width: 2em;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 798px) {
   .port {
-    font-size: 12rem;
+    font-size: 10rem;
   }
   .folio {
     font-size: 5.5rem;
@@ -593,16 +595,18 @@ p.enter {
     transform: rotate(0deg);
   }
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .wordAnimation {
     margin: 10em 2em;
   }
-
+  .word {
+    margin-left: 3.5em;
+  }
   .shante {
     font-size: 2.5rem;
   }
   .port {
-    font-size: 8rem;
+    font-size: 7rem;
   }
   .folio {
     font-size: 4rem;
@@ -624,34 +628,57 @@ p.enter {
     width: 1.5em;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 505px) {
   .wordAnimation {
-    margin: 6em 2.5em;
+    margin: 6em 0em;
+  }
+  .word {
+    margin-left: 3.5em;
   }
   .shante {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .port {
-    font-size: 15rem;
+    font-size: 13rem;
   }
   .folio {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .word span:nth-child(16) {
     margin-left: 0.3em;
   }
   .click-me {
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 5em;
+    margin-right: 5em;
   }
   .enter-container {
-    padding-top: 0em;
+    padding-top: 5em;
   }
-  p.enter {
-    margin-bottom: 0;
-  }
+
   .warning {
     font-size: 1rem;
+    margin: 1em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .wordAnimation {
+    margin: 6em 0em;
+  }
+  .word {
+    margin-left: 2em;
+  }
+  .shante {
+    font-size: 1.5rem;
+  }
+  .port {
+    font-size: 11rem;
+  }
+  .folio {
+    font-size: 3.5rem;
+  }
+  .click-me {
+    margin-left: 3em;
+    margin-right: 3em;
   }
 }
 </style>
