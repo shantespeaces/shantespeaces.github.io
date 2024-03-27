@@ -1,13 +1,13 @@
 <template>
   <!-- <WordAnimation v-if="isLoading" />
   <Home v-if="!isLoading" /> -->
-  <WordAnimation />
+  <!-- <WordAnimation /> -->
   <Home />
 </template>
 
 <script setup>
 import Home from "@/components/Home.vue";
-import WordAnimation from "../components/WordAnimation.vue";
+// import WordAnimation from "../components/WordAnimation.vue";
 import { ref } from "vue";
 const isLoading = ref(true);
 

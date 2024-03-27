@@ -1,7 +1,7 @@
 <template>
   <section id="sticky-about">
     <section class="about">
-      <div class="heading-container">
+      <div class="heading-container" id="about">
         <h2 class="heading">About</h2>
       </div>
       <div class="text-container">

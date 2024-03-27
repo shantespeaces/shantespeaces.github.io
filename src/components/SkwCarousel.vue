@@ -1,5 +1,8 @@
 <template>
-  <section class="skwd-projects" id="sticky-heading">
+  <section
+    class="skwd-projects animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
+    id="sticky-heading"
+  >
     <h4 class="more-projects">Showcase</h4>
     <div
       class="skw-pages"
@@ -327,6 +330,7 @@ button.shuffle p {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
 }

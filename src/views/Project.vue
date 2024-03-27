@@ -238,6 +238,7 @@ const viewPrevProject = async () => {
   background-image: var(--goldToRight);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   text-transform: uppercase;
   margin-left: 4em;
 }
@@ -290,6 +291,7 @@ const viewPrevProject = async () => {
   background-image: var(--goldToBottomDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 #heading4 {
   padding-bottom: 1.5em;
@@ -368,11 +370,13 @@ button.pdf {
   background-image: var(--goldToBottom);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 .more button p {
   background-image: var(--goldToRightYellow);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   /* padding-top: 3.3rem; */
   font-size: 2em;
   text-transform: uppercase;

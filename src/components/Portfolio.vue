@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio" ref="portfolioRef">
+  <section class="portfolio" ref="portfolioRef" Id="portfolio">
     <div Id="sticky-header">
       <div class="heading-container">
         <h2 class="heading">You might also like</h2>
@@ -97,8 +97,9 @@ section.portfolio {
   margin-bottom: 0;
 }
 .portfolio-filter {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  height: 35em;
+  /* padding-top: 5em;
+  padding-bottom: 5em; */
   position: relative;
   background-color: #fffdf6;
 }

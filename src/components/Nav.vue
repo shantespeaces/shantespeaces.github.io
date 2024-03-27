@@ -27,7 +27,10 @@
     <transition name="slide">
       <ul v-if="isOpen" class="menu">
         <li class="menu-item">
-          <router-link data-name="home" :to="{ name: 'home' }"
+          <router-link
+            data-name="home"
+            :to="{ name: 'home' }"
+            @click="toggleMenu"
             >Home</router-link
           >
         </li>
@@ -37,7 +40,11 @@
           >
         </li> -->
         <li class="menu-item">
-          <router-link data-name="projects" :to="{ name: 'projects' }">
+          <router-link
+            data-name="projects"
+            :to="{ name: 'projects' }"
+            @click="toggleMenu"
+          >
             Projects</router-link
           >
         </li>
@@ -47,6 +54,19 @@
           >Contact</router-link
         > -->
         </li>
+        <router-link :to="{ name: 'home', hash: '#about' }" @click="toggleMenu"
+          >about</router-link
+        >
+        <router-link
+          :to="{ name: 'home', hash: '#experience' }"
+          @click="toggleMenu"
+          >Experience</router-link
+        >
+        <router-link
+          :to="{ name: 'home', hash: '#portfolio' }"
+          @click="toggleMenu"
+          >portfolio</router-link
+        >
       </ul>
     </transition>
   </nav>
@@ -55,7 +75,8 @@
 <script setup>
 import { ref } from "vue";
 import ScrollingAnimation from "../components/ScrollingAnimation.vue";
-
+import { defineProps } from "vue";
+const props = defineProps({});
 const isOpen = ref(false);
 
 const toggleMenu = () => {
@@ -225,7 +246,7 @@ a.navbar-brand {
     justify-content: center;
     background-size: 55em;
     background-position: right;
-    background-image: url("/images/feather.png");
+    background-image: url("/images/artDeco/feather4.png");
   }
   .menu li {
     padding-bottom: 2em;

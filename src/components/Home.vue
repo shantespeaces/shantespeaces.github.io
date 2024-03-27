@@ -43,6 +43,28 @@ import Experience from "../components/Experience.vue";
 import References from "../components/References.vue";
 import Portfolio from "../components/Portfolio.vue";
 // import Card1Vue from "../components/Card1.vue";
+// import { onMounted, onBeforeUnmount } from "vue";
+
+// onMounted(() => {
+//   if ($route.name === "home") {
+//     window.addEventListener("hashchange", scrollToSection);
+//     scrollToSection();
+//   }
+// });
+
+// onBeforeUnmount(() => {
+//   window.removeEventListener("hashchange", scrollToSection);
+// });
+
+// const scrollToSection = () => {
+//   const hash = window.location.hash;
+//   if (hash) {
+//     const element = document.querySelector(hash);
+//     if (element) {
+//       element.scrollIntoView({ behavior: "smooth" });
+//     }
+//   }
+// };
 </script>
 <style>
 body {

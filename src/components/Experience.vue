@@ -1,5 +1,5 @@
 <template>
-  <section class="experience" id="sticky-header">
+  <section class="experience" id="experience">
     <div class="heading-container">
       <h2 class="heading">Experience</h2>
     </div>
@@ -178,7 +178,7 @@ onMounted(async () => {
 <style>
 /*EXPERIENCE*/
 
-#sticky-header {
+#experience {
   position: sticky;
   position: -webkit-sticky;
   top: 0px;

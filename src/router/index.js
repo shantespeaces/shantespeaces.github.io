@@ -6,7 +6,9 @@ import IndexView from "../views/Index.vue"
 import ProjectVue from '../views/Project.vue'
 import Projects from '@/views/Projects.vue'
 
-// import Experience from '@/components/Experience.vue'
+import About from '@/components/About.vue'
+import Experience from '@/components/Experience.vue'
+import Portfolio from '@/components/Portfolio.vue'
 // import SkwCarousel from '@/components/SkwCarousel.vue'
 
 // Route
@@ -31,18 +33,46 @@ const router = createRouter({
             props: true,
         },
         {
-            path: "/projects/",
+            path: "/projects",
             name: "projects",
             component: Projects
         },
-        // {
-        //     path: "/experience/",
-        //     name: "experience",
-        //     component:  Experience,
-        // },
+        {
+            path: "/about",
+            name: "about",
+            component: About,
+        },
+        {
+            path: "/experience",
+            name: "experience",
+            component: Experience,
+        },
+        {
+            path: "/portfolio",
+            name: "portfolio",
+            component: Portfolio,
+        },
        
      
-    ]
+    ],
+    scrollBehavior(to, _from, savedPosition) {
+        console.log("Destination route:", to.name);
+        if (to.hash) {
+            // Return a selector to scroll to the element with the corresponding ID
+            return { el: to.hash };
+        } else if (to.name === 'experience' || to.name === 'about') {
+            console.log("Scrolling to the top of the page...");
+            // If navigating to "Experience" or "About", scroll to the top of the page
+            return { el: to.hash};
+        } else if (savedPosition) {
+            // If a savedPosition is available, return it to scroll to the saved position
+            return savedPosition;
+        } else {
+            // If no hash or saved position is available, scroll to the top of the page
+            return { top: 0 };
+        }
+    }
+    
 })
 
 export default router
