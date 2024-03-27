@@ -533,9 +533,6 @@ p.enter {
   .wordAnimation {
     margin: 10em 3em;
   }
-  /* .word {
-    margin-left: 3.5em;
-  } */
   .rotate {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
