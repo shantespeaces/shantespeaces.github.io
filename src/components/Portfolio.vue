@@ -75,11 +75,10 @@ const filterByType = (type) => {
   position: -webkit-sticky;
   top: 0px;
 }
-/* #sticky-cards {
+#sticky-cards {
   position: sticky;
   position: -webkit-sticky;
-  top: -2800px;
-} */
+}
 section.portfolio {
   position: relative;
   border-top: solid 3px;

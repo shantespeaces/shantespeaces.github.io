@@ -14,7 +14,8 @@
               truly set her apart.</q
             >
 
-            <p>- Marie Bertrand - Internship Suppervisor</p>
+            <p>- Marie Bertrand</p>
+            <p>Internship Suppervisor</p>
           </div>
         </div>
         <div class="image-container right">
@@ -27,7 +28,8 @@
               excel in the field of web development.
             </q>
 
-            <p>- Éric Gagné - Professor at Cégep de Saint-Jérôme</p>
+            <p>- Éric Gagné</p>
+            <p>Professor at Cégep de Saint-Jérôme</p>
           </div>
         </div>
       </div>
@@ -92,84 +94,69 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 .image-container.left .quote-container {
   transform: rotate(-25deg);
 }
-.quote-container q,
-.quote-container p {
-  padding: 1em;
+.image-container .quote-container q {
+  width: 25em;
+  margin-left: 1.5em;
+  margin-top: 5em;
+  padding-bottom: 2em;
 }
+
 @media screen and (max-width: 1600px) {
-  .image-wrapper {
-    padding-bottom: 25em;
-  }
-  .image-container.left,
-  .image-container.right {
-    height: 53em;
-    width: 38em;
-  }
+  .image-container.right,
   .image-container.left {
-    margin: auto;
+    height: 60em;
+    width: 40em;
   }
-  .image-container.right {
-    margin: auto;
-    top: 20em;
-  }
+
   .image-container .quote-container {
-    top: 17.4em;
-    left: 4.4em;
-    height: 29.2em;
-    width: 29.2em;
+    top: 18.7em;
+    left: 4.5em;
+    height: 31em;
+    width: 31em;
+  }
+  .image-container .quote-container q {
+    width: 19em;
+    padding-bottom: 1em;
+    margin-top: 3.5em;
+  }
+  .image-container .quote-container p {
+    width: 10em;
+    margin-left: 5.5em;
+    margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .image-container.left,
+  .image-wrapper {
+    flex-direction: column;
+  }
   .image-container.right {
-    height: 43em;
-    width: 30em;
+    margin-top: 0;
+    left: 20em;
   }
   .image-container.left {
-    margin: auto;
-  }
-  .image-container.right {
-    margin: auto;
-  }
-  .image-container .quote-container {
-    top: 12.5em;
-    left: 3.3em;
-    height: 23.1em;
-    width: 23.1em;
+    left: 10em;
   }
 }
 @media screen and (max-width: 992px) {
   .image-wrapper {
-    flex-direction: column;
-    padding-bottom: 10em;
-  }
-  .image-container.left {
-    left: -5em;
+    margin-bottom: 10em;
   }
   .image-container.right {
-    margin: auto;
-    top: 0em;
-    right: -7em;
+    left: 5em;
   }
 }
 @media screen and (max-width: 768px) {
-  .image-wrapper {
-    margin: 5em 0em;
-    padding-bottom: 5em;
-  }
   .image-container.left,
   .image-container.right {
     height: 50em;
     width: 35em;
   }
   .image-container.left {
-    margin: auto;
-    left: 6em;
+    left: 8.5em;
   }
   .image-container.right {
-    right: 5em;
-    margin: auto;
+    right: 0em;
   }
   .image-container .quote-container {
     top: 15.5em;
@@ -177,8 +164,18 @@ import Neumorphisme from "../components/Neumorphisme.vue";
     height: 27em;
     width: 27em;
   }
-  q.reference {
-    font-size: 1.6rem;
+
+  .image-container .quote-container q {
+    padding-top: 0em;
+    width: 17em;
+    margin-left: 2em;
+    margin-top: 2.5em;
+    font-size: 1.3rem;
+  }
+  .image-container .quote-container p {
+    width: 9em;
+    margin-left: 5em;
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 576px) {
@@ -192,50 +189,60 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   }
   .image-container.left {
     margin: auto;
-    left: 2em;
+    left: 3em;
   }
   .image-container.right {
     right: 0;
     top: 3em;
-    margin: auto;
+    margin-left: -4em;
   }
   .image-container .quote-container {
-    top: 11em;
-    left: 3.1em;
+    top: 10.9em;
+    left: 3em;
     height: 20.7em;
     width: 20.7em;
   }
-  q.reference {
+
+  .image-container .quote-container q {
     font-size: 1rem;
   }
-  .quote-container p {
+  .image-container .quote-container p {
     font-size: 1rem;
+    margin-left: 5.5em;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .image-container.left,
   .image-container.right {
-    height: 30em;
-    width: 20em;
+    height: 35em;
+    width: 25em;
   }
   .image-container.left {
-    margin: auto;
-    left: 0;
+    left: 0em;
+    transform: rotate(10deg);
   }
+
   .image-container.right {
-    right: 0;
-    margin: auto;
+    left: 2em;
   }
   .image-container .quote-container {
-    top: 7em;
-    left: 2.3em;
-    height: 15.5em;
+    height: 19.3em;
+    width: 19.3em;
+    top: 9.6em;
+    left: 2.7em;
+  }
+  .image-container.left .quote-container {
+    transform: rotate(-10deg);
+  }
+  .image-container .quote-container q {
+    padding-top: 0em;
     width: 15.5em;
+    margin-left: 2.7em;
+    font-size: 0.9rem;
   }
-  q.reference {
-    font-size: 1rem;
-  }
-  #sticky-references {
+  .image-container .quote-container p {
+    font-size: 0.9rem;
+    margin-left: 5.8em;
   }
 }
 </style>
