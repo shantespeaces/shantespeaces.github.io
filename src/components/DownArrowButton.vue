@@ -16,6 +16,10 @@ const scrollToNextViewport = () => {
 };
 </script>
 <style>
+.down-arrow-button-container {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
 .triangle {
   margin-top: 2em;
   position: relative;

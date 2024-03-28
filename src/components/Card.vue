@@ -1,6 +1,6 @@
 <template>
   <div class="card-wrapper">
-    <div class="card">
+    <div class="card mb-4">
       <div
         class="card__side card__side--front"
         :style="{ backgroundImage: `url(${project.backgroundImage})` }"
@@ -164,5 +164,20 @@ const props = defineProps({
 .card__side video.background-video {
   margin-top: 0;
   height: 400px;
+}
+@media screen and (max-width: 360px) {
+  .card,
+  .card__side {
+    width: 20rem;
+    height: 50rem;
+  }
+  .circle {
+    height: 18em;
+    width: 18em;
+    bottom: -15em;
+  }
+  /* .card__side {
+    height: fit-content;
+  } */
 }
 </style>

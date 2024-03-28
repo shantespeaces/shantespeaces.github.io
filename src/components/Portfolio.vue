@@ -75,11 +75,11 @@ const filterByType = (type) => {
   position: -webkit-sticky;
   top: 0px;
 }
-#sticky-cards {
+/* #sticky-cards {
   position: sticky;
   position: -webkit-sticky;
   top: -2800px;
-}
+} */
 section.portfolio {
   position: relative;
   border-top: solid 3px;
@@ -97,9 +97,7 @@ section.portfolio {
   margin-bottom: 0;
 }
 .portfolio-filter {
-  height: 35em;
-  /* padding-top: 5em;
-  padding-bottom: 5em; */
+  height: 40em;
   position: relative;
   background-color: #fffdf6;
 }
@@ -127,6 +125,49 @@ section.portfolio {
   }
   100% {
     transform: scale(1);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .card-container-wrapper {
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .portfolio h2.heading {
+    margin-left: 3.5em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .card-container-wrapper {
+    padding: 0;
+  }
+  .portfolio h2.heading {
+    margin-left: 2.5em;
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-container-wrapper {
+    padding: 0;
+  }
+  .portfolio h2.heading {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .card-container-wrapper {
+    padding: 0;
+  }
+  .portfolio h2.heading {
+    margin-left: 1em;
+    padding-top: 3em;
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .portfolio-filter {
+    height: 43em;
   }
 }
 </style>
