@@ -53,6 +53,7 @@
               <p class="content">{{ item }}</p>
             </li>
           </ul>
+          <p class="see-project">See project</p>
         </div>
       </router-link>
     </div>
@@ -148,6 +149,7 @@ const props = defineProps({
 .card__side--back .highlights {
   padding-left: 1em;
   padding-top: 1em;
+  letter-spacing: 2px;
 }
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
@@ -165,19 +167,35 @@ const props = defineProps({
   margin-top: 0;
   height: 400px;
 }
+.see-project {
+  display: none;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 1.6rem;
+}
 @media screen and (max-width: 360px) {
+  /* .card-wrapper, */
   .card,
   .card__side {
-    width: 20rem;
-    height: 50rem;
+    width: 19rem;
+    height: 30em;
+  }
+  .card__side--back {
+    height: 50em;
   }
   .circle {
     height: 18em;
     width: 18em;
-    bottom: -15em;
+    bottom: -7em;
+    left: 0.5em;
   }
-  /* .card__side {
-    height: fit-content;
-  } */
+  .see-project {
+    display: block;
+  }
 }
 </style>

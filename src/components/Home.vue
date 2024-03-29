@@ -6,17 +6,17 @@
 
     <Experience />
 
-    <section id="sticky-scrolling-text">
+    <!-- <section id="sticky-scrolling-text">
       <ScrollingText />
-    </section>
-    <div class="horizontal-scroll">
+    </section> -->
+    <!-- <div class="horizontal-scroll">
       <section>
         <HorizontalScroll />
       </section>
-    </div>
-    <section id="sticky-scrolling-text">
+    </div> -->
+    <!-- <section id="sticky-scrolling-text">
       <ScrollingText />
-    </section>
+    </section> -->
     <section>
       <!-- <Portfolio /> -->
       <!-- <Card1Vue /> -->
@@ -34,7 +34,7 @@
 
 <script setup>
 // import NavAnimated from "./NavAnimated.vue";
-import HorizontalScroll from "../components/HorizontalScroll.vue";
+// import HorizontalScroll from "../components/HorizontalScroll.vue";
 import ScrollingText from "../components/ScrollingText.vue";
 import FooterComponent from "../components/FooterComponent.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";

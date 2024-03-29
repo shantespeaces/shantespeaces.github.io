@@ -188,9 +188,8 @@ const viewPrevProject = async () => {
   background-color: #fffdf6;
 }
 .show-container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
+  margin-left: 15em;
+  margin-right: 15em;
   font-size: 14px;
   font-family: "Montserrat", sans;
   justify-content: center;
@@ -210,9 +209,9 @@ const viewPrevProject = async () => {
 
 .main-content {
   position: fixed;
+  width: 50%;
 }
 .main-headings {
-  width: 50%;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -221,7 +220,7 @@ const viewPrevProject = async () => {
 }
 
 .main-headings #quote {
-  width: 60%;
+  width: 65%;
   padding-bottom: 1px;
   padding-left: 3px;
   margin-left: 15px;
@@ -245,7 +244,6 @@ const viewPrevProject = async () => {
 .show-highlights {
   display: none;
   padding: 2em;
-
   background-color: #fffdf6;
   border: solid 2px;
   border-image: var(--goldToBottomYellow) 1;
@@ -253,14 +251,10 @@ const viewPrevProject = async () => {
   position: relative;
   left: 20em;
   top: -25em;
-  /* flex-wrap: wrap; */
 }
 .show-highlights h5 {
   margin-left: 0;
 }
-/* .show-highlights li {
-  padding: 1em;
-} */
 .highlights-title:hover + .show-highlights {
   display: block;
 }
@@ -303,7 +297,6 @@ const viewPrevProject = async () => {
 }
 .show-project-description p {
   font-size: 1.3rem;
-  /* font-style: italic; */
 }
 .github a {
   margin-left: 92px;
@@ -452,204 +445,47 @@ button.pdf {
     transform: scale(1);
   }
 }
-@media (min-width: 350px) and (max-width: 529px) {
-  * {
-    animation-name: none;
-  }
-
+@media (max-width: 1600px) {
   .show-container {
-    width: 90%;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 5px;
-    margin-bottom: 20px;
+    font-size: 11.5px;
+    margin-left: 15em;
+    margin-right: 15em;
   }
-
-  .show-container-left {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .main-content,
-  .image-show-wrapper {
-    flex-basis: 100%;
-  }
-
   .main-content {
-    order: 2;
-    outline: 1px solid red;
-    margin: 0 50px;
+    width: 40%;
   }
-
-  .image-show-wrapper {
-    order: 1;
+  .image-show-container {
+    width: 100%;
   }
-
-  .heading {
-    margin-left: 55px;
-  }
-
-  #heading1,
-  #heading2 {
-    margin: 0;
-    margin-top: -5px;
-  }
-
-  #heading2 {
-    margin-left: 100px;
-  }
-
-  #heading3 {
-    margin-top: -20px;
-  }
-
   .show-project-description {
-    margin-top: -10px;
-    margin-left: 60px;
-  }
-
-  .more-info {
-    height: 150px;
-    width: 60%;
-    margin: 0;
-    align-self: flex-start;
-    margin-top: 0px;
-    margin-left: 60px;
-    font-size: 8px;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .image-show-wrapper {
-    order: 1;
-    width: 100%;
-    height: 100px;
-    justify-content: center;
-  }
-
-  .logo-show-container {
-    width: 100%;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  img .image-show {
     width: 80%;
-    height: auto;
-    top: -20px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-right: 5em;
+  }
+  .main-headings #quote {
+    width: 85%;
   }
 }
-.image-show {
-  padding-bottom: 5em;
-}
-@media (min-width: 530px) and (max-width: 699px) {
-  * {
-    animation-name: none;
-  }
-
+@media (max-width: 1200px) {
   .show-container {
-    width: 90%;
-    height: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 8px;
-  }
-
-  .show-container-left {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .main-content,
-  .image-show-wrapper {
-    flex-basis: 100%;
-  }
-
-  .main-content {
-    width: 80%;
-    order: 2;
-    align-self: center;
-  }
-
-  .main-headings {
-    width: 100%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .heading {
-    margin-left: 55px;
-  }
-
-  #heading1,
-  #heading2 {
-    margin: 0;
-    margin-top: -15px;
-  }
-
-  #heading3 {
-    margin-top: -30px;
-  }
-
-  .show-project-description {
-    margin-top: -20px;
-    margin-left: 60px;
-  }
-
-  .link {
-    display: none;
-  }
-
-  .more-info {
-    height: 150px;
-    width: 60%;
-    margin: 0;
-    align-self: flex-start;
-    margin-top: 0px;
-    margin-left: 60px;
-    text-align: justify;
-  }
-
-  .image-show-wrapper {
-    order: 1;
-    width: 100%;
-    height: 400px;
-    justify-content: center;
-  }
-
-  .logo-show-container {
-    width: 100%;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  img .image-show {
-    width: 80%;
-    height: auto;
-    top: -20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 1200px) {
-  .show-container {
-    width: 100%;
-    height: auto;
     font-size: 9px;
+    margin-left: 10em;
+    margin-right: 10em;
   }
-
+  .main-content {
+    width: 40%;
+  }
+  .show-container-left {
+    width: 40%;
+  }
+  .show-container-right {
+    width: 60%;
+  }
+  .image-show-container {
+    width: 75%;
+  }
+  #heading1 {
+    margin-bottom: 10px;
+  }
   #heading3 {
     margin-top: -35px;
   }
@@ -661,5 +497,39 @@ button.pdf {
   .more-info {
     margin-top: -40px;
   }
+}
+@media (max-width: 992px) {
+  .show-container {
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+  .main-content,
+  .main-headings {
+    width: 100%;
+  }
+  .show-project-description {
+    width: 75%;
+  }
+  .show-container-left {
+    width: 100%;
+    padding-left: 20em;
+    padding-right: 20em;
+  }
+  .show-container-right {
+    width: 100%;
+    padding-left: 20em;
+    padding-right: 20em;
+  }
+  .image-show-container {
+    margin: 0;
+    width: 100%;
+  }
+  .main-content {
+    position: relative;
+  }
+  /* .more {
+    position: relative;
+  } */
 }
 </style>
