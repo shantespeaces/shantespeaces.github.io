@@ -89,18 +89,34 @@
     </div>
   </section>
   <section class="more">
-    <div class="d-flex justify-content-between align-items-center">
-      <button>
+    <div
+      class="more-container d-flex justify-content-around align-items-center"
+    >
+      <!-- <button>
         <router-link data-name="home" :to="{ name: 'home' }"
-          ><p>Return to Home Page</p></router-link
+          ><p>Home</p></router-link
         >
-      </button>
+      </button> -->
 
-      <button @click="viewPrevProject" class="d-flex">
-        <p>View Previous Project</p>
+      <button
+        @click="viewPrevProject"
+        class="btn d-flex justify-content-around align-items-center"
+      >
+        <span class="before material-symbols-outlined mt-1"
+          >navigate_before</span
+        >
+        <span class="before material-symbols-outlined mt-1"
+          >navigate_before</span
+        >
+        <p class="mt-1 pt-1">Previous</p>
       </button>
-      <button @click="viewNextProject" class="d-flex">
-        <p>View Next Project</p>
+      <button
+        @click="viewNextProject"
+        class="btn d-flex justify-content-around align-items-center"
+      >
+        <p class="mt-1 pt-1">Next</p>
+        <span class="next material-symbols-outlined mt-1">navigate_next</span>
+        <span class="next material-symbols-outlined mt-1">navigate_next</span>
       </button>
     </div>
   </section>
@@ -258,6 +274,11 @@ const viewPrevProject = async () => {
 .highlights-title:hover + .show-highlights {
   display: block;
 }
+h5.highlights-title,
+.github a {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 #heading1,
 #heading2,
 #heading3 {
@@ -320,6 +341,10 @@ const viewPrevProject = async () => {
 .logo-show-container {
   max-width: 100%;
   padding-bottom: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-show-container img {
@@ -330,6 +355,9 @@ const viewPrevProject = async () => {
 }
 .image-show-container {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .image-show {
@@ -347,7 +375,7 @@ const viewPrevProject = async () => {
 button.pdf {
   margin-bottom: 10em;
 }
-.more {
+section.more {
   height: 8em;
   background-color: white;
   z-index: 100;
@@ -357,6 +385,9 @@ button.pdf {
   width: 100%;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
+}
+.more-container {
+  margin-top: 2em;
 }
 .more button {
   border: none;
@@ -370,15 +401,24 @@ button.pdf {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  /* padding-top: 3.3rem; */
   font-size: 2em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 0;
+}
+.more span {
+  font-size: 2.6rem;
 }
 .more button p:hover {
   transition: font-size 0.5s;
-  font-size: 3em;
+  font-size: 2.5em;
 }
+/* .more p:hover.material-symbols-outlined {
+  background-image: var(--goldToRightYellow);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+} */
 .image-pdf {
   height: 20em;
   width: 14em;
@@ -528,8 +568,63 @@ button.pdf {
   .main-content {
     position: relative;
   }
-  /* .more {
-    position: relative;
-  } */
+}
+@media (max-width: 768px) {
+  .show-container-right,
+  .show-container-left {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
+@media (max-width: 576px) {
+  .show-container-right,
+  .show-container-left {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+  .main-headings .heading,
+  .show-project-description {
+    margin-left: 0;
+  }
+  .show-project-description {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+@media (max-width: 360px) {
+  .show-container-left {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  #heading1 {
+    margin-left: 30px;
+  }
+  #heading2 {
+    margin-left: 90px;
+  }
+  h5.highlights-title {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.6rem;
+  }
+
+  .github a {
+    font-size: 200%;
+  }
+  h5.highlights-title,
+  .github a {
+    margin-left: 2em;
+  }
+  .show-highlights {
+    display: block;
+    left: 0;
+    top: 0em;
+  }
+  .show-highlights ul {
+    padding: 0;
+  }
+  .show-highlights h5 {
+    display: none;
+  }
 }
 </style>
