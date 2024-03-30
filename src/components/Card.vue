@@ -183,7 +183,7 @@ const props = defineProps({
   .card,
   .card__side {
     width: 19rem;
-    height: 30em;
+    height: 40em;
   }
   .card__side--back {
     height: 50em;
@@ -191,7 +191,7 @@ const props = defineProps({
   .circle {
     height: 18em;
     width: 18em;
-    bottom: -7em;
+    bottom: -10em;
     left: 0.5em;
   }
   .see-project {

@@ -66,9 +66,9 @@
           </div>
           <template v-if="project.pdfImages"
             ><p>Guideline Document</p>
-            <div class="row">
+            <div class="row pdf-container">
               <div
-                class="col-4 mb-3"
+                class="col-6 mb-3"
                 v-for="(pdfImage, index) in project.pdfImages"
                 :key="index"
               >
@@ -361,7 +361,7 @@ h5.highlights-title,
   align-items: center;
 }
 .image-show {
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
   align-self: center;
 }
@@ -372,9 +372,7 @@ h5.highlights-title,
 .image-show-title {
   text-align: center;
 }
-button.pdf {
-  margin-bottom: 10em;
-}
+
 section.more {
   height: 8em;
   background-color: white;
@@ -420,8 +418,12 @@ section.more {
   background-clip: text;
 } */
 .image-pdf {
-  height: 20em;
-  width: 14em;
+  /* height: 20em; */
+  width: 100%;
+}
+.pdf-container {
+  margin-left: 3em;
+  margin-right: 3em;
 }
 .image-pdf:hover {
   transform: scale(1.2);
@@ -504,6 +506,10 @@ section.more {
   .main-headings #quote {
     width: 85%;
   }
+  .github a {
+    font-size: 150%;
+    margin-left: 4.5em;
+  }
 }
 @media (max-width: 1200px) {
   .show-container {
@@ -537,6 +543,10 @@ section.more {
   .more-info {
     margin-top: -40px;
   }
+  .github a {
+    font-size: 175%;
+    margin-left: 5em;
+  }
 }
 @media (max-width: 992px) {
   .show-container {
@@ -567,6 +577,27 @@ section.more {
   }
   .main-content {
     position: relative;
+  }
+  .show-highlights {
+    display: block;
+    left: 0;
+    top: 0em;
+  }
+
+  .show-highlights h5 {
+    display: none;
+  }
+  .github a {
+    font-size: 300%;
+    position: relative;
+    top: 2em;
+    margin-left: 0;
+    font-weight: 400;
+    /* letter-spacing: 2px;
+    background-image: var(--goldToRight);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; */
   }
 }
 @media (max-width: 768px) {
@@ -615,16 +646,9 @@ section.more {
   .github a {
     margin-left: 2em;
   }
-  .show-highlights {
-    display: block;
-    left: 0;
-    top: 0em;
-  }
+
   .show-highlights ul {
     padding: 0;
-  }
-  .show-highlights h5 {
-    display: none;
   }
 }
 </style>

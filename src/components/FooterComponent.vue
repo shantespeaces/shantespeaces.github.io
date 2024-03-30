@@ -104,6 +104,8 @@ footer h1.job-title {
 .copyright {
   background-color: #fffdf6;
   padding-top: 1rem;
+  z-index: 100;
+  position: relative;
 }
 .copyright p,
 .copyright a {
