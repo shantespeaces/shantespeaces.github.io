@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent />
-  <!-- <NavAnimated /> -->
+
   <main class="profile">
     <About />
 
@@ -17,10 +17,6 @@
     <!-- <section id="sticky-scrolling-text">
       <ScrollingText />
     </section> -->
-    <section>
-      <!-- <Portfolio /> -->
-      <!-- <Card1Vue /> -->
-    </section>
   </main>
   <References />
   <section id="sticky-scrolling-text">

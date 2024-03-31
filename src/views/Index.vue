@@ -1,19 +1,55 @@
 <template>
-  <!-- <WordAnimation v-if="isLoading" />
-  <Home v-if="!isLoading" /> -->
-  <!-- <WordAnimation /> -->
-  <Home />
+  <WordAnimation
+    v-if="isLoading && isFirstLoad"
+    :remainingSeconds="remainingSeconds"
+    @skipAnimation="handleEntry"
+  />
+  <Home v-else />
+  <!-- <WordAnimation />
+  <Home /> -->
 </template>
 
 <script setup>
 import Home from "@/components/Home.vue";
-// import WordAnimation from "../components/WordAnimation.vue";
-import { ref } from "vue";
+import WordAnimation from "../components/WordAnimation.vue";
+import { ref, onBeforeMount } from "vue";
 const isLoading = ref(true);
+const isFirstLoad = ref(false); // Initialize isFirstLoad as false
 
+// Retrieve isFirstLoad from session storage
+const storedIsFirstLoad = sessionStorage.getItem("isFirstLoad");
+if (storedIsFirstLoad === null) {
+  isFirstLoad.value = true; // Set isFirstLoad to true if it's the first time visiting the website
+}
+
+// Simulate loading delay
 setTimeout(() => {
   isLoading.value = false;
+  if (isFirstLoad.value) {
+    sessionStorage.setItem("isFirstLoad", "false"); // Store isFirstLoad in session storage after the first load
+  }
 }, 15000);
+
+const remainingSeconds = ref(15); // Initial value for countdown
+
+const handleEntry = () => {
+  isLoading.value = false;
+};
+
+const countdown = () => {
+  if (remainingSeconds.value > 0) {
+    remainingSeconds.value--;
+    setTimeout(countdown, 1000); // Call countdown again after 1 second
+  } else {
+    isLoading.value = false; // Transition to MainContent when countdown reaches 0
+  }
+};
+
+onBeforeMount(() => {
+  if (isFirstLoad.value) {
+    setTimeout(countdown, 1000); // Start the countdown timer when component is mounted
+  }
+});
 </script>
 
 <style>

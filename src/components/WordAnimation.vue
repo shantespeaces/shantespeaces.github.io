@@ -47,14 +47,23 @@
         >
           <p>click the letters!</p>
         </div>
-        <div
-          class="enter-container d-flex animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
-        >
-          <p class="enter">Come In!</p>
+        <div class="enter-wrapper d-flex">
+          <div
+            class="enter-container d-flex animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
+          >
+            <p class="enter">Come In!</p>
 
-          <div class="enter-arrow"></div>
+            <div class="enter-arrow" @click="skipAnimation"></div>
+          </div>
+          <div v-if="remainingSeconds > 0">
+            <p class="enter-now">
+              Play for <span class="seconds">{{ remainingSeconds }}</span> s OR
+              click to enter now!
+            </p>
+          </div>
         </div>
       </div>
+
       <p class="warning">
         Im under Construction, but come in and see where im at. I hope you
         enjoy!
@@ -63,14 +72,21 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
+<script setup props="props">
+import { ref, onMounted, defineProps } from "vue";
 import Neumorphisme from "../components/Neumorphisme.vue";
 
 const shante = ref(["S", "H", "A", "N", "T", "É", "'", "S"]);
 const port = ref(["P", "O", "R", "T", "-"]);
 const folio = ref(["F", "O", "L", "I", "O"]);
-// const wordRef = ref(null);
+const props = defineProps({
+  remainingSeconds: Number,
+});
+const emit = defineEmits(["skipAnimation"]);
+
+const skipAnimation = () => {
+  emit("skipAnimation");
+};
 
 onMounted(() => {
   const spans = document.querySelectorAll(".word span");
@@ -128,6 +144,9 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .enter-container {
   z-index: 1000;
 }
+.enter-wrapper {
+  flex-direction: column;
+}
 p.enter {
   font-family: "League Script";
   font-size: 7em;
@@ -138,8 +157,18 @@ p.enter {
   font-weight: bold;
   text-shadow: 0 0 20px #fff, 0 0 10px #f6e27a, 0 0 50px #cb9b51;
   z-index: 1000;
+  margin-bottom: 0;
 }
-
+p.enter-now {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 1.3em;
+  z-index: 1000;
+}
 .enter-arrow {
   height: 4em;
   width: 4em;
@@ -152,8 +181,11 @@ p.enter {
   transform: rotate(-45deg);
   margin: 2em 0 0 2em;
   z-index: 1000;
+  cursor: pointer;
 }
-
+.seconds {
+  font-size: 2em;
+}
 .click-me {
   z-index: 1000;
   align-self: start;
