@@ -88,7 +88,7 @@
   </section>
 </template>
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
 
 let curPage = ref(1);
 let numOfPages = ref(0);
@@ -104,11 +104,9 @@ async function fetchData() {
   try {
     const response = await fetch(`/projects.json`);
     const data = await response.json();
-    // Shuffle the projects array
-    data.sort(() => Math.random() - 0.5);
-    // Get the first 5 projects
-    projects.value = data.slice(0, 5);
+    projects.value = data;
     numOfPages.value = projects.value.length;
+
     console.log("Projects:", projects.value);
   } catch (error) {
     console.error("Error fetching data:", error);
