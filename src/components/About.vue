@@ -65,7 +65,6 @@ section.about h2 {
 
 h2.heading {
   color: black;
-  font-weight: bold;
 }
 .text-container {
   margin-left: 25em;
@@ -92,6 +91,7 @@ h2.heading {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   text-transform: uppercase;
   margin-top: 0.6em;
   font-weight: bold;
@@ -203,10 +203,9 @@ p.full {
   }
   section.about h2 {
     margin-left: 1em;
-  }
-  section.about h2 {
     padding-top: 3em;
   }
+
   section.about q.mini {
     font-size: 1.2rem;
   }

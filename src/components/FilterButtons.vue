@@ -93,7 +93,6 @@ input[type="radio"]:checked + .label-text {
   text-align: center;
   cursor: default;
   align-self: center;
-  cursor: default;
 }
 
 @media screen and (max-width: 576px) {

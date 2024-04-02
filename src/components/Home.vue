@@ -6,23 +6,25 @@
 
     <Experience />
 
-    <!-- <section id="sticky-scrolling-text">
+    <section id="sticky-scrolling-text">
       <ScrollingText />
-    </section> -->
-    <!-- <div class="horizontal-scroll">
+    </section>
+    <div class="horizontal-scroll">
       <section>
         <HorizontalScroll />
       </section>
-    </div> -->
-    <!-- <section id="sticky-scrolling-text">
+    </div>
+    <section id="sticky-scrolling-text">
       <ScrollingText />
-    </section> -->
+    </section>
   </main>
   <References />
   <section id="sticky-scrolling-text">
     <ScrollingText />
   </section>
+
   <Portfolio />
+
   <footer>
     <FooterComponent />
   </footer>
@@ -30,7 +32,7 @@
 
 <script setup>
 // import NavAnimated from "./NavAnimated.vue";
-// import HorizontalScroll from "../components/HorizontalScroll.vue";
+import HorizontalScroll from "../components/HorizontalScroll.vue";
 import ScrollingText from "../components/ScrollingText.vue";
 import FooterComponent from "../components/FooterComponent.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
@@ -81,7 +83,6 @@ h2,
 h3 {
   font-family: "Poiret One", sans-serif;
   text-transform: uppercase;
-  font-weight: bold;
   font-size: 4rem;
 }
 

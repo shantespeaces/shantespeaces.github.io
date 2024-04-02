@@ -2,37 +2,42 @@
   <div class="references-container" id="sticky-references">
     <div class="neumorphismes">
       <Neumorphisme />
-      <div class="image-wrapper d-flex justify-content-between">
-        <div class="image-container left">
-          <div class="quote-container d-flex justify-content-center">
-            <q class="reference"
-              >Shante Nicolaides embodies values of integrity and reliability.
-              Always ready to tackle new challenges, she willingly assumes
-              additional responsibilities, demonstrating her ability to adapt
-              quickly and effectively to various situations. Her unwavering
-              commitment, attention to detail, and ability to work autonomously
-              truly set her apart.</q
-            >
+      <section class="references">
+        <div class="heading-container" id="references">
+          <h2 class="heading">References</h2>
+        </div>
+        <div class="image-wrapper d-flex justify-content-between">
+          <div class="image-container left">
+            <div class="quote-container d-flex justify-content-center">
+              <q class="reference"
+                >Shante Nicolaides embodies values of integrity and reliability.
+                Always ready to tackle new challenges, she willingly assumes
+                additional responsibilities, demonstrating her ability to adapt
+                quickly and effectively to various situations. Her unwavering
+                commitment, attention to detail, and ability to work
+                autonomously truly set her apart.</q
+              >
 
-            <p>- Marie Bertrand</p>
-            <p>Internship Suppervisor</p>
+              <p>- Marie Bertrand</p>
+              <p>Internship Suppervisor</p>
+            </div>
+          </div>
+          <div class="image-container right">
+            <div class="quote-container d-flex justify-content-center">
+              <q class="reference"
+                >Shante has consistently approached each project with a high
+                level of autonomy and initiative, emphasizing diligent work. Her
+                keen interest in new technologies and her willingness to tackle
+                complex projects reflect her intellectual curiosity and
+                determination to excel in the field of web development.
+              </q>
+
+              <p>- Éric Gagné</p>
+              <p>Professor at Cégep de Saint-Jérôme</p>
+            </div>
           </div>
         </div>
-        <div class="image-container right">
-          <div class="quote-container d-flex justify-content-center">
-            <q class="reference"
-              >Shante has consistently approached each project with a high level
-              of autonomy and initiative, emphasizing diligent work. Her keen
-              interest in new technologies and her willingness to tackle complex
-              projects reflect her intellectual curiosity and determination to
-              excel in the field of web development.
-            </q>
-
-            <p>- Éric Gagné</p>
-            <p>Professor at Cégep de Saint-Jérôme</p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -51,6 +56,27 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
   position: relative;
+}
+section.references {
+  /* background-color: #fffdf6; */
+  z-index: 500;
+}
+section.references h2 {
+  padding-top: 4em;
+  background-color: #fde8d9;
+  margin-left: 6em;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 500;
+}
+.references .heading-container {
+  background-color: white;
+}
+h2.heading {
+  color: black;
+  font-weight: bold;
 }
 .image-wrapper {
   position: relative;
@@ -127,6 +153,9 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 }
 
 @media screen and (max-width: 1200px) {
+  section.references h2 {
+    margin-left: 3.5em;
+  }
   .image-wrapper {
     flex-direction: column;
   }
@@ -139,6 +168,9 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   }
 }
 @media screen and (max-width: 992px) {
+  section.references h2 {
+    margin-left: 2.5em;
+  }
   .image-wrapper {
     margin-bottom: 10em;
   }
@@ -147,6 +179,9 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   }
 }
 @media screen and (max-width: 768px) {
+  section.references h2 {
+    margin-left: 1.5em;
+  }
   .image-container.left,
   .image-container.right {
     height: 50em;
@@ -179,6 +214,9 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   }
 }
 @media screen and (max-width: 576px) {
+  section.references h2 {
+    padding-top: 4em;
+  }
   .image-wrapper {
     margin: 5em 0em;
   }
@@ -212,6 +250,10 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   }
 }
 @media screen and (max-width: 450px) {
+  section.references h2 {
+    margin-left: 1em;
+    padding-top: 3em;
+  }
   .image-container.left,
   .image-container.right {
     height: 35em;

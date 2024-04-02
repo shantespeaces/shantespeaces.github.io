@@ -1,13 +1,12 @@
 <template>
   <section
     class="skwd-projects animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
-    id="sticky-heading"
   >
-    <h4 class="more-projects">Showcase</h4>
+    <div class="heading-container" id="skwd-projects">
+      <h2 class="skwd-projects">Showcase</h2>
+    </div>
     <div
       class="skw-pages"
-      id="sticky-skw"
-      :class="{ sticky: isSticky }"
       @mouseover="enableScroll"
       @mouseleave="disableScroll"
     >
@@ -49,7 +48,7 @@
           >
             <div class="skw-page__skewed">
               <div class="skw-page__content">
-                <h2 class="skw-page__heading">{{ project.title }}</h2>
+                <h4 class="skw-page__heading">{{ project.title }}</h4>
                 <p class="skw-page__description">{{ project.description }}</p>
                 <router-link
                   class="project-details"
@@ -181,41 +180,34 @@ function disableScroll() {
   document.onmousewheel = document.onwheel = null;
   document.onkeydown = null;
 }
-// Check if the section is sticky when scrolling
-// window.addEventListener("scroll", () => {
-//   const sectionTop = document
-//     .getElementById("sticky-skw")
-//     .getBoundingClientRect().top;
-//   isSticky.value = sectionTop <= 0;
-// });
-// Function to determine if a page is active or inactive
+
 function isPageActive(index) {
   return curPage.value === index + 1 ? "active" : "inactive";
 }
 </script>
 <style>
-#sticky-heading {
-  position: sticky;
-  position: -webkit-sticky;
-  top: -500px;
-}
-.skwd-projects {
+section.skwd-projects {
   background-color: #fffdf6;
-  padding-top: 10em;
-  padding-bottom: 15em;
+  z-index: 500;
 }
-h4.more-projects {
+section.skwd-projects .heading-container {
+  position: relative;
+  padding-top: 14em;
+  background-color: #fde8d9;
+  margin-left: 25em;
+}
+.skwd-projects h2 {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
   font-family: "Poiret One", sans-serif;
   text-transform: uppercase;
-  font-size: 4em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  background-color: #fde8d9;
+  margin-bottom: 0;
 }
+
 .skw-pages {
   overflow: hidden;
   position: relative;
-  height: 60vh;
+  height: 55vh;
 }
 
 .skw-page {
@@ -228,7 +220,7 @@ h4.more-projects {
   position: absolute;
   top: 0;
   width: 50%;
-  height: 60vh;
+  height: 55vh;
   transition: transform 1s, opacity 1s;
 }
 .skw-page__half--left {
@@ -319,7 +311,7 @@ button.shuffle {
   cursor: pointer;
   background-color: white;
   position: relative;
-  top: 5em;
+  top: 1em;
   left: 50%;
   transform: translateX(-50%);
 }

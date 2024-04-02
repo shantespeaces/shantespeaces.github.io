@@ -97,7 +97,7 @@ onMounted(async () => {
           start: "top top",
           end: "+=4000",
           scrub: 1,
-          markers: true,
+          markers: false,
           pin: true,
           snap: 1.3 / amount,
           responsive: true,
@@ -331,6 +331,7 @@ onMounted(() => {
   );
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 /* BACK OF CARD */
 .horizontal-card-back {

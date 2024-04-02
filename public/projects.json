@@ -132,7 +132,7 @@
     "date": "Date 3",
     "title": "Bois Espiègle",
     "cardTitle": "Bois Espiègle",
-    "heading3": "Store",
+    "heading3": "E-Com",
     "projectImages": [
       {"title": "Home Page", "image": "/images/bois/home.jpg"}, 
       {"title": "Products Page", "image": "/images/bois/products.jpg"},
@@ -180,7 +180,7 @@
     ],
     "description": "UX/UI Exercise: Enhancing my skills in research, development, and design, I created a guideline document essential for crafting comprehensive mockups.  The research findings were synthesized and  fundamental UI/UX principles applied to create an impactful user interfaces. Upon 'client' approval the design elements where integrated into the mockup and presented to the class.",
     "items": ["Reflects the sophistication and opulence synonymous with luxury furniture through elegant design elements and sleek aesthetics.", "Highlight the meticulous craftsmanship and premium materials used in each furniture piece, instilling confidence in potential buyers.", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients, aimed to showcase our success and instill confidence in the shopper."],
-    "cardItems": ["Adobe Design Project: XD, PS, AI", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients."],
+    "cardItems": ["Adobe Design Project: XD, PS, AI", "Researched, designed and created a comprehensive guideline document tailored to bridge client requirements with developpement and integration.", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients."],
     "link": "",
     "backgroundImage": "images/cards/artDeco9.jpg",
     "quote": ""

@@ -28,9 +28,9 @@ setTimeout(() => {
   if (isFirstLoad.value) {
     sessionStorage.setItem("isFirstLoad", "false"); // Store isFirstLoad in session storage after the first load
   }
-}, 15000);
+}, 25000);
 
-const remainingSeconds = ref(15); // Initial value for countdown
+const remainingSeconds = ref(25); // Initial value for countdown
 
 const handleEntry = () => {
   isLoading.value = false;

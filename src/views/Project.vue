@@ -23,9 +23,20 @@
               <h5 class="highlights-title">Highligts</h5>
               <div class="show-highlights">
                 <h5>Highligts</h5>
+
                 <ul class="">
                   <li
                     v-for="(item, index) in project.cardItems"
+                    :key="`${project.id}_${index}`"
+                    class="list-item d-flex pb-2"
+                  >
+                    <span class="bullet">+</span>
+                    <p class="content">{{ item }}</p>
+                  </li>
+                </ul>
+                <ul class="">
+                  <li
+                    v-for="(item, index) in project.items"
                     :key="`${project.id}_${index}`"
                     class="list-item d-flex pb-2"
                   >
@@ -72,7 +83,13 @@
                 v-for="(pdfImage, index) in project.pdfImages"
                 :key="index"
               >
-                <img class="image-pdf" :src="pdfImage.image" alt="" />
+                <img
+                  class="image-pdf"
+                  :class="{ 'col-12': pdfImage.image === selectedImage }"
+                  :src="pdfImage.image"
+                  alt=""
+                  @click="toggleImageSize(pdfImage.image)"
+                />
               </div>
             </div>
           </template>
@@ -197,6 +214,15 @@ const viewPrevProject = async () => {
   projectId = projectId === 0 ? lastIndex : projectId - 1;
   await getProjectDetails(projectId);
 };
+const selectedImage = ref(null);
+
+const toggleImageSize = (imageSrc) => {
+  if (selectedImage.value === imageSrc) {
+    selectedImage.value = null; // Hide the image if it's already selected
+  } else {
+    selectedImage.value = imageSrc; // Show the selected image
+  }
+};
 </script>
 
 <style>
@@ -257,28 +283,6 @@ const viewPrevProject = async () => {
   text-transform: uppercase;
   margin-left: 4em;
 }
-.show-highlights {
-  display: none;
-  padding: 2em;
-  background-color: #fffdf6;
-  border: solid 2px;
-  border-image: var(--goldToBottomYellow) 1;
-  border-image-slice: 1;
-  position: relative;
-  left: 20em;
-  top: -25em;
-}
-.show-highlights h5 {
-  margin-left: 0;
-}
-.highlights-title:hover + .show-highlights {
-  display: block;
-}
-h5.highlights-title,
-.github a {
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
 #heading1,
 #heading2,
 #heading3 {
@@ -319,6 +323,34 @@ h5.highlights-title,
 .show-project-description p {
   font-size: 1.3rem;
 }
+.show-highlights {
+  display: none;
+  padding: 2em;
+  background-color: #fffdf6;
+  border: solid 2px;
+  border-image: var(--goldToBottomYellow) 1;
+  border-image-slice: 1;
+  position: relative;
+  left: 20em;
+  top: 0;
+  height: 100vh;
+}
+.show-highlights span {
+  padding-right: 1em;
+}
+.show-highlights h5 {
+  margin-left: 0;
+  margin-top: 3em;
+}
+.highlights-title:hover + .show-highlights {
+  display: block;
+}
+h5.highlights-title,
+.github a {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .github a {
   margin-left: 92px;
   font-weight: bold;
@@ -372,7 +404,24 @@ h5.highlights-title,
 .image-show-title {
   text-align: center;
 }
-
+.image-pdf {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.pdf-container {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.image-pdf:hover {
+  transform: scale(1.2);
+}
+.col-12 {
+  height: 70em;
+  width: 60em;
+  object-fit: contain;
+}
 section.more {
   height: 8em;
   background-color: white;
@@ -417,18 +466,7 @@ section.more {
   -webkit-background-clip: text;
   background-clip: text;
 } */
-.image-pdf {
-  /* height: 20em; */
-  width: 100%;
-}
-.pdf-container {
-  margin-left: 3em;
-  margin-right: 3em;
-}
-.image-pdf:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease-in-out;
-}
+
 @keyframes scaleDown {
   0% {
     transform: scale(1);

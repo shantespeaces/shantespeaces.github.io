@@ -88,11 +88,12 @@ section.portfolio {
 }
 
 .portfolio h2.heading {
-  padding-top: 4em;
-  background-color: #fde8d9;
-  margin-left: 6em;
-  padding-left: 1rem;
+  text-align: end;
+  padding-right: 1rem;
+  padding-top: 3em;
   padding-bottom: 1rem;
+  background-color: #fde8d9;
+  margin-right: 6em;
   margin-bottom: 0;
 }
 .portfolio-filter {
@@ -134,7 +135,7 @@ section.portfolio {
 }
 @media screen and (max-width: 1200px) {
   .portfolio h2.heading {
-    margin-left: 3.5em;
+    margin-right: 3em;
   }
 }
 @media screen and (max-width: 992px) {
@@ -142,8 +143,8 @@ section.portfolio {
     padding: 0;
   }
   .portfolio h2.heading {
-    margin-left: 2.5em;
-    font-size: 3rem;
+    margin-right: 2.5em;
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -159,7 +160,7 @@ section.portfolio {
     padding: 0;
   }
   .portfolio h2.heading {
-    margin-left: 1em;
+    margin-right: 1em;
     padding-top: 3em;
     font-size: 3rem;
   }

@@ -20,12 +20,19 @@
               :class="{ title: selectedProject === project }"
             >
               <h3 class="heading">{{ project.title }}</h3>
-              <img
-                class="project-image"
-                :src="project.logo"
-                :class="{ show: selectedProject === project }"
-                alt=""
-              />
+              <router-link
+                :to="{
+                  name: 'project',
+                  params: { id: project.id },
+                }"
+              >
+                <img
+                  class="project-image"
+                  :src="project.logo"
+                  :class="{ show: selectedProject === project }"
+                  alt=""
+                />
+              </router-link>
             </div>
           </div>
         </div>
@@ -123,6 +130,7 @@
 <script setup>
 import { ref, onMounted, computed, nextTick } from "vue";
 import axios from "axios";
+import { RouterLink } from "vue-router";
 
 const projects = ref([]);
 
@@ -232,9 +240,20 @@ img.project-image {
 
 img.project-image.show {
   display: block;
+  border-radius: 50%;
+  object-fit: contain;
+  border: none;
   height: 10em;
   width: 10em;
   opacity: 1;
+  filter: grayscale(100%);
+  transition: height 0.5s, width 0.5s, filter 0.5s;
+}
+img.project-image:hover {
+  filter: none;
+  height: 11em;
+  width: 11em;
+  background-image: var(--goldToRight);
 }
 .project-title.container {
   flex-direction: column;
@@ -246,8 +265,9 @@ img.project-image.show {
   color: black;
 }
 
-h3.heading {
+.project-title h3.heading {
   font-size: 1.5rem;
+  transition: font-size 0.5s;
 }
 .title {
   border-bottom: solid 2px;
@@ -259,13 +279,14 @@ h3.heading {
   -webkit-background-clip: text;
   font-weight: bold;
 }
-.project-title:hover {
+.project-title h3.heading:hover {
   background-image: var(--goldToRightDark);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
   transform: translateY(2px);
+  font-size: 1.6rem;
 }
 
 .left-container {
@@ -297,10 +318,10 @@ h3.heading {
   text-align: right;
   font-family: "Poiret One";
   font-weight: bold;
+  transition: font-size 0.5s;
 }
 .right-container .link-container a:hover {
-  font-size: 1.4rem;
-  transition: font-size 0.5s;
+  font-size: 1.8rem;
 }
 
 .right-container p,
@@ -363,6 +384,8 @@ h3.heading {
 .pagination-buttons p {
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: font-size 0.5s;
+  font-size: 1.4rem;
 }
 .pagination-buttons button:hover {
   transform: translateY(2px);
@@ -377,6 +400,7 @@ h3.heading {
 }
 .pagination-buttons span {
   font-size: 2.6rem;
+  transition: font-size 0.5s;
 }
 
 .pagination-buttons button:disabled {
@@ -542,7 +566,6 @@ h3.heading {
     top: -650px;
   }
   .experience h2.heading {
-    font-weight: bold;
     padding-top: 2em;
     margin-right: 1em;
   }

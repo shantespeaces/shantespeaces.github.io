@@ -2,7 +2,6 @@
   <nav>
     <div class="nav-container">
       <div class="brand">
-        <!-- <img class="logo" src="/images/artDeco3.jpg" alt="" /> -->
         <router-link
           data-name="home"
           class="navbar-brand"
@@ -34,11 +33,7 @@
             >Home</router-link
           >
         </li>
-        <!-- <li class="menu-item">
-          <router-link data-name="Experience" :to="{ name: 'experience' }"
-            >Experience</router-link
-          >
-        </li> -->
+
         <li class="menu-item">
           <router-link
             data-name="projects"
@@ -48,25 +43,31 @@
             Projects</router-link
           >
         </li>
-        <li class="menu-item">
-          Contact
-          <!-- <router-link data-name="contact" :to="{ name: 'contact' }"
-          >Contact</router-link
-        > -->
-        </li>
-        <router-link :to="{ name: 'home', hash: '#about' }" @click="toggleMenu"
+        <router-link
+          :to="{ name: 'home', hash: '#about' }"
+          @click="toggleMenu"
+          class="menu-item"
           >about</router-link
         >
         <router-link
           :to="{ name: 'home', hash: '#experience' }"
           @click="toggleMenu"
+          class="menu-item"
           >Experience</router-link
+        >
+        <router-link
+          :to="{ name: 'home', hash: '#references' }"
+          @click="toggleMenu"
+          class="menu-item"
+          >References</router-link
         >
         <router-link
           :to="{ name: 'home', hash: '#portfolio' }"
           @click="toggleMenu"
+          class="menu-item"
           >portfolio</router-link
         >
+        <li class="menu-item"><a :href="emailLink">Contact</a></li>
       </ul>
     </transition>
   </nav>
@@ -76,12 +77,19 @@
 import { ref } from "vue";
 import ScrollingAnimation from "../components/ScrollingAnimation.vue";
 import { defineProps } from "vue";
+
 const props = defineProps({});
 const isOpen = ref(false);
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+const emailAddress = "shantespeaces@gmail.com";
+const subject = "";
+const body = "";
+const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+  subject
+)}&body=${encodeURIComponent(body)}`;
 </script>
 
 <style>
@@ -162,38 +170,45 @@ a.navbar-brand {
   background-image: url("/images/artDeco/feather4.png");
   flex-direction: column;
   position: fixed;
-  top: 5em;
   width: 100%;
   opacity: 1;
 }
 
-.menu li {
-  margin-bottom: 2em;
+.menu-item,
+.menu-item a,
+.close-icon {
+  padding-bottom: 2em;
   font-family: "Poiret One", sans-serif;
   text-transform: uppercase;
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 2em;
   letter-spacing: 4px;
   font-weight: bold;
+  transition: font-size 0.5s;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-.menu li:hover {
-  color: black;
-  text-decoration: underline;
+.menu-item:hover,
+.close-icon:hover {
+  font-size: 2.5em;
+}
+.menu-item a:hover {
+  font-size: 1em;
+}
+.menu-item,
+.close-icon {
+  font-size: 2em;
+}
+.menu-item {
+  /* height: 6em; */
+  display: inline-block;
 }
 .close-icon {
-  font-size: 2rem;
-  background-image: var(--goldToRightDark);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-family: "Poiret One", sans-serif;
+  padding-bottom: 0;
 }
-.close-icon:hover {
-  color: black;
-}
+
 .slide-leave-active {
   animation: slideOut 1.8s ease-in-out forwards;
 }
@@ -223,41 +238,6 @@ a.navbar-brand {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  a.navbar-brand {
-    font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  a.navbar-brand {
-    font-size: 1.6rem;
-  }
-  .menu {
-    top: 4.5em;
-  }
-}
-@media screen and (max-width: 576px) {
-  .menu {
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    background-size: 55em;
-    background-position: right;
-    background-image: url("/images/artDeco/feather4.png");
-  }
-  .menu li {
-    padding-bottom: 2em;
-    font-size: 3rem;
-  }
-  .close-icon {
-    font-size: 3rem;
-    background-image: var(--goldToRightYellow);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
   }
 }
 </style>
