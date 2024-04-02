@@ -251,9 +251,10 @@ h2.heading {
 }
 @media screen and (max-width: 450px) {
   section.references h2 {
-    margin-left: 1em;
-    padding-top: 3em;
+    margin-left: 0em;
+    padding-top: 2em;
   }
+
   .image-container.left,
   .image-container.right {
     height: 35em;

@@ -202,8 +202,8 @@ p.full {
     top: 0px;
   }
   section.about h2 {
-    margin-left: 1em;
-    padding-top: 3em;
+    margin-left: 0em;
+    padding-top: 2em;
   }
 
   section.about q.mini {

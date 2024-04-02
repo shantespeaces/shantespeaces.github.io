@@ -453,10 +453,10 @@ img.cover-image {
   }
   .wrapper {
     padding-top: 10em;
-    padding-bottom: 150em;
+    padding-bottom: 190em;
     width: 100%;
-    overflow-x: auto;
     flex-direction: column;
+    overflow: visible;
   }
   .horizontal-card {
     background-color: transparent;
@@ -501,12 +501,7 @@ img.cover-image {
   .animated-text {
     display: none;
   }
-  .wrapper {
-    padding-bottom: 160em;
-  }
-  .horizontal-scroll-container {
-    overflow-x: hidden;
-  }
+
   .wrapper {
     background-size: 55em;
     background-position: right;
@@ -515,8 +510,8 @@ img.cover-image {
 @media screen and (max-width: 400px) {
   .cover,
   .horizontal-card-back {
-    height: 4em;
-    width: 4em;
+    height: 5em;
+    width: 5em;
   }
   .horizontal-card {
     position: relative;
@@ -524,41 +519,38 @@ img.cover-image {
     overflow-x: hidden;
   }
   .gold-container {
-    height: 4em;
-    width: 4em;
+    height: 5em;
+    width: 5em;
     top: 0em;
     left: 0em;
     overflow-x: hidden;
   }
   img.cover-image {
-    height: 3.5em;
-    width: 3.5em;
+    height: 4.5em;
+    width: 4.5em;
     overflow-x: hidden;
   }
   .cover-before {
-    height: 3.5em;
-    width: 3.5em;
+    height: 4.5em;
+    width: 4.5em;
     top: 0.9rem;
     left: 0.9rem;
   }
   .cover-before .title-container {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.5em;
+    width: 3.5em;
   }
   .cover-before h3.title-card {
     font-size: 2rem;
-    top: 1em;
+    top: 1.4em;
   }
   .animated-text {
     display: none;
   }
   .wrapper {
-    padding-bottom: 120em;
-    overflow-x: hidden;
+    padding-bottom: 140em;
   }
-  .horizontal-scroll-container {
-    overflow-x: hidden;
-  }
+
   .horizontal-card {
     background-color: transparent;
     height: 35vh;

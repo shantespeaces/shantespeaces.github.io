@@ -169,5 +169,9 @@ section.portfolio {
   .portfolio-filter {
     height: 43em;
   }
+  .portfolio h2.heading {
+    margin-right: 0em;
+    padding-top: 2em;
+  }
 }
 </style>
