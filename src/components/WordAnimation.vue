@@ -3,7 +3,7 @@
     <Neumorphisme />
     <section class="wordAnimation d-flex">
       <div class="word-container">
-        <div class="centered d-flex">
+        <div class="d-flex">
           <div
             class="word animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
           >
@@ -124,14 +124,9 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .wordAnimation {
   height: 100vh;
   flex-direction: column;
-  margin: 10em 10em;
+  margin: 10em 0em 10em 5em;
 }
 
-/* .centered {
-  display: flex;
-
-  flex-direction: column;
-} */
 .word {
   margin-bottom: 3em;
   z-index: 1000;
@@ -146,6 +141,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 }
 .enter-wrapper {
   flex-direction: column;
+  z-index: 1000;
 }
 p.enter {
   font-family: "League Script";
@@ -212,7 +208,7 @@ p.enter-now {
 
 .port,
 .folio {
-  font-size: 14.5rem;
+  font-size: 18.5rem;
   color: #ffffff;
 }
 .word span {
@@ -467,10 +463,16 @@ p.enter-now {
     transform: translateY(-100%);
   }
 }
+@media screen and (max-width: 1901px) {
+  .port,
+  .folio {
+    font-size: 17em;
+  }
+}
 @media screen and (max-width: 1800px) {
   .port,
   .folio {
-    font-size: 13em;
+    font-size: 16em;
   }
   .enter-container {
     padding-top: 10em;
@@ -486,16 +488,16 @@ p.enter-now {
 @media screen and (max-width: 1700px) {
   .port,
   .folio {
-    font-size: 12em;
+    font-size: 15em;
   }
 }
 @media screen and (max-width: 1600px) {
   .shante {
-    font-size: 5em;
+    font-size: 6em;
   }
   .port,
   .folio {
-    font-size: 11rem;
+    font-size: 13.5rem;
   }
   .enter-container {
     padding-top: 14em;
@@ -512,7 +514,7 @@ p.enter-now {
 @media screen and (max-width: 1500px) {
   .port,
   .folio {
-    font-size: 9.5rem;
+    font-size: 12.5rem;
   }
   .wordAnimation {
     margin-top: 15em;
@@ -524,16 +526,19 @@ p.enter-now {
 @media screen and (max-width: 1400px) {
   .port,
   .folio {
-    font-size: 8.5rem;
+    font-size: 11.5rem;
   }
   .enter-container {
     padding-top: 14em;
   }
 }
 @media screen and (max-width: 1300px) {
+  .wordAnimation {
+    margin-left: 10em;
+  }
   .port,
   .folio {
-    font-size: 7.5rem;
+    font-size: 10.5rem;
   }
   .enter-container {
     padding-top: 13em;
@@ -557,12 +562,6 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 1100px) {
-  .port {
-    font-size: 14rem;
-  }
-  .folio {
-    font-size: 7.5rem;
-  }
   p.enter {
     font-size: 4.5em;
   }
@@ -575,19 +574,20 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 992px) {
-  .wordAnimation {
-    margin: 10em 3em;
-  }
   .rotate {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+  .wordAnimation {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
   .shante {
     font-size: 3.5rem;
   }
   .port {
-    font-size: 15rem;
+    font-size: 13.5rem;
   }
   .folio {
     font-size: 6rem;
@@ -612,6 +612,7 @@ p.enter-now {
   .enter-container {
     align-self: flex-end;
     padding-top: 5em;
+    margin-right: 5em;
   }
   .enter-arrow {
     height: 2em;
@@ -619,8 +620,12 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 798px) {
+  .wordAnimation {
+    margin-right: 3em;
+    margin-left: 3em;
+  }
   .port {
-    font-size: 10rem;
+    font-size: 10.5rem;
   }
   .folio {
     font-size: 5.5rem;
@@ -637,30 +642,37 @@ p.enter-now {
     transform: rotate(0deg);
   }
 }
+
 @media screen and (max-width: 600px) {
   .wordAnimation {
-    margin: 10em 2em;
+    margin-left: 2em;
   }
   .word {
-    margin-left: 3.5em;
+    margin-left: 2em;
   }
   .shante {
-    font-size: 2.5rem;
+    font-size: 3em;
   }
   .port {
-    font-size: 7rem;
+    font-size: 15rem;
   }
   .folio {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
-  .br {
-    display: block;
+  .word span:nth-child(16) {
+    margin-left: 0.5em;
+  }
+  .click-container {
+    margin-left: 4em;
   }
   .enter-container {
-    padding-top: 10em;
+    padding-top: 1em;
+    margin-left: 3em;
+    margin-right: 0em;
   }
   p.enter {
-    font-size: 3.5em;
+    font-size: 3em;
+    padding-top: 0.4em;
   }
   .enter-container {
     align-self: center;
@@ -668,17 +680,17 @@ p.enter-now {
   .enter-arrow {
     height: 1.5em;
     width: 1.5em;
+    padding: 1em;
+    margin-bottom: 1em;
   }
 }
-@media screen and (max-width: 505px) {
+@media screen and (max-width: 500px) {
   .wordAnimation {
-    margin: 6em 0em;
-  }
-  .word {
-    margin-left: 3.5em;
+    margin-left: 1em;
+    margin-right: 0em;
   }
   .shante {
-    font-size: 2rem;
+    font-size: 2em;
   }
   .port {
     font-size: 13rem;
@@ -686,20 +698,12 @@ p.enter-now {
   .folio {
     font-size: 4rem;
   }
-  .word span:nth-child(16) {
-    margin-left: 0.3em;
-  }
-  .click-me {
-    margin-left: 5em;
-    margin-right: 5em;
-  }
   .enter-container {
-    padding-top: 5em;
+    margin-left: 1em;
   }
-
   .warning {
-    font-size: 1rem;
     margin: 1em;
+    font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -716,11 +720,19 @@ p.enter-now {
     font-size: 11rem;
   }
   .folio {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
-  .click-me {
-    margin-left: 3em;
-    margin-right: 3em;
+  .enter-container {
+    margin-left: 0em;
+    margin-right: 1em;
+  }
+  p.enter {
+    font-size: 2.5em;
+    padding-top: 0.6em;
+  }
+  .enter-arrow:hover {
+    height: 2.5em;
+    width: 2.5em;
   }
 }
 </style>
