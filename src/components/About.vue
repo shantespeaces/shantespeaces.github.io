@@ -45,7 +45,7 @@ const toggleFullText = () => {
 <style>
 /* ABOUT */
 #sticky-about {
-  top: -100px;
+  top: -180px;
   position: sticky;
   position: -webkit-sticky;
 }
@@ -67,8 +67,8 @@ h2.heading {
   color: black;
 }
 .text-container {
-  margin-left: 25em;
-  margin-right: 20em;
+  margin-left: 15em;
+  margin-right: 15em;
   padding-bottom: 20em;
 }
 .quote-container {
@@ -114,19 +114,16 @@ q.mini,
 p.full {
   font-size: 1.3rem;
   letter-spacing: 1px;
+  line-height: 2;
 }
-@media screen and (max-width: 1500px) {
-  .text-container {
-    margin-right: 20em;
-  }
-}
+
 @media screen and (max-width: 1200px) {
   section.about h2 {
     margin-left: 3.5em;
   }
   .text-container {
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 10em;
+    margin-right: 10em;
   }
   #sticky-about {
     top: -160px;
@@ -134,6 +131,7 @@ p.full {
   q.mini,
   p.full {
     font-size: 1.3rem;
+    line-height: 2;
   }
 }
 @media screen and (max-width: 992px) {

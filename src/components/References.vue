@@ -48,7 +48,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 #sticky-references {
   position: sticky;
   position: -webkit-sticky;
-  top: -800px;
+  top: -1200px;
 }
 .references-container {
   background-color: white;
