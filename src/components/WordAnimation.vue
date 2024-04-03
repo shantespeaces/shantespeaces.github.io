@@ -155,7 +155,7 @@ p.enter {
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
-  text-shadow: 0 0 20px #fff, 0 0 10px #f6e27a, 0 0 50px #cb9b51;
+  /* text-shadow: 0 0 20px #fff, 0 0 10px #f6e27a, 0 0 50px #cb9b51; */
   z-index: 1000;
   margin-bottom: 0;
 }
@@ -182,6 +182,11 @@ p.enter-now {
   margin: 2em 0 0 2em;
   z-index: 1000;
   cursor: pointer;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+.enter-arrow:hover {
+  height: 4.3em;
+  width: 4.3em;
 }
 .seconds {
   font-size: 2em;
@@ -204,23 +209,27 @@ p.enter-now {
 .shante {
   font-size: 8rem;
 }
+
 .port,
 .folio {
   font-size: 14.5rem;
+  color: #ffffff;
 }
 .word span {
-  cursor: pointer;
   display: inline-block;
   letter-spacing: 1.5rem;
   user-select: none;
   line-height: 1.1;
   font-family: "Parklane";
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 236, 222, 0.8),
+}
+.word span.port,
+.word span.folio {
+  cursor: pointer;
+
+  text-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
+  /* 0 0 10px rgba(255, 236, 222, 0.8),
     0 0 20px rgba(255, 236, 222, 0.8), 0 0 25px rgba(255, 236, 222, 0.8),
-    0 0 5px rgb(188, 139, 121), 0 0 30px rgba(255, 236, 222, 0.8),
-    0 0 40px rgba(201, 174, 164, 0.8), 0 0 50px rgba(201, 174, 164, 0.8),
-    0 0 10px rgba(141, 103, 90, 0.3);
+    0 0 5px rgb(188, 139, 121), 0 0 30px rgba(255, 236, 222, 0.8), */
 }
 .word span:nth-child(14) {
   display: none;
@@ -234,8 +243,22 @@ p.enter-now {
 }
 
 /* LETTER ANIMATION */
-.word span:nth-child(1),
+.word span:nth-child(2),
 .word span:nth-child(4),
+.word span:nth-child(6) {
+  color: #cb9b51;
+}
+.word span:nth-child(3),
+.word span:nth-child(7) {
+  color: #f0cd7b;
+  animation: flicker 3s infinite alternate;
+}
+.word span:nth-child(1),
+.word span:nth-child(5),
+.word span:nth-child(8) {
+  color: #4a2b2acd;
+  animation: flicker 3s infinite alternate;
+}
 .word span:nth-child(10),
 .word span:nth-child(12),
 .word span:nth-child(13),
@@ -243,11 +266,15 @@ p.enter-now {
 .word span:nth-child(17),
 .word span:nth-child(18) {
   color: white;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   animation: flicker 3s infinite alternate;
 }
 
 @keyframes flicker {
+  10% {
+    opacity: 0.1;
+    color: #f0cd7b;
+  }
   40% {
     opacity: 0.8;
   }
@@ -269,12 +296,7 @@ p.enter-now {
     animation-delay: 6s;
   }
 }
-.word span:nth-child(2),
-.word span:nth-child(3),
-.word span:nth-child(5),
-.word span:nth-child(7),
-.word span:nth-child(6),
-.word span:nth-child(8),
+
 .word span:nth-child(11),
 .word span:nth-child(17),
 .word span:nth-child(20) {
@@ -289,13 +311,15 @@ p.enter-now {
   }
 
   50% {
-    color: rgba(236, 205, 193, 0.667);
+    color: #cb9a51d5;
   }
 }
 
-.word span:nth-child(10).active {
+.word span:nth-child(10).active,
+.word span:nth-child(13).active {
   animation: balance 1.5s ease-out;
   transform-origin: bottom left;
+  color: #f0cd7b;
 }
 
 @keyframes balance {
@@ -309,9 +333,11 @@ p.enter-now {
     transform: rotate(-45deg);
   }
 }
+
 .word span:nth-child(12).active {
   animation: falling 2s ease-out;
   transform-origin: bottom center;
+  color: #4a2b2acd;
 }
 
 @keyframes falling {
@@ -341,24 +367,9 @@ p.enter-now {
   }
 }
 
-.word span:nth-child(13).active {
-  animation: balance 1.5s ease-out;
-  transform-origin: bottom left;
-}
-
-@keyframes balance {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-
-  30%,
-  60% {
-    transform: rotate(-45deg);
-  }
-}
 .word span:nth-child(16).active {
   animation: rotate 1s ease-out;
+  color: #4a2b2acd;
 }
 
 @keyframes rotate {
@@ -374,6 +385,7 @@ p.enter-now {
 .word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
+  color: #4a2b2acd;
 }
 
 @keyframes shrinkjump {
@@ -393,16 +405,17 @@ p.enter-now {
 }
 .word span:nth-child(19).active {
   animation: toplong 1.5s linear;
+  color: #f0cd7b;
 }
 
 @keyframes toplong {
   10%,
   40% {
-    transform: translateY(-48vh) scaleY(1);
+    transform: translateY(-20vh) scaleY(1);
   }
 
   90% {
-    transform: translateY(-48vh) scaleY(4);
+    transform: translateY(-20vh) scaleY(4);
   }
 }
 .word span:nth-child(11).active,
