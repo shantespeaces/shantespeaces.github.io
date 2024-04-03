@@ -1,12 +1,12 @@
 <template>
-  <!-- <WordAnimation
+  <WordAnimation
     v-if="isLoading && isFirstLoad"
     :remainingSeconds="remainingSeconds"
     @skipAnimation="handleEntry"
   />
-  <Home v-else /> -->
-  <WordAnimation />
-  <Home />
+  <Home v-else />
+  <!-- <WordAnimation />
+  <Home /> -->
 </template>
 
 <script setup>

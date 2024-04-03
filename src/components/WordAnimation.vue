@@ -269,7 +269,11 @@ p.enter-now {
 @keyframes flicker {
   10% {
     opacity: 0.1;
-    color: #f0cd7b;
+    /* color: #f0cd7b; */
+    background-image: var(--goldToBottom);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
   40% {
     opacity: 0.8;
@@ -307,7 +311,11 @@ p.enter-now {
   }
 
   50% {
-    color: #cb9a51d5;
+    /* color: #cb9a51d5; */
+    background-image: var(--goldToRight);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
 
@@ -315,7 +323,11 @@ p.enter-now {
 .word span:nth-child(13).active {
   animation: balance 1.5s ease-out;
   transform-origin: bottom left;
-  color: #f0cd7b;
+  /* color: #f0cd7b; */
+  background-image: var(--goldToBottom);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes balance {
@@ -333,7 +345,11 @@ p.enter-now {
 .word span:nth-child(12).active {
   animation: falling 2s ease-out;
   transform-origin: bottom center;
-  color: #4a2b2acd;
+  /* color: #4a2b2acd; */
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes falling {
@@ -365,7 +381,11 @@ p.enter-now {
 
 .word span:nth-child(16).active {
   animation: rotate 1s ease-out;
-  color: #4a2b2acd;
+  /* color: #4a2b2acd; */
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes rotate {
@@ -381,7 +401,11 @@ p.enter-now {
 .word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
-  color: #4a2b2acd;
+  /* color: #4a2b2acd; */
+  background-image: var(--goldToBottom);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes shrinkjump {
@@ -401,7 +425,11 @@ p.enter-now {
 }
 .word span:nth-child(19).active {
   animation: toplong 1.5s linear;
-  color: #f0cd7b;
+  /* color: #f0cd7b; */
+  background-image: var(--goldToBottomYellow);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes toplong {
@@ -707,20 +735,23 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 400px) {
-  .wordAnimation {
-    margin: 6em 0em;
-  }
   .word {
-    margin-left: 2em;
+    margin-left: 0em;
   }
   .shante {
     font-size: 1.5rem;
   }
+  .word span:nth-child(1) {
+    margin-left: 1em;
+  }
   .port {
-    font-size: 11rem;
+    font-size: 13rem;
   }
   .folio {
-    font-size: 3rem;
+    font-size: 3.9rem;
+  }
+  .word span:nth-child(16) {
+    margin-left: 0.5em;
   }
   .enter-container {
     margin-left: 0em;
