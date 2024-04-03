@@ -43,7 +43,7 @@
             Projects</router-link
           >
         </li>
-        <router-link
+        <!-- <router-link
           :to="{ name: 'home', hash: '#about' }"
           @click="toggleMenu"
           class="menu-item"
@@ -66,7 +66,7 @@
           @click="toggleMenu"
           class="menu-item"
           >portfolio</router-link
-        >
+        > -->
         <li class="menu-item"><a :href="emailLink">Contact</a></li>
       </ul>
     </transition>
