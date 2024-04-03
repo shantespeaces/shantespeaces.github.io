@@ -302,14 +302,14 @@ img.project-image:hover {
   border-left: solid 2px;
   border-image: var(--goldToBottom) 1;
   border-image-slice: 1;
-  max-width: 500px;
   margin-top: 10em;
   flex-direction: column;
 }
 
 .right-container {
-  padding-top: 2em;
-  padding-right: 3em;
+  padding-top: 4em;
+  padding-right: 2em;
+
   flex-direction: column;
 }
 .date-container {
@@ -340,21 +340,22 @@ img.project-image:hover {
   color: black;
   letter-spacing: 1px;
   font-size: 1.2rem;
+  line-height: 2;
 }
-.right-container .info {
-  margin-left: 3em;
-}
+
 .right-container .date {
   font-style: italic;
   text-transform: uppercase;
   margin-bottom: 0;
   letter-spacing: 2px;
+  font-weight: bold;
 }
 .right-container .description {
   margin: 1.5em 0em 1.5em 0em;
 }
 .right-container .highlights {
   letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .right-container ul {
@@ -380,7 +381,13 @@ img.project-image:hover {
   width: 100%;
   --bs-gutter-x: 0rem;
 }
-
+.left-wrapper {
+  max-width: 30em;
+  margin: 2em;
+}
+.right-wrapper {
+  margin: 2em;
+}
 /* PAGINATION BUTTONS */
 .pagination-button-wrapper {
   background-color: #002d40;
@@ -439,32 +446,35 @@ img.project-image:hover {
   h3.heading {
     font-size: 1.3rem;
   }
-
+  .left-wrapper {
+    max-width: 25em;
+  }
   .right-container .link-container a,
   .right-container li,
   .right-container p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 2;
   }
-  .right-container .link-container {
-    width: 175px;
+
+  .right-container {
+    padding-right: 2em;
+  }
+  .right-container .info {
+    margin-left: 1em;
+  }
+  .link-container {
+    width: 70%;
   }
 }
 @media screen and (max-width: 992px) {
   #sticky-projects {
-    top: -800px;
+    top: -900px;
   }
   .experience h2.heading {
     margin-right: 2em;
   }
   h3.heading {
     font-size: 1.5rem;
-  }
-  .right-container .description,
-  .right-container .date,
-  .right-container li,
-  .date-container {
-    font-size: 1.2rem;
-    padding-right: 3em;
   }
   .project-container {
     display: flex;
@@ -485,27 +495,36 @@ img.project-image:hover {
     display: flex;
     order: 2;
   } */
-  .project-title.container {
-    padding-bottom: 1em;
-    padding-top: 1em;
-  }
-
   .left-container {
     margin-left: 3em;
     padding-bottom: 3em;
     margin-top: 3em;
+    width: 147%;
+  }
+  .project-title.container {
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+  img.project-image.show {
+    filter: none;
+    background-image: var(--goldToRight);
+  }
+
+  .right-container .description,
+  .right-container .date,
+  .right-container li,
+  .date-container {
+    font-size: 1.2rem;
+    line-height: 2;
   }
 
   .right-container {
+    padding: 0;
     padding-top: 3em;
-
-    margin-left: 3em;
-    border-left: solid 2px;
-    border-image: var(--goldToBottom) 1;
-    border-image-slice: 1;
   }
   .right-container .info {
     margin-left: 2em;
+    margin-right: 2em;
   }
   .right-container .link-container a {
     text-align: left;
@@ -522,32 +541,30 @@ img.project-image:hover {
   h3.heading {
     font-size: 1.3rem;
   }
+  .left-wrapper {
+    margin: 0;
+  }
+  .left-container {
+    padding-bottom: 5em;
+    width: 100%;
+  }
 
-  .pagination-buttons p {
-    display: none;
-  }
-  .pagination-buttons span {
-    font-size: 3.6rem;
-  }
-  .left-container,
-  .right-container {
-    max-width: 420px;
-    margin: auto;
-  }
-  h3.heading {
-    font-size: 1.3rem;
-  }
   .right-container .description,
   .right-container .date,
   .right-container li {
     font-size: 1.1rem;
+    line-height: 2;
+    padding: 0;
   }
 
   .right-container .link-container a {
     text-align: center;
   }
-  .left-container {
-    padding-bottom: 15em;
+  .pagination-buttons p {
+    display: none;
+  }
+  .pagination-buttons span {
+    font-size: 3.6rem;
   }
 }
 
@@ -556,46 +573,26 @@ img.project-image:hover {
     top: -1000px;
   }
   .experience h2.heading {
-    font-weight: bold;
     padding-top: 2em;
   }
   h3.heading {
     font-size: 1.2rem;
   }
-  .right-container {
-    margin-bottom: 1em;
-  }
-  .left-container {
-    padding-top: 4em;
-    margin-top: 1em;
-    padding-bottom: 3em;
-  }
-
-  .right-container .description,
-  .right-container .date,
-  .right-container li {
-    font-size: 1rem;
-  }
-
-  .right-container ul {
-    padding-top: 0;
-  }
-  .project-title.container {
-    padding-bottom: 0;
-  }
   .project-container {
     padding: 0em;
     flex-wrap: nowrap;
   }
-  .right-container .date-container {
-    flex-direction: column;
+  .left-container {
+    padding-top: 4em;
+    margin-top: 3em;
+    padding-bottom: 3em;
+    width: 100%;
   }
-  .right-container .date {
-    padding-bottom: 1rem;
+
+  .project-title.container {
+    padding: 0;
   }
-  .right-container .link-container a {
-    text-align: left;
-  }
+
   .project-title {
     flex-direction: column;
     margin-bottom: 1em;
@@ -607,56 +604,101 @@ img.project-image:hover {
     margin-top: 1em;
     margin-bottom: 1em;
   }
+  .right-container {
+    margin-bottom: 1em;
+  }
+  .right-container .description,
+  .right-container li {
+    font-size: 1.2rem;
+    margin-left: 0;
+    padding-right: 0em;
+    line-height: 2;
+  }
+  .date-container {
+    flex-direction: column;
+  }
+  .link-container {
+    width: 140%;
+  }
+  p.description {
+    padding-top: 2em;
+  }
+  .right-container ul {
+    padding-top: 0;
+  }
+
+  .right-container .date {
+    padding-bottom: 1rem;
+  }
+  .right-container .link-container a {
+    text-align: left;
+  }
+  .right-container {
+    margin-bottom: 1em;
+  }
+
   .pagination-button-wrapper {
     margin-top: 5em;
   }
 }
 @media screen and (max-width: 450px) {
   #sticky-projects {
-    top: -950px;
+    top: -1000px;
   }
   .experience h2.heading {
     padding-top: 2em;
     margin-right: 1em;
   }
-  .right-container,
-  .left-container {
-    border-left: none;
+  .experience h2.heading {
+    margin-right: 0;
   }
+  .left-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 1.5em;
+    border-left: none;
+    width: 86%;
+  }
+  .project-title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .project-title img.project-image.show {
     height: 5em;
     width: 5em;
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  .pagination-button-wrapper {
-    margin-top: 3em;
-  }
-}
-@media screen and (max-width: 360px) {
-  #sticky-projects {
-    top: -1500px;
-  }
-  .experience h2.heading {
-    margin-right: 0;
+  .project-title h3 {
+    font-size: 1.1rem;
   }
 
-  .right-container .description,
-  .right-container li {
-    font-size: 1.3rem;
-    margin-left: 0;
-    padding-right: 0em;
+  .right-container {
+    padding: 0;
+    border-left: none;
+  }
+  .right-container .info {
+    margin: 1.5em;
   }
   .right-container .link-container a,
   .right-container .date {
     font-size: 1.1rem;
   }
-  .project-title h3 {
-    font-size: 1.1rem;
+  .right-container .content {
+    margin: 0;
   }
 
+  .pagination-button-wrapper {
+    margin-top: 3em;
+  }
   .pagination-buttons button {
     width: 100px;
+  }
+}
+@media screen and (max-width: 360px) {
+  #sticky-projects {
+    top: -1500px;
   }
 }
 </style>

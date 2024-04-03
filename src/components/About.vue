@@ -141,8 +141,8 @@ p.full {
     margin-left: 2.5em;
   }
   .text-container {
-    margin-left: 11em;
-    margin-right: 11em;
+    margin-left: 7em;
+    margin-right: 7em;
   }
   #sticky-about {
     top: -100px;
@@ -150,6 +150,7 @@ p.full {
   q.mini,
   p.full {
     font-size: 1.2rem;
+    line-height: 2;
   }
 }
 @media screen and (max-width: 768px) {
@@ -157,34 +158,40 @@ p.full {
     margin-left: 1.5em;
   }
   .text-container {
-    margin-left: 6.5em;
-    margin-right: 6.5em;
+    margin-left: 4.5em;
+    margin-right: 4.5em;
   }
 
   q.mini,
   p.full {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 2;
   }
 }
 @media screen and (max-width: 576px) {
-  /* h2.heading {
-    font-weight: bold;
-  } */
+  #sticky-about {
+    top: -600px;
+  }
   section.about h2 {
     padding-top: 4em;
   }
   q.mini {
     font-size: 1.2rem;
+    line-height: 2;
   }
   .full {
     display: none;
   }
+  p.full {
+    font-size: 1.2rem;
+  }
   .show-full {
     display: block;
+    line-height: 2;
   }
   .text-container {
     padding-bottom: 12em;
-    margin-bottom: 0;
+    margin: 0em 2em;
   }
 
   .quote-container {
@@ -199,7 +206,7 @@ p.full {
 
 @media screen and (max-width: 360px) {
   #sticky-about {
-    top: 0px;
+    top: -600px;
   }
   section.about h2 {
     margin-left: 0em;
@@ -208,6 +215,14 @@ p.full {
 
   section.about q.mini {
     font-size: 1.2rem;
+    line-height: 2;
+  }
+  section.about p.full {
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+  .about .text-container {
+    margin: 1.5em;
   }
   .quote-container {
     display: flex;
@@ -218,13 +233,6 @@ p.full {
   }
   .quote-container button:hover p {
     font-size: 1.8rem;
-  }
-  .text-container {
-    margin-left: 4.5em;
-    margin-right: 3.5em;
-  }
-  q.mini {
-    font-size: 1.3rem;
   }
 }
 </style>
