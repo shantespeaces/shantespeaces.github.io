@@ -191,7 +191,8 @@ section.skwd-projects {
 section.skwd-projects .heading-container {
   position: relative;
   padding-top: 14em;
-  background-color: #fde8d9;
+  /* background-color: #fde8d9; */
+  background-color: #fcf4ed;
   margin-left: 25em;
 }
 .skwd-projects h2 {
@@ -323,12 +324,24 @@ button.shuffle p {
   background-clip: text;
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
+  position: relative;
+  z-index: 1;
 }
-button.shuffle:hover {
+
+button.shuffle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
   background-color: #fcf4ed;
-  border: none;
+  /* background-color: #fde8d9; */
+  transform-origin: bottom;
+  transition: height 0.3s ease-in;
 }
-button.shuffle:hover p {
-  color: black;
+
+button.shuffle:hover::after {
+  height: 100%;
 }
 </style>
