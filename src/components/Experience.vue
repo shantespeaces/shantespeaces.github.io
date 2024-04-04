@@ -26,13 +26,15 @@
                     name: 'project',
                     params: { id: project.id },
                   }"
-                >
-                  <img
-                    class="project-image"
-                    :src="project.logo"
-                    :class="{ show: selectedProject === project }"
-                    alt=""
-                  />
+                  ><div class="project-image-wrapper">
+                    <div class="hover-circle"></div>
+                    <img
+                      class="project-image"
+                      :src="project.logo"
+                      :class="{ show: selectedProject === project }"
+                      alt=""
+                    />
+                  </div>
                 </router-link>
               </div>
             </div>
@@ -76,7 +78,7 @@
                     class="list-item d-flex pb-2"
                   >
                     <span class="bullet">+</span>
-                    <span class="content">{{ item }}</span>
+                    <span class="list-item">{{ item }}</span>
                   </li>
                 </ul>
               </div>
@@ -242,29 +244,15 @@ onMounted(async () => {
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
 }
-img.project-image {
-  display: none;
-  opacity: 0;
-  transition: opacity 10s ease;
+/* LEFT CONTAINER */
+.left-container {
+  border-left: solid 2px;
+  border-image: var(--goldToBottom) 1;
+  border-image-slice: 1;
+  margin-top: 10em;
+  flex-direction: column;
 }
-
-img.project-image.show {
-  display: block;
-  border-radius: 50%;
-  object-fit: contain;
-  border: none;
-  height: 10em;
-  width: 10em;
-  opacity: 1;
-  filter: grayscale(100%);
-  transition: height 0.5s, width 0.5s, filter 0.5s;
-}
-img.project-image:hover {
-  filter: none;
-  height: 11em;
-  width: 11em;
-  background-image: var(--goldToRight);
-}
+/* TITLE */
 .project-title.container {
   flex-direction: column;
 }
@@ -299,14 +287,31 @@ img.project-image:hover {
   font-size: 1.6rem;
 }
 
-.left-container {
-  border-left: solid 2px;
-  border-image: var(--goldToBottom) 1;
-  border-image-slice: 1;
-  margin-top: 10em;
-  flex-direction: column;
+/* IMAGE */
+img.project-image {
+  display: none;
+  opacity: 0;
+  transition: opacity 10s ease;
 }
 
+img.project-image.show {
+  display: block;
+  border-radius: 50%;
+  object-fit: contain;
+  border: none;
+  height: 8em;
+  width: 8em;
+  opacity: 1;
+  transition: height 0.5s, width 0.5s, filter 0.5s;
+}
+
+img.project-image:hover {
+  height: 10em;
+  width: 10em;
+  padding: 0.5em;
+  background-image: var(--goldToRight);
+}
+/* RIGHT CONTAINER */
 .right-container {
   padding-top: 4em;
   padding-right: 2em;
@@ -316,7 +321,13 @@ img.project-image:hover {
 .date-container {
   height: 50px;
 }
-
+.right-container .date {
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
 .right-container .link-container a {
   text-decoration: none;
   font-size: 1.3rem;
@@ -344,13 +355,6 @@ img.project-image:hover {
   line-height: 2;
 }
 
-.right-container .date {
-  font-style: italic;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
 .right-container .description {
   margin: 1.5em 0em 1.5em 0em;
 }
@@ -370,9 +374,10 @@ img.project-image:hover {
   background-clip: text;
   -webkit-background-clip: text;
 }
-.right-container .content {
+.right-container .list-item {
   margin-left: 1em;
 }
+/* FOR RESIVE */
 .column {
   flex: 1;
   display: flex;

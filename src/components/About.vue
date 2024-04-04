@@ -108,8 +108,7 @@ h2.heading {
   bottom: 0;
   width: 100%;
   height: 0;
-  /* background-color: #fde8d9; */
-  background-color: #fcf4ed;
+  background-color: #fde8d9;
   transform-origin: bottom;
   transition: height 0.3s ease-in;
 }

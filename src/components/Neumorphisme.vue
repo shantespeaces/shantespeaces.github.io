@@ -124,6 +124,7 @@ img.neumorphisme58 {
   background-color: white;
   background: linear-gradient(145deg, #eccdc1aa, #fffdf6);
   box-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
+  
 }
 
 .neumorphisme47,
