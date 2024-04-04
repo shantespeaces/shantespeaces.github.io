@@ -126,8 +126,8 @@ const slides = [
     image: "images/primaColors/logo.png",
   },
   { title: "Pub G4", id: 3, image: "images/pubG4/logo.png" },
-  { title: "Bois Espiègle", id: 5, image: "images/bois/logo-bois.png" },
-  { title: "Fusion Spa", id: 0, image: "images/spa/logo.png" },
+  { title: "Bois Espiègle", id: 0, image: "images/bois/logo-bois.png" },
+  { title: "Fusion Spa", id: 4, image: "images/spa/logo.png" },
 ];
 
 const handleStyles = (index) => {

@@ -20,11 +20,17 @@
               <div class="show-project-description">
                 <p>{{ project.description }}</p>
               </div>
-              <h5 class="highlights-title">Highligts</h5>
+              <h5
+                class="highlights-title"
+                @mouseenter="applyZIndex"
+                @mouseleave="resetZIndex"
+              >
+                Highligts
+              </h5>
               <div class="show-highlights">
                 <h5>Highligts</h5>
 
-                <ul class="">
+                <!-- <ul class="">
                   <li
                     v-for="(item, index) in project.cardItems"
                     :key="`${project.id}_${index}`"
@@ -33,7 +39,7 @@
                     <span class="bullet">+</span>
                     <p class="content">{{ item }}</p>
                   </li>
-                </ul>
+                </ul> -->
                 <ul class="">
                   <li
                     v-for="(item, index) in project.items"
@@ -76,20 +82,39 @@
             <img class="logo-show" :src="project.logo" alt="" />
           </div>
           <template v-if="project.pdfImages"
-            ><p>Guideline Document</p>
+            ><p class="image-show-title">Guideline Document</p>
             <div class="row pdf-container">
               <div
                 class="col-6 mb-3"
                 v-for="(pdfImage, index) in project.pdfImages"
                 :key="index"
+                :style="{
+                  position:
+                    pdfImage.image === selectedImage ? 'relative' : 'static',
+                }"
               >
-                <img
-                  class="image-pdf"
-                  :class="{ 'col-12': pdfImage.image === selectedImage }"
-                  :src="pdfImage.image"
-                  alt=""
-                  @click="toggleImageSize(pdfImage.image)"
-                />
+                <div
+                  class="image-pdf-container"
+                  @mousemove="updateTextPosition"
+                >
+                  <img
+                    class="image-pdf"
+                    :class="{ 'col-12': pdfImage.image === selectedImage }"
+                    :src="pdfImage.image"
+                    alt=""
+                    @click="toggleImageSize(pdfImage.image)"
+                  />
+                  <div
+                    class="hover-text-container"
+                    ref="hoverText"
+                    :style="{
+                      top: textPosition.y + 'px',
+                      left: textPosition.x + 'px',
+                    }"
+                  >
+                    <p class="hover-text">Click Me</p>
+                  </div>
+                </div>
               </div>
             </div>
           </template>
@@ -144,7 +169,7 @@
 
 <script setup>
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import MainNav from "../components/Nav.vue";
 import FooterComponent from "../components/FooterComponent.vue";
@@ -167,7 +192,7 @@ onMounted(() => {
   console.log("ID prop:", props.id);
   console.log("Project object:", project.value);
 });
-
+//FETCH POJECT
 onMounted(async () => {
   try {
     const axios_result = await axios.get("/projects.json");
@@ -180,7 +205,7 @@ onMounted(async () => {
     console.error("Error fetching projects data:", error);
   }
 });
-
+//GET PROJECT DETAILS ASSOCIATED WITH ID
 async function getProjectDetails(id) {
   try {
     // Log the ID being searched
@@ -203,6 +228,7 @@ async function getProjectDetails(id) {
   }
 }
 
+//VIEW NEXT/PREVIOUS PROJECT
 const viewNextProject = async () => {
   const lastIndex = projectsData.length - 1;
   projectId = projectId === lastIndex ? 0 : projectId + 1;
@@ -214,14 +240,57 @@ const viewPrevProject = async () => {
   projectId = projectId === 0 ? lastIndex : projectId - 1;
   await getProjectDetails(projectId);
 };
+
+//PDF TOGGLE IMAGE SIZE
 const selectedImage = ref(null);
 
-const toggleImageSize = (imageSrc) => {
-  if (selectedImage.value === imageSrc) {
-    selectedImage.value = null; // Hide the image if it's already selected
+const toggleImageSize = (image) => {
+  selectedImage.value = image;
+  if (selectedImage.value) {
+    window.addEventListener("scroll", handleScroll);
   } else {
-    selectedImage.value = imageSrc; // Show the selected image
+    window.removeEventListener("scroll", handleScroll);
   }
+};
+//PUT IMAGE BACK TO ORIGINAL POSITION
+const handleScroll = () => {
+  const imageContainer = document.querySelector(".image-pdf.col-12");
+  if (imageContainer) {
+    const topOffset = window.scrollY;
+    imageContainer.style.top = `${topOffset}px`;
+
+    // Check if the image is no longer visible in the viewport
+    const viewportHeight = window.innerHeight;
+    const imageRect = imageContainer.getBoundingClientRect();
+    if (
+      imageRect.bottom < 0 || // Image is above the viewport
+      imageRect.top > viewportHeight // Image is below the viewport
+    ) {
+      // Reset image size and position
+      imageContainer.classList.remove("col-12");
+      imageContainer.style.top = ""; // Reset top position
+    }
+  }
+};
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+//APPLY Z-INDEX TO HIGHLIGHTS ON hoverText
+const mainContentRef = ref(null);
+
+const applyZIndex = () => {
+  mainContentRef.value.style.zIndex = "5000";
+};
+
+const resetZIndex = () => {
+  mainContentRef.value.style.zIndex = "";
+};
+//PDF CLICK ME CURSOR
+const textPosition = ref({ x: 0, y: 0 });
+const updateTextPosition = (event) => {
+  console.log(event); // Log mousemove event
+  textPosition.value = { x: event.clientX, y: event.clientY };
 };
 </script>
 
@@ -324,16 +393,18 @@ const toggleImageSize = (imageSrc) => {
   font-size: 1.3rem;
 }
 .show-highlights {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   padding: 2em;
   background-color: #fffdf6;
   border: solid 2px;
   border-image: var(--goldToBottomYellow) 1;
   border-image-slice: 1;
-  position: relative;
+  position: absolute;
   left: 20em;
-  top: 0;
-  height: 100vh;
+  top: -9em;
+  height: 63.9em;
+  width: 70em;
 }
 .show-highlights span {
   padding-right: 1em;
@@ -343,8 +414,12 @@ const toggleImageSize = (imageSrc) => {
   margin-top: 3em;
 }
 .highlights-title:hover + .show-highlights {
-  display: block;
+  opacity: 1;
 }
+.highlights-title:hover + .show-highlights .main-content {
+  z-index: 5000;
+}
+
 h5.highlights-title,
 .github a {
   padding-top: 1em;
@@ -371,7 +446,7 @@ h5.highlights-title,
   text-align: center;
 }
 .logo-show-container {
-  max-width: 100%;
+  width: 100%;
   padding-bottom: 10em;
   display: flex;
   flex-direction: column;
@@ -391,6 +466,7 @@ h5.highlights-title,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .image-show {
   width: 100%;
@@ -403,27 +479,82 @@ h5.highlights-title,
 }
 .image-show-title {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 5em;
 }
+
+.image-pdf-container {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+}
+
+.hover-text-container {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  /* border: solid 2px;
+  border-image: var(--goldToBottom) 1;
+  border-image-slice: 1; */
+  background-color: white;
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+  z-index: 300;
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+}
+p.hover-text {
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 1.6rem;
+  font-family: "Poiret One", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 0.8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.image-pdf-container {
+  position: relative;
+}
+
+.image-pdf-container:hover {
+  z-index: 1;
+}
+.image-pdf-container:hover .hover-text-container {
+  opacity: 1;
+}
+
 .image-pdf {
-  height: 100%;
   width: 100%;
+  height: auto;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
-.pdf-container {
-  margin-left: 3em;
-  margin-right: 3em;
-}
+
 .image-pdf:hover {
   transform: scale(1.2);
+  z-index: 2;
 }
+
 .col-12 {
-  height: 70em;
-  width: 60em;
+  height: 60em;
+  width: 57em;
   object-fit: contain;
+  position: fixed;
+  top: 10em;
+  left: 15em;
+}
+.col-12:hover + .hover-text-container {
+  opacity: 0;
 }
 section.more {
-  height: 8em;
+  height: 5em;
   background-color: white;
   z-index: 100;
   position: fixed;
@@ -434,7 +565,7 @@ section.more {
   border-image-slice: 1;
 }
 .more-container {
-  margin-top: 2em;
+  margin-top: 0.4em;
 }
 .more button {
   border: none;

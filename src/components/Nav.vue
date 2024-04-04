@@ -240,4 +240,9 @@ a.navbar-brand {
     transform: translateY(0);
   }
 }
+/* @media screen and (max-width: 579px) {
+  .nav-container {
+    display: none;
+  }
+} */
 </style>
