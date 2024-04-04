@@ -79,6 +79,7 @@ h2.heading {
   display: none;
 }
 .quote-container button {
+  position: relative;
   border-left: solid 3px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
@@ -86,25 +87,35 @@ h2.heading {
 }
 
 .quote-container button p {
+  margin-top: 0.6em;
+  font-weight: bold;
   font-size: 2rem;
   letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
-  background-clip: text;
   text-transform: uppercase;
-  margin-top: 0.6em;
-  font-weight: bold;
   font-family: "Poiret One", sans-serif;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
-.quote-container button:hover p {
-  font-size: 2.1rem;
-  color: black;
+.quote-container button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fcf4ed;
+  transform-origin: bottom;
+  transition: height 0.3s ease-in;
 }
-.quote-container button:hover {
-  background-color: #fbe1d0;
-  border: transparent;
+
+.quote-container button:hover::after {
+  height: 100%;
 }
+
 p.full {
   padding-bottom: 5em;
   margin-bottom: 0;

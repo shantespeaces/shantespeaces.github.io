@@ -17,7 +17,7 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
   margin-top: 2em;
 }
 .contact button {
-  position: relative; /* Ensure proper positioning for pseudo-element */
+  position: relative; 
   border-left: solid 2px;
   border-image: var(--goldToRightDark) 1;
   border-image-slice: 1;
