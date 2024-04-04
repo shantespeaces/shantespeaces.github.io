@@ -470,7 +470,7 @@ h5.highlights-title,
 }
 .image-show {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   align-self: center;
 }
 .background-video {

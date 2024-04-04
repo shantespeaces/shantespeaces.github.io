@@ -245,10 +245,19 @@ onMounted(async () => {
   border-image-slice: 1;
 }
 /* LEFT CONTAINER */
-.left-container {
+.left-wrapper {
   border-left: solid 2px;
   border-image: var(--goldToBottom) 1;
   border-image-slice: 1;
+  max-width: 30em;
+  margin: 3em 2em 2em 2em;
+}
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.left-container {
   margin-top: 10em;
   flex-direction: column;
 }
@@ -312,6 +321,14 @@ img.project-image:hover {
   background-image: var(--goldToRight);
 }
 /* RIGHT CONTAINER */
+
+.right-wrapper {
+  margin: 2em;
+}
+.row {
+  width: 100%;
+  --bs-gutter-x: 0rem;
+}
 .right-container {
   padding-top: 4em;
   padding-right: 2em;
@@ -377,23 +394,7 @@ img.project-image:hover {
 .right-container .list-item {
   margin-left: 1em;
 }
-/* FOR RESIVE */
-.column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.row {
-  width: 100%;
-  --bs-gutter-x: 0rem;
-}
-.left-wrapper {
-  max-width: 30em;
-  margin: 2em;
-}
-.right-wrapper {
-  margin: 2em;
-}
+
 /* PAGINATION BUTTONS */
 .pagination-button-wrapper {
   background-color: #002d40;
