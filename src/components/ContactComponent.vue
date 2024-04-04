@@ -17,6 +17,7 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
   margin-top: 2em;
 }
 .contact button {
+  position: relative; /* Ensure proper positioning for pseudo-element */
   border-left: solid 2px;
   border-image: var(--goldToRightDark) 1;
   border-image-slice: 1;
@@ -25,7 +26,9 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
   padding-bottom: 1em;
   cursor: pointer;
   background: white;
+  overflow: hidden;
 }
+
 .contact button a {
   font-weight: bold;
   font-size: 2rem;
@@ -36,15 +39,24 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
-.contact button:hover {
+
+.contact button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
   background-color: #fcf4ed;
-  border: none;
+  transform-origin: bottom;
+  transition: height 0.3s ease-in;
 }
-.contact button:hover a {
-  font-size: 2.5rem;
-  /* color: black; */
-  transition: font-size 0.5s;
+
+.contact button:hover::after {
+  height: 100%;
 }
 
 @media screen and (max-width: 1350px) {
