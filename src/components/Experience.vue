@@ -207,7 +207,8 @@ onMounted(async () => {
   padding-right: 1rem;
   padding-top: 3em;
   padding-bottom: 1rem;
-  background-color: #fde8d9;
+  /* background-color: #fde8d9; */
+  background-color: #fcf4ed;
   margin-right: 6em;
   margin-bottom: 0;
 }

@@ -63,7 +63,8 @@ section.references {
 }
 section.references h2 {
   padding-top: 4em;
-  background-color: #fde8d9;
+  /* background-color: #fde8d9; */
+  background-color: #fcf4ed;
   margin-left: 6em;
   padding-left: 1rem;
   padding-bottom: 1rem;

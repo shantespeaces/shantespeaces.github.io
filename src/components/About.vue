@@ -56,7 +56,8 @@ section.about {
 }
 section.about h2 {
   padding-top: 4em;
-  background-color: #fde8d9;
+  /* background-color: #fde8d9; */
+  background-color: #fcf4ed;
   margin-left: 6em;
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -107,6 +108,7 @@ h2.heading {
   bottom: 0;
   width: 100%;
   height: 0;
+  /* background-color: #fde8d9; */
   background-color: #fcf4ed;
   transform-origin: bottom;
   transition: height 0.3s ease-in;
