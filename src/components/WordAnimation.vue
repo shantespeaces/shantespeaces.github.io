@@ -202,6 +202,7 @@ p.enter-now {
   font-size: 1.6em;
   transform: rotate(-5deg);
 }
+
 .shante {
   font-size: 8rem;
 }
@@ -209,7 +210,12 @@ p.enter-now {
 .port,
 .folio {
   font-size: 18.5rem;
-  color: #ffffff;
+  /* opacity: 1; */
+  /* color: #ffffff; */
+  background-image: var(--goldToRight);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .word span {
   display: inline-block;
@@ -222,7 +228,7 @@ p.enter-now {
 .word span.folio {
   cursor: pointer;
 
-  text-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
+  /* text-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d; */
   /* 0 0 10px rgba(255, 236, 222, 0.8),
     0 0 20px rgba(255, 236, 222, 0.8), 0 0 25px rgba(255, 236, 222, 0.8),
     0 0 5px rgb(188, 139, 121), 0 0 30px rgba(255, 236, 222, 0.8), */
@@ -242,35 +248,72 @@ p.enter-now {
 .word span:nth-child(2),
 .word span:nth-child(4),
 .word span:nth-child(6) {
-  color: #cb9b51;
+  /* color: #cb9b51; */
+  /* color: #4a2b2acd; */
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: colorPulse 3s infinite alternate;
 }
+
 .word span:nth-child(3),
 .word span:nth-child(7) {
   color: #f0cd7b;
-  animation: flicker 3s infinite alternate;
+  /* animation: flicker 3s infinite alternate; */
+  animation: colorPulse 3s infinite alternate;
 }
 .word span:nth-child(1),
 .word span:nth-child(5),
 .word span:nth-child(8) {
-  color: #4a2b2acd;
+  /* color: #4a2b2acd; */
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* animation: flicker 3s infinite alternate; */
+  animation: colorPulse 3s infinite alternate;
+}
+.word span:nth-child(10) {
+  background-image: var(--goldToBottomYellow);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.word span:nth-child(12) {
+  background-image: var(--goldToBottomYellow);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
   animation: flicker 3s infinite alternate;
 }
-.word span:nth-child(10),
-.word span:nth-child(12),
-.word span:nth-child(13),
+.word span:nth-child(13) {
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: flicker 3s infinite alternate;
+}
 .word span:nth-child(15),
 .word span:nth-child(17),
 .word span:nth-child(18) {
-  color: white;
-  /* opacity: 0.8; */
+  /* color: white; */
+  /* color: #4a2b2acd; */
+  /* color: #f0cd7b; */
+
+  background-image: var(--goldToRight);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* opacity: 1; */
   animation: flicker 3s infinite alternate;
 }
 
 @keyframes flicker {
   10% {
-    opacity: 0.1;
+    opacity: 1;
     /* color: #f0cd7b; */
-    background-image: var(--goldToBottom);
+    background-image: var(--goldToRight);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -300,22 +343,31 @@ p.enter-now {
 .word span:nth-child(11),
 .word span:nth-child(17),
 .word span:nth-child(20) {
+  /* color: white; */
   color: (236, 205, 193, 0.667);
+  /* background-image: var(--goldToRight);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; */
   animation: colorPulse 5s linear infinite, flicker 3s infinite alternate;
 }
 
 @keyframes colorPulse {
   0%,
   100% {
-    color: white;
-  }
-
-  50% {
-    /* color: #cb9a51d5; */
-    background-image: var(--goldToRight);
+    /* color: white; */
+    background-image: var(--goldToBottom);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+  }
+
+  50% {
+    color: #cb9a51d5;
+    /* background-image: var(--goldToRight);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; */
   }
 }
 
@@ -345,11 +397,11 @@ p.enter-now {
 .word span:nth-child(12).active {
   animation: falling 2s ease-out;
   transform-origin: bottom center;
-  /* color: #4a2b2acd; */
-  background-image: var(--goldToBottomDark);
+  color: #4a2b2acd;
+  /* background-image: var(--goldToBottomDark);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
 }
 
 @keyframes falling {
@@ -381,11 +433,11 @@ p.enter-now {
 
 .word span:nth-child(16).active {
   animation: rotate 1s ease-out;
-  /* color: #4a2b2acd; */
-  background-image: var(--goldToBottomDark);
+  color: #4a2b2acd;
+  /* background-image: var(--goldToBottomDark);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
 }
 
 @keyframes rotate {
@@ -401,11 +453,11 @@ p.enter-now {
 .word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
-  /* color: #4a2b2acd; */
-  background-image: var(--goldToBottom);
+  color: #4a2b2acd;
+  /* background-image: var(--goldToBottom);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
 }
 
 @keyframes shrinkjump {
@@ -425,11 +477,11 @@ p.enter-now {
 }
 .word span:nth-child(19).active {
   animation: toplong 1.5s linear;
-  /* color: #f0cd7b; */
-  background-image: var(--goldToBottomYellow);
+  color: #f0cd7b;
+  /* background-image: var(--goldToBottomYellow);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
 }
 
 @keyframes toplong {
@@ -647,10 +699,25 @@ p.enter-now {
     width: 2em;
   }
 }
-@media screen and (max-width: 798px) {
+@media screen and (max-width: 1000px) {
   .wordAnimation {
-    margin-right: 3em;
-    margin-left: 3em;
+    margin-right: 0em;
+    margin-left: 10em;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wordAnimation {
+    margin-left: 8em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .wordAnimation {
+    margin-left: 6em;
+  }
+}
+@media screen and (max-width: 700px) {
+  .wordAnimation {
+    margin-left: 4em;
   }
   .port {
     font-size: 10.5rem;
@@ -671,12 +738,12 @@ p.enter-now {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 615px) {
   .wordAnimation {
-    margin-left: 2em;
+    margin-right: 0;
   }
   .word {
-    margin-left: 2em;
+    margin-left: 3em;
   }
   .shante {
     font-size: 3em;
@@ -684,11 +751,14 @@ p.enter-now {
   .port {
     font-size: 15rem;
   }
+  .br {
+    display: block;
+  }
   .folio {
     font-size: 4.5rem;
   }
   .word span:nth-child(16) {
-    margin-left: 0.5em;
+    margin-left: 0em;
   }
   .click-container {
     margin-left: 4em;
@@ -713,15 +783,19 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 500px) {
-  .wordAnimation {
-    margin-left: 1em;
-    margin-right: 0em;
+  .word {
+    margin-left: 2em;
+    margin-right: 0;
   }
+  .wordAnimation {
+    margin-right: 0;
+  }
+
   .shante {
-    font-size: 2em;
+    font-size: 1.7em;
   }
   .port {
-    font-size: 13rem;
+    font-size: 11rem;
   }
   .folio {
     font-size: 4rem;
@@ -738,28 +812,27 @@ p.enter-now {
 @media screen and (max-width: 400px) {
   .wordAnimation {
     margin-top: 6em;
+    margin-right: 0;
+    margin-left: 1em;
   }
-  .word {
-    margin-left: 0em;
+  .rotate {
+    margin: 2em;
   }
   .shante {
     font-size: 1.6rem;
   }
-  .word span:nth-child(1) {
-    margin-left: 1em;
-  }
+
   .port {
-    font-size: 13rem;
+    font-size: 11rem;
   }
   .folio {
     font-size: 3.9rem;
   }
-  .word span:nth-child(16) {
-    margin-left: 0.5em;
-  }
+
   .enter-container {
     margin-left: 0em;
     margin-right: 1em;
+    width: 100%;
   }
   p.enter {
     font-size: 2.5em;
