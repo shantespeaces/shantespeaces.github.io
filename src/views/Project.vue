@@ -107,8 +107,8 @@
                     @click="toggleImageSize(pdfImage.image)"
                   />
                   <div
-                    class="hover-text-container"
-                    ref="hoverText"
+                    class="cursor-circle-container"
+                    ref="circleText"
                     :style="{
                       top: textPosition.y + 'px',
                       left: textPosition.x + 'px',
@@ -278,7 +278,7 @@ const handleScroll = () => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
-//APPLY Z-INDEX TO HIGHLIGHTS ON hoverText
+//APPLY Z-INDEX TO HIGHLIGHTS ON circleText
 const mainContentRef = ref(null);
 
 const applyZIndex = () => {
@@ -297,9 +297,6 @@ const updateTextPosition = (event) => {
 </script>
 
 <style>
-#project {
-  margin-bottom: 10em;
-}
 .show-background-container {
   background-color: #fffdf6;
 }
@@ -497,7 +494,7 @@ h5.highlights-title,
 }
 
 /* CURSOR CIRCLE */
-.hover-text-container {
+.cursor-circle-container {
   position: fixed;
   opacity: 0;
   pointer-events: none;
@@ -536,7 +533,7 @@ p.hover-text {
 /* .image-pdf-container:hover {
   z-index: 1;
 } */
-.image-pdf-container:hover .hover-text-container {
+.image-pdf-container:hover .cursor-circle-container {
   opacity: 1;
 }
 
@@ -562,7 +559,7 @@ p.hover-text {
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
-.col-12:hover + .hover-text-container {
+.col-12:hover + .cursor-circle-container {
   opacity: 0;
 }
 section.more {
@@ -690,7 +687,7 @@ section.more {
   .github a {
     margin-left: 2.5em;
   }
-  .hover-text-container {
+  .cursor-circle-container {
     height: 8em;
     width: 8em;
   }
@@ -743,7 +740,7 @@ section.more {
   .github a {
     font-size: 175%;
   }
-  .hover-text-container {
+  .cursor-circle-container {
     height: 10em;
     width: 10em;
   }
@@ -753,6 +750,9 @@ section.more {
   }
 }
 @media (max-width: 992px) {
+  .cursor-circle-container {
+    display: none;
+  }
   .show-container {
     flex-direction: column;
     margin: 0;

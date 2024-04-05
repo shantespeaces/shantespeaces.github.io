@@ -202,7 +202,7 @@ onMounted(async () => {
 #sticky-projects {
   position: sticky;
   position: -webkit-sticky;
-  top: -500px;
+  top: -700px;
 }
 .experience h2.heading {
   text-align: end;
@@ -443,7 +443,7 @@ img.project-image:hover {
 
 @media screen and (max-width: 1200px) {
   #sticky-projects {
-    top: -330px;
+    top: -800px;
   }
   .experience h2.heading {
     margin-right: 3em;
@@ -473,7 +473,7 @@ img.project-image:hover {
 }
 @media screen and (max-width: 992px) {
   #sticky-projects {
-    top: -900px;
+    top: -1100px;
   }
   .experience h2.heading {
     margin-right: 2em;
@@ -487,6 +487,11 @@ img.project-image:hover {
   }
   .column {
     display: flex;
+  }
+  .pagination-button-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 45.5em;
   }
   /* .left-wrapper.column {
     order: 1;
@@ -592,6 +597,9 @@ img.project-image:hover {
     margin-top: 3em;
     padding-bottom: 3em;
     width: 100%;
+  }
+  .date-container {
+    margin-bottom: 3em;
   }
 
   .project-title.container {

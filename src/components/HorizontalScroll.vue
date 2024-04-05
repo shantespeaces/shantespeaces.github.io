@@ -453,10 +453,10 @@ img.cover-image {
   }
   .wrapper {
     padding-top: 10em;
-    padding-bottom: 190em;
+    padding-bottom: 150em;
     width: 100%;
     flex-direction: column;
-    overflow: visible;
+    overflow: hidden;
   }
   .horizontal-card {
     background-color: transparent;
@@ -548,7 +548,7 @@ img.cover-image {
     display: none;
   }
   .wrapper {
-    padding-bottom: 140em;
+    padding-bottom: 120em;
   }
 
   .horizontal-card {

@@ -79,12 +79,12 @@ const props = defineProps({
   -moz-perspective: 150rem;
   position: relative;
   width: 23rem;
-  height: 45rem;
+  height: 46rem;
   border: none;
 }
 
 .card__side {
-  height: 45rem;
+  height: 46rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -112,7 +112,7 @@ const props = defineProps({
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   position: relative;
-  bottom: -11em;
+  bottom: -12em;
   left: 1em;
   height: 21em;
   width: 21em;
@@ -181,6 +181,31 @@ const props = defineProps({
   -webkit-background-clip: text;
   font-size: 1.6rem;
 }
+/* @media screen and (max-width: 992px) {
+  .card-wrapper {
+    height: 15em;
+  }
+  .card,
+  .card__side {
+    height: 15em;
+    width: 10em;
+  }
+
+  .circle {
+    height: 9em;
+    width: 9em;
+    bottom: -3em;
+    left: 0.3em;
+  }
+  .circle h4 {
+    font-size: 2em;
+  }
+} */
+@media screen and (max-width: 450px) {
+  .card__side--back {
+    height: fit-content;
+  }
+}
 @media screen and (max-width: 360px) {
   /* .card-wrapper, */
   .card,
@@ -188,9 +213,7 @@ const props = defineProps({
     width: 19rem;
     height: 40em;
   }
-  .card__side--back {
-    height: 50em;
-  }
+
   .circle {
     height: 18em;
     width: 18em;
@@ -202,3 +225,12 @@ const props = defineProps({
   }
 }
 </style>
+<!-- .card:hover .card__side { -->
+<!-- /* transform: translateY(-3px) scale(1.2); */
+  /* height: 46rem;
+  width: 30em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; */ -->
+<!-- } -->
