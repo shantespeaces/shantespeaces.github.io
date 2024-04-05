@@ -151,6 +151,9 @@ const props = defineProps({
   padding-top: 1em;
   letter-spacing: 2px;
 }
+.card__side--back ul {
+  padding-left: 1em;
+}
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
 }

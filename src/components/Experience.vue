@@ -390,9 +390,7 @@ img.project-image:hover {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-}
-.right-container .list-item {
-  margin-left: 1em;
+  margin-right: 1em;
 }
 
 /* PAGINATION BUTTONS */

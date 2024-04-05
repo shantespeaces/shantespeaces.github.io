@@ -24,13 +24,11 @@
   </div>
 
   <div class="copyright d-flex justify-content-center">
-    <span class="material-symbols-outlined"> copyright </span>
-    <p>Shanté Nicolaides Loving Art Deco 2024</p>
-    <p>
-      <a href="https://www.freepik.com/free-vector"
-        >Art Deco Images by freepik</a
-      >
-    </p>
+    <div class="shante-container d-flex justify-content-center">
+      <span class="material-symbols-outlined"> copyright </span>
+      <p>Shanté Nicolaides Loving Art Deco 2024</p>
+    </div>
+    <a href="https://www.freepik.com/free-vector">Art Deco Images by freepik</a>
   </div>
 </template>
 <script setup>
@@ -104,8 +102,11 @@ footer h1.job-title {
 .copyright {
   background-color: #fffdf6;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   z-index: 100;
   position: relative;
+  flex-direction: column;
+  align-items: center;
 }
 .copyright p,
 .copyright a {
@@ -200,6 +201,8 @@ footer h1.job-title {
   }
   .copyright p {
     font-size: 1rem;
+    margin-bottom: 0;
+    padding-top: 0.3rem;
   }
 }
 </style>

@@ -145,15 +145,11 @@ section.portfolio {
   }
   .portfolio h2.heading {
     margin-right: 2.5em;
-    font-size: 2rem;
   }
 }
 @media screen and (max-width: 768px) {
   .card-container-wrapper {
     padding: 0;
-  }
-  .portfolio h2.heading {
-    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 576px) {

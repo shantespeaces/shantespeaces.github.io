@@ -390,6 +390,7 @@ const updateTextPosition = (event) => {
   width: 60%;
   margin-top: -30px;
   margin-left: 3em;
+  line-height: 2;
 }
 .show-project-description p {
   font-size: 1.2rem;
@@ -815,6 +816,10 @@ section.more {
     padding-left: 5em;
     padding-right: 5em;
   }
+  p.content,
+  .show-project-description p {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 576px) {
   .show-container-right,
@@ -829,11 +834,10 @@ section.more {
   .show-project-description {
     width: 100%;
     padding-right: 0;
-    font-size: 1.2rem;
   }
-  .show-project-description p,
-  p.content {
-    font-size: 1.2rem;
+
+  h5.highlights-title {
+    margin-left: 0;
   }
   .show-highlights {
     position: static;
@@ -867,7 +871,7 @@ section.more {
   .github a {
     font-size: 200%;
   }
-  h5.highlights-title,
+
   .github a {
     margin-left: 2em;
   }
