@@ -726,6 +726,7 @@ p.enter-now {
   .folio {
     font-size: 4rem;
   }
+
   .enter-container {
     margin-left: 1em;
   }
@@ -735,11 +736,14 @@ p.enter-now {
   }
 }
 @media screen and (max-width: 400px) {
+  .wordAnimation {
+    margin-top: 6em;
+  }
   .word {
     margin-left: 0em;
   }
   .shante {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .word span:nth-child(1) {
     margin-left: 1em;

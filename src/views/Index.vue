@@ -130,7 +130,7 @@ onBeforeMount(() => {
     #cb9b51 78%
   );
 }
-body{
+body {
   overflow-x: hidden;
 }
 </style>
