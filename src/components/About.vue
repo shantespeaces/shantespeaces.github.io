@@ -216,7 +216,7 @@ p.full {
 
 @media screen and (max-width: 360px) {
   #sticky-about {
-    top: -600px;
+    top: -900px;
   }
   section.about h2 {
     margin-left: 0em;
@@ -232,7 +232,8 @@ p.full {
     line-height: 2;
   }
   .about .text-container {
-    margin: 1.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
   }
   .quote-container {
     display: flex;

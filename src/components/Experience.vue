@@ -705,7 +705,7 @@ img.project-image:hover {
 }
 @media screen and (max-width: 360px) {
   #sticky-projects {
-    top: -1500px;
+    top: -1800px;
   }
 }
 </style>

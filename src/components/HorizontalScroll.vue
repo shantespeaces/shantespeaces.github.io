@@ -510,8 +510,8 @@ img.cover-image {
 @media screen and (max-width: 400px) {
   .cover,
   .horizontal-card-back {
-    height: 5em;
-    width: 5em;
+    height: 4em;
+    width: 4em;
   }
   .horizontal-card {
     position: relative;
@@ -519,30 +519,30 @@ img.cover-image {
     overflow-x: hidden;
   }
   .gold-container {
-    height: 5em;
-    width: 5em;
+    height: 4em;
+    width: 4em;
     top: 0em;
     left: 0em;
     overflow-x: hidden;
   }
   img.cover-image {
-    height: 4.5em;
-    width: 4.5em;
+    height: 3.5em;
+    width: 3.5em;
     overflow-x: hidden;
   }
   .cover-before {
-    height: 4.5em;
-    width: 4.5em;
+    height: 3.5em;
+    width: 3.5em;
     top: 0.9rem;
     left: 0.9rem;
   }
   .cover-before .title-container {
-    height: 3.5em;
-    width: 3.5em;
+    height: 2.5em;
+    width: 2.5em;
   }
   .cover-before h3.title-card {
     font-size: 2rem;
-    top: 1.4em;
+    top: 0.5em;
   }
   .animated-text {
     display: none;
