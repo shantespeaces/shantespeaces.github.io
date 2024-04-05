@@ -470,7 +470,6 @@ h5.highlights-title,
   width: 100%;
   height: auto;
   position: relative;
-  /* object-fit: scale-down; */
 }
 .image-show-container {
   margin: auto;
@@ -496,20 +495,12 @@ h5.highlights-title,
   font-weight: bold;
 }
 
-.image-pdf-container {
-  position: relative;
-  display: inline-block;
-  margin: 1em;
-}
-
+/* CURSOR CIRCLE */
 .hover-text-container {
   position: fixed;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
-  /* border: solid 2px;
-  border-image: var(--goldToBottom) 1;
-  border-image-slice: 1; */
   background-color: white;
   margin-top: 1.5em;
   margin-left: 1.5em;
@@ -531,13 +522,19 @@ p.hover-text {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
+/* PDF IMAGES */
+.image-pdf-container {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+}
 .image-pdf-container {
   position: relative;
 }
 
-.image-pdf-container:hover {
+/* .image-pdf-container:hover {
   z-index: 1;
-}
+} */
 .image-pdf-container:hover .hover-text-container {
   opacity: 1;
 }
@@ -549,18 +546,20 @@ p.hover-text {
   cursor: pointer;
 }
 
-.image-pdf:hover {
+.image-pdf.col-6:hover {
   transform: scale(1.2);
   z-index: 2;
 }
 
 .col-12 {
-  height: 60em;
+  height: 57em;
   width: 57em;
   object-fit: contain;
   position: fixed;
-  top: 10em;
-  left: 15em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 .col-12:hover + .hover-text-container {
   opacity: 0;
@@ -603,12 +602,6 @@ section.more {
   transition: font-size 0.5s;
   font-size: 2.5em;
 }
-/* .more p:hover.material-symbols-outlined {
-  background-image: var(--goldToRightYellow);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-} */
 
 @keyframes scaleDown {
   0% {
@@ -696,6 +689,20 @@ section.more {
   .github a {
     margin-left: 2.5em;
   }
+  .hover-text-container {
+    height: 8em;
+    width: 8em;
+  }
+  p.hover-text {
+    font-size: 1.5rem;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .col-12 {
+    height: 67em;
+    width: 67em;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -705,15 +712,15 @@ section.more {
     margin-right: 5em;
     padding-top: 12em;
   }
-  .main-content {
+  /* .main-content {
     width: 40%;
-  }
-  .show-container-left {
+  } */
+  /* .show-container-left {
     width: 40%;
   }
   .show-container-right {
     width: 60%;
-  }
+  } */
 
   .image-show-container {
     width: 75%;
@@ -735,6 +742,14 @@ section.more {
   .github a {
     font-size: 175%;
   }
+  .hover-text-container {
+    height: 10em;
+    width: 10em;
+  }
+  .col-12 {
+    height: 85em;
+    width: 85em;
+  }
 }
 @media (max-width: 992px) {
   .show-container {
@@ -754,13 +769,13 @@ section.more {
   }
   .show-container-left {
     width: 100%;
-    padding-left: 20em;
-    padding-right: 20em;
+    padding-left: 15em;
+    padding-right: 15em;
   }
   .show-container-right {
     width: 100%;
-    padding-left: 20em;
-    padding-right: 20em;
+    padding-left: 15em;
+    padding-right: 15em;
   }
   .image-show-container {
     margin: 0;
@@ -793,6 +808,7 @@ section.more {
     margin-top: 1em;
   }
 }
+
 @media (max-width: 768px) {
   .show-container-right,
   .show-container-left {
@@ -826,6 +842,9 @@ section.more {
   }
   .show-container-right {
     padding: 0;
+  }
+  .col-12 {
+    width: 100%;
   }
 }
 @media (max-width: 360px) {
