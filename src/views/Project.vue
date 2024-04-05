@@ -20,17 +20,18 @@
               <div class="show-project-description">
                 <p>{{ project.description }}</p>
               </div>
-              <h5
-                class="highlights-title"
-                @mouseenter="applyZIndex"
-                @mouseleave="resetZIndex"
-              >
-                Highligts
-              </h5>
-              <div class="show-highlights">
-                <h5>Highligts</h5>
+              <div class="highlights-container d-flex">
+                <h5
+                  class="highlights-title"
+                  @mouseenter="applyZIndex"
+                  @mouseleave="resetZIndex"
+                >
+                  Highligts
+                </h5>
+                <div class="show-highlights">
+                  <h5>Highligts</h5>
 
-                <!-- <ul class="">
+                  <!-- <ul class="">
                   <li
                     v-for="(item, index) in project.cardItems"
                     :key="`${project.id}_${index}`"
@@ -40,27 +41,28 @@
                     <p class="content">{{ item }}</p>
                   </li>
                 </ul> -->
-                <ul class="">
-                  <li
-                    v-for="(item, index) in project.items"
-                    :key="`${project.id}_${index}`"
-                    class="list-item d-flex pb-2"
-                  >
-                    <span class="bullet">+</span>
-                    <p class="content">{{ item }}</p>
-                  </li>
-                </ul>
-              </div>
-              <template v-if="project.link">
-                <div class="github">
-                  <a
-                    :href="project.link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >View project in Github</a
-                  >
+                  <ul class="">
+                    <li
+                      v-for="(item, index) in project.items"
+                      :key="`${project.id}_${index}`"
+                      class="list-item d-flex pb-2"
+                    >
+                      <span class="bullet">+</span>
+                      <p class="content">{{ item }}</p>
+                    </li>
+                  </ul>
                 </div>
-              </template>
+                <template v-if="project.link">
+                  <div class="github">
+                    <a
+                      :href="project.link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >View project in Github</a
+                    >
+                  </div>
+                </template>
+              </div>
             </div>
           </div>
         </div>
@@ -295,27 +297,27 @@ const updateTextPosition = (event) => {
 </script>
 
 <style>
+#project {
+  margin-bottom: 10em;
+}
 .show-background-container {
   background-color: #fffdf6;
 }
 .show-container {
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: 10em;
+  margin-right: 10em;
   font-size: 14px;
   font-family: "Montserrat", sans;
   justify-content: center;
+  padding-top: 10em;
 }
 /* LEFT */
 .show-container-left {
   width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   position: relative;
   animation: fade-in 1.5s ease, slide-in 1.2s ease;
   -webkit-animation: fade-in 1.5s ease, slide-in 1.2s ease;
-  padding-top: 15em;
+  padding-top: 3em;
 }
 
 .main-content {
@@ -341,7 +343,7 @@ const updateTextPosition = (event) => {
 }
 .main-headings .heading {
   margin-top: 20px;
-  margin-left: 80px;
+  margin-left: 3em;
 }
 .main-headings h5 {
   letter-spacing: 2px;
@@ -373,7 +375,7 @@ const updateTextPosition = (event) => {
 #heading3 {
   padding-top: 1rem;
   margin-top: -52px;
-  font-size: 1100%;
+  font-size: 1000%;
   font-weight: 800;
   letter-spacing: 2px;
   background-image: var(--goldToBottomDark);
@@ -387,34 +389,45 @@ const updateTextPosition = (event) => {
 .show-project-description {
   width: 60%;
   margin-top: -30px;
-  margin-left: 90px;
+  margin-left: 3em;
 }
 .show-project-description p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+/* HIGHLIGHTS */
+.highlights-container {
+  display: flex;
+  flex-direction: column;
 }
 .show-highlights {
+  position: fixed;
+  display: none;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  padding: 2em;
+  padding: 4em;
   background-color: #fffdf6;
   border: solid 2px;
   border-image: var(--goldToBottomYellow) 1;
   border-image-slice: 1;
-  position: absolute;
-  left: 20em;
-  top: -9em;
-  height: 63.9em;
-  width: 70em;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .show-highlights span {
   padding-right: 1em;
 }
 .show-highlights h5 {
-  margin-left: 0;
-  margin-top: 3em;
+  margin-left: 1.5em;
+  padding-bottom: 1em;
+}
+.show-highlights ul {
+  padding-left: 0;
 }
 .highlights-title:hover + .show-highlights {
   opacity: 1;
+  display: block;
 }
 .highlights-title:hover + .show-highlights .main-content {
   z-index: 5000;
@@ -424,10 +437,10 @@ h5.highlights-title,
 .github a {
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-left: 2em;
 }
 
 .github a {
-  margin-left: 92px;
   font-weight: bold;
   font-size: 120%;
   text-decoration: none;
@@ -440,19 +453,18 @@ h5.highlights-title,
 .show-container-right {
   width: 50%;
   flex-direction: column;
-  padding-top: 2em;
 }
 .show-container-right p {
   text-align: center;
 }
-.logo-show-container {
+/* .logo-show-container {
   width: 100%;
   padding-bottom: 10em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .logo-show-container img {
   width: 100%;
@@ -467,6 +479,7 @@ h5.highlights-title,
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-bottom: 8em;
 }
 .image-show {
   width: 100%;
@@ -481,7 +494,6 @@ h5.highlights-title,
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 5em;
 }
 
 .image-pdf-container {
@@ -569,13 +581,13 @@ section.more {
 }
 .more button {
   border: none;
-  background-image: var(--goldToBottom);
+  background-image: var(--goldToBottomDark);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
 .more button p {
-  background-image: var(--goldToRightYellow);
+  background-image: var(--goldToRight);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -656,35 +668,42 @@ section.more {
     transform: scale(1);
   }
 }
+@media (max-width: 1800px) {
+  .show-container {
+    padding-top: 8em;
+  }
+}
 @media (max-width: 1600px) {
   .show-container {
     font-size: 11.5px;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 10em;
+    margin-right: 10em;
+    padding-top: 12em;
   }
   .main-content {
     width: 40%;
   }
+
   .image-show-container {
     width: 100%;
   }
   .show-project-description {
     width: 80%;
-    padding-right: 5em;
   }
   .main-headings #quote {
     width: 85%;
   }
   .github a {
-    font-size: 150%;
-    margin-left: 4.5em;
+    margin-left: 2.5em;
   }
 }
+
 @media (max-width: 1200px) {
   .show-container {
     font-size: 9px;
     margin-left: 10em;
-    margin-right: 10em;
+    margin-right: 5em;
+    padding-top: 12em;
   }
   .main-content {
     width: 40%;
@@ -695,6 +714,7 @@ section.more {
   .show-container-right {
     width: 60%;
   }
+
   .image-show-container {
     width: 75%;
   }
@@ -714,7 +734,6 @@ section.more {
   }
   .github a {
     font-size: 175%;
-    margin-left: 5em;
   }
 }
 @media (max-width: 992px) {
@@ -727,8 +746,11 @@ section.more {
   .main-headings {
     width: 100%;
   }
+  .main-headings #quote {
+    width: 94%;
+  }
   .show-project-description {
-    width: 75%;
+    width: 90%;
   }
   .show-container-left {
     width: 100%;
@@ -747,26 +769,28 @@ section.more {
   .main-content {
     position: relative;
   }
-  .show-highlights {
-    display: block;
-    left: 0;
-    top: 0em;
+
+  .highlights-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
+  .show-highlights {
+    position: static;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 1;
+    margin-bottom: 5em;
+  }
   .show-highlights h5 {
     display: none;
   }
-  .github a {
-    font-size: 300%;
-    position: relative;
-    top: 2em;
-    margin-left: 0;
-    font-weight: 400;
-    /* letter-spacing: 2px;
-    background-image: var(--goldToRight);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; */
+  .github {
+    margin-top: 1em;
   }
 }
 @media (max-width: 768px) {
@@ -789,6 +813,19 @@ section.more {
   .show-project-description {
     width: 100%;
     padding-right: 0;
+    font-size: 1.2rem;
+  }
+  .show-project-description p,
+  p.content {
+    font-size: 1.2rem;
+  }
+  .show-highlights {
+    position: static;
+    border: none;
+    padding: 0;
+  }
+  .show-container-right {
+    padding: 0;
   }
 }
 @media (max-width: 360px) {
