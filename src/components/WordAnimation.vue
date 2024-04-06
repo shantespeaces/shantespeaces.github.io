@@ -2,6 +2,9 @@
   <div class="neumorphismes">
     <Neumorphisme />
     <section class="wordAnimation d-flex">
+      <div class="welcome">
+        <p>welcome to</p>
+      </div>
       <div class="word-container">
         <div class="d-flex">
           <div
@@ -139,10 +142,21 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .enter-container {
   z-index: 1000;
 }
+.welcome p {
+  font-family: "League Script";
+  font-size: 3em;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  padding-left: 0.3em;
+}
 .enter-wrapper {
   flex-direction: column;
   z-index: 1000;
 }
+
 p.enter {
   font-family: "League Script";
   font-size: 7em;
