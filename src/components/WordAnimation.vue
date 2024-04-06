@@ -124,7 +124,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .wordAnimation {
   height: 100vh;
   flex-direction: column;
-  margin: 10em 0em 10em 5em;
+  margin: 10em 0em 0em 5em;
 }
 
 .word {
@@ -151,7 +151,6 @@ p.enter {
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
-  /* text-shadow: 0 0 20px #fff, 0 0 10px #f6e27a, 0 0 50px #cb9b51; */
   z-index: 1000;
   margin-bottom: 0;
 }
@@ -227,11 +226,6 @@ p.enter-now {
 .word span.port,
 .word span.folio {
   cursor: pointer;
-
-  /* text-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d; */
-  /* 0 0 10px rgba(255, 236, 222, 0.8),
-    0 0 20px rgba(255, 236, 222, 0.8), 0 0 25px rgba(255, 236, 222, 0.8),
-    0 0 5px rgb(188, 139, 121), 0 0 30px rgba(255, 236, 222, 0.8), */
 }
 .word span:nth-child(14) {
   display: none;
@@ -250,7 +244,7 @@ p.enter-now {
 .word span:nth-child(2),
 .word span:nth-child(4),
 .word span:nth-child(6) {
-  animation: colorPulse 5s infinite alternate;
+  animation: colorPulseLight 5s infinite alternate;
 }
 /* A, ' */
 .word span:nth-child(3),
@@ -388,6 +382,44 @@ p.enter-now {
   }
   100% {
     background-image: var(--goldToBottomDark);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+@keyframes colorPulseLight {
+  0% {
+    background-image: var(--goldToBottom);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  10% {
+    background-image: var(--goldToBottom);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  20% {
+    color: #cb9a51d5;
+  }
+  50% {
+    background-image: var(--goldToBottomYellow);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  60% {
+    color: #f0cd7b;
+  }
+  70% {
+    background-image: var(--goldToBottom);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  100% {
+    background-image: var(--goldToBottomYellow);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -647,6 +679,9 @@ p.enter-now {
   .folio {
     font-size: 9rem;
   }
+  .br {
+    display: block;
+  }
   .wordAnimation {
     margin-top: 9em;
   }
@@ -686,7 +721,7 @@ p.enter-now {
     font-size: 6rem;
   }
   .word span:nth-child(16) {
-    margin-left: 2.5em;
+    margin-left: 2em;
   }
   .click-container {
     flex-direction: column;
@@ -725,16 +760,17 @@ p.enter-now {
 }
 @media screen and (max-width: 800px) {
   .wordAnimation {
-    margin-left: 6em;
+    margin-left: 4em;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 702px) {
   .wordAnimation {
     margin-left: 4em;
   }
   .port {
     font-size: 10.5rem;
   }
+
   .folio {
     font-size: 5.5rem;
   }
@@ -795,7 +831,7 @@ p.enter-now {
     margin-bottom: 1em;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 502px) {
   .word {
     margin-left: 2em;
     margin-right: 0;
@@ -815,7 +851,7 @@ p.enter-now {
   }
 
   .enter-container {
-    margin-left: 1em;
+    margin-left: 0;
   }
   .warning {
     margin: 1em;
@@ -824,12 +860,12 @@ p.enter-now {
 }
 @media screen and (max-width: 400px) {
   .wordAnimation {
-    margin-top: 6em;
+    margin-top: 7em;
     margin-right: 0;
-    margin-left: 1em;
+    margin-left: 0em;
   }
   .rotate {
-    margin: 2em;
+    margin: 0em;
   }
   .shante {
     font-size: 1.6rem;
@@ -839,7 +875,7 @@ p.enter-now {
     font-size: 11rem;
   }
   .folio {
-    font-size: 3.9rem;
+    font-size: 3.8rem;
   }
 
   .enter-container {
