@@ -26,10 +26,10 @@
                   @mouseenter="applyZIndex"
                   @mouseleave="resetZIndex"
                 >
-                  Highligts
+                  Highlights
                 </h5>
                 <div class="show-highlights">
-                  <h5>Highligts</h5>
+                  <h5>Highlights</h5>
 
                   <!-- <ul class="">
                   <li
