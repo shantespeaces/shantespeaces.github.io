@@ -431,10 +431,11 @@ p.enter-now {
 .word span:nth-child(13).active {
   animation: balance 1.5s ease-out;
   transform-origin: bottom left;
-  background-image: var(--goldToBottom);
+  /* background-image: var(--goldToBottom);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
+  color: #a6084543;
 }
 
 @keyframes balance {
@@ -452,7 +453,9 @@ p.enter-now {
 .word span:nth-child(12).active {
   animation: falling 2s ease-out;
   transform-origin: bottom center;
-  color: #4a2b2acd;
+  /* color: #bca399; */
+  /* color: #b8523399; */
+  color: #e30a5d74;
 }
 
 @keyframes falling {
@@ -484,7 +487,8 @@ p.enter-now {
 /* F */
 .word span:nth-child(16).active {
   animation: rotate 1s ease-out;
-  color: #4a2b2acd;
+  /* color: #002d40; */
+  color: #e30a5d98;
 }
 
 @keyframes rotate {
@@ -501,7 +505,8 @@ p.enter-now {
 .word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
-  background-image: var(--goldToRightDark);
+  /* background-image: var(--goldToRightDark); */
+  color: #e30a5d98;
 }
 
 @keyframes shrinkjump {
@@ -522,10 +527,11 @@ p.enter-now {
 /* I */
 .word span:nth-child(19).active {
   animation: toplong 1.5s linear;
-  background-image: var(--goldToRight);
+  /* background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; */
+  color: #a6084543;
 }
 
 @keyframes toplong {
@@ -543,6 +549,8 @@ p.enter-now {
 .word span:nth-child(17).active,
 .word span:nth-child(20).active {
   animation: flipping 3s linear;
+  /* color: #bca399; */
+  color: #002d40;
 }
 
 @keyframes flipping {
