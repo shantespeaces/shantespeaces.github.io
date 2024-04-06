@@ -95,6 +95,7 @@ h2.heading {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
   text-decoration: none;
