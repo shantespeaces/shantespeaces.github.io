@@ -205,17 +205,17 @@ p.enter-now {
 
 .shante {
   font-size: 8rem;
+  -webkit-text-stroke: 1px #4a2b2acd;
 }
 
 .port,
 .folio {
   font-size: 18.5rem;
-  /* opacity: 1; */
-  /* color: #ffffff; */
   background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #4a2b2acd;
 }
 .word span {
   display: inline-block;
@@ -245,48 +245,47 @@ p.enter-now {
 }
 
 /* LETTER ANIMATION */
+/* SHANTE */
+/* H, N, E */
 .word span:nth-child(2),
 .word span:nth-child(4),
 .word span:nth-child(6) {
-  /* color: #cb9b51; */
-  /* color: #4a2b2acd; */
-  background-image: var(--goldToBottomDark);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: colorPulse 3s infinite alternate;
+  animation: colorPulse 5s infinite alternate;
 }
-
+/* A, ' */
 .word span:nth-child(3),
 .word span:nth-child(7) {
-  color: #f0cd7b;
-  /* animation: flicker 3s infinite alternate; */
   animation: colorPulse 3s infinite alternate;
 }
+/* S, T, S */
 .word span:nth-child(1),
 .word span:nth-child(5),
 .word span:nth-child(8) {
-  /* color: #4a2b2acd; */
-  background-image: var(--goldToBottomDark);
+  background-image: var(--goldToRightDark);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  /* animation: flicker 3s infinite alternate; */
   animation: colorPulse 3s infinite alternate;
 }
+/* PORT FOLIO */
+/* P */
 .word span:nth-child(10) {
   background-image: var(--goldToBottomYellow);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+  animation: colorPulse 5s infinite alternate;
 }
+/* R */
 .word span:nth-child(12) {
   background-image: var(--goldToBottomYellow);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   animation: flicker 3s infinite alternate;
+  opacity: 1;
 }
+/* T */
 .word span:nth-child(13) {
   background-image: var(--goldToBottomDark);
   color: transparent;
@@ -294,25 +293,31 @@ p.enter-now {
   -webkit-background-clip: text;
   animation: flicker 3s infinite alternate;
 }
-.word span:nth-child(15),
+
+/* F, I */
+.word span:nth-child(16),
+.word span:nth-child(19) {
+  background-image: var(--goldToBottomDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: colorPulse 10s infinite alternate;
+}
+
+/* O,L */
 .word span:nth-child(17),
 .word span:nth-child(18) {
-  /* color: white; */
-  /* color: #4a2b2acd; */
-  /* color: #f0cd7b; */
-
   background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  /* opacity: 1; */
   animation: flicker 3s infinite alternate;
+  opacity: 1;
 }
 
 @keyframes flicker {
   10% {
     opacity: 1;
-    /* color: #f0cd7b; */
     background-image: var(--goldToRight);
     color: transparent;
     background-clip: text;
@@ -335,47 +340,65 @@ p.enter-now {
   }
 
   100% {
-    opacity: 0.8;
+    opacity: 1;
     animation-delay: 6s;
   }
 }
-
+/* O */
 .word span:nth-child(11),
 .word span:nth-child(17),
 .word span:nth-child(20) {
-  /* color: white; */
-  color: (236, 205, 193, 0.667);
-  /* background-image: var(--goldToRight);
+  background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   animation: colorPulse 5s linear infinite, flicker 3s infinite alternate;
 }
 
 @keyframes colorPulse {
-  0%,
-  100% {
-    /* color: white; */
+  0% {
     background-image: var(--goldToBottom);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
   }
-
-  50% {
-    color: #cb9a51d5;
-    /* background-image: var(--goldToRight);
+  10% {
+    background-image: var(--goldToBottom);
     color: transparent;
     background-clip: text;
-    -webkit-background-clip: text; */
+    -webkit-background-clip: text;
+  }
+  20% {
+    color: #cb9a51d5;
+  }
+  50% {
+    background-image: var(--goldToBottomDark);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  60% {
+    color: #f0cd7b;
+  }
+  70% {
+    background-image: var(--goldToBottom);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  100% {
+    background-image: var(--goldToBottomDark);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
-
+/* ON CLICK ACTIVE */
+/* P, T */
 .word span:nth-child(10).active,
 .word span:nth-child(13).active {
   animation: balance 1.5s ease-out;
   transform-origin: bottom left;
-  /* color: #f0cd7b; */
   background-image: var(--goldToBottom);
   color: transparent;
   background-clip: text;
@@ -393,15 +416,11 @@ p.enter-now {
     transform: rotate(-45deg);
   }
 }
-
+/* R */
 .word span:nth-child(12).active {
   animation: falling 2s ease-out;
   transform-origin: bottom center;
   color: #4a2b2acd;
-  /* background-image: var(--goldToBottomDark);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text; */
 }
 
 @keyframes falling {
@@ -430,14 +449,10 @@ p.enter-now {
     transform: rotateX(0deg);
   }
 }
-
+/* F */
 .word span:nth-child(16).active {
   animation: rotate 1s ease-out;
   color: #4a2b2acd;
-  /* background-image: var(--goldToBottomDark);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text; */
 }
 
 @keyframes rotate {
@@ -450,14 +465,11 @@ p.enter-now {
     transform: rotateY(360deg);
   }
 }
+/* L */
 .word span:nth-child(18).active {
   animation: shrinkjump 1s ease-in-out;
   transform-origin: bottom center;
-  color: #4a2b2acd;
-  /* background-image: var(--goldToBottom);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text; */
+  background-image: var(--goldToRightDark);
 }
 
 @keyframes shrinkjump {
@@ -475,13 +487,13 @@ p.enter-now {
     transform: scale(1) translate(0, 0);
   }
 }
+/* I */
 .word span:nth-child(19).active {
   animation: toplong 1.5s linear;
-  color: #f0cd7b;
-  /* background-image: var(--goldToBottomYellow);
+  background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text; */
+  -webkit-background-clip: text;
 }
 
 @keyframes toplong {
@@ -494,6 +506,7 @@ p.enter-now {
     transform: translateY(-20vh) scaleY(4);
   }
 }
+/* O */
 .word span:nth-child(11).active,
 .word span:nth-child(17).active,
 .word span:nth-child(20).active {
