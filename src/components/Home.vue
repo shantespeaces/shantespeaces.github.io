@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent />
 
-  <main class="profile">
+  <main>
     <About />
 
     <Experience />

@@ -567,11 +567,13 @@ section.more {
   background-color: white;
   z-index: 100;
   position: fixed;
-  border-top: solid 3px;
+  /* border-top: solid 3px;
+  border-image: var(--goldToRight) 1;
+  border-image-slice: 1; */
   bottom: 0;
   width: 100%;
-  border-image: var(--goldToRight) 1;
-  border-image-slice: 1;
+
+  box-shadow: -5px 5px 8px #13131344, 5px 5px 8px rgba(48, 48, 48, 0.452);
 }
 .more-container {
   margin-top: 0.4em;

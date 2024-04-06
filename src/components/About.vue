@@ -155,7 +155,7 @@ p.full {
     margin-right: 7em;
   }
   #sticky-about {
-    top: -100px;
+    top: -150px;
   }
   q.mini,
   p.full {

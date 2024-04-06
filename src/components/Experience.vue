@@ -1,107 +1,112 @@
 <template>
   <section class="experience" id="experience">
-    <div class="heading-container">
-      <h2 class="heading">Experience</h2>
-    </div>
-  </section>
-  <section id="sticky-projects">
-    <div class="project-wrapper">
-      <div class="project-container container">
-        <!-- titles-left -->
-        <div class="left-wrapper column">
-          <div class="left-container container d-flex justify-content-center">
-            <div
-              v-for="(project, index) in displayedProjects"
-              :key="project.id"
-              class=" "
-            >
+    <section class="experience-header" id="experience-header">
+      <div class="heading-container">
+        <h2 class="heading">Experience</h2>
+      </div>
+    </section>
+    <section class="relative">
+      <div class="project-wrapper" id="sticky-projects">
+        <div class="project-container container">
+          <!-- titles-left -->
+          <div class="left-wrapper column">
+            <div class="left-container container d-flex justify-content-center">
               <div
-                class="project-title container d-flex"
-                @click="handleTitleClick(project)"
-                :class="{ title: selectedProject === project }"
+                v-for="(project, index) in displayedProjects"
+                :key="project.id"
+                class=" "
               >
-                <h3 class="heading">{{ project.title }}</h3>
-                <router-link
-                  :to="{
-                    name: 'project',
-                    params: { id: project.id },
-                  }"
-                  ><div class="project-image-wrapper">
-                    <div class="hover-circle"></div>
-                    <img
-                      class="project-image"
-                      :src="project.logo"
-                      :class="{ show: selectedProject === project }"
-                      alt=""
-                    />
-                  </div>
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- content-right -->
-        <div class="right-wrappper column">
-          <div class="right-container container d-flex justify-content-center">
-            <div v-for="project in projects" :key="project.id" class="this">
-              <div
-                v-if="selectedProject === null || selectedProject === project"
-                class="info"
-              >
-                <div class="date-container d-flex justify-content-between">
-                  <p class="date">{{ project.date }}</p>
-                  <div class="link-container d-flex">
-                    <a
-                      :href="project.link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Code</a
-                    >
-                    <router-link
-                      class="project-details"
-                      :to="{
-                        name: 'project',
-                        params: { id: project.id },
-                      }"
-                    >
-                      {{ project.types.includes("video") ? "Video" : "Design" }}
-                    </router-link>
-                  </div>
-                </div>
-                <p class="description">{{ project.description }}</p>
-                <p class="highlights">HIGHLIGHTS INCLUDE:</p>
-                <ul>
-                  <li
-                    v-for="(item, index) in project.items"
-                    :key="`${project.id}_${index}`"
-                    class="list-item d-flex pb-2"
-                  >
-                    <span class="bullet">+</span>
-                    <span class="list-item">{{ item }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pagination-button-wrapper row">
-          <div
-            class="pagination-button-container d-flex justify-content-around py-2"
-          >
-            <div class="pagination-buttons">
-              <button
-                class="btn pagination-buttons d-flex align-items-center"
-                @click="showPreviousProjects"
-                :disabled="currentPage === 0"
-              >
-                <span class="before material-symbols-outlined mt-1"
-                  >navigate_before</span
+                <div
+                  class="project-title container d-flex"
+                  @click="handleTitleClick(project)"
+                  :class="{ title: selectedProject === project }"
                 >
-                <p class="mt-3 pt-1">Previous</p>
-              </button>
+                  <h3 class="heading">{{ project.title }}</h3>
+                  <router-link
+                    :to="{
+                      name: 'project',
+                      params: { id: project.id },
+                    }"
+                    ><div class="project-image-wrapper">
+                      <div class="hover-circle"></div>
+                      <img
+                        class="project-image"
+                        :src="project.logo"
+                        :class="{ show: selectedProject === project }"
+                        alt=""
+                      />
+                    </div>
+                  </router-link>
+                </div>
+              </div>
             </div>
-            <!-- 
+          </div>
+
+          <!-- content-right -->
+          <div class="right-wrappper column">
+            <div
+              class="right-container container d-flex justify-content-center"
+            >
+              <div v-for="project in projects" :key="project.id" class="this">
+                <div
+                  v-if="selectedProject === null || selectedProject === project"
+                  class="info"
+                >
+                  <div class="date-container d-flex justify-content-between">
+                    <p class="date">{{ project.date }}</p>
+                    <div class="link-container d-flex">
+                      <a
+                        :href="project.link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Code</a
+                      >
+                      <router-link
+                        class="project-details"
+                        :to="{
+                          name: 'project',
+                          params: { id: project.id },
+                        }"
+                      >
+                        {{
+                          project.types.includes("video") ? "Video" : "Design"
+                        }}
+                      </router-link>
+                    </div>
+                  </div>
+                  <p class="description">{{ project.description }}</p>
+                  <p class="highlights">HIGHLIGHTS INCLUDE:</p>
+                  <ul>
+                    <li
+                      v-for="(item, index) in project.items"
+                      :key="`${project.id}_${index}`"
+                      class="list-item d-flex pb-2"
+                    >
+                      <span class="bullet">+</span>
+                      <span class="list-item">{{ item }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pagination-button-wrapper row">
+            <div
+              class="pagination-button-container d-flex justify-content-around py-2"
+            >
+              <div class="pagination-buttons">
+                <button
+                  class="btn pagination-buttons d-flex align-items-center"
+                  @click="showPreviousProjects"
+                  :disabled="currentPage === 0"
+                >
+                  <span class="before material-symbols-outlined mt-1"
+                    >navigate_before</span
+                  >
+                  <p class="mt-3 pt-1">Previous</p>
+                </button>
+              </div>
+              <!-- 
           <div
             class="pagination-circles d-flex jutify-content-center align-items-center"
           >
@@ -116,22 +121,23 @@
             >
           </div> -->
 
-            <div class="pagination-buttons">
-              <button
-                class="btn pagination-buttons d-flex justify-content-around align-items-center"
-                @click="showNextProjects"
-                :disabled="currentPage === maxPage"
-              >
-                <p class="mt-3 pt-1">Next</p>
-                <span class="next material-symbols-outlined mt-1"
-                  >navigate_next</span
+              <div class="pagination-buttons">
+                <button
+                  class="btn pagination-buttons d-flex justify-content-around align-items-center"
+                  @click="showNextProjects"
+                  :disabled="currentPage === maxPage"
                 >
-              </button>
+                  <p class="mt-3 pt-1">Next</p>
+                  <span class="next material-symbols-outlined mt-1"
+                    >navigate_next</span
+                  >
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -192,19 +198,15 @@ onMounted(async () => {
 </script>
 
 <style>
-/*EXPERIENCE*/
+/*HEADER*/
 
-#experience {
+#experience-header {
   position: sticky;
   position: -webkit-sticky;
   top: 0px;
 }
-#sticky-projects {
-  position: sticky;
-  position: -webkit-sticky;
-  top: -700px;
-}
-.experience h2.heading {
+
+.experience-header h2.heading {
   text-align: end;
   padding-right: 1rem;
   padding-top: 3em;
@@ -217,20 +219,28 @@ onMounted(async () => {
 .heading-container {
   background-color: #fffdf6;
 }
-
-.project-wrapper {
+/* PROJECTS */
+.relative {
   position: relative;
+}
+#sticky-projects {
+  position: sticky;
+  position: -webkit-sticky;
+  top: -0px;
+}
+.project-wrapper {
+  /* position: relative; */
   background-image: url("/images/artDeco/artDecoGreen.jpg");
   width: 100vw;
   padding-top: 5em;
   padding-bottom: 5em;
   border-top: solid 2px;
-  border-bottom: solid 2px;
+  /* border-bottom: solid 2px; */
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
 }
 .project-container {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -443,9 +453,9 @@ img.project-image:hover {
 
 @media screen and (max-width: 1200px) {
   #sticky-projects {
-    top: -800px;
+    top: -500px;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     margin-right: 3em;
   }
   h3.heading {
@@ -473,9 +483,9 @@ img.project-image:hover {
 }
 @media screen and (max-width: 992px) {
   #sticky-projects {
-    top: -1100px;
+    top: -90px;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     margin-right: 2em;
   }
   h3.heading {
@@ -488,6 +498,9 @@ img.project-image:hover {
   .column {
     display: flex;
   }
+  /* #experience-header {
+    position: relative;
+  } */
   .pagination-button-wrapper {
     position: fixed;
     bottom: 0;
@@ -545,7 +558,7 @@ img.project-image:hover {
   #sticky-projects {
     top: -1200px;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     margin-right: 1.5em;
   }
   h3.heading {
@@ -582,7 +595,7 @@ img.project-image:hover {
   #sticky-projects {
     top: -1000px;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     padding-top: 2em;
   }
   h3.heading {
@@ -658,11 +671,11 @@ img.project-image:hover {
   #sticky-projects {
     top: -1000px;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     padding-top: 2em;
     margin-right: 1em;
   }
-  .experience h2.heading {
+  .experience-header h2.heading {
     margin-right: 0;
   }
   .left-container {
