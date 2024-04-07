@@ -52,6 +52,9 @@
                   v-if="selectedProject === null || selectedProject === project"
                   class="info"
                 >
+                  <div class="project-title right">
+                    <h2 class="heading">{{ project.title }}</h2>
+                  </div>
                   <div class="date-container d-flex justify-content-between">
                     <p class="date">{{ project.date }}</p>
                     <div class="link-container d-flex">
@@ -59,7 +62,7 @@
                         :href="project.link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >Code</a
+                        >Github</a
                       >
                       <router-link
                         class="project-details"
@@ -340,10 +343,16 @@ img.project-image:hover {
   --bs-gutter-x: 0rem;
 }
 .right-container {
-  padding-top: 4em;
   padding-right: 2em;
 
   flex-direction: column;
+}
+.project-title.right {
+  padding-left: 0;
+  cursor: default;
+}
+.right h2 {
+  font-size: 3em;
 }
 .date-container {
   height: 50px;
@@ -480,6 +489,9 @@ img.project-image:hover {
   .link-container {
     width: 70%;
   }
+  .project-title.right h2 {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (max-width: 992px) {
   #sticky-projects {
@@ -498,15 +510,8 @@ img.project-image:hover {
   .column {
     display: flex;
   }
-  /* #experience-header {
-    position: relative;
-  } */
-  .pagination-button-wrapper {
-    position: fixed;
-    bottom: 0;
-    width: 45.5em;
-  }
-  /* .left-wrapper.column {
+
+  .left-wrapper.column {
     order: 1;
   }
 
@@ -517,9 +522,9 @@ img.project-image:hover {
   .pagination-button-wrapper.row {
     display: flex;
     order: 2;
-  } */
+  }
   .left-container {
-    margin-left: 3em;
+    margin-left: 0em;
     padding-bottom: 3em;
     margin-top: 3em;
     width: 147%;
@@ -565,11 +570,17 @@ img.project-image:hover {
     font-size: 1.3rem;
   }
   .left-wrapper {
-    margin: 0;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 0;
+    border-left: none;
   }
   .left-container {
     padding-bottom: 5em;
     width: 100%;
+  }
+  .project-title {
+    padding-left: 0;
   }
 
   .right-container .description,
@@ -606,9 +617,9 @@ img.project-image:hover {
     flex-wrap: nowrap;
   }
   .left-container {
-    padding-top: 4em;
-    margin-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 0em;
+    margin-top: 0em;
+    padding-bottom: 0em;
     width: 100%;
   }
   .date-container {
@@ -639,6 +650,9 @@ img.project-image:hover {
     margin-left: 0;
     padding-right: 0em;
     line-height: 2;
+  }
+  .project-title.right h2 {
+    font-size: 2em;
   }
   .date-container {
     flex-direction: column;
@@ -677,6 +691,10 @@ img.project-image:hover {
   }
   .experience-header h2.heading {
     margin-right: 0;
+  }
+  .left-wrapper {
+    margin-left: 1em;
+    margin-right: 1em;
   }
   .left-container {
     padding-left: 0;
