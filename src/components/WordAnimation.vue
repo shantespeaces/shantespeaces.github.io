@@ -127,7 +127,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 .wordAnimation {
   height: 100vh;
   flex-direction: column;
-  margin: 10em 0em 0em 5em;
+  margin: 5em 0em 0em 5em;
 }
 
 .word {
@@ -151,6 +151,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   -webkit-background-clip: text;
   font-weight: bold;
   padding-left: 0.3em;
+  z-index: 1000;
 }
 .enter-wrapper {
   flex-direction: column;
@@ -622,7 +623,7 @@ p.enter-now {
     font-size: 16em;
   }
   .enter-container {
-    padding-top: 10em;
+    padding-top: 5em;
   }
   p.enter {
     font-size: 6em;
@@ -646,9 +647,7 @@ p.enter-now {
   .folio {
     font-size: 13.5rem;
   }
-  .enter-container {
-    padding-top: 14em;
-  }
+
   p.enter {
     font-size: 5.5em;
   }
@@ -663,35 +662,20 @@ p.enter-now {
   .folio {
     font-size: 12.5rem;
   }
-  .wordAnimation {
-    margin-top: 15em;
-  }
-  .enter-container {
-    padding-top: 13em;
-  }
 }
 @media screen and (max-width: 1400px) {
   .port,
   .folio {
     font-size: 11.5rem;
   }
-  .enter-container {
-    padding-top: 14em;
-  }
 }
 @media screen and (max-width: 1300px) {
-  .wordAnimation {
-    margin-left: 10em;
-  }
   .port,
   .folio {
     font-size: 10.5rem;
   }
-  .enter-container {
-    padding-top: 13em;
-  }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1205px) {
   .word span:nth-child(16) {
     margin-left: 1.5em;
   }
@@ -704,35 +688,25 @@ p.enter-now {
   .br {
     display: block;
   }
-  .wordAnimation {
-    margin-top: 9em;
-  }
-  .enter-container {
-    padding-top: 5em;
-  }
-}
-@media screen and (max-width: 1100px) {
   p.enter {
     font-size: 4.5em;
   }
-  .enter-arrow {
-    height: 2.5em;
-    width: 2.5em;
-  }
   .enter-container {
-    padding-top: 10em;
+    padding-top: 0;
+  }
+  .enter-arrow {
+    height: 2em;
+    width: 2em;
   }
 }
+
 @media screen and (max-width: 992px) {
   .rotate {
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  .wordAnimation {
-    margin-right: 5em;
-    margin-left: 5em;
-  }
+
   .shante {
     font-size: 3.5rem;
   }
@@ -756,36 +730,14 @@ p.enter-now {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  p.enter {
-    font-size: 5em;
-  }
+
   .enter-container {
     align-self: flex-end;
-    padding-top: 5em;
     margin-right: 5em;
   }
-  .enter-arrow {
-    height: 2em;
-    width: 2em;
-  }
 }
-@media screen and (max-width: 1000px) {
-  .wordAnimation {
-    margin-right: 0em;
-    margin-left: 10em;
-  }
-}
-@media screen and (max-width: 900px) {
-  .wordAnimation {
-    margin-left: 8em;
-  }
-}
-@media screen and (max-width: 800px) {
-  .wordAnimation {
-    margin-left: 4em;
-  }
-}
-@media screen and (max-width: 702px) {
+
+@media screen and (max-width: 768px) {
   .wordAnimation {
     margin-left: 4em;
   }
@@ -807,14 +759,19 @@ p.enter-now {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+  .warning {
+    padding-right: 3em;
+  }
 }
 
 @media screen and (max-width: 615px) {
   .wordAnimation {
     margin-right: 0;
+    margin-top: 1em;
   }
   .word {
     margin-left: 3em;
+    margin-bottom: 1em;
   }
   .shante {
     font-size: 3em;
@@ -832,10 +789,9 @@ p.enter-now {
     margin-left: 0em;
   }
   .click-container {
-    margin-left: 4em;
+    margin-left: 3em;
   }
   .enter-container {
-    padding-top: 1em;
     margin-left: 3em;
     margin-right: 0em;
   }
@@ -851,6 +807,12 @@ p.enter-now {
     width: 1.5em;
     padding: 1em;
     margin-bottom: 1em;
+  }
+  .click-me p {
+    margin-bottom: 0;
+  }
+  .warning {
+    font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 502px) {
@@ -878,11 +840,11 @@ p.enter-now {
   .warning {
     margin: 1em;
     font-size: 1.2rem;
+    padding: 0;
   }
 }
 @media screen and (max-width: 400px) {
   .wordAnimation {
-    margin-top: 7em;
     margin-right: 0;
     margin-left: 0em;
   }
@@ -905,6 +867,7 @@ p.enter-now {
     margin-right: 1em;
     width: 100%;
   }
+
   p.enter {
     font-size: 2.5em;
     padding-top: 0.6em;
