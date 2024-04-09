@@ -1,7 +1,7 @@
 <template>
   <section class="experience" id="experience">
     <section class="experience-header" id="experience-header">
-      <div class="heading-container">
+      <div class="heading-container" ref="headingContainer">
         <h2 class="heading">Experience</h2>
       </div>
     </section>
@@ -160,9 +160,17 @@ async function getProjects() {
 getProjects();
 
 const selectedProject = ref(null);
+const headingContainer = ref(null);
 
 const handleTitleClick = (project) => {
   selectedProject.value = project;
+  scrollToTop();
+};
+
+const scrollToTop = () => {
+  if (headingContainer.value) {
+    headingContainer.value.scrollTop = 0;
+  }
 };
 
 const projectsPerPage = 3;

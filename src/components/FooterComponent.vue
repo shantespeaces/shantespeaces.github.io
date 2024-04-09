@@ -29,6 +29,9 @@
       <p>Shanté Nicolaides Loving Art Deco 2024</p>
     </div>
     <a href="https://www.freepik.com/free-vector">Art Deco Images by freepik</a>
+    <a href="https://www.flaticon.com/free-icons">
+      icons created by Freepik - Flaticon</a
+    >
   </div>
 </template>
 <script setup>

@@ -9,12 +9,12 @@
       /></a>
     </div>
     <div class="">
-      <a href="#"
+      <a href="https://www.linkedin.com/in/shante-nicolaides/" target="_blank"
         ><img src="/images/socialMedias/linkedin.png" alt="Logo LinkedIn"
       /></a>
     </div>
     <div class="">
-      <a href="#"
+      <a href="https://github.com/shantespeaces" target="_blank"
         ><img src="/images/socialMedias/github.png" alt="Logo Github"
       /></a>
     </div>

@@ -2,33 +2,93 @@
   <section id="sticky-about">
     <section class="about">
       <div class="heading-container" id="about">
-        <h2 class="heading">About</h2>
+        <h2 class="heading">About Me</h2>
       </div>
-      <div class="text-container">
+      <div class="text-container container">
         <div class="quote-container d-flex">
           <q class="mini">
-            lorem "description": "Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard
+            Empowering digital journeys through a blend of creativity, technical
+            prowess, and an unyielding thirst for knowledge, I strive to bridge
+            the gap between design and functionality, crafting captivating user
+            experiences one pixel at a time.
           </q>
           <button @click="toggleFullText">
             <p>{{ showFull ? "read less" : "read more" }}</p>
           </button>
         </div>
         <p class="full" :class="{ 'show-full': showFull }">
-          lorem "description": "Lorem Ipsum is simply dummy text of the printing
-          and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum.", the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.",
+          My mission? By staying at the forefront of emerging technologies and
+          design trends, I strive to transform static concepts into dynamic,
+          immersive digital environments that resonate with users on a profound
+          level. Through this dedication to continuous learning and innovation,
+          I empower myself to craft visually stunning and highly functional web
+          interfaces that leave a lasting impression on every visitor.
         </p>
+      </div>
+      <div class="skills container">
+        <h4>Technical Skills</h4>
+        <div
+          v-for="(skill, index) in skills"
+          :key="index"
+          class="row"
+          @click="toggleSkill(index)"
+        >
+          <div class="title-container col-xl-12">
+            <h5 class="gold">{{ skill.title }}</h5>
+          </div>
+          <div class="test">
+            <div
+              class="d-flex flex-wrap justify-content-between"
+              v-show="showSkills[index]"
+              :class="{ hidden: !showSkills[index] }"
+            >
+              <div
+                v-for="(item, itemIndex) in skill.items"
+                :key="itemIndex"
+                class="col-auto d-flex skills-item"
+              >
+                <template v-if="item.icon">
+                  <img
+                    :src="item.icon"
+                    class="icon"
+                    :alt="item.name + ' Icon'"
+                  />
+                </template>
+                <template v-else>
+                  <span class="bullet">&#8226;</span>
+                </template>
+                <p class="skill">{{ item.name }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="education container">
+        <h4>Professional Development and Education</h4>
+        <div
+          v-for="(education, educIndex) in educations"
+          :key="educIndex"
+          @click="toggleDescription(educIndex)"
+        >
+          <div class="title-container d-flex justify-content-between row">
+            <h5 class="gold col-xl-10 col-lg-9 col-md-8 col-sm-7">
+              {{ education.title }}
+            </h5>
+            <p class="year gold col-xl-2 col-lg-3 col-md-4 col-sm-5">
+              {{ education.year }}
+            </p>
+          </div>
+          <ul v-show="showDescription[educIndex]">
+            <li
+              v-for="(description, descIndex) in education.description"
+              :key="descIndex"
+              class="col-xl-12"
+            >
+              {{ description }}
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </section>
@@ -41,14 +101,130 @@ const showFull = ref(false);
 const toggleFullText = () => {
   showFull.value = !showFull.value;
 };
+
+// Define arrays for each skill
+const skills = [
+  {
+    title: "Programming Languages",
+    items: [
+      { name: "JavaScript", icon: "/images/skills/js.png" },
+      { name: "TypeScript", icon: "/images/skills/typescript.png" },
+      { name: "PHP", icon: "/images/skills/php.png" },
+      { name: "HTML", icon: "/images/skills/html5.png" },
+      { name: "CSS", icon: "/images/skills/css3.png" },
+      { name: "Sass", icon: "/images/skills/sass.png" },
+      { name: "SQL", icon: "/images/skills/database.png" },
+    ],
+  },
+  {
+    title: "Libraries",
+    items: [
+      { name: "React", icon: "/images/skills/atom.png" },
+      { name: "Vues.Js", icon: "images/skills/vuejs.png" },
+      { name: "Angular", icon: "/images/skills/angular.png" },
+    ],
+  },
+  {
+    title: "Graphic Editors",
+    items: [
+      { name: "Adobe XD (Xd)", icon: "/images/skills/xd.png" },
+      { name: "Photoshop (Ps)", icon: "/images/skills/ps.png" },
+      { name: "Illustrator (Ai)", icon: "/images/skills/ai.png" },
+      { name: "Premiere Pro (Pr)", icon: "/images/skills/premiere.png" },
+      { name: "Figma", icon: "/images/skills/figma.png" },
+    ],
+  },
+  {
+    title: "Frameworks",
+    items: [
+      { name: "Laravel", icon: "images/skills/laravel.png" },
+      { name: "Node.js", icon: "images/skills/nodejs.png" },
+      { name: "MVC Architecture", icon: "images/skills/mvc.png" },
+      { name: "Bootstrap", icon: "images/skills/bootstrap.png" },
+    ],
+  },
+  {
+    title: "Project Management",
+    items: [
+      { name: "ClickUp", icon: "/images/skills/clickup.png" },
+      { name: "SourceTree", icon: "/images/skills/sourcetree.png" },
+      { name: "Git", icon: "/images/skills/git.png" },
+      { name: "GitHub", icon: "/images/skills/github.png" },
+    ],
+  },
+  {
+    title: "Other items",
+    items: [
+      { name: "MySQL" },
+      { name: "AWS" },
+      { name: "FileZilla" },
+      { name: "NPM" },
+      { name: "Artisan" },
+      { name: "WordPress" },
+      { name: "Visual Studio Code" },
+      { name: "Responsive Design " },
+    ],
+  },
+];
+
+// Combine all arrays into one
+
+//education
+
+const educations = [
+  {
+    title: "Udemy | Angular",
+    year: "2024 - Present",
+    description: [
+      "Gain hands-on experience in building dynamic, responsive web applications using Angular framework.",
+      "Improve awareness of Angular concepts, such as components, services, routing, and form handling, along with integrating RESTful APIs for seamless data exchange in web applications.",
+    ],
+  },
+  {
+    title: "Cégep Saint-Jérôme, QC | Web Programming and Design AEC",
+    year: "2023",
+    description: [
+      "Enhanced knowledge of web development fundamentals, including front-end and back-end programming, web design principles, and User Experience (UX) optimization.",
+      "Improved proficiency in web technologies and programming languages; gained experience creating and deploying responsive, user-centered websites and applications while leveraging modern web design tools and techniques.",
+    ],
+  },
+  {
+    title: "Concordia University, QC | Bachelors of Sociology",
+    year: "2012",
+    description: ["Bachelors of Sociology (GPA: 3.98 with Honors)"],
+  },
+];
+const showDescription = ref([]);
+const showSkills = ref([]);
+
+const toggleDescription = (index) => {
+  showDescription.value[index] = !showDescription.value[index];
+};
+
+const toggleSkill = (index) => {
+  console.log("Toggling skill with index:", index);
+  // Toggle the visibility state
+  showSkills.value[index] = !showSkills.value[index];
+  console.log("Updated showSkills:", showSkills.value);
+};
+
+// Initialize showDescription and showSkillss arrays with false for each item
+// (Define a reactive variable to track the visibility state)
+const initializeShowData = () => {
+  showDescription.value = new Array(educations.length).fill(false);
+  showSkills.value = new Array(skills.length).fill(false);
+  console.log("Initial showSkills:", showSkills.value);
+};
+
+initializeShowData();
 </script>
 <style>
 /* ABOUT */
-#sticky-about {
-  top: -180px;
+/* #sticky-about {
+  bottom: 0;
   position: sticky;
   position: -webkit-sticky;
-}
+} */
 
 section.about {
   background-color: #fffdf6;
@@ -56,7 +232,6 @@ section.about {
 }
 section.about h2 {
   padding-top: 4em;
-  /* background-color: #fde8d9; */
   background-color: #fcf4ed;
   margin-left: 6em;
   padding-left: 1rem;
@@ -68,9 +243,7 @@ h2.heading {
   color: black;
 }
 .text-container {
-  margin-left: 15em;
-  margin-right: 15em;
-  padding-bottom: 20em;
+  padding-bottom: 5em;
 }
 .quote-container {
   margin-top: 5em;
@@ -119,7 +292,6 @@ h2.heading {
 }
 
 p.full {
-  padding-bottom: 5em;
   margin-bottom: 0;
 }
 
@@ -130,17 +302,85 @@ p.full {
   line-height: 2;
 }
 
+/* EDUCATION AND SKILLS */
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+/* ::marker {
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  content: "•";
+} */
+
+.skills.container,
+.education.container {
+  padding-bottom: 5em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.skills.container h5,
+.education.container h5,
+.skills.container h4,
+.education.container h4,
+p.year {
+  font-family: "Poiret One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.skills.container h4,
+.education.container h4 {
+  font-size: 2rem;
+  padding-bottom: 1em;
+}
+.skills.container h5,
+.education.container h5,
+p.year {
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+}
+p.skill {
+  padding-left: 0.5em;
+  margin: 0em;
+}
+.skills-item {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+li {
+  line-height: 2;
+}
+.hidden {
+  display: none !important;
+}
+.skills .row,
+.education .row {
+  cursor: pointer;
+}
+.title-container {
+  background-color: #fcf4ed;
+  margin-bottom: 1em;
+}
+.gold {
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  padding-left: 1em;
+}
 @media screen and (max-width: 1200px) {
   section.about h2 {
     margin-left: 3.5em;
   }
-  .text-container {
-    margin-left: 10em;
-    margin-right: 10em;
-  }
-  #sticky-about {
+
+  /* #sticky-about {
     top: -160px;
-  }
+  } */
   q.mini,
   p.full {
     font-size: 1.3rem;
@@ -151,10 +391,7 @@ p.full {
   section.about h2 {
     margin-left: 2.5em;
   }
-  .text-container {
-    margin-left: 7em;
-    margin-right: 7em;
-  }
+
   #sticky-about {
     top: -150px;
   }
@@ -168,10 +405,6 @@ p.full {
   section.about h2 {
     margin-left: 1.5em;
   }
-  .text-container {
-    margin-left: 4.5em;
-    margin-right: 4.5em;
-  }
 
   q.mini,
   p.full {
@@ -180,29 +413,31 @@ p.full {
   }
 }
 @media screen and (max-width: 576px) {
-  #sticky-about {
+  /* #sticky-about {
     top: -600px;
+  } */
+  .text-container,
+  .skills.container,
+  .education.container {
+    padding-left: 1em;
+    padding-right: 1em;
   }
   section.about h2 {
     padding-top: 4em;
   }
-  q.mini {
+  q.mini,
+  p.full,
+  p.skill,
+  .education li {
     font-size: 1.2rem;
-    line-height: 2;
   }
   .full {
     display: none;
   }
-  p.full {
-    font-size: 1.2rem;
-  }
+
   .show-full {
     display: block;
     line-height: 2;
-  }
-  .text-container {
-    padding-bottom: 12em;
-    margin: 0em 2em;
   }
 
   .quote-container {
@@ -216,35 +451,21 @@ p.full {
 }
 
 @media screen and (max-width: 360px) {
-  #sticky-about {
+  /* #sticky-about {
     top: -900px;
-  }
+  } */
   section.about h2 {
     margin-left: 0em;
     padding-top: 2em;
   }
 
-  section.about q.mini {
+  q.mini,
+  p.full {
     font-size: 1.2rem;
-    line-height: 2;
   }
-  section.about p.full {
-    font-size: 1.2rem;
-    line-height: 2;
-  }
-  .about .text-container {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-  }
-  .quote-container {
-    display: flex;
-    flex-direction: column;
-  }
+
   .quote-container button p {
     font-size: 1.6rem;
-  }
-  .quote-container button:hover p {
-    font-size: 1.8rem;
   }
 }
 </style>
