@@ -33,7 +33,7 @@
           class="row"
           @click="toggleSkill(index)"
         >
-          <div class="title-container col-xl-12">
+          <div class="skills-title-container col-xl-12">
             <h5 class="gold">{{ skill.title }}</h5>
           </div>
           <div class="test">
@@ -71,7 +71,9 @@
           :key="educIndex"
           @click="toggleDescription(educIndex)"
         >
-          <div class="title-container d-flex justify-content-between row">
+          <div
+            class="skills-title-container d-flex justify-content-between row"
+          >
             <h5 class="gold col-xl-10 col-lg-9 col-md-8 col-sm-7">
               {{ education.title }}
             </h5>
@@ -362,7 +364,7 @@ li {
 .education .row {
   cursor: pointer;
 }
-.title-container {
+.skills-title-container {
   background-color: #fcf4ed;
   margin-bottom: 1em;
 }

@@ -22,28 +22,79 @@
                   :class="{ title: selectedProject === project }"
                 >
                   <h3 class="heading">{{ project.title }}</h3>
-                  <router-link
-                    :to="{
-                      name: 'project',
-                      params: { id: project.id },
-                    }"
-                    ><div class="project-image-wrapper">
-                      <div class="hover-circle"></div>
-                      <img
-                        class="project-image"
-                        :src="project.logo"
-                        :class="{ show: selectedProject === project }"
-                        alt=""
-                      />
+                </div>
+                <div class="small-right-wrappper column">
+                  <div
+                    class="right-container container d-flex justify-content-center"
+                  >
+                    <div
+                      v-if="
+                        selectedProject === null || selectedProject === project
+                      "
+                      class="info"
+                    >
+                      <div
+                        class="date-container d-flex justify-content-between"
+                      >
+                        <p class="date">{{ project.date }}</p>
+                        <div class="link-container d-flex">
+                          <a
+                            :href="project.link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >Github</a
+                          >
+                          <router-link
+                            class="project-details"
+                            :to="{
+                              name: 'project',
+                              params: { id: project.id },
+                            }"
+                          >
+                            {{
+                              project.types.includes("video")
+                                ? "Video"
+                                : "Design"
+                            }}
+                          </router-link>
+                        </div>
+                      </div>
+                      <p class="description">{{ project.description }}</p>
+                      <p class="highlights">HIGHLIGHTS INCLUDE:</p>
+                      <ul>
+                        <li
+                          v-for="(item, index) in project.items"
+                          :key="`${project.id}_${index}`"
+                          class="list-item d-flex pb-2"
+                        >
+                          <span class="bullet">+</span>
+                          <span class="list-item">{{ item }}</span>
+                        </li>
+                      </ul>
+                      <router-link
+                        :to="{
+                          name: 'project',
+                          params: { id: project.id },
+                        }"
+                        ><div class="project-image-wrapper">
+                          <div class="hover-circle"></div>
+                          <img
+                            class="project-image"
+                            :src="project.logo"
+                            :class="{ show: selectedProject === project }"
+                            alt=""
+                          />
+                        </div>
+                      </router-link>
                     </div>
-                  </router-link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- content-right -->
-          <div class="right-wrappper column">
+          <div class="large-right-wrappper column">
             <div
               class="right-container container d-flex justify-content-center"
             >
@@ -53,7 +104,9 @@
                   class="info"
                 >
                   <div class="project-title right">
-                    <h2 class="heading">{{ project.title }}</h2>
+                    <h2 class="heading" @click="toggleProject">
+                      {{ project.title }}
+                    </h2>
                   </div>
                   <div class="date-container d-flex justify-content-between">
                     <p class="date">{{ project.date }}</p>
@@ -89,6 +142,21 @@
                       <span class="list-item">{{ item }}</span>
                     </li>
                   </ul>
+                  <router-link
+                    :to="{
+                      name: 'project',
+                      params: { id: project.id },
+                    }"
+                    ><div class="project-image-wrapper">
+                      <div class="hover-circle"></div>
+                      <img
+                        class="project-image"
+                        :src="project.logo"
+                        :class="{ show: selectedProject === project }"
+                        alt=""
+                      />
+                    </div>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -172,14 +240,22 @@ const scrollToTop = () => {
     headingContainer.value.scrollTop = 0;
   }
 };
-
-const projectsPerPage = 3;
+let projectsPerPage = 6;
 const currentPage = ref(0);
 
+// Determine if the screen size is large
+const isLargeScreen = computed(() => {
+  return window.innerWidth >= 992;
+});
 const displayedProjects = computed(() => {
-  const startIndex = currentPage.value * projectsPerPage;
-  const endIndex = startIndex + projectsPerPage;
-  return projects.value.slice(startIndex, endIndex);
+  if (isLargeScreen.value) {
+    console.log("isLargeScreen:", isLargeScreen.value);
+    const startIndex = currentPage.value * projectsPerPage;
+    const endIndex = startIndex + projectsPerPage;
+    return projects.value.slice(startIndex, endIndex);
+  } else {
+    return projects.value; // Show all projects for small screens
+  }
 });
 
 const maxPage = computed(
@@ -256,7 +332,7 @@ onMounted(async () => {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #fffdf6;
-  padding-top: 3em;
+  padding-top: 5em;
   padding-left: 0;
   padding-right: 0;
   margin-top: 5em;
@@ -271,7 +347,7 @@ onMounted(async () => {
   border-image: var(--goldToBottom) 1;
   border-image-slice: 1;
   max-width: 30em;
-  margin: 3em 2em 2em 2em;
+  margin: 2em 2em 2em 2em;
 }
 .column {
   flex: 1;
@@ -279,7 +355,6 @@ onMounted(async () => {
   flex-direction: column;
 }
 .left-container {
-  margin-top: 10em;
   flex-direction: column;
 }
 /* TITLE */
@@ -317,33 +392,12 @@ onMounted(async () => {
   font-size: 1.6rem;
 }
 
-/* IMAGE */
-img.project-image {
-  display: none;
-  opacity: 0;
-  transition: opacity 10s ease;
-}
-
-img.project-image.show {
-  display: block;
-  border-radius: 50%;
-  object-fit: contain;
-  border: none;
-  height: 8em;
-  width: 8em;
-  opacity: 1;
-  transition: height 0.5s, width 0.5s, filter 0.5s;
-}
-
-img.project-image:hover {
-  height: 10em;
-  width: 10em;
-  padding: 0.5em;
-  background-image: var(--goldToRight);
-}
 /* RIGHT CONTAINER */
-
-.right-wrapper {
+.small-right-wrappper.column {
+  display: none;
+}
+.small-right-wrapper,
+.large-right-wrapper {
   margin: 2em;
 }
 .row {
@@ -420,6 +474,24 @@ img.project-image:hover {
   margin-right: 1em;
 }
 
+/* IMAGE */
+.project-image-wrapper {
+  margin: 5em 15em;
+}
+img.project-image {
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  height: 15em;
+  width: 15em;
+  opacity: 1;
+  transition: padding 0.5s;
+}
+
+img.project-image:hover {
+  padding: 0.9em;
+  background-image: var(--goldToRight);
+}
 /* PAGINATION BUTTONS */
 .pagination-button-wrapper {
   background-color: #002d40;
@@ -469,9 +541,9 @@ img.project-image:hover {
 }
 
 @media screen and (max-width: 1200px) {
-  #sticky-projects {
+  /* #sticky-projects {
     top: -500px;
-  }
+  } */
   .experience-header h2.heading {
     margin-right: 3em;
   }
@@ -500,11 +572,21 @@ img.project-image:hover {
   .project-title.right h2 {
     font-size: 2.5rem;
   }
+  .large-right-wrappper.column {
+    max-width: 35em;
+  }
+  .left-wrapper {
+    max-width: 20em;
+  }
+  .project-image-wrapper {
+    margin: 5em 8em;
+  }
 }
 @media screen and (max-width: 992px) {
-  #sticky-projects {
+  /* #sticky-projects {
     top: -90px;
-  }
+  } */
+
   .experience-header h2.heading {
     margin-right: 2em;
   }
@@ -515,21 +597,48 @@ img.project-image:hover {
     display: flex;
     flex-direction: column;
   }
+  .project-title {
+    background-color: rgba(24, 111, 133, 0.05);
+  }
   .column {
     display: flex;
   }
-
-  .left-wrapper.column {
-    order: 1;
+  .left-wrapper {
+    border: none;
+    max-width: 100%;
+    margin: 0;
   }
 
-  .right-wrapper.column {
-    order: 3;
+  .project-title.title {
+    border: none !important;
+  }
+  .small-right-wrappper.column {
+    display: block;
   }
 
+  .large-right-wrappper.column .right-container {
+    display: none !important;
+  }
+
+  .project-title h3.heading {
+    background-image: var(--goldToRightDark);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+  .project-title h3.heading:hover {
+    background-image: var(--goldToRightDark);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    transform: translateY(0px);
+    font-size: 1.5rem;
+  }
   .pagination-button-wrapper.row {
-    display: flex;
-    order: 2;
+    display: none;
   }
   .left-container {
     margin-left: 0em;
@@ -538,12 +647,7 @@ img.project-image:hover {
     width: 147%;
   }
   .project-title.container {
-    padding-bottom: 1em;
-    padding-top: 1em;
-  }
-  img.project-image.show {
-    filter: none;
-    background-image: var(--goldToRight);
+    padding: 0;
   }
 
   .right-container .description,
@@ -565,6 +669,9 @@ img.project-image:hover {
   .right-container .link-container a {
     text-align: left;
   }
+  .project-image-wrapper {
+    margin: 5em 12em;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -578,9 +685,6 @@ img.project-image:hover {
     font-size: 1.3rem;
   }
   .left-wrapper {
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-top: 0;
     border-left: none;
   }
   .left-container {
@@ -607,6 +711,9 @@ img.project-image:hover {
   }
   .pagination-buttons span {
     font-size: 3.6rem;
+  }
+  .project-image-wrapper {
+    margin: 5em 6em;
   }
 }
 
@@ -636,11 +743,6 @@ img.project-image:hover {
 
   .project-title.container {
     padding: 0;
-  }
-
-  .project-title {
-    flex-direction: column;
-    margin-bottom: 1em;
   }
 
   .project-title img.project-image.show {
@@ -687,6 +789,10 @@ img.project-image:hover {
 
   .pagination-button-wrapper {
     margin-top: 5em;
+  }
+  .project-image-wrapper {
+    margin-left: 5.5em;
+    margin-right: 5.5em;
   }
 }
 @media screen and (max-width: 450px) {
@@ -747,10 +853,18 @@ img.project-image:hover {
   .pagination-buttons button {
     width: 100px;
   }
+  .project-image-wrapper {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
 @media screen and (max-width: 360px) {
   #sticky-projects {
     top: -1800px;
+  }
+  .project-image-wrapper {
+    margin-left: 0em;
+    margin-right: 0em;
   }
 }
 </style>
