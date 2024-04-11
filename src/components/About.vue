@@ -344,6 +344,11 @@ p.year {
 p.year {
   font-size: 1.3rem;
   padding-top: 0.5rem;
+  transition: font-size 0.5s;
+}
+.skills.container h5:hover,
+.education.container h5:hover {
+  font-size: 1.35rem;
 }
 p.skill {
   padding-left: 0.5em;

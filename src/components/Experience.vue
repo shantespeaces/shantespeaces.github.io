@@ -388,8 +388,8 @@ onMounted(async () => {
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
-  transform: translateY(2px);
-  font-size: 1.6rem;
+
+  font-size: 1.54rem;
 }
 
 /* RIGHT CONTAINER */
