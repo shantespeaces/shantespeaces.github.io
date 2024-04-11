@@ -496,7 +496,7 @@ img.project-image:hover {
 .pagination-button button p {
   margin-top: 0.6em;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;
