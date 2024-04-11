@@ -92,11 +92,26 @@
           </ul>
         </div>
       </div>
+      <div class="download d-flex justify-content-center">
+        <button @click="downloadDocument"><p>Download Resume</p></button>
+      </div>
     </section>
   </section>
 </template>
 <script setup>
 import { ref } from "vue";
+
+const downloadDocument = () => {
+  const documentUrl = `${
+    import.meta.env.BASE_URL
+  }documents/shante_nicolaides_resume.pdf`;
+  const link = document.createElement("a");
+  link.href = documentUrl;
+  link.setAttribute("download", "shante_nicolaides_resume.pdf");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 const showFull = ref(false);
 
@@ -256,7 +271,7 @@ h2.heading {
 }
 .quote-container button {
   position: relative;
-  border-left: solid 3px;
+  border: solid 3px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
   background-color: transparent;
@@ -284,7 +299,7 @@ h2.heading {
   bottom: 0;
   width: 100%;
   height: 0;
-  background-color: #fde8d9;
+  background-color: #fcf4ed;
   transform-origin: bottom;
   transition: height 0.3s ease-in;
 }
@@ -379,6 +394,49 @@ li {
   background-clip: text;
   -webkit-background-clip: text;
   padding-left: 1em;
+}
+/* DOWNLOAD BUTTON */
+
+.download button {
+  position: relative;
+  border: solid 2px;
+  border-image: var(--goldToRightDark) 1;
+  border-image-slice: 1;
+  background-color: transparent;
+  padding: 1em;
+  cursor: pointer;
+  margin-bottom: 5em;
+}
+
+.download button p {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-family: "Poiret One", sans-serif;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.download button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fcf4ed;
+  transform-origin: bottom;
+  transition: height 0.3s ease-in;
+}
+
+.download button:hover::after {
+  height: 100%;
 }
 @media screen and (max-width: 1200px) {
   section.about h2 {

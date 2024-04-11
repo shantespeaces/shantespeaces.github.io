@@ -91,27 +91,30 @@
               <div
                 class="pagination-container d-flex justify-content-around py-2"
               >
-                <button
-                  class="btn pagination-button d-flex align-items-center"
-                  @click="showPreviousProjects"
-                  :disabled="currentPage === 0"
-                >
-                  <span class="before material-symbols-outlined mt-1"
-                    >navigate_before</span
+                <div class="pagination-button">
+                  <button
+                    class="btn d-flex justify-content-around align-items-center"
+                    @click="showPreviousProjects"
+                    :disabled="currentPage === 0"
                   >
-                  <p class="mt-3 pt-1">Previous</p>
-                </button>
-
-                <button
-                  class="btn pagination-button d-flex justify-content-around align-items-center"
-                  @click="showNextProjects"
-                  :disabled="currentPage === maxPage"
-                >
-                  <p class="mt-3 pt-1">Next</p>
-                  <span class="next material-symbols-outlined mt-1"
-                    >navigate_next</span
+                    <span class="before material-symbols-outlined mt-1"
+                      >navigate_before</span
+                    >
+                    <p class="mt-3 pt-1">Previous</p>
+                  </button>
+                </div>
+                <div class="pagination-button">
+                  <button
+                    class="btn d-flex justify-content-around align-items-center"
+                    @click="showNextProjects"
+                    :disabled="currentPage === maxPage"
                   >
-                </button>
+                    <p class="mt-3 pt-1">Next</p>
+                    <span class="next material-symbols-outlined mt-1"
+                      >navigate_next</span
+                    >
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -473,54 +476,52 @@ img.project-image:hover {
   /* background-color: #002d40; */
   height: 100px;
   margin-top: 5em;
-  position: absolute;
-  top: 54em;
-  left: 10em;
+
   max-width: 25em;
 }
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
 
-button.btn.pagination-button {
-  cursor: pointer;
-  width: 11.5em;
-  height: 65px;
-  background-image: var(--goldToRight);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  margin-top: 0.7em;
-  border: solid 1px;
+.pagination-button button {
+  position: relative;
+  border: solid 2px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
-  overflow: hidden;
-  position: relative;
+  background-color: transparent;
+  width: 100%;
 }
-button.btn.pagination-button p {
+.pagination-button button p {
+  margin-top: 0.6em;
   font-weight: bold;
+  font-size: 2rem;
   letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   text-transform: uppercase;
+  font-family: "Poiret One", sans-serif;
+  text-decoration: none;
   position: relative;
-  font-size: 1.4rem;
   z-index: 1;
 }
-button.btn.pagination-button::after {
+.pagination-button button::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 0;
-  background-color: transparent;
+  background-color: #fcf4ed;
   transform-origin: bottom;
   transition: height 0.3s ease-in;
 }
 
-button.btn.pagination-button:hover::after {
+.pagination-button button:hover::after {
   height: 100%;
-  background-color: #fcf4ed;
 }
 
 .pagination-button span {
@@ -863,11 +864,15 @@ button.btn.pagination-button:hover::after {
     margin-left: 2em;
     margin-right: 2em;
   }
+  /* .project-title h3.heading {
+    text-align: center;
+  } */
 }
 @media screen and (max-width: 360px) {
   #sticky-projects {
     top: -1800px;
   }
+
   .project-image-wrapper {
     margin-left: 0em;
     margin-right: 0em;
