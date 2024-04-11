@@ -26,13 +26,9 @@
                 <div class="small-right-wrappper column">
                   <div
                     class="right-container container d-flex justify-content-center"
+                    v-show="selectedProject === project"
                   >
-                    <div
-                      v-if="
-                        selectedProject === null || selectedProject === project
-                      "
-                      class="info"
-                    >
+                    <div class="info">
                       <div
                         class="date-container d-flex justify-content-between"
                       >
@@ -89,6 +85,33 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="pagination-wrapper row">
+              <div
+                class="pagination-container d-flex justify-content-around py-2"
+              >
+                <button
+                  class="btn pagination-button d-flex align-items-center"
+                  @click="showPreviousProjects"
+                  :disabled="currentPage === 0"
+                >
+                  <span class="before material-symbols-outlined mt-1"
+                    >navigate_before</span
+                  >
+                  <p class="mt-3 pt-1">Previous</p>
+                </button>
+
+                <button
+                  class="btn pagination-button d-flex justify-content-around align-items-center"
+                  @click="showNextProjects"
+                  :disabled="currentPage === maxPage"
+                >
+                  <p class="mt-3 pt-1">Next</p>
+                  <span class="next material-symbols-outlined mt-1"
+                    >navigate_next</span
+                  >
+                </button>
               </div>
             </div>
           </div>
@@ -161,51 +184,6 @@
               </div>
             </div>
           </div>
-          <div class="pagination-button-wrapper row">
-            <div
-              class="pagination-button-container d-flex justify-content-around py-2"
-            >
-              <div class="pagination-buttons">
-                <button
-                  class="btn pagination-buttons d-flex align-items-center"
-                  @click="showPreviousProjects"
-                  :disabled="currentPage === 0"
-                >
-                  <span class="before material-symbols-outlined mt-1"
-                    >navigate_before</span
-                  >
-                  <p class="mt-3 pt-1">Previous</p>
-                </button>
-              </div>
-              <!-- 
-          <div
-            class="pagination-circles d-flex jutify-content-center align-items-center"
-          >
-            <span class="pagination-circle material-symbols-outlined mt-1"
-              >circle</span
-            >
-            <span class="pagination-circle material-symbols-outlined mt-1"
-              >circle</span
-            >
-            <span class="pagination-circle material-symbols-outlined mt-1"
-              >circle</span
-            >
-          </div> -->
-
-              <div class="pagination-buttons">
-                <button
-                  class="btn pagination-buttons d-flex justify-content-around align-items-center"
-                  @click="showNextProjects"
-                  :disabled="currentPage === maxPage"
-                >
-                  <p class="mt-3 pt-1">Next</p>
-                  <span class="next material-symbols-outlined mt-1"
-                    >navigate_next</span
-                  >
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -213,7 +191,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, nextTick } from "vue";
+import { ref, onMounted, computed } from "vue";
 import axios from "axios";
 import { RouterLink } from "vue-router";
 
@@ -226,20 +204,24 @@ async function getProjects() {
 }
 
 getProjects();
-
 const selectedProject = ref(null);
-const headingContainer = ref(null);
-
+const showProjectDetails = ref(false); // Define showProjectDetails here
 const handleTitleClick = (project) => {
-  selectedProject.value = project;
-  scrollToTop();
+  // Toggle the selected project
+  selectedProject.value = selectedProject.value === project ? null : project;
+  // Toggle the visibility of project details
+  showProjectDetails.value = !showProjectDetails.value;
 };
 
-const scrollToTop = () => {
-  if (headingContainer.value) {
-    headingContainer.value.scrollTop = 0;
-  }
+// Initialize the visibility state for projects
+const initializeShowData = () => {
+  projects.value.forEach((project) => {
+    project.showDetails = false;
+  });
 };
+
+initializeShowData();
+
 let projectsPerPage = 6;
 const currentPage = ref(0);
 
@@ -257,7 +239,7 @@ const displayedProjects = computed(() => {
     return projects.value; // Show all projects for small screens
   }
 });
-
+//pagination
 const maxPage = computed(
   () => Math.ceil(projects.value.length / projectsPerPage) - 1
 );
@@ -276,11 +258,6 @@ const showNextProjects = () => {
 onMounted(async () => {
   // Fetch projects
   await getProjects();
-
-  // Sets the default selected project to the first project if no project is selected
-  selectedProject.value = projects.value[0];
-  await nextTick();
-  // console.log("Selected project after setting:", selectedProject.value);
 });
 </script>
 
@@ -370,7 +347,7 @@ onMounted(async () => {
 
 .project-title h3.heading {
   font-size: 1.5rem;
-  transition: font-size 0.5s;
+  transition: font-size 0.5s, font-weight 0.5s;
 }
 .title {
   border-bottom: solid 2px;
@@ -388,7 +365,6 @@ onMounted(async () => {
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
-
   font-size: 1.54rem;
 }
 
@@ -493,48 +469,70 @@ img.project-image:hover {
   background-image: var(--goldToRight);
 }
 /* PAGINATION BUTTONS */
-.pagination-button-wrapper {
-  background-color: #002d40;
-  border-bottom: solid 2px;
-  border-image: var(--goldToRight) 1;
-  border-image-slice: 1;
+.pagination-wrapper {
+  /* background-color: #002d40; */
   height: 100px;
-  margin-top: 10em;
+  margin-top: 5em;
+  position: absolute;
+  top: 54em;
+  left: 10em;
+  max-width: 25em;
 }
 
-.pagination-buttons button {
+button.btn.pagination-button {
   cursor: pointer;
-  width: 200px;
+  width: 11.5em;
   height: 65px;
   background-image: var(--goldToRight);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   margin-top: 0.7em;
+  border: solid 1px;
+  border-image: var(--goldToRight) 1;
+  border-image-slice: 1;
+  overflow: hidden;
+  position: relative;
 }
-.pagination-buttons p {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: font-size 0.5s;
-  font-size: 1.4rem;
-}
-.pagination-buttons button:hover {
-  transform: translateY(2px);
-  background-image: var(--goldToRight);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-.pagination-buttons button:hover p {
-  font-size: 1.6rem;
+button.btn.pagination-button p {
   font-weight: bold;
+  letter-spacing: 2px;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 1.4rem;
+  z-index: 1;
 }
-.pagination-buttons span {
-  font-size: 2.6rem;
-  transition: font-size 0.5s;
+button.btn.pagination-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: transparent;
+  transform-origin: bottom;
+  transition: height 0.3s ease-in;
 }
 
-.pagination-buttons button:disabled {
+button.btn.pagination-button:hover::after {
+  height: 100%;
+  background-color: #fcf4ed;
+}
+
+.pagination-button span {
+  font-size: 2.6rem;
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: 1;
+}
+
+.pagination-button button:disabled {
   color: #999;
   cursor: not-allowed;
   border: none;
@@ -590,15 +588,16 @@ img.project-image:hover {
   .experience-header h2.heading {
     margin-right: 2em;
   }
-  h3.heading {
-    font-size: 1.5rem;
-  }
+
   .project-container {
     display: flex;
     flex-direction: column;
   }
   .project-title {
     background-color: rgba(24, 111, 133, 0.05);
+    border: solid 1px;
+    border-image: var(--goldToRight) 1;
+    border-image-slice: 1;
   }
   .column {
     display: flex;
@@ -615,18 +614,25 @@ img.project-image:hover {
   .small-right-wrappper.column {
     display: block;
   }
-
+  .info {
+    display: none;
+  }
+  /* Show project details when its title is clicked */
+  .project-title.title + .small-right-wrappper .info {
+    display: block;
+  }
   .large-right-wrappper.column .right-container {
     display: none !important;
   }
 
   .project-title h3.heading {
-    background-image: var(--goldToRightDark);
+    /* background-image: var(--goldToRightDark);
     color: transparent;
     background-clip: text;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text; */
     margin-bottom: 0;
-    padding: 1rem;
+    padding: 2rem;
+    font-size: 1.5rem;
   }
   .project-title h3.heading:hover {
     background-image: var(--goldToRightDark);
@@ -637,7 +643,7 @@ img.project-image:hover {
     transform: translateY(0px);
     font-size: 1.5rem;
   }
-  .pagination-button-wrapper.row {
+  .pagination-wrapper.row {
     display: none;
   }
   .left-container {
@@ -787,7 +793,7 @@ img.project-image:hover {
     margin-bottom: 1em;
   }
 
-  .pagination-button-wrapper {
+  .pagination-wrapper {
     margin-top: 5em;
   }
   .project-image-wrapper {
@@ -847,7 +853,7 @@ img.project-image:hover {
     margin: 0;
   }
 
-  .pagination-button-wrapper {
+  .pagination-wrapper {
     margin-top: 3em;
   }
   .pagination-buttons button {
