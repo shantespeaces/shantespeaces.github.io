@@ -410,7 +410,7 @@ li {
 
 .download button p {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   background-image: var(--goldToRightDark);
   color: transparent;

@@ -864,9 +864,9 @@ img.project-image:hover {
     margin-left: 2em;
     margin-right: 2em;
   }
-  /* .project-title h3.heading {
-    text-align: center;
-  } */
+  .pagination-button button p {
+    font-size: 1.8rem;
+  }
 }
 @media screen and (max-width: 360px) {
   #sticky-projects {
