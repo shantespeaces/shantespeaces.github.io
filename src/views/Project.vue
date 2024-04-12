@@ -71,17 +71,37 @@
           class="show-container-right d-flex justify-content-center alig-items-center"
         >
           <div class="logo-show-container">
-            <template v-if="project.video">
+            <template
+              v-if="project.videoSource && project.videoSource.videoFile"
+            >
+              <!-- Render video if videoFile exists -->
               <video
-                :src="project.video"
+                :src="project.videoSource.videoFile"
                 class="background-video"
                 controls
                 autoplay
                 muted
               ></video>
             </template>
+            <template
+              v-else-if="project.videoSource && project.videoSource.youtubeLink"
+            >
+              <div class="youtube">
+                <a
+                  :href="project.videoSource.youtubeLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img :src="project.logo" alt="YouTube Video" />
+                  <p>See youtube video</p>
+                </a>
+              </div>
+            </template>
 
-            <img class="logo-show" :src="project.logo" alt="" />
+            <template v-else>
+              <!-- Fallback content if no valid video source is found -->
+              <img class="logo-show" :src="project.logo" alt="" />
+            </template>
           </div>
           <template v-if="project.pdfImages"
             ><p class="image-show-title">Guideline Document</p>
@@ -132,36 +152,31 @@
       </div>
     </div>
   </section>
-  <section class="more">
+  <section class="pagination">
     <div
-      class="more-container d-flex justify-content-around align-items-center"
+      class="show-pagination-container d-flex justify-content-around align-items-center"
     >
-      <!-- <button>
-        <router-link data-name="home" :to="{ name: 'home' }"
-          ><p>Home</p></router-link
+      <div class="pagination-button">
+        <button
+          @click="viewPrevProject"
+          class="btn d-flex justify-content-around align-items-center"
         >
-      </button> -->
+          <span class="before material-symbols-outlined mt-1"
+            >navigate_before</span
+          >
 
-      <button
-        @click="viewPrevProject"
-        class="btn d-flex justify-content-around align-items-center"
-      >
-        <span class="before material-symbols-outlined mt-1"
-          >navigate_before</span
+          <p class="mt-3 pt-1">Previous</p>
+        </button>
+      </div>
+      <div class="pagination-button">
+        <button
+          @click="viewNextProject"
+          class="btn d-flex justify-content-around align-items-center"
         >
-        <span class="before material-symbols-outlined mt-1"
-          >navigate_before</span
-        >
-        <p class="mt-1 pt-1">Previous</p>
-      </button>
-      <button
-        @click="viewNextProject"
-        class="btn d-flex justify-content-around align-items-center"
-      >
-        <p class="mt-1 pt-1">Next</p>
-        <span class="next material-symbols-outlined mt-1">navigate_next</span>
-        <span class="next material-symbols-outlined mt-1">navigate_next</span>
-      </button>
+          <p class="mt-3 pt-1">Next</p>
+          <span class="next material-symbols-outlined mt-1">navigate_next</span>
+        </button>
+      </div>
     </div>
   </section>
   <footer>
@@ -235,12 +250,14 @@ const viewNextProject = async () => {
   const lastIndex = projectsData.length - 1;
   projectId = projectId === lastIndex ? 0 : projectId + 1;
   await getProjectDetails(projectId);
+  window.scrollTo(0, 0); // Scroll to the top of the page
 };
 
 const viewPrevProject = async () => {
   const lastIndex = projectsData.length - 1;
   projectId = projectId === 0 ? lastIndex : projectId - 1;
   await getProjectDetails(projectId);
+  window.scrollTo(0, 0); // Scroll to the top of the page
 };
 
 //PDF TOGGLE IMAGE SIZE
@@ -297,9 +314,6 @@ const updateTextPosition = (event) => {
 </script>
 
 <style>
-.show-background-container {
-  background-color: #fffdf6;
-}
 .show-container {
   margin-left: 10em;
   margin-right: 10em;
@@ -455,19 +469,45 @@ h5.highlights-title,
 .show-container-right p {
   text-align: center;
 }
-/* .logo-show-container {
-  width: 100%;
-  padding-bottom: 10em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
+.logo-show-container {
+  margin-bottom: 5em;
+  margin-top: 5em;
+  align-self: center;
+}
 .logo-show-container img {
-  width: 100%;
-  height: auto;
+  width: 25em;
+  height: 25em;
+  object-fit: contain;
   position: relative;
+}
+.youtube {
+  margin-top: 5em;
+}
+.youtube a {
+  text-decoration: none;
+}
+.youtube p {
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 1.6rem;
+  font-family: "Poiret One", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.youtube p:hover {
+  font-size: 1.65rem;
+  color: #fcf4ed;
+}
+.youtube img {
+  margin-bottom: 2em;
+}
+.background-video {
+  width: 100%;
+  margin-top: 5em;
 }
 .image-show-container {
   margin: auto;
@@ -483,10 +523,7 @@ h5.highlights-title,
   object-fit: contain;
   align-self: center;
 }
-.background-video {
-  height: 40em;
-  margin-top: 15em;
-}
+
 .image-show-title {
   text-align: center;
   text-transform: uppercase;
@@ -562,45 +599,34 @@ p.hover-text {
 .col-12:hover + .cursor-circle-container {
   opacity: 0;
 }
-section.more {
-  height: 5em;
+section.pagination {
+  height: 6em;
   background-color: white;
   z-index: 100;
   position: fixed;
-  /* border-top: solid 3px;
-  border-image: var(--goldToRight) 1;
-  border-image-slice: 1; */
   bottom: 0;
   width: 100%;
-
   box-shadow: -5px 5px 8px #13131344, 5px 5px 8px rgba(48, 48, 48, 0.452);
 }
-.more-container {
-  margin-top: 0.4em;
+.show-pagination-container {
+  /* margin-top: 0.4em; */
+  width: 100%;
+  height: 6em;
 }
-.more button {
+.show-pagination-container .pagination-button button {
   border: none;
   background-image: var(--goldToBottomDark);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
-.more button p {
-  background-image: var(--goldToRight);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0;
+.show-pagination-container .pagination-button button:hover::after {
+  height: 0;
+  width: 0;
 }
-.more span {
-  font-size: 2.6rem;
-}
-.more button p:hover {
-  transition: font-size 0.5s;
-  font-size: 2.5em;
+.show-pagination-container .pagination-button button:hover p,
+.show-pagination-container .pagination-button button:hover span {
+  color: #fcf4ed;
 }
 
 @keyframes scaleDown {
@@ -736,7 +762,7 @@ section.more {
     margin-left: 30px;
   }
 
-  .more-info {
+  .pagination-info {
     margin-top: -40px;
   }
   .github a {

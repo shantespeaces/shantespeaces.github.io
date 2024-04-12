@@ -261,6 +261,8 @@ const showNextProjects = () => {
 onMounted(async () => {
   // Fetch projects
   await getProjects();
+  // Set the default project to be displayed on mount
+  selectedProject.value = displayedProjects.value[0];
 });
 </script>
 
@@ -476,7 +478,6 @@ img.project-image:hover {
   /* background-color: #002d40; */
   height: 100px;
   margin-top: 5em;
-
   max-width: 25em;
 }
 .pagination-container {

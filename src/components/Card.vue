@@ -21,27 +21,8 @@
         }"
       >
         <div class="card__side card__side--back d-flex">
-          <template v-if="project.videoSource">
-            <!-- Display video if it exists -->
-            <!-- <video
-              :src="project.videoSource.videoFile"
-              class="background-video"
-              controls
-              autoplay
-              muted
-            ></video> -->
-            <iframe
-              width="560"
-              height="315"
-              :src="project.videoSource.youtubeLink"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </template>
-          <template v-else>
-            <!-- Display images if video doesn't exist -->
-            <img :src="project.skw" class="background-img" alt="" />
-          </template>
+          <img :src="project.skw" class="background-img" alt="" />
+
           <p class="highlights">HIGHLIGHTS INCLUDE:</p>
           <ul>
             <li
