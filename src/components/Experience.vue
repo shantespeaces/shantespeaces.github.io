@@ -23,12 +23,27 @@
                 >
                   <h3 class="heading">{{ project.title }}</h3>
                 </div>
-                <div class="small-right-wrappper column">
+                <div class="mobile-right-wrappper column">
                   <div
                     class="right-container container d-flex justify-content-center"
                     v-show="selectedProject === project"
                   >
                     <div class="info">
+                      <router-link
+                        :to="{
+                          name: 'project',
+                          params: { id: project.id },
+                        }"
+                        ><div class="project-image-wrapper">
+                          <div class="hover-circle"></div>
+                          <img
+                            class="project-image"
+                            :src="project.logo"
+                            :class="{ show: selectedProject === project }"
+                            alt=""
+                          />
+                        </div>
+                      </router-link>
                       <div
                         class="date-container d-flex justify-content-between"
                       >
@@ -67,21 +82,6 @@
                           <span class="list-item">{{ item }}</span>
                         </li>
                       </ul>
-                      <router-link
-                        :to="{
-                          name: 'project',
-                          params: { id: project.id },
-                        }"
-                        ><div class="project-image-wrapper">
-                          <div class="hover-circle"></div>
-                          <img
-                            class="project-image"
-                            :src="project.logo"
-                            :class="{ show: selectedProject === project }"
-                            alt=""
-                          />
-                        </div>
-                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@
           </div>
 
           <!-- content-right -->
-          <div class="large-right-wrappper column">
+          <div class="desktop-right-wrappper column">
             <div
               class="right-container container d-flex justify-content-center"
             >
@@ -374,7 +374,7 @@ onMounted(async () => {
 }
 
 /* RIGHT CONTAINER */
-.small-right-wrappper.column {
+.mobile-right-wrappper.column {
   display: none;
 }
 .small-right-wrapper,
@@ -461,7 +461,7 @@ onMounted(async () => {
 }
 img.project-image {
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border: none;
   height: 15em;
   width: 15em;
@@ -572,7 +572,7 @@ img.project-image:hover {
   .project-title.right h2 {
     font-size: 2.5rem;
   }
-  .large-right-wrappper.column {
+  .desktop-right-wrappper.column {
     max-width: 35em;
   }
   .left-wrapper {
@@ -609,21 +609,24 @@ img.project-image:hover {
     max-width: 100%;
     margin: 0;
   }
-
+  img.project-image {
+    padding: 0.9em;
+    background-image: var(--goldToRight);
+  }
   .project-title.title {
     border: none !important;
   }
-  .small-right-wrappper.column {
+  .mobile-right-wrappper.column {
     display: block;
   }
   .info {
     display: none;
   }
   /* Show project details when its title is clicked */
-  .project-title.title + .small-right-wrappper .info {
+  .project-title.title + .mobile-right-wrappper .info {
     display: block;
   }
-  .large-right-wrappper.column .right-container {
+  .desktop-right-wrappper.column .right-container {
     display: none !important;
   }
 

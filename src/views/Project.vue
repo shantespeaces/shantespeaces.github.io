@@ -314,13 +314,8 @@ const updateTextPosition = (event) => {
 </script>
 
 <style>
-.show-container {
-  margin-left: 10em;
-  margin-right: 10em;
-  font-size: 14px;
-  font-family: "Montserrat", sans;
-  justify-content: center;
-  padding-top: 10em;
+#project {
+  background-color: #fffdf6;
 }
 /* LEFT */
 .show-container-left {
@@ -877,6 +872,11 @@ section.pagination {
   }
   .col-12 {
     width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .pagination-button button p {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 360px) {
