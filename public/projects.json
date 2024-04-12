@@ -120,7 +120,7 @@
   {
     "id": 3,
     "logo": "/images/pubG4/logo.png",
-    "skw": "/images/pubG4/skw.png",
+    "skw": "/images/pubG4/skw.jpg",
     "video": "/videos/pubG4.mp4",
     "types": ["code", "design"], 
     "language": "PhP MVC",
