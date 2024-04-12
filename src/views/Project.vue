@@ -316,7 +316,15 @@ const updateTextPosition = (event) => {
 <style>
 #project {
   background-color: #fffdf6;
-  padding: 10em;
+  /* padding: 10em; */
+}
+.show-container {
+  margin-left: 10em;
+  margin-right: 10em;
+  font-size: 14px;
+  font-family: "Montserrat", sans;
+  justify-content: center;
+  padding-top: 10em;
 }
 /* LEFT */
 .show-container-left {
@@ -683,11 +691,7 @@ section.pagination {
     transform: scale(1);
   }
 }
-@media (max-width: 1800px) {
-  .show-container {
-    padding-top: 8em;
-  }
-}
+
 @media (max-width: 1600px) {
   .show-container {
     font-size: 11.5px;
