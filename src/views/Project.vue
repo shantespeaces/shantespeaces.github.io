@@ -316,6 +316,7 @@ const updateTextPosition = (event) => {
 <style>
 #project {
   background-color: #fffdf6;
+  padding: 10em;
 }
 /* LEFT */
 .show-container-left {
