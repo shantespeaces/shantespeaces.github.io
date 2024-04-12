@@ -1,10 +1,11 @@
 <template>
   <MainNav />
-  <SkwCarousel />
+  <!-- <SkwCarousel /> -->
 </template>
 
 <script setup>
-import SkwCarousel from "../components/SkwCarousel.vue";
+// import SkwCarousel from "../components/SkwCarousel.vue";
+
 import MainNav from "../components/Nav.vue";
 </script>
 
