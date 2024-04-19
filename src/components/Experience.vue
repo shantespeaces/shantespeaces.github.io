@@ -458,7 +458,7 @@ onMounted(async () => {
 .project-image-wrapper {
   height: 15em;
   width: 25em;
-  object-fit: contain;
+  object-fit: cover;
   text-align: center;
   margin: auto;
   margin-bottom: 3em;

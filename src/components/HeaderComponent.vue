@@ -26,7 +26,7 @@
         <div class="avatar-background"></div>
         <img
           class="avatar d-inline-block align-text-top"
-          src="\images\me-removebg-preview.png"
+          src="\images\profile4.png"
           alt="Profile picture for Shanté Nicolaides"
         />
         <!-- <div class="half-circle"></div> -->

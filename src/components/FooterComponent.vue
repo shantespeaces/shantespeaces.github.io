@@ -13,7 +13,7 @@
         <div class="avatar-background"></div>
         <img
           class="avatar"
-          src="\images\me-removebg-preview.png"
+          src="\images\profile4.png"
           alt="Profile picture for Shanté Nicolaides"
         />
       </div>
