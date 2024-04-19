@@ -214,7 +214,7 @@ const initializeShowData = () => {
 
 initializeShowData();
 
-let projectsPerPage = 6;
+let projectsPerPage = 5;
 const currentPage = ref(0);
 
 // Determine if the screen size is large
@@ -262,6 +262,9 @@ onMounted(async () => {
   position: sticky;
   position: -webkit-sticky;
   top: 0px;
+  border-top: solid 3px;
+  border-image: var(--goldToRight) 1;
+  border-image-slice: 1;
 }
 
 .experience-header h2.heading {
@@ -304,7 +307,7 @@ onMounted(async () => {
   padding-right: 0;
   margin-top: 5em;
   border-bottom: solid 0px 2px;
-  border-top: solid 2px;
+
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
 }
@@ -323,7 +326,7 @@ onMounted(async () => {
 }
 .left-container {
   flex-direction: column;
-  margin-top: 10em;
+  margin-top: 5em;
 }
 /* TITLE */
 
@@ -452,50 +455,23 @@ onMounted(async () => {
 }
 
 /* IMAGE */
-/* img.project-logo-wrapper {
-  margin: 0;
-}
-.project-title.right img.project-logo {
-  height: 10em;
-  width: 10em;
-  background-image: var(--goldToRight);
-  padding: 0.1em;
-  transition: padding 0.5s;
-}
-.project-title.right img.project-logo:hover {
-  padding: 0.15em;
-}
-
-img.project-logo {
-  border-radius: 50%;
-  object-fit: contain;
-  border: none;
-  height: 15em;
-  width: 15em;
-  opacity: 1;
-  transition: padding 0.5s;
-}
-
-img.project-logo:hover {
-  padding: 0.4em;
-  background-image: var(--goldToRight);
-} */
 .project-image-wrapper {
   height: 15em;
   width: 25em;
-  object-fit: cover;
+  object-fit: contain;
   text-align: center;
   margin: auto;
+  margin-bottom: 3em;
 }
 
 .project-image-wrapper img {
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease; /* Smooth transition effect */
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
 .project-image-wrapper:hover img {
-  transform: scale(1.1); /* Scale up by 10% on hover */
+  transform: scale(1.1);
 }
 /* PAGINATION BUTTONS */
 

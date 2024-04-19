@@ -86,7 +86,7 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
 }
 @media screen and (max-width: 360px) {
   .contact {
-    padding-top: 23em;
+    padding-top: 28em;
   }
   .contact button:hover a {
     font-size: 1.6rem;

@@ -3,6 +3,9 @@
 
   <main>
     <About />
+    <section id="sticky-scrolling-text">
+      <ScrollingText />
+    </section>
     <References />
 
     <Experience />
@@ -19,7 +22,7 @@
       <HorizontalScroll />
     </section>
   </div>
-  <section id="sticky-scrolling-text">
+  <section id="sticky-scrolling-text" class="text-scroll">
     <ScrollingText />
   </section>
   <!-- <Portfolio /> -->
@@ -96,7 +99,8 @@ li {
   /* letter-spacing: 1px; */
 }
 @media screen and (max-width: 768px) {
-  .horizontal-scroll {
+  .horizontal-scroll,
+  .text-scroll {
     display: none;
   }
 }
