@@ -9,10 +9,10 @@
       <div class="project-wrapper" id="sticky-projects">
         <div class="project-container container">
           <!-- titles-left -->
-          <div class="left-wrapper column">
-            <div class="left-container container d-flex justify-content-center">
+          <div class="left-wrapper column justify-content-between">
+            <div class="left-container container d-flex">
               <div
-                v-for="(project, index) in displayedProjects"
+                v-for="project in displayedProjects"
                 :key="project.id"
                 class=" "
               >
@@ -29,21 +29,6 @@
                     v-show="selectedProject === project"
                   >
                     <div class="info">
-                      <router-link
-                        :to="{
-                          name: 'project',
-                          params: { id: project.id },
-                        }"
-                        ><div class="project-image-wrapper">
-                          <div class="hover-circle"></div>
-                          <img
-                            class="project-image"
-                            :src="project.logo"
-                            :class="{ show: selectedProject === project }"
-                            alt=""
-                          />
-                        </div>
-                      </router-link>
                       <div
                         class="date-container d-flex justify-content-between"
                       >
@@ -70,18 +55,20 @@
                           </router-link>
                         </div>
                       </div>
-                      <p class="description">{{ project.description }}</p>
-                      <p class="highlights">HIGHLIGHTS INCLUDE:</p>
-                      <ul>
-                        <li
-                          v-for="(item, index) in project.items"
-                          :key="`${project.id}_${index}`"
-                          class="list-item d-flex pb-2"
-                        >
-                          <span class="bullet">+</span>
-                          <span class="list-item">{{ item }}</span>
-                        </li>
-                      </ul>
+                      <router-link
+                        :to="{
+                          name: 'project',
+                          params: { id: project.id },
+                        }"
+                        ><div class="project-image-wrapper">
+                          <img
+                            class="project-image"
+                            :src="project.skw"
+                            :class="{ show: selectedProject === project }"
+                            alt=""
+                          />
+                        </div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -129,10 +116,27 @@
                   v-if="selectedProject === null || selectedProject === project"
                   class="info"
                 >
-                  <div class="project-title right">
+                  <div
+                    class="project-title right d-flex justify-content-between"
+                  >
                     <h2 class="heading" @click="toggleProject">
                       {{ project.title }}
                     </h2>
+                    <!-- <router-link
+                      :to="{
+                        name: 'project',
+                        params: { id: project.id },
+                      }"
+                      ><div class="project-logo-wrapper">
+                        <div class="hover-circle"></div>
+                        <img
+                          class="project-logo"
+                          :src="project.logo"
+                          :class="{ show: selectedProject === project }"
+                          alt=""
+                        />
+                      </div>
+                    </router-link> -->
                   </div>
                   <div class="date-container d-flex justify-content-between">
                     <p class="date">{{ project.date }}</p>
@@ -174,10 +178,9 @@
                       params: { id: project.id },
                     }"
                     ><div class="project-image-wrapper">
-                      <div class="hover-circle"></div>
                       <img
                         class="project-image"
-                        :src="project.logo"
+                        :src="project.skw"
                         :class="{ show: selectedProject === project }"
                         alt=""
                       />
@@ -338,6 +341,7 @@ onMounted(async () => {
 }
 .left-container {
   flex-direction: column;
+  margin-top: 10em;
 }
 /* TITLE */
 .project-title.container {
@@ -456,10 +460,21 @@ onMounted(async () => {
 }
 
 /* IMAGE */
-.project-image-wrapper {
-  margin: 5em 15em;
+/* img.project-logo-wrapper {
+  margin: 0;
 }
-img.project-image {
+.project-title.right img.project-logo {
+  height: 10em;
+  width: 10em;
+  background-image: var(--goldToRight);
+  padding: 0.1em;
+  transition: padding 0.5s;
+}
+.project-title.right img.project-logo:hover {
+  padding: 0.15em;
+}
+
+img.project-logo {
   border-radius: 50%;
   object-fit: contain;
   border: none;
@@ -469,40 +484,46 @@ img.project-image {
   transition: padding 0.5s;
 }
 
-img.project-image:hover {
-  padding: 0.9em;
+img.project-logo:hover {
+  padding: 0.4em;
   background-image: var(--goldToRight);
+} */
+.project-image-wrapper {
+  text-align: center;
+  margin-bottom: 2em;
 }
+.project-image {
+  height: 15em;
+  width: 25em;
+  object-fit: cover;
+}
+
 /* PAGINATION BUTTONS */
-.pagination-wrapper {
-  /* background-color: #002d40; */
-  height: 100px;
-  margin-top: 5em;
-  max-width: 25em;
-}
+
 .pagination-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin: 1em;
+  max-width: 25em;
+  margin-bottom: 3em;
 }
 
 .pagination-button button {
   position: relative;
-  border: solid 2px;
-  border-image: var(--goldToRight) 1;
-  border-image-slice: 1;
-  background-color: transparent;
-  width: 100%;
+  border: solid 2px #fcf4ed;
+  width: 10.5em;
+  height: 3em;
+  border-radius: 1rem;
+  background: #fffdf6;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
 .pagination-button button p {
-  margin-top: 0.6em;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 1.5rem;
   letter-spacing: 2px;
-  background-image: var(--goldToRightDark);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* color: #333; */
+
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
   text-decoration: none;
@@ -519,10 +540,18 @@ img.project-image:hover {
   background-color: #fcf4ed;
   transform-origin: bottom;
   transition: height 0.3s ease-in;
+  border-radius: 1rem;
 }
 
 .pagination-button button:hover::after {
   height: 100%;
+}
+.pagination-button button:hover p {
+  background-image: var(--goldToRightDark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: bold;
 }
 
 .pagination-button span {
@@ -550,9 +579,9 @@ img.project-image:hover {
   h3.heading {
     font-size: 1.3rem;
   }
-  .left-wrapper {
-    max-width: 25em;
-  }
+  /* .left-wrapper {
+    max-width: 35em;
+  } */
   .right-container .link-container a,
   .right-container li,
   .right-container p {
@@ -572,21 +601,25 @@ img.project-image:hover {
   .project-title.right h2 {
     font-size: 2.5rem;
   }
-  .desktop-right-wrappper.column {
+  /* .desktop-right-wrappper.column {
     max-width: 35em;
-  }
+  } */
   .left-wrapper {
-    max-width: 20em;
+    max-width: 22em;
   }
-  .project-image-wrapper {
+  /* .project-image-wrapper {
     margin: 5em 8em;
-  }
+  } */
 }
 @media screen and (max-width: 992px) {
   /* #sticky-projects {
     top: -90px;
   } */
-
+  .project-container {
+    margin-top: 0;
+    padding-top: 0;
+    border: none;
+  }
   .experience-header h2.heading {
     margin-right: 2em;
   }
@@ -596,10 +629,7 @@ img.project-image:hover {
     flex-direction: column;
   }
   .project-title {
-    background-color: rgba(24, 111, 133, 0.05);
-    border: solid 1px;
-    border-image: var(--goldToRight) 1;
-    border-image-slice: 1;
+    background-color: #fcf4ed;
   }
   .column {
     display: flex;
@@ -609,10 +639,7 @@ img.project-image:hover {
     max-width: 100%;
     margin: 0;
   }
-  img.project-image {
-    padding: 0.9em;
-    background-image: var(--goldToRight);
-  }
+
   .project-title.title {
     border: none !important;
   }
@@ -671,7 +698,7 @@ img.project-image:hover {
 
   .right-container {
     padding: 0;
-    padding-top: 3em;
+    padding-top: 1em;
   }
   .right-container .info {
     margin-left: 2em;
@@ -679,9 +706,6 @@ img.project-image:hover {
   }
   .right-container .link-container a {
     text-align: left;
-  }
-  .project-image-wrapper {
-    margin: 5em 12em;
   }
 }
 

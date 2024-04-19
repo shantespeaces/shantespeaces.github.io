@@ -9,21 +9,21 @@
     <section id="sticky-scrolling-text">
       <ScrollingText />
     </section>
-    <div class="horizontal-scroll">
+    <!-- <div class="horizontal-scroll">
       <section>
         <HorizontalScroll />
       </section>
     </div>
     <section id="sticky-scrolling-text">
       <ScrollingText />
-    </section>
+    </section> -->
   </main>
   <References />
   <section id="sticky-scrolling-text">
     <ScrollingText />
   </section>
 
-  <Portfolio />
+  <!-- <Portfolio /> -->
 
   <footer>
     <FooterComponent />

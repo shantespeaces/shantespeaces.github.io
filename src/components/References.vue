@@ -45,11 +45,11 @@
 import Neumorphisme from "../components/Neumorphisme.vue";
 </script>
 <style>
-#sticky-references {
+/* #sticky-references {
   position: sticky;
   position: -webkit-sticky;
   top: -1200px;
-}
+} */
 .references-container {
   background-color: white;
   border-top: solid 3px;
