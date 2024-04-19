@@ -19,7 +19,7 @@
   letter-spacing: 20px;
   background-color: #fffdf6;
   border-top: solid 3px;
-  /* border-bottom: solid 2px; */
+  border-bottom: solid 2px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
   position: relative;

@@ -3,12 +3,11 @@
 
   <main>
     <About />
-
-    <Experience />
-
     <section id="sticky-scrolling-text">
       <ScrollingText />
     </section>
+    <Experience />
+
     <!-- <div class="horizontal-scroll">
       <section>
         <HorizontalScroll />

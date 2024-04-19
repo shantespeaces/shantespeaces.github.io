@@ -22,6 +22,7 @@
                   :class="{ title: selectedProject === project }"
                 >
                   <h3 class="heading">{{ project.title }}</h3>
+                  <div class="triangle-right"></div>
                 </div>
                 <div class="mobile-right-wrappper column">
                   <div
@@ -271,7 +272,16 @@ onMounted(async () => {
 
 <style>
 /*HEADER*/
-
+/* .triangle-right {
+  margin-top: 2em;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 1em solid transparent;
+  border-right: 1em solid black;
+  border-bottom: 1em solid transparent;
+  transition: transform 0.2s;
+} */
 #experience-header {
   position: sticky;
   position: -webkit-sticky;
@@ -355,7 +365,7 @@ onMounted(async () => {
 }
 
 .project-title h3.heading {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: font-size 0.5s, font-weight 0.5s;
 }
 .title {
@@ -374,7 +384,7 @@ onMounted(async () => {
   background-clip: text;
   -webkit-background-clip: text;
   font-weight: bold;
-  font-size: 1.54rem;
+  font-size: 1.35rem;
 }
 
 /* RIGHT CONTAINER */
@@ -576,12 +586,7 @@ img.project-logo:hover {
   .experience-header h2.heading {
     margin-right: 3em;
   }
-  h3.heading {
-    font-size: 1.3rem;
-  }
-  /* .left-wrapper {
-    max-width: 35em;
-  } */
+
   .right-container .link-container a,
   .right-container li,
   .right-container p {
@@ -592,34 +597,21 @@ img.project-logo:hover {
   .right-container {
     padding-right: 2em;
   }
-  .right-container .info {
-    margin-left: 1em;
-  }
+
   .link-container {
     width: 70%;
   }
   .project-title.right h2 {
     font-size: 2.5rem;
   }
-  /* .desktop-right-wrappper.column {
-    max-width: 35em;
-  } */
   .left-wrapper {
     max-width: 22em;
   }
-  /* .project-image-wrapper {
-    margin: 5em 8em;
-  } */
 }
 @media screen and (max-width: 992px) {
   /* #sticky-projects {
     top: -90px;
   } */
-  .project-container {
-    margin-top: 0;
-    padding-top: 0;
-    border: none;
-  }
   .experience-header h2.heading {
     margin-right: 2em;
   }
@@ -628,6 +620,17 @@ img.project-logo:hover {
     display: flex;
     flex-direction: column;
   }
+  .project-container {
+    margin-top: 0;
+    padding-top: 0;
+    border: none;
+  }
+  .date-container {
+    margin-bottom: 3em;
+    margin-left: 1em;
+    flex-direction: column;
+  }
+
   .project-title {
     background-color: #fcf4ed;
   }
@@ -639,9 +642,8 @@ img.project-logo:hover {
     max-width: 100%;
     margin: 0;
   }
-
-  .project-title.title {
-    border: none !important;
+  .left-container {
+    margin-top: 1em;
   }
   .mobile-right-wrappper.column {
     display: block;
@@ -658,39 +660,18 @@ img.project-logo:hover {
   }
 
   .project-title h3.heading {
-    /* background-image: var(--goldToRightDark);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text; */
     margin-bottom: 0;
     padding: 2rem;
-    font-size: 1.5rem;
   }
-  .project-title h3.heading:hover {
-    background-image: var(--goldToRightDark);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: bold;
-    transform: translateY(0px);
-    font-size: 1.5rem;
-  }
+
   .pagination-wrapper.row {
     display: none;
   }
-  .left-container {
-    margin-left: 0em;
-    padding-bottom: 3em;
-    margin-top: 3em;
-    width: 147%;
-  }
+
   .project-title.container {
     padding: 0;
   }
 
-  .right-container .description,
-  .right-container .date,
-  .right-container li,
   .date-container {
     font-size: 1.2rem;
     line-height: 2;
@@ -699,10 +680,6 @@ img.project-logo:hover {
   .right-container {
     padding: 0;
     padding-top: 1em;
-  }
-  .right-container .info {
-    margin-left: 2em;
-    margin-right: 2em;
   }
   .right-container .link-container a {
     text-align: left;
@@ -714,41 +691,17 @@ img.project-logo:hover {
     top: -1200px;
   }
   .experience-header h2.heading {
-    margin-right: 1.5em;
+    margin-right: 0;
+    text-align: center;
   }
   h3.heading {
     font-size: 1.3rem;
   }
-  .left-wrapper {
-    border-left: none;
-  }
-  .left-container {
-    padding-bottom: 5em;
-    width: 100%;
-  }
-  .project-title {
-    padding-left: 0;
-  }
 
-  .right-container .description,
-  .right-container .date,
-  .right-container li {
+  .right-container .date {
     font-size: 1.1rem;
     line-height: 2;
     padding: 0;
-  }
-
-  .right-container .link-container a {
-    text-align: center;
-  }
-  .pagination-buttons p {
-    display: none;
-  }
-  .pagination-buttons span {
-    font-size: 3.6rem;
-  }
-  .project-image-wrapper {
-    margin: 5em 6em;
   }
 }
 
@@ -762,148 +715,18 @@ img.project-logo:hover {
   h3.heading {
     font-size: 1.2rem;
   }
-  .project-container {
-    padding: 0em;
-    flex-wrap: nowrap;
-  }
-  .left-container {
-    padding-top: 0em;
-    margin-top: 0em;
-    padding-bottom: 0em;
-    width: 100%;
-  }
-  .date-container {
-    margin-bottom: 3em;
-  }
-
-  .project-title.container {
-    padding: 0;
-  }
-
-  .project-title img.project-image.show {
-    height: 7em;
-    width: 7em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  .right-container {
-    margin-bottom: 1em;
-  }
-  .right-container .description,
-  .right-container li {
-    font-size: 1.2rem;
-    margin-left: 0;
-    padding-right: 0em;
-    line-height: 2;
-  }
-  .project-title.right h2 {
-    font-size: 2em;
-  }
-  .date-container {
-    flex-direction: column;
-  }
-  .link-container {
-    width: 140%;
-  }
-  p.description {
-    padding-top: 2em;
-  }
-  .right-container ul {
-    padding-top: 0;
-  }
-
-  .right-container .date {
-    padding-bottom: 1rem;
-  }
-  .right-container .link-container a {
-    text-align: left;
-  }
-  .right-container {
-    margin-bottom: 1em;
-  }
-
-  .pagination-wrapper {
-    margin-top: 5em;
-  }
-  .project-image-wrapper {
-    margin-left: 5.5em;
-    margin-right: 5.5em;
-  }
 }
 @media screen and (max-width: 450px) {
   #sticky-projects {
     top: -1000px;
   }
-  .experience-header h2.heading {
-    padding-top: 2em;
-    margin-right: 1em;
-  }
-  .experience-header h2.heading {
-    margin-right: 0;
-  }
-  .left-wrapper {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  .left-container {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 1.5em;
-    border-left: none;
-    width: 86%;
-  }
-  .project-title {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .project-title img.project-image.show {
-    height: 5em;
-    width: 5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  .project-title h3 {
-    font-size: 1.1rem;
-  }
-
-  .right-container {
-    padding: 0;
-    border-left: none;
-  }
   .right-container .info {
-    margin: 1.5em;
-  }
-  .right-container .link-container a,
-  .right-container .date {
-    font-size: 1.1rem;
-  }
-  .right-container .content {
     margin: 0;
-  }
-
-  .pagination-wrapper {
-    margin-top: 3em;
-  }
-  .pagination-buttons button {
-    width: 100px;
-  }
-  .project-image-wrapper {
-    margin-left: 2em;
-    margin-right: 2em;
-  }
-  .pagination-button button p {
-    font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 360px) {
   #sticky-projects {
     top: -1800px;
-  }
-
-  .project-image-wrapper {
-    margin-left: 0em;
-    margin-right: 0em;
   }
 }
 </style>
