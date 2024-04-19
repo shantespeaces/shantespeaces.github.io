@@ -305,11 +305,11 @@ onMounted(async () => {
 .relative {
   position: relative;
 }
-#sticky-projects {
+/* #sticky-projects {
   position: sticky;
   position: -webkit-sticky;
-  top: -0px;
-}
+  top: 0px;
+} */
 .project-wrapper {
   /* position: relative; */
   background-image: url("/images/artDeco/artDecoGreen.jpg");
@@ -520,20 +520,12 @@ img.project-logo:hover {
 
 .pagination-button button {
   position: relative;
-  border: solid 2px #fcf4ed;
   width: 10.5em;
   height: 3em;
-  border-radius: 1rem;
-  background: #fffdf6;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
-    -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
 .pagination-button button p {
-  /* font-weight: bold; */
   font-size: 1.5rem;
   letter-spacing: 2px;
-  /* color: #333; */
-
   text-transform: uppercase;
   font-family: "Poiret One", sans-serif;
   text-decoration: none;
@@ -722,6 +714,9 @@ img.project-logo:hover {
   }
   .right-container .info {
     margin: 0;
+  }
+  .project-image {
+    width: 20em;
   }
 }
 @media screen and (max-width: 360px) {

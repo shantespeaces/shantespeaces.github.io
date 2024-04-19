@@ -8,12 +8,12 @@
     </section>
     <Experience />
 
-    <!-- <div class="horizontal-scroll">
+    <div class="horizontal-scroll">
       <section>
         <HorizontalScroll />
       </section>
     </div>
-    <section id="sticky-scrolling-text">
+    <!-- <section id="sticky-scrolling-text">
       <ScrollingText />
     </section> -->
   </main>
@@ -94,5 +94,10 @@ li {
   font-size: 1.4rem;
   /* font-weight: bold; */
   /* letter-spacing: 1px; */
+}
+@media screen and (max-width: 768px) {
+  .horizontal-scroll {
+    display: none;
+  }
 }
 </style>

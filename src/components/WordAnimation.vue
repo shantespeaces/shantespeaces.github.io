@@ -54,7 +54,7 @@
           <div
             class="enter-container d-flex animate__animated animate__fadeInDown animate__slow 1s animate__delay-0.5s"
           >
-            <p class="enter">Come In!</p>
+            <p class="enter">come in!</p>
 
             <div class="enter-arrow" @click="skipAnimation"></div>
           </div>
@@ -152,6 +152,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
   font-weight: bold;
   padding-left: 0.3em;
   z-index: 1000;
+  position: relative;
 }
 .enter-wrapper {
   flex-direction: column;
@@ -160,7 +161,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON .word {
 
 p.enter {
   font-family: "League Script";
-  font-size: 7em;
+  font-size: 4em;
   background-image: var(--goldToRightDark);
   color: transparent;
   background-clip: text;
@@ -180,14 +181,13 @@ p.enter-now {
   z-index: 1000;
 }
 .enter-arrow {
-  height: 4em;
-  width: 4em;
+  height: 2em;
+  width: 2em;
   border: solid;
   border-image: var(--goldToBottomYellow) 1;
   border-image-slice: 1;
   border-width: 0 0.3em 0.3em 0;
   display: inline-block;
-  padding: 0.3em;
   transform: rotate(-45deg);
   margin: 2em 0 0 2em;
   z-index: 1000;
@@ -195,8 +195,8 @@ p.enter-now {
   transition: height 0.3s ease, width 0.3s ease;
 }
 .enter-arrow:hover {
-  height: 4.3em;
-  width: 4.3em;
+  height: 2.5em;
+  width: 2.5em;
 }
 .seconds {
   font-size: 2em;
@@ -625,13 +625,6 @@ p.enter-now {
   .enter-container {
     padding-top: 5em;
   }
-  p.enter {
-    font-size: 6em;
-  }
-  .enter-arrow {
-    height: 3em;
-    width: 3em;
-  }
 }
 @media screen and (max-width: 1700px) {
   .port,
@@ -646,14 +639,6 @@ p.enter-now {
   .port,
   .folio {
     font-size: 13.5rem;
-  }
-
-  p.enter {
-    font-size: 5.5em;
-  }
-  .enter-arrow {
-    height: 3em;
-    width: 3em;
   }
 }
 
@@ -688,15 +673,9 @@ p.enter-now {
   .br {
     display: block;
   }
-  p.enter {
-    font-size: 4.5em;
-  }
+
   .enter-container {
     padding-top: 0;
-  }
-  .enter-arrow {
-    height: 2em;
-    width: 2em;
   }
 }
 
@@ -866,15 +845,6 @@ p.enter-now {
     margin-left: 0em;
     margin-right: 1em;
     width: 100%;
-  }
-
-  p.enter {
-    font-size: 2.5em;
-    padding-top: 0.6em;
-  }
-  .enter-arrow:hover {
-    height: 2.5em;
-    width: 2.5em;
   }
 }
 </style>

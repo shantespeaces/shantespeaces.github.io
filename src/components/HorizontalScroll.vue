@@ -79,36 +79,36 @@ onMounted(async () => {
   await nextTick();
 
   // Check if screen width is greater than 768 pixels
-  if (window.innerWidth > 768) {
-    console.log(
-      "Screen width is greater than 768 pixels. Initializing ScrollTrigger..."
-    );
-    gsap.registerPlugin(ScrollTrigger);
+  // if (window.innerWidth > 768) {
+  //   console.log(
+  //     "Screen width is greater than 768 pixels. Initializing ScrollTrigger..."
+  //   );
+  gsap.registerPlugin(ScrollTrigger);
 
-    ctx = gsap.context((self) => {
-      const images = self.selector(".image");
-      const amount = images.length - 1;
+  ctx = gsap.context((self) => {
+    const images = self.selector(".image");
+    const amount = images.length - 1;
 
-      gsap.to(images, {
-        xPercent: -78 * amount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container.value,
-          start: "top top",
-          end: "+=4000",
-          scrub: 1,
-          markers: false,
-          pin: true,
-          snap: 1.3 / amount,
-          responsive: true,
-        },
-      });
-    }, container.value);
-  } else {
-    console.log(
-      "Screen width is not greater than 768 pixels. ScrollTrigger will not be initialized."
-    );
-  }
+    gsap.to(images, {
+      xPercent: -78 * amount,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container.value,
+        start: "top top",
+        end: "+=4000",
+        scrub: 1,
+        markers: false,
+        pin: true,
+        snap: 1.3 / amount,
+        responsive: true,
+      },
+    });
+  }, container.value);
+  // } else {
+  //   console.log(
+  //     "Screen width is not greater than 768 pixels. ScrollTrigger will not be initialized."
+  //   );
+  // }
 });
 
 onUnmounted(() => {
@@ -153,34 +153,34 @@ const handleStyles = (index) => {
 };
 
 // Function to add touch event listeners
-const addTouchListeners = () => {
-  const cards = document.querySelectorAll(".horizontal-card");
+// const addTouchListeners = () => {
+//   const cards = document.querySelectorAll(".horizontal-card");
 
-  cards.forEach((card) => {
-    // Function to rotate the card
-    const rotateCard = () => {
-      card.classList.add("touch");
-      setTimeout(() => {
-        revertRotation();
-      }, 4000);
-    };
+//   cards.forEach((card) => {
+//     // Function to rotate the card
+//     const rotateCard = () => {
+//       card.classList.add("touch");
+//       setTimeout(() => {
+//         revertRotation();
+//       }, 4000);
+//     };
 
-    // Function to revert the rotation
-    const revertRotation = () => {
-      card.classList.remove("touch");
-    };
+//     // Function to revert the rotation
+//     const revertRotation = () => {
+//       card.classList.remove("touch");
+//     };
 
-    card.addEventListener("touchstart", rotateCard);
-  });
-};
+//     card.addEventListener("touchstart", rotateCard);
+//   });
+// };
 
-onMounted(() => {
-  // Check screen width and attach touch event listeners if necessary
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= 768) {
-    addTouchListeners();
-  }
-});
+// onMounted(() => {
+//   // Check screen width and attach touch event listeners if necessary
+//   const screenWidth = window.innerWidth;
+//   if (screenWidth <= 768) {
+//     addTouchListeners();
+//   }
+// });
 </script>
 
 <style>

@@ -159,6 +159,9 @@ img.avatar {
   h2.name {
     font-size: 3.5rem;
   }
+  .intro {
+    padding-top: 5em;
+  }
   .avatar-container {
     height: 23em;
     width: 23em;
@@ -175,7 +178,7 @@ img.avatar {
 }
 @media screen and (max-width: 360px) {
   .intro {
-    margin-top: 3em;
+    margin-top: 0em;
   }
   h2.name {
     font-size: 3.5rem;

@@ -5,8 +5,8 @@
     @skipAnimation="handleEntry"
   />
   <Home v-else />
-  <!-- <WordAnimation /> -->
-  <!-- <Home /> -->
+  <!-- <WordAnimation />
+  <Home /> -->
 </template>
 
 <script setup>
