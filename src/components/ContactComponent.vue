@@ -74,14 +74,14 @@ const emailLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
 }
 
 @media screen and (max-width: 500px) {
-  .contact {
-    padding-top: 28em;
-  }
   .contact button {
     width: 100%;
   }
   .contact button a {
     font-size: 1.5rem;
+  }
+  .contact {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 360px) {

@@ -292,10 +292,10 @@ const handleStyles = (index) => {
 .cover-before {
   content: "";
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
-  right: 0.5em;
-  bottom: 0.5em;
+  top: 0.12em;
+  left: 0.12em;
+  right: 0.12em;
+  bottom: 0.12em;
   z-index: 2;
   transition: ease all var(--transition-time);
   transform-style: preserve-3d;
@@ -304,6 +304,8 @@ const handleStyles = (index) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 9em;
+  width: 9em;
 }
 .cover-before .title-container {
   height: 5em;
@@ -370,8 +372,8 @@ const handleStyles = (index) => {
 }
 
 img.cover-image {
-  height: 4.5em;
-  width: 4.5em;
+  height: 4.8em;
+  width: 4.8em;
   object-fit: contain;
   border-radius: 50%;
   position: absolute;

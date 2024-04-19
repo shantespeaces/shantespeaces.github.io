@@ -165,7 +165,6 @@ img.avatar {
   .avatar-container {
     height: 23em;
     width: 23em;
-    top: -44em;
   }
   img.avatar {
     height: 15em;

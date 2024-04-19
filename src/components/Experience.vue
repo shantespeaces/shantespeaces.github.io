@@ -21,8 +21,8 @@
                   @click="handleTitleClick(project)"
                   :class="{ title: selectedProject === project }"
                 >
-                  <h3 class="heading">{{ project.title }}</h3>
                   <div class="triangle-right"></div>
+                  <h3 class="heading">{{ project.title }}</h3>
                 </div>
                 <div class="mobile-right-wrappper column">
                   <div
@@ -123,21 +123,6 @@
                     <h2 class="heading" @click="toggleProject">
                       {{ project.title }}
                     </h2>
-                    <!-- <router-link
-                      :to="{
-                        name: 'project',
-                        params: { id: project.id },
-                      }"
-                      ><div class="project-logo-wrapper">
-                        <div class="hover-circle"></div>
-                        <img
-                          class="project-logo"
-                          :src="project.logo"
-                          :class="{ show: selectedProject === project }"
-                          alt=""
-                        />
-                      </div>
-                    </router-link> -->
                   </div>
                   <div class="date-container d-flex justify-content-between">
                     <p class="date">{{ project.date }}</p>
@@ -272,16 +257,7 @@ onMounted(async () => {
 
 <style>
 /*HEADER*/
-/* .triangle-right {
-  margin-top: 2em;
-  position: relative;
-  width: 0;
-  height: 0;
-  border-left: 1em solid transparent;
-  border-right: 1em solid black;
-  border-bottom: 1em solid transparent;
-  transition: transform 0.2s;
-} */
+
 #experience-header {
   position: sticky;
   position: -webkit-sticky;
@@ -293,7 +269,6 @@ onMounted(async () => {
   padding-right: 1rem;
   padding-top: 3em;
   padding-bottom: 1rem;
-  /* background-color: #fde8d9; */
   background-color: #fcf4ed;
   margin-right: 6em;
   margin-bottom: 0;
@@ -311,18 +286,15 @@ onMounted(async () => {
   top: 0px;
 } */
 .project-wrapper {
-  /* position: relative; */
   background-image: url("/images/artDeco/artDecoGreen.jpg");
   width: 100vw;
   padding-top: 5em;
   padding-bottom: 5em;
   border-top: solid 2px;
-  /* border-bottom: solid 2px; */
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
 }
 .project-container {
-  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -354,9 +326,7 @@ onMounted(async () => {
   margin-top: 10em;
 }
 /* TITLE */
-.project-title.container {
-  flex-direction: column;
-}
+
 .project-title {
   cursor: pointer;
   letter-spacing: 4px;
@@ -367,6 +337,20 @@ onMounted(async () => {
 .project-title h3.heading {
   font-size: 1.3rem;
   transition: font-size 0.5s, font-weight 0.5s;
+  margin-bottom: 0;
+  margin-top: 1.6em;
+  margin-left: 1em;
+}
+.triangle-right {
+  margin-top: 2em;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 1em solid transparent;
+  border-right: 1em solid #004040;
+  border-bottom: 1em solid transparent;
+  transition: transform 0.2s;
+  transform: rotate(45deg);
 }
 .title {
   border-bottom: solid 2px;
@@ -383,8 +367,6 @@ onMounted(async () => {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  font-weight: bold;
-  font-size: 1.35rem;
 }
 
 /* RIGHT CONTAINER */
@@ -437,7 +419,7 @@ onMounted(async () => {
   transition: font-size 0.5s;
 }
 .right-container .link-container a:hover {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .right-container p,
@@ -499,20 +481,26 @@ img.project-logo:hover {
   background-image: var(--goldToRight);
 } */
 .project-image-wrapper {
-  text-align: center;
-  margin-bottom: 2em;
-}
-.project-image {
   height: 15em;
   width: 25em;
   object-fit: cover;
+  text-align: center;
+  margin: auto;
 }
 
+.project-image-wrapper img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.project-image-wrapper:hover img {
+  transform: scale(1.1); /* Scale up by 10% on hover */
+}
 /* PAGINATION BUTTONS */
 
 .pagination-container {
   display: flex;
-  /* flex-direction: column; */
   margin: 1em;
   max-width: 25em;
   margin-bottom: 3em;
@@ -622,7 +610,9 @@ img.project-logo:hover {
     margin-left: 1em;
     flex-direction: column;
   }
-
+  .project-title h3.heading {
+    margin: 0;
+  }
   .project-title {
     background-color: #fcf4ed;
   }

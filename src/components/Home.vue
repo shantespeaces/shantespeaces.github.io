@@ -3,25 +3,25 @@
 
   <main>
     <About />
+    <References />
+
+    <Experience />
     <section id="sticky-scrolling-text">
       <ScrollingText />
     </section>
-    <Experience />
 
-    <div class="horizontal-scroll">
-      <section>
-        <HorizontalScroll />
-      </section>
-    </div>
     <!-- <section id="sticky-scrolling-text">
       <ScrollingText />
     </section> -->
   </main>
-  <References />
+  <div class="horizontal-scroll">
+    <section>
+      <HorizontalScroll />
+    </section>
+  </div>
   <section id="sticky-scrolling-text">
     <ScrollingText />
   </section>
-
   <!-- <Portfolio /> -->
 
   <footer>
