@@ -32,11 +32,13 @@ const router = createRouter({
             component: ProjectVue, 
             props: true,
         },
+     
         {
-            path: "/projects",
+            // Default route for projects with ID 0
+            path: '/project/',
             name: "projects",
-            component: Projects
-        },
+            redirect: '/project/0'
+          },
         {
             path: "/about",
             name: "about",

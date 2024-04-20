@@ -69,6 +69,7 @@ h2.name {
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 .intro h1 {
   color: black;

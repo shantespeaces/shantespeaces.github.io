@@ -681,8 +681,9 @@ onMounted(async () => {
   .right-container .info {
     margin: 0;
   }
-  .project-image {
+  .project-image-wrapper {
     width: 20em;
+    height: 13em;
   }
 }
 @media screen and (max-width: 360px) {

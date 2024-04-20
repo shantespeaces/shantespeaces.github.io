@@ -9,14 +9,15 @@
           <div class="main-content" ref="mainContentRef">
             <div class="main-headings" ref="mainHeadingsRef">
               <q id="quote"> {{ project.quote }}</q>
-
-              <div class="heading">
-                <h3 id="heading1">{{ project.language }}</h3>
-                <h3 id="heading2">Project</h3>
-                <h1 id="heading3">{{ project.heading3 }}</h1>
-                <h4 id="heading4">{{ project.title }}</h4>
+              <div class="mobile-heading-container d-flex">
+                <div class="heading">
+                  <h3 id="heading1">{{ project.language }}</h3>
+                  <h3 id="heading2">Project</h3>
+                  <h1 id="heading3">{{ project.heading3 }}</h1>
+                  <h4 id="heading4">{{ project.title }}</h4>
+                </div>
+                <img class="logo-show-mobile" :src="project.logo" alt="" />
               </div>
-
               <div class="show-project-description">
                 <p>{{ project.description }}</p>
               </div>
@@ -87,14 +88,21 @@
               v-else-if="project.videoSource && project.videoSource.youtubeLink"
             >
               <div class="youtube">
-                <a
+                <iframe
+                  width="560"
+                  height="315"
+                  :src="embedUrl"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+                <!-- <a
                   :href="project.videoSource.youtubeLink"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img :src="project.logo" alt="YouTube Video" />
                   <p>See youtube video</p>
-                </a>
+                </a> -->
               </div>
             </template>
 
@@ -204,7 +212,8 @@ const project = ref(null); // Initialize as null or an empty object
 const route = useRoute(); // Access route object
 let projectId = null; // To keep track of the current project ID
 let projectsData = null; // To store the fetched projects data
-
+const videoId = "7IjLz0kg1JE";
+const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 onMounted(() => {
   console.log("ID prop:", props.id);
   console.log("Project object:", project.value);
@@ -326,6 +335,9 @@ const updateTextPosition = (event) => {
   padding-top: 10em;
 }
 /* LEFT */
+.logo-show-mobile {
+  display: none;
+}
 .show-container-left {
   width: 50%;
   position: relative;
@@ -781,6 +793,13 @@ section.pagination {
   }
 }
 @media (max-width: 992px) {
+  .logo-show-mobile {
+    display: block;
+    height: 15em;
+    width: 15em;
+    margin-top: 5em;
+    margin-left: 5em;
+  }
   .cursor-circle-container {
     display: none;
   }
@@ -853,6 +872,10 @@ section.pagination {
   }
 }
 @media (max-width: 576px) {
+  .logo-show-mobile {
+    height: 10em;
+    width: 10em;
+  }
   .show-container-right,
   .show-container-left {
     padding-left: 5em;
@@ -885,6 +908,9 @@ section.pagination {
 @media (max-width: 450px) {
   .pagination-button button p {
     font-size: 1.5rem;
+  }
+  .logo-show-mobile {
+    display: none;
   }
 }
 @media (max-width: 360px) {

@@ -59,6 +59,7 @@ span.scrolling-text {
   );
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   animation: anim 80s linear infinite;
   height: 200px;
   text-wrap: none;

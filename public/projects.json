@@ -59,7 +59,7 @@
     "cardItems": ["Adobe Design Project: XD, PS, AI", "Researched, designed and created a comprehensive guideline document tailored to bridge client requirements with developpement and integration.", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients."],
     "link": "",
     "backgroundImage": "images/cards/artDeco9.jpg",
-    "quote": ""
+    "quote": "Good design is good business. -Thomas J. Watson" 
   },
   { 
     "id": 1,
@@ -251,7 +251,7 @@
     "cardItems": ["Transitions", "Syncing Visuals with Music", "Narrative Structure", "Creative Conceptualization"],
     "link": "",
     "backgroundImage": "images/cards/artDeco8.jpg",
-    "quote": ""
+    "quote": "Software and cathedrals are much the same; first we build them, then we pray. -Anonymous"
   },  
   {
     "id": 9,
@@ -276,6 +276,6 @@
     "cardItems": ["Attention to Detail", "Dynamic Editing", "Text Animation"],
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "images/cards/artDeco8.jpg",
-    "quote": ""
+    "quote": "Design is the silent ambassador of your brand. -Paul Rand"
   }  
 ]

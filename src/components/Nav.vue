@@ -12,7 +12,7 @@
       </div>
       <ScrollingAnimation />
 
-      <!-- <button
+      <button
         @click="toggleMenu"
         class="hamburger"
         :class="{ 'is-active': isOpen }"
@@ -21,9 +21,9 @@
         <span v-if="!isOpen" class="bar"></span>
         <span v-if="!isOpen" class="bar"></span>
         <span v-if="isOpen" class="close-icon">X</span>
-      </button> -->
+      </button>
     </div>
-    <!-- <transition name="slide">
+    <transition name="slide">
       <ul v-if="isOpen" class="menu">
         <li class="menu-item">
           <router-link
@@ -37,13 +37,14 @@
         <li class="menu-item">
           <router-link
             data-name="projects"
-            :to="{ name: 'projects' }"
+            :to="{ name: 'projects', params: { id: 0 } }"
             @click="toggleMenu"
           >
-            Projects</router-link
-          >
-        </li> -->
-    <!-- <router-link
+            Projects
+          </router-link>
+        </li>
+
+        <router-link
           :to="{ name: 'home', hash: '#about' }"
           @click="toggleMenu"
           class="menu-item"
@@ -61,15 +62,15 @@
           class="menu-item"
           >References</router-link
         >
-        <router-link
+        <!-- <router-link
           :to="{ name: 'home', hash: '#portfolio' }"
           @click="toggleMenu"
           class="menu-item"
           >portfolio</router-link
         > -->
-    <!-- <li class="menu-item"><a :href="emailLink">Contact</a></li>
+        <li class="menu-item"><a :href="emailLink">Contact</a></li>
       </ul>
-    </transition> -->
+    </transition>
   </nav>
 </template>
 
