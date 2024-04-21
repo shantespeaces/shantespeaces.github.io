@@ -76,16 +76,34 @@
     class="neumorphisme58 neumorphisme"
     alt=""
   />
+  <!-- <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-large"></div>
+  <div class="triangle-up triangle-medium"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-large"></div>
+  <div class="triangle-up triangle-medium"></div>
+  <div class="triangle-up triangle-small"></div>
+  <div class="triangle-up triangle-large"></div>
+  <div class="triangle-up triangle-medium"></div> -->
 </template>
 <script setup>
 import { onMounted, ref } from "vue";
 
-const numberOfCircles = ref(10);
+// const numberOfCircles = ref(10);
 
 onMounted(() => {
   const setRandomPosition = () => {
     const neumorphismeElements = document.querySelectorAll(
       '.neumorphismes > div[class^="neumorphisme"], .neumorphismes > img[class^="neumorphisme"]'
+    );
+
+    const triangles = document.querySelectorAll(
+      ".neumorphismes > .triangle-up"
     );
 
     neumorphismeElements.forEach((element) => {
@@ -95,6 +113,15 @@ onMounted(() => {
       element.style.top = `calc(${randomTop}% - 50px)`;
       element.style.left = `calc(${randomLeft}% - 50px)`;
       element.classList.add("float-up");
+    });
+
+    triangles.forEach((triangle) => {
+      const randomTop = Math.random() * 100;
+      const randomLeft = Math.random() * 100;
+
+      triangle.style.top = `calc(${randomTop}% - 50px)`;
+      triangle.style.left = `calc(${randomLeft}% - 50px)`;
+      triangle.classList.add("float-up-triangle");
     });
   };
 
@@ -124,7 +151,6 @@ img.neumorphisme58 {
   background-color: white;
   background: linear-gradient(145deg, #eccdc1aa, #fffdf6);
   box-shadow: 5px 5px 10px #bca39973, -5px -5px 10px #fffdf69d;
-  
 }
 
 .neumorphisme47,
@@ -169,7 +195,34 @@ img.neumorphisme58 {
   background-color: white;
   z-index: 1;
 }
-
+/* triangles */
+.triangle-small {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 1em solid #004040;
+  /* transition: transform 0.2s; */
+}
+.triangle-medium {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 1.5em solid transparent;
+  border-right: 1.5em solid transparent;
+  border-bottom: 2.5em solid #004040;
+  /* transition: transform 0.2s; */
+}
+.triangle-large {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-bottom: 3.5em solid #004040;
+  /* transition: transform 0.2s; */
+}
 @keyframes floatUp {
   0% {
     transform: translateY(0);
@@ -182,7 +235,23 @@ img.neumorphisme58 {
   }
 }
 
+@keyframes floatUpTriangle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-80px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
 .float-up {
   animation: floatUp 20s ease-in-out infinite;
+}
+
+.float-up-triangle {
+  animation: floatUpTriangle 20s ease-in-out infinite;
 }
 </style>

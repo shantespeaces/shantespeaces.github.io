@@ -435,6 +435,10 @@ img.cover-image {
     height: 3.5em;
     width: 3.5em;
   }
+  .cover-before {
+    height: 6.8em;
+    width: 6.8em;
+  }
   .cover-before .title-container {
     height: 4em;
     width: 4em;
@@ -449,7 +453,8 @@ img.cover-image {
     transform-origin: 0em 4em;
   }
 }
-@media screen and (max-width: 768px) {
+
+/* @media screen and (max-width: 768px) {
   .horizontal-scroll-container {
     background-color: rgba(251, 225, 208, 1);
   }
@@ -557,5 +562,5 @@ img.cover-image {
     background-color: transparent;
     height: 35vh;
   }
-}
+} */
 </style>

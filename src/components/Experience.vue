@@ -268,12 +268,11 @@ onMounted(async () => {
 }
 
 .experience-header h2.heading {
-  text-align: end;
-  padding-right: 1rem;
-  padding-top: 3em;
+  padding-left: 1rem;
+  padding-top: 4em;
   padding-bottom: 1rem;
   background-color: #fcf4ed;
-  margin-right: 6em;
+  margin-left: 5em;
   margin-bottom: 0;
 }
 .heading-container {
@@ -350,7 +349,7 @@ onMounted(async () => {
   width: 0;
   height: 0;
   border-left: 1em solid transparent;
-  border-right: 1em solid #004040;
+  border-right: 1em solid #004152;
   border-bottom: 1em solid transparent;
   transition: transform 0.2s;
   transform: rotate(45deg);
@@ -539,9 +538,6 @@ onMounted(async () => {
   /* #sticky-projects {
     top: -500px;
   } */
-  .experience-header h2.heading {
-    margin-right: 3em;
-  }
 
   .right-container .link-container a,
   .right-container li,
@@ -569,7 +565,7 @@ onMounted(async () => {
     top: -90px;
   } */
   .experience-header h2.heading {
-    margin-right: 2em;
+    margin-left: 2.5em;
   }
 
   .project-container {
@@ -649,8 +645,7 @@ onMounted(async () => {
     top: -1200px;
   }
   .experience-header h2.heading {
-    margin-right: 0;
-    text-align: center;
+    margin-left: 1.5em;
   }
   h3.heading {
     font-size: 1.3rem;
@@ -668,7 +663,9 @@ onMounted(async () => {
     top: -1000px;
   }
   .experience-header h2.heading {
-    padding-top: 2em;
+    padding-top: 3em;
+    margin: 0;
+    text-align: center;
   }
   h3.heading {
     font-size: 1.2rem;

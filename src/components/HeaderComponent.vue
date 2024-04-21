@@ -45,7 +45,7 @@ import SocialMedia from "../components/SocialMedia.vue";
 <style>
 /**HEADER */
 header {
-  height: 50em;
+  height: 45em;
 }
 .neumorphismes {
   position: relative;
@@ -63,6 +63,7 @@ header {
   z-index: 5;
   position: relative;
   margin-top: 9em;
+  margin-right: 6em;
 }
 h2.name {
   font-size: 6rem;
@@ -87,7 +88,7 @@ h1.job-title {
 .avatar-container {
   position: relative;
   top: -20em;
-  margin-left: 10em;
+  margin-left: 6em;
   z-index: 10;
   height: 30em;
   width: 30em;

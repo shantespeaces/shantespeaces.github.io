@@ -3,7 +3,7 @@
 
   <main>
     <About />
-    <section id="sticky-scrolling-text">
+    <section id="sticky-scrolling-text" class="green">
       <ScrollingText />
     </section>
     <References />

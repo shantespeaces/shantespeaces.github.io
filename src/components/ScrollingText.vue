@@ -11,6 +11,9 @@
 </template>
 <script></script>
 <style>
+#sticky-scrolling-text.green .scrolling-text-wrapper {
+  background-color: #004152;
+}
 .scrolling-text-wrapper {
   overflow-x: hidden;
   width: 100%;
@@ -18,7 +21,7 @@
   overflow: hidden;
   letter-spacing: 20px;
   background-color: #fffdf6;
-  border-top: solid 3px;
+  border-top: solid 5px;
   border-bottom: solid 2px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;

@@ -250,7 +250,7 @@ section.about {
 section.about h2 {
   padding-top: 4em;
   background-color: #fcf4ed;
-  margin-left: 6em;
+  margin-left: 5em;
   padding-left: 1rem;
   padding-bottom: 1rem;
   position: relative;
@@ -440,7 +440,7 @@ li {
 }
 @media screen and (max-width: 1200px) {
   section.about h2 {
-    margin-left: 3.5em;
+    margin-left: 5em;
   }
 
   /* #sticky-about {
@@ -488,7 +488,9 @@ li {
     padding-right: 1em;
   }
   section.about h2 {
-    padding-top: 4em;
+    padding-top: 3em;
+    margin: 0;
+    text-align: center;
   }
   q.mini,
   p.full,
@@ -516,14 +518,6 @@ li {
 }
 
 @media screen and (max-width: 360px) {
-  /* #sticky-about {
-    top: -900px;
-  } */
-  section.about h2 {
-    margin-left: 0em;
-    padding-top: 2em;
-  }
-
   q.mini,
   p.full {
     font-size: 1.2rem;

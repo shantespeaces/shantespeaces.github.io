@@ -52,7 +52,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
 }
 .references-container {
   background-color: white;
-  border-top: solid 3px;
+  border-top: solid 2px;
   border-image: var(--goldToRight) 1;
   border-image-slice: 1;
   position: relative;
@@ -63,10 +63,11 @@ section.references {
 }
 section.references h2 {
   padding-top: 4em;
+  text-align: end;
   /* background-color: #fde8d9; */
   background-color: #fcf4ed;
-  margin-left: 6em;
-  padding-left: 1rem;
+  margin-right: 4em;
+  padding-right: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
   position: relative;
@@ -154,9 +155,6 @@ h2.heading {
 }
 
 @media screen and (max-width: 1200px) {
-  section.references h2 {
-    margin-left: 3.5em;
-  }
   .image-wrapper {
     flex-direction: column;
   }
@@ -169,8 +167,11 @@ h2.heading {
   }
 }
 @media screen and (max-width: 992px) {
+  #sticky-references {
+    top: -1500px;
+  }
   section.references h2 {
-    margin-left: 2.5em;
+    margin-right: 2.5em;
   }
   .image-wrapper {
     margin-bottom: 10em;
@@ -181,7 +182,7 @@ h2.heading {
 }
 @media screen and (max-width: 768px) {
   section.references h2 {
-    margin-left: 1.5em;
+    margin-right: 1.5em;
   }
   .image-container.left,
   .image-container.right {
@@ -216,7 +217,9 @@ h2.heading {
 }
 @media screen and (max-width: 576px) {
   section.references h2 {
-    padding-top: 4em;
+    padding-top: 3em;
+    margin: 0;
+    text-align: center;
   }
   .image-wrapper {
     margin: 5em 0em;
@@ -251,11 +254,6 @@ h2.heading {
   }
 }
 @media screen and (max-width: 450px) {
-  section.references h2 {
-    margin-left: 0em;
-    padding-top: 2em;
-  }
-
   .image-container.left,
   .image-container.right {
     height: 35em;

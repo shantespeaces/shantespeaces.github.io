@@ -34,6 +34,13 @@ const router = createRouter({
         },
      
         {
+            path: "/projects/",
+            name: "projects",
+            component: Projects, 
+         
+        },
+     
+        {
             // Default route for projects with ID 0
             path: '/project/',
             name: "projects",
