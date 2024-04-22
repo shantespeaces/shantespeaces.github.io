@@ -1,42 +1,47 @@
 <template>
   <div class="screen"></div>
   <div class="horizontal-scroll-container">
-    <div class="wrapper" ref="container">
-      <div
-        v-for="(slide, index) in slides"
-        :class="`image horizontal-card-${index}`"
-        :key="index"
-      >
-        <div class="horizontal-card container" id="card">
-          <div class="cover">
-            <div class="horizontal-card-back">
-              <router-link :to="{ name: 'project', params: { id: slide.id } }">
-                <div class="gold-container">
-                  <img
-                    class="cover-image"
-                    :src="slide.image"
-                    alt="project image"
-                  />
-                </div>
-              </router-link>
-              <div class="animated-text">
-                <div class="text-wrapper">
-                  <p
-                    v-for="(char, index) in text"
-                    :key="index"
-                    class="character"
-                    :style="{
-                      transform: `rotate(${index * 35}deg)`,
-                    }"
-                  >
-                    {{ char }}
-                  </p>
+    <div class="neumorphismes">
+      <Neumorphisme />
+      <div class="wrapper" ref="container">
+        <div
+          v-for="(slide, index) in slides"
+          :class="`image horizontal-card-${index}`"
+          :key="index"
+        >
+          <div class="horizontal-card container" id="card">
+            <div class="cover">
+              <div class="horizontal-card-back">
+                <router-link
+                  :to="{ name: 'project', params: { id: slide.id } }"
+                >
+                  <div class="gold-container">
+                    <img
+                      class="cover-image"
+                      :src="slide.image"
+                      alt="project image"
+                    />
+                  </div>
+                </router-link>
+                <div class="animated-text">
+                  <div class="text-wrapper">
+                    <p
+                      v-for="(char, index) in text"
+                      :key="index"
+                      class="character"
+                      :style="{
+                        transform: `rotate(${index * 35}deg)`,
+                      }"
+                    >
+                      {{ char }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="cover-before" :style="handleStyles(index)">
-              <div class="title-container">
-                <h3 class="title-card">{{ slide.title }}</h3>
+              <div class="cover-before" :style="handleStyles(index)">
+                <div class="title-container">
+                  <h3 class="title-card">{{ slide.title }}</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -58,6 +63,7 @@ import {
 } from "vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Neumorphisme from "../components/Neumorphisme.vue";
 // import axios from "axios";
 
 const container = ref(null);
@@ -192,7 +198,7 @@ const handleStyles = (index) => {
 .horizontal-scroll-container {
   overflow-x: hidden;
   position: relative;
-  background-color: #fffdf6;
+  background-color: #fefaf6;
 
   border-top: solid 4px;
   border-image: linear-gradient(
@@ -220,9 +226,10 @@ const handleStyles = (index) => {
   overscroll-behavior: none;
   display: flex;
   overflow: hidden;
-  background-image: url("/images/artDeco/feather4.png");
+  /* background-image: url("/images/artDeco/feather4.png"); */
   background-size: 75em;
   background-position: top left;
+  z-index: 1000;
 }
 
 .image {

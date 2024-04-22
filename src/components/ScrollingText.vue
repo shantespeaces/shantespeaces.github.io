@@ -14,6 +14,7 @@
 #sticky-scrolling-text.green .scrolling-text-wrapper {
   background-color: #004152;
 }
+
 .scrolling-text-wrapper {
   overflow-x: hidden;
   width: 100%;
