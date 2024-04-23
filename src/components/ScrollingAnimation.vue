@@ -24,6 +24,7 @@
   background-image: var(--goldToRightDark);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 2.26rem;
   text-transform: uppercase;
   display: flex;

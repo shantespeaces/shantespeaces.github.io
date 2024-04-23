@@ -36,6 +36,8 @@
                         <p class="date">{{ project.date }}</p>
                         <div class="link-container d-flex">
                           <a
+                            class="github-link"
+                            v-if="project.link"
                             :href="project.link"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -127,11 +129,14 @@
                   <div class="date-container d-flex justify-content-between">
                     <p class="date">{{ project.date }}</p>
                     <div class="link-container d-flex">
-                      <a
-                        :href="project.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Github</a
+                      <template v-if="project.link">
+                        <a
+                          :href="project.link"
+                          target="_blank"
+                          rel="noopener
+                          noreferrer"
+                          >Github</a
+                        ></template
                       >
                       <router-link
                         class="project-details"
