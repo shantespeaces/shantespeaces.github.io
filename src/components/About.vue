@@ -487,6 +487,13 @@ li {
   /* #sticky-about {
     top: -600px;
   } */
+  .download {
+    flex-direction: column;
+    margin-bottom: 4em;
+  }
+  .download button {
+    margin-bottom: 1em;
+  }
   .text-container,
   .skills.container,
   .education.container {
