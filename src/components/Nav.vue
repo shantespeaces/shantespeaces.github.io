@@ -2,6 +2,7 @@
   <nav>
     <div class="nav-container">
       <div class="brand">
+        <img src="/images/portfolio/logo-gold.jpeg" alt="" />
         <router-link
           data-name="home"
           class="navbar-brand"
@@ -114,6 +115,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.brand img {
+  height: 3em;
+  width: 3em;
 }
 a.navbar-brand {
   font-family: "Poiret One", sans-serif;

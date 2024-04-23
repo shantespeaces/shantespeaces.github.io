@@ -24,31 +24,31 @@ I'm always eager to connect with fellow creatives and potential collaborators. W
 
 #### Animated Intro
 
-<img src="public/images/readMe/animatedIntro.jpeg" width="30%" />
+<img src="public/images/portfolio/animatedIntro.jpeg" width="30%" />
 
 #### About Me
 
-<img src="public/images/readMe/about.jpeg" width="30%" />
+<img src="public/images/portfolio/about.jpeg" width="30%" />
 
 #### Experience
 
-<img src="public/images/readMe/experiences.jpeg" width="30%" />
+<img src="public/images/portfolio/experiences.jpeg" width="30%" />
 
 #### References
 
-<img src="public/images/readMe/references.jpeg" width="30%" />
+<img src="public/images/portfolio/references.jpeg" width="30%" />
 
 #### Footer
 
-<img src="public/images/readMe/footer.jpeg" width="30%" />
+<img src="public/images/portfolio/footer.jpeg" width="30%" />
 
 #### Project Details
 
-<img src="public/images/readMe/projectDetails.jpeg" width="30%" />
+<img src="public/images/portfolio/projectDetails.jpeg" width="30%" />
 
 #### Mobile
 
-<img src="public/images/readMe/mobile.jpeg" width="30%" />
+<img src="public/images/portfolio/mobile.jpeg" width="30%" />
 
 ## Project Setup
 

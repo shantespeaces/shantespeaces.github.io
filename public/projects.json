@@ -277,5 +277,30 @@
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "images/cards/artDeco8.jpg",
     "quote": "Design is the silent ambassador of your brand. -Paul Rand"
-  }  
+  },
+  { 
+    "id": 10,
+    "logo": "/images/portfolio/logo-gold.jpeg",
+    "skw": "/images/portfolio/animatedIntro.jpeg",
+    "video": "",
+    "types": ["code", "design"], 
+    "language": "Vue Js 3",
+    "date": "Winter 2024",
+    "title": "Shanté's Portfolio",
+    "cardTitle": "Shanté's Portfolio",
+    "heading3": "Portfolio",
+    "projectImages": [ 
+      {"title": "Animated Intro", "image": "/images/portfolio/animatedIntro.jpeg"},
+      {"title": "About Me", "image": "/images/portfolio/about.jpeg"},
+      {"title": "References", "image": "/images/portfolio/references.jpeg"},
+      {"title": "Experience", "image": "/images/portfolio/experiences.jpeg"},
+      {"title": "Footer", "image": "/images/portfolio/footer.jpeg"},
+      {"title": "Mobile", "image": "/images/portfolio/mobile.jpeg"} 
+    ],
+    "description": "Crafted with Vue.js 3 and JavaScript, this portfolio is not just a showcase of my technical proficiency but also an exercise in pushing the boundaries of web design. I've leveraged CSS animations extensively, incorporating complex Art Deco-inspired elements to infuse each page with a touch of timeless elegance. Despite the challenges posed by executing such intricate designs in a web environment, I've strived to create an immersive experience that captivates visitors and leaves a lasting impression.",
+    "items": ["Imaginative Design: Embracing the spirit of Art Deco, I've woven intricate patterns and geometric motifs throughout the design, creating a visually stunning experience that sets this portfolio apart.", "Responsive Across Devices: Whether you're viewing on a smartphone, tablet, or desktop, rest assured that this portfolio adapts flawlessly to provide an optimal viewing experience on any screen size.", "Vue.js 3 Powered: Leveraging the power of Vue.js 3, I've built a dynamic and interactive interface that not only engages visitors but also ensures smooth navigation and functionality throughout." ],
+    "link": "https://github.com/shantespeaces/shantespeaces.github.io",
+    "backgroundImage": "images/artDeco/gold1.avif",
+    "quote": "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs"
+  }
 ]

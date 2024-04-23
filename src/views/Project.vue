@@ -323,6 +323,8 @@ const updateTextPosition = (event) => {
 </script>
 
 <style>
+
+
 #project {
   background-color: #fffdf6;
 }
