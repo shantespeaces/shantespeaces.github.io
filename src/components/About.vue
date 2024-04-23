@@ -93,7 +93,12 @@
         </div>
       </div>
       <div class="download d-flex justify-content-center">
-        <button @click="downloadDocument"><p>Download Resume</p></button>
+        <button @click="downloadDocument('shante_nicolaides_resume_en.pdf')">
+          <p>Download CV</p>
+        </button>
+        <button @click="downloadDocument('shante_nicolaides_resume_fr.pdf')">
+          <p>Télécharger CV</p>
+        </button>
       </div>
     </section>
   </section>
@@ -101,13 +106,11 @@
 <script setup>
 import { ref } from "vue";
 
-const downloadDocument = () => {
-  const documentUrl = `${
-    import.meta.env.BASE_URL
-  }documents/shante_nicolaides_resume.pdf`;
+const downloadDocument = (fileName) => {
+  const documentUrl = `${import.meta.env.BASE_URL}documents/${fileName}`;
   const link = document.createElement("a");
   link.href = documentUrl;
-  link.setAttribute("download", "shante_nicolaides_resume.pdf");
+  link.setAttribute("download", fileName);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -406,6 +409,8 @@ li {
   padding: 1em;
   cursor: pointer;
   margin-bottom: 5em;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .download button p {
