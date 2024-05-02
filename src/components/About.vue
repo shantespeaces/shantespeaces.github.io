@@ -192,14 +192,14 @@ const skills = [
 //education
 
 const educations = [
-  {
-    title: "Udemy | Angular",
-    year: "2024 - Present",
-    description: [
-      "Gain hands-on experience in building dynamic, responsive web applications using Angular framework.",
-      "Improve awareness of Angular concepts, such as components, services, routing, and form handling, along with integrating RESTful APIs for seamless data exchange in web applications.",
-    ],
-  },
+  // {
+  //   title: "Udemy | Angular",
+  //   year: "2024 - Present",
+  //   description: [
+  //     "Gain hands-on experience in building dynamic, responsive web applications using Angular framework.",
+  //     "Improve awareness of Angular concepts, such as components, services, routing, and form handling, along with integrating RESTful APIs for seamless data exchange in web applications.",
+  //   ],
+  // },
   {
     title: "Cégep Saint-Jérôme, QC | Web Programming and Design AEC",
     year: "2023",

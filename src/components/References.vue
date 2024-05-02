@@ -6,6 +6,7 @@
         <div class="heading-container" id="references">
           <h2 class="heading">References</h2>
         </div>
+
         <div class="image-wrapper d-flex justify-content-between">
           <div class="image-container left">
             <div class="quote-container d-flex justify-content-center">
@@ -50,6 +51,11 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   position: -webkit-sticky;
   top: -1200px;
 }
+.reference-header {
+  z-index: 100;
+  position: relative;
+}
+
 .references-container {
   background-color: white;
   border-top: solid 2px;
@@ -57,10 +63,7 @@ import Neumorphisme from "../components/Neumorphisme.vue";
   border-image-slice: 1;
   position: relative;
 }
-section.references {
-  /* background-color: #fffdf6; */
-  z-index: 500;
-}
+
 section.references h2 {
   padding-top: 4em;
   text-align: end;
@@ -74,7 +77,9 @@ section.references h2 {
   z-index: 500;
 }
 .references .heading-container {
-  background-color: white;
+  background-color: #fffdf6;
+  position: relative;
+  z-index: 100;
 }
 h2.heading {
   color: black;

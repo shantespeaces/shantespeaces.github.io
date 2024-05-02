@@ -76,6 +76,31 @@
     class="neumorphisme58 neumorphisme"
     alt=""
   />
+  <img
+    src="/images/portfolio/logo-gold.jpeg"
+    alt=""
+    class="neumorphisme58 neumorphisme"
+  />
+  <img
+    src="/images/portfolio/logo-gold.jpeg"
+    alt=""
+    class="neumorphisme58 neumorphisme"
+  />
+  <img
+    src="/images/portfolio/logo-gold.jpeg"
+    alt=""
+    class="neumorphisme58 neumorphisme"
+  />
+  <img
+    src="/images/portfolio/logo-gold.jpeg"
+    alt=""
+    class="neumorphisme58 neumorphisme"
+  />
+  <img
+    src="/images/portfolio/logo-gold.jpeg"
+    alt=""
+    class="neumorphisme58 neumorphisme"
+  />
   <!-- <div class="triangle-up triangle-small"></div>
   <div class="triangle-up triangle-small"></div>
   <div class="triangle-up triangle-small"></div>
@@ -132,8 +157,8 @@ onMounted(() => {
 img.neumorphisme58 {
   position: absolute;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   z-index: 1;
   background-color: transparent;
 }

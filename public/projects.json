@@ -55,8 +55,8 @@
       {"image": "/images/bois/pdf/36.png"}
     ],
     "description": "UX/UI Exercise: Enhancing my skills in research, development, and design, I created a guideline document essential for crafting comprehensive mockups.  The research findings were synthesized and  fundamental UI/UX principles applied to create an impactful user interfaces. Upon 'client' approval the design elements where integrated into the mockup and presented to the class.",
-    "items": ["Reflects the sophistication and opulence synonymous with luxury furniture through elegant design elements and sleek aesthetics.", "Highlight the meticulous craftsmanship and premium materials used in each furniture piece, instilling confidence in potential buyers.", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients, aimed to showcase our success and instill confidence in the shopper."],
-    "cardItems": ["Adobe Design Project: XD, PS, AI", "Researched, designed and created a comprehensive guideline document tailored to bridge client requirements with developpement and integration.", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients."],
+    "items": ["Adobe Design Project: XD, PS, AI", "Researched, designed and created a comprehensive guideline document tailored to bridge client requirements with developpement and integration.", "Created design from guideline document previously researched", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients."],
+    "cardItems":["Reflects the sophistication and opulence synonymous with luxury furniture through elegant design elements and sleek aesthetics.", "Highlight the meticulous craftsmanship and premium materials used in each furniture piece, instilling confidence in potential buyers.", "Utilized captivating visuals, rich imagery, and immersive experiences to engage users and evoke an emotional connection to the brand.", "Crafted an engaging recommendation section adorned with beautiful images from satisfied clients, aimed to showcase our success and instill confidence in the shopper."],
     "link": "",
     "backgroundImage": "images/cards/artDeco9.jpg",
     "quote": "Good design is good business. -Thomas J. Watson" 
@@ -80,8 +80,8 @@
       {"title": "Recipe Page", "image": "/images/menu/recipe.jpeg"} 
     ],
     "description": "A recipe creation platform dedicated to cooking enthusiasts. A user-friendly interface allowing users to input ingredients, cooking instructions, photos, and other relevant details for their recipes. This initial phase aims to establish a strong foundation by enabling users to create accounts, facilitating the recording, management, and access to their personal recipes within the application.",
-    "items": ["Crafted a dynamic and accessible User Interface (UI) using React and TypeScript, focusing on object-oriented programming", "Led design of a user-friendly UI/UX, including creation of a unique logo, and development of interactive mock-ups", "Implemented server-side scripting and API integration; designed sophisticated database architecture with interconnected tables.", "Enhanced awareness of responsive design and UI best practices has led to the development of a complex form featuring multiple input elements - maximizing efficiency and ensuring data integrity in data input processes" ],
-    "cardItems": ["React project using Typescript and Bootstrap","Fully responsive, object-oriented programming", "Crafted a dynamic and accessible User Interface (UI)", "Implemented server-side scripting and API integration.", "Designed sophisticated database architecture.", "Development of a complex form featuring multiple input elements.","Creation of user account" ],
+    "cardItems": ["Crafted a dynamic and accessible User Interface (UI) focusing on object-oriented programming and using React, TypeScript and Bootstrap ", "Led design of a user-friendly UI/UX, including creation of a unique logo, and development of interactive mock-ups", "Implemented server-side scripting and API integration; designed sophisticated database architecture with interconnected tables.", "Enhanced awareness of responsive design and UI best practices has led to the development of a complex form featuring multiple input elements - maximizing efficiency and ensuring data integrity in data input processes" ],
+     "items":  ["React project using Typescript and Bootstrap.","Fully responsive, object-oriented programming.", "Crafted a dynamic and accessible User Interface (UI).", "Implemented server-side scripting and API integration.", "Designed sophisticated database architecture with interconnected tables.", "Development of a complex form featuring multiple input elements and categories.","Creation of user account." ],
     "link": "https://github.com/shantespeaces/recipe-app",
     "backgroundImage": "images/artDeco/gold1.avif",
     "quote": "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs"
@@ -110,8 +110,8 @@
 
     ],
     "description": "Scoped and led development of a vibrant and engaging website for a festival blending both innovative design and technical skills. The objective of this project was to design a captivating website for the Prima-Colors Festival. The festival targeted a dynamic and creative clientele aged 18 to 40, passionate about arts, music, and creativity. The website's mission was to meet their expectations by offering a modern experience that combined technology and enjoyment.",
-    "items": ["Led team of 3, defining target audience and project objectives. Designed visual identity, including a unique logo, and comprehensive UX/UI strategy to ensure a user-friendly experience.", "Produced high-quality, reusable components using HTML5, SCSS and JavaScript within a Laravel framework.", "Oversaw all aspects of back-end development; spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section, enhancing website interactivity.", "Refined and optimized codebase - created reusable components and utilized JSON for content testing databases."],
-    "cardItems": ["Laravel Project using SCSS and JavaScript", "Defined project objectives, design and comprehensive UX/UI strategy.", "Produced high-quality, reusable components." , "Spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section."],
+    "cardItems": ["Led team of 3, defining target audience and project objectives. Designed visual identity, including a unique logo, and comprehensive UX/UI strategy to ensure a user-friendly experience.", "Produced high-quality, reusable components using HTML5, SCSS and JavaScript within a Laravel framework.", "Oversaw all aspects of back-end development; spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section, enhancing website interactivity.", "Refined and optimized codebase - created reusable components and utilized JSON for content testing databases."],
+    "items":  ["Laravel Project using HTML, SCSS and JavaScript", "Defined project objectives, designed visual identity and comprehensive UX/UI strategy.", "Produced high-quality, reusable components." , "Spearheaded server-side scripting, implementing dynamic content and functionalities for the Admin section.", "Oversaw all aspects of back-end development.", "Refined and optimized codebase - created reusable components and utilized JSON for content testing databases."],
     "link": "https://github.com/shantespeaces/prima_colors_pw2",
    
     "backgroundImage": "images/cards/artDeco7.jpg",
@@ -121,7 +121,9 @@
     "id": 3,
     "logo": "/images/pubG4/logo.png",
     "skw": "/images/pubG4/skw.jpg",
-    "video": "/videos/pubG4.mp4",
+    "videoSource": {
+      "videoFile": "/videos/pubG4.mp4"
+    },
     "types": ["code", "design"], 
     "language": "PhP MVC",
     "date": "Winter 2023",
@@ -134,8 +136,8 @@
       {"title": "Admin Menu", "image": "/images/pubG4/menuAdmin.png"}
     ],
     "description": "Maintained consistent communication and reported back to the 'client', showcasing effective stakeholder management skills during development of a restaurant website",
-    "items": ["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms.", "Engaged in an iterative design process, soliciting feedback and making revisions as necessary to refine the website design and ensure alignment with the client's vision and needs"],
-    "cardItems": ["Php Project using Vue.js and MVC architecture", "Outlined project objectives and established visual identity.", "Developement of Admin section enabling employees to manage menu items effectively", "Optimized website security having deployed role-based access control.", "Secure connection with encrypted passwords and robust authorization mechanisms."],
+     "cardItems":["Outlined project objectives and established visual identity. Designed logo and formulated a high-impact and engaging UX/UI strategy.", "Promoted interactive development; utilized Vue.js and MVC to generate high-quality, reusable components while introducing interactive menu, enabling employees to manage menu items effectively.", "Optimized website security having deployed role-based access control, granting managers elevated privileges, and ensured a secure connection with encrypted passwords and robust authorization mechanisms.", "Engaged in an iterative design process, soliciting feedback and making revisions as necessary to refine the website design and ensure alignment with the client's vision and needs"],
+     "items":["Php Project using MVC architecture, Vue.js, HTML, SCSS ", "Outlined project objectives and established visual identity.", "Developement of Admin section enabling employees to manage menu items effectively", "Optimized website security having deployed role-based access control.", "Secure connection with encrypted passwords and robust authorization mechanisms."],
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "images/artDeco/gold1.avif",
     "quote": "It's not a bug; it's an undocumented feature. - Anonymous"
@@ -144,7 +146,6 @@
     "id": 4,
     "logo": "/images/spa/logo1.png",
    "skw": "/images/spa/hero.png",
-    "video": "",
     "types": ["design"], 
     "language": "XD Design",
     "date": "Winter 2023",
@@ -159,33 +160,37 @@
       {"title": "", "image": ""}
    ],
     "description": "Design Exercise: Elevating User Experience for a Spa Website.  Tasked with crafting a captivating user interface (UI) design, I Created a harmonious digital space that mirrors the tranquility and luxury of a spa. Gained valuable skills in Adobe XD, Photoshop (PS), and Illustrator (AI).",
-    "items": [" Curated high-quality images of serene spa environments, lush landscapes, and serene treatments to visually transport visitors to a world of relaxation.", "Soothing hues such as soft blues, muted greens, and gentle neutrals to evoke a sense of calmness.", "Employed a harmonious blend of colors, typography, and imagery to evoke a tranquil atmosphere while maintaining visual appeal.", "Mobil, Tablet and Desktop design"], 
-    "cardItems": ["Mobil, Tablet and Desktop design", "Adobe Design Project: XD, PS, AI", "Created elegant and unique logo and branding", "Applied modern design trends such as glassmorphism",  "Employed a harmonious blend of colors, typography, and imagery"], 
+     "cardItems": [" Curated high-quality images of serene spa environments, lush landscapes, and serene treatments to visually transport visitors to a world of relaxation.", "Soothing hues such as soft blues, muted greens, and gentle neutrals to evoke a sense of calmness.", "Employed a harmonious blend of colors, typography, and imagery to evoke a tranquil atmosphere while maintaining visual appeal.", "Mobil, Tablet and Desktop design"], 
+     "items":["Mobil, Tablet and Desktop design.", "Adobe Design Project: XD, PS, AI.", "Creation of elegant and unique logo and branding.", "Application of modern design trends such as glassmorphism.",  "Employment of a harmonious blend of colors, typography, and imagery."], 
     "link": "",
     "backgroundImage": "images/cards/gold-diamonds.jpg",
     "quote": "Good design is actually a lot harder to notice than poor design, in part because good designs fit our needs so well that the design is invisible - Don Norman"
   },
-
-  {
+  { 
     "id": 5,
-    "logo": "/images/filmsFlix/logo.png",
-    "skw": "/images/filmsFlix/skw.jpg",
+    "logo": "/images/portfolio/logo-gold.jpeg",
+    "skw": "/images/portfolio/animatedIntro.jpeg",
     "types": ["code", "design"], 
-    "language": "Laravel",
-    "date": "Spring 2023",
-    "title": "FilmsFlix - Mini Film App",
-    "cardTitle": "FilmsFlix",
-    "heading3": "Films",
-    "projectImages": [{"title": "Home", "image": "/images/filmsFlix/home.jpeg"},
-      {"title": "Film Details", "image": "/images/filmsFlix/show.jpeg"}],
-    "description": "Laravel Exercise: FilmsFlix is a Laravel project designed to replicate the immersive experience of a Netflix-style platform. The objective was to create a small website allowing users to browse a list of movies as well as the details of each movie with information retrieved from the database.",
-    "items": ["Learning Laravel!", "Creation of the models and Retrieval of data (using a model) and passing it to the views", "Dynamization of views with received data and use of an appropriate layout and components"],
-    "cardItems": ["Mini Laravel App", "Creation of models and Retrieval of data", "Dynamization of views with received data and use of an appropriate layout and components"],
-    "link": "https://github.com/shantespeaces/filmsFlix",
+    "language": "Vue Js 3",
+    "date": "Winter 2024",
+    "title": "Shanté's Portfolio",
+    "cardTitle": "Shanté's Portfolio",
+    "heading3": "Portfolio",
+    "projectImages": [ 
+      {"title": "Animated Intro", "image": "/images/portfolio/animatedIntro.jpeg"},
+      {"title": "About Me", "image": "/images/portfolio/about.jpeg"},
+      {"title": "References", "image": "/images/portfolio/references.jpeg"},
+      {"title": "Experience", "image": "/images/portfolio/experiences.jpeg"},
+      {"title": "Footer", "image": "/images/portfolio/footer.jpeg"},
+      {"title": "Mobile", "image": "/images/portfolio/mobile.jpeg"} 
+    ],
+    "description": "Crafted with Vue.js 3 and JavaScript, this portfolio is not just a showcase of my technical proficiency but also an exercise in pushing the boundaries of web design. I've leveraged CSS animations extensively, incorporating complex Art Deco-inspired elements to infuse each page with a touch of timeless elegance. Despite the challenges posed by executing such intricate designs in a web environment, I've strived to create an immersive experience that captivates visitors and leaves a lasting impression.",
+    "items": ["VueJs Project using HTML, CSS and Json", "Embracing the spirit of Art Deco, intricate patterns and geometric motifs were woven throughout the design, creating a visually stunning experience that sets this portfolio apart.", "Responsive and fluid design for mobile tablet, and desktop.", "Interactive interface that not only engages visitors but also ensures smooth navigation and functionality throughout.", "Deployement on Github"],
+    "link": "https://github.com/shantespeaces/shantespeaces.github.io",
     "backgroundImage": "images/artDeco/gold1.avif",
-    "quote": "Coding like poetry should be short and concise. - Santosh Kalwar"
+    "quote": "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs"
   },
-
+ 
   {
     "id": 6,
     "logo": "/images/monVoyage/logo.png",
@@ -199,11 +204,30 @@
     "projectImages": [{"title": "Home Page", "image": "/images/monVoyage/home.png"},
       {"title": "", "image": ""}],
     "description": "WordPress Exercise: Familiarizing myself with the fundamentals of the WordPress platform, I was tasked with the integration and customization of theme to suit the desired aesthetic and functionality, as well as adding relevant content to populate the website.  I gained hands-on experience in navigating WordPress, manipulating themes, and effectively presenting content on a website.",
-    "items": ["Gained practical experience in working with the WordPress platform, allowing me to grasp key concepts such as theme integration, customization, and content management through active engagement with the platform.", "By integrating and modifying a theme, I honed my skills in customizing website appearance and functionality to align with specific requirements or design preferences. This involved adjusting layout, colors, fonts, and other elements to create a cohesive and visually appealing website.", "Through the addition of content, I learned how to effectively structure and present information on a website."],
+    "items": ["Gained practical experience in working with the WordPress platform, allowing me to grasp key concepts such as theme integration, customization, and content management through active engagement with the platform.", "Integrated and modified a theme.", "Deployed using AWS."],
     "cardItems": [" WordPress project", "Intro to theme integration, customization, and content management.", "Customized website appearance and functionality to align with client requirements and design preferences.", "Effectively structured and presented information."],
     "link": "https://0261994.cpsw-fcsei.com/wordpress",
     "backgroundImage": "images/cards/artDeco7.jpg",
     "quote": "Talk is cheap. Show me the code. - Linus Torvalds"
+  },
+  {
+    "id": 10,
+    "logo": "/images/filmsFlix/logo.png",
+    "skw": "/images/filmsFlix/skw.jpg",
+    "types": ["code", "design"], 
+    "language": "Laravel",
+    "date": "Spring 2023",
+    "title": "FilmsFlix - Mini Film App",
+    "cardTitle": "FilmsFlix",
+    "heading3": "Films",
+    "projectImages": [{"title": "Home", "image": "/images/filmsFlix/home.jpeg"},
+      {"title": "Film Details", "image": "/images/filmsFlix/show.jpeg"}],
+    "description": "Laravel Exercise: FilmsFlix is a Laravel project designed to replicate the immersive experience of a Netflix-style platform. The objective was to create a small website allowing users to browse a list of movies as well as the details of each movie with information retrieved from the database.",
+    "cardItems":  ["Laravel Php mini project", "Creation of the models and Retrieval of data (using a model) and passing it to the views", "Dynamization of views with received data and use of an appropriate layout and components"],
+    "items":["Mini Laravel, Php App", "Creation of models and Retrieval of data", "Dynamization of views with received data and use of an appropriate layout and components.", " Used factories, migrations and seeders for the database"],
+    "link": "https://github.com/shantespeaces/filmsFlix",
+    "backgroundImage": "images/artDeco/gold1.avif",
+    "quote": "Coding like poetry should be short and concise. - Santosh Kalwar"
   },
   {
     "id": 7,
@@ -223,8 +247,8 @@
    
     ],
     "description": "Design Exercise: The objective was to develop skills in creating a mood board based on a client request and utilize it as inspiration to design a website. This project was specifically tailored to cater to the preferences and characteristics of a persona within the 30+ age group, characterized as funky artists, bloggers, and shoppers.",
-    "items": ["Curated a mood board based on the client's request and the persona's characteristics. The mood board incorporated vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.", "Utilized the mood board as inspiration to design the fashion blog website. Incorporated elements such as vibrant color schemes, playful typography, dynamic layouts, and visually striking imagery to create an engaging and immersive user experience.", "Ensured that the web design elements aligned with the persona's preferences and characteristics. Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
-    "cardItems": ["Adobe Design Project: XD, PS, AI", "Created a mood board based taht incorporates vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.",  "Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
+    "cardItems":["Curated a mood board based on the client's request and the persona's characteristics. The mood board incorporated vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.", "Utilized the mood board as inspiration to design the fashion blog website. Incorporated elements such as vibrant color schemes, playful typography, dynamic layouts, and visually striking imagery to create an engaging and immersive user experience.", "Ensured that the web design elements aligned with the persona's preferences and characteristics. Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
+    "items":  ["Adobe Design Project: XD, PS, AI", "Creation of a mood board based incorporating vibrant colors, eclectic patterns, bold typography, and fashion-forward imagery to reflect the funky and artistic style preferences of the target audience.",  "Prioritized user-centric design decisions to enhance usability and appeal to the target audience's tastes and interests."],
     "link": "",
     "backgroundImage": "images/artDeco/gold1.avif",
     "quote": "Design creates culture. Culture shapes values. Values determine the future. -Robert L. Peters"
@@ -247,8 +271,8 @@
     
     ],
     "description": "Adobe Premiere Exercise: a fun exercise focused on video editting skills. The video demonstrates advanced video editing skills through seamless transitions, dynamic effects, and precise synchronization with the music. Through creative conceptualization and attention to detail, the video effectively transforms a coding session into an engaging and visually stimulating experience, showcasing the fun and creativity inherent in both video editing and web development.  ",
-    "items": ["Transitions: The video showcases various transition effects between scenes", "Syncing Visuals with Music: Synchronizing the visuals with the beat of the music demonstrates an understanding of rhythm and timing, adding energy and excitement to the video.", "Dynamic Editing: The use of dynamic editing techniques, such as speeding up or slowing down footage, adds variety and pace to the video, keeping the viewer engaged.", "Creative Conceptualization: Developing a creative concept that combines seemingly unrelated themes (web development and rap music) requires imaginative thinking and the ability to conceptualize ideas outside the box."],
-    "cardItems": ["Transitions", "Syncing Visuals with Music", "Narrative Structure", "Creative Conceptualization"],
+    "cardItems":["Transitions: The video showcases various transition effects between scenes", "Syncing Visuals with Music: Synchronizing the visuals with the beat of the music demonstrates an understanding of rhythm and timing, adding energy and excitement to the video.", "Dynamic Editing: The use of dynamic editing techniques, such as speeding up or slowing down footage, adds variety and pace to the video, keeping the viewer engaged.", "Creative Conceptualization: Developing a creative concept that combines seemingly unrelated themes (web development and rap music) requires imaginative thinking and the ability to conceptualize ideas outside the box."],
+    "items":["Transitions", "Syncing Visuals with Music", "Narrative Structure", "Creative Conceptualization"],
     "link": "",
     "backgroundImage": "images/cards/artDeco8.jpg",
     "quote": "Software and cathedrals are much the same; first we build them, then we pray. -Anonymous"
@@ -272,35 +296,11 @@
       {"title": "", "image": ""}
     ],
     "description": "Crafted with precision, the PUBG4 website header video seamlessly integrates Overlay Effects, dynamically enriching visual engagement and conveying the theme with clarity. Employing Text Animation, the video incorporates animated overlays to deepen context and add a stylish flair, elevating the viewing experience to new heights.",
-    "items": ["Attention to Detail: Paying attention to small details such as timing, pacing, and visual coherence ensures a polished final product that resonates with the audience.", "Text Animation: Animated text overlays provide additional context and information while also adding a stylish flair to the video." ],
-    "cardItems": ["Attention to Detail", "Dynamic Editing", "Text Animation"],
+    "cardItems": ["Attention to Detail: Paying attention to small details such as timing, pacing, and visual coherence ensures a polished final product that resonates with the audience.", "Text Animation: Animated text overlays provide additional context and information while also adding a stylish flair to the video." ],
+    "items":["Attention to Detail", "Dynamic Editing", "Text Animation"],
     "link": "https://github.com/shantespeaces/PubG4",
     "backgroundImage": "images/cards/artDeco8.jpg",
     "quote": "Design is the silent ambassador of your brand. -Paul Rand"
-  },
-  { 
-    "id": 10,
-    "logo": "/images/portfolio/logo-gold.jpeg",
-    "skw": "/images/portfolio/animatedIntro.jpeg",
-    "video": "",
-    "types": ["code", "design"], 
-    "language": "Vue Js 3",
-    "date": "Winter 2024",
-    "title": "Shanté's Portfolio",
-    "cardTitle": "Shanté's Portfolio",
-    "heading3": "Portfolio",
-    "projectImages": [ 
-      {"title": "Animated Intro", "image": "/images/portfolio/animatedIntro.jpeg"},
-      {"title": "About Me", "image": "/images/portfolio/about.jpeg"},
-      {"title": "References", "image": "/images/portfolio/references.jpeg"},
-      {"title": "Experience", "image": "/images/portfolio/experiences.jpeg"},
-      {"title": "Footer", "image": "/images/portfolio/footer.jpeg"},
-      {"title": "Mobile", "image": "/images/portfolio/mobile.jpeg"} 
-    ],
-    "description": "Crafted with Vue.js 3 and JavaScript, this portfolio is not just a showcase of my technical proficiency but also an exercise in pushing the boundaries of web design. I've leveraged CSS animations extensively, incorporating complex Art Deco-inspired elements to infuse each page with a touch of timeless elegance. Despite the challenges posed by executing such intricate designs in a web environment, I've strived to create an immersive experience that captivates visitors and leaves a lasting impression.",
-    "items": ["Imaginative Design: Embracing the spirit of Art Deco, I've woven intricate patterns and geometric motifs throughout the design, creating a visually stunning experience that sets this portfolio apart.", "Responsive Across Devices: Whether you're viewing on a smartphone, tablet, or desktop, rest assured that this portfolio adapts flawlessly to provide an optimal viewing experience on any screen size.", "Vue.js 3 Powered: Leveraging the power of Vue.js 3, I've built a dynamic and interactive interface that not only engages visitors but also ensures smooth navigation and functionality throughout." ],
-    "link": "https://github.com/shantespeaces/shantespeaces.github.io",
-    "backgroundImage": "images/artDeco/gold1.avif",
-    "quote": "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs"
   }
+
 ]
