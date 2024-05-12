@@ -55,6 +55,7 @@ const scrollToNextViewport = () => {
   background-image: var(--goldToRightYellow);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   cursor: pointer;
 }
 
@@ -62,6 +63,7 @@ const scrollToNextViewport = () => {
   background-image: var(--goldToBottomYellow);
   color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   cursor: pointer;
   transition: color 0.3s ease;
 }

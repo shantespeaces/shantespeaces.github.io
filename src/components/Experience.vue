@@ -11,11 +11,7 @@
           <!-- titles-left -->
           <div class="left-wrapper column justify-content-between">
             <div class="left-container container d-flex">
-              <div
-                v-for="project in displayedProjects"
-                :key="project.id"
-                class=" "
-              >
+              <div v-for="project in displayedProjects" :key="project.id">
                 <div
                   class="project-title container d-flex"
                   @click="handleTitleClick(project)"
@@ -68,7 +64,7 @@
                             class="project-image"
                             :src="project.skw"
                             :class="{ show: selectedProject === project }"
-                            alt=""
+                            alt="shante nicolaides project image"
                           />
                         </div>
                       </router-link>
@@ -173,7 +169,7 @@
                         class="project-image"
                         :src="project.skw"
                         :class="{ show: selectedProject === project }"
-                        alt=""
+                        alt="shante nicolaides project image"
                       />
                     </div>
                   </router-link>
