@@ -9,7 +9,7 @@
     </div>
   </section>
 </template>
-<script></script>
+<script setup></script>
 <style>
 #sticky-scrolling-text.green .scrolling-text-wrapper {
   background-color: #004152;
